@@ -1,0 +1,872 @@
+{
+  "name": "portal_notas_fiscais",
+  "owner_org": "",
+  "profile": "data-package",
+  "resources": [
+    {
+      "description": "Insira a descrição/explicação detalhada deste recurso.",
+      "dialect": {
+        "delimiter": ";"
+      },
+      "encoding": "utf-8-sig",
+      "format": "csv",
+      "hashing": "md5",
+      "name": "itensnotas2025_1",
+      "path": "data/itensnotas2025_1.csv",
+      "profile": "tabular-data-resource",
+      "schema": {
+        "fields": [
+          {
+            "name": "orgao_emissor",
+            "type": "string"
+          },
+          {
+            "name": "tipo_de_documento",
+            "type": "any"
+          },
+          {
+            "name": "fornecedor_cnpj_cpf",
+            "type": "string"
+          },
+          {
+            "name": "fornecedor_nome_empresarial",
+            "type": "string"
+          },
+          {
+            "name": "numero",
+            "type": "integer"
+          },
+          {
+            "name": "serie",
+            "type": "any"
+          },
+          {
+            "name": "sequencial",
+            "type": "integer"
+          },
+          {
+            "name": "natureza",
+            "type": "string"
+          },
+          {
+            "name": "indicador_de_orcamento",
+            "type": "string"
+          },
+          {
+            "name": "item_da_nota_fiscal",
+            "type": "integer"
+          },
+          {
+            "name": "codigo_do_item",
+            "type": "integer"
+          },
+          {
+            "name": "desc_do_item_de_material",
+            "type": "string"
+          },
+          {
+            "name": "desc_da_unid_de_fornecimento",
+            "type": "string"
+          },
+          {
+            "name": "unid_orcamentaria",
+            "type": "integer"
+          },
+          {
+            "name": "elemento_item_de_despesa",
+            "type": "integer"
+          },
+          {
+            "name": "qtde_na_nota_fiscal",
+            "type": "string"
+          },
+          {
+            "name": "valor_unitario_r",
+            "type": "string"
+          },
+          {
+            "name": "valor_total_r",
+            "type": "string"
+          }
+        ]
+      },
+      "scheme": "file",
+      "title": "Insira um título humanamente legível para este recurso."
+    },
+    {
+      "description": "Insira a descrição/explicação detalhada deste recurso.",
+      "dialect": {
+        "delimiter": ";"
+      },
+      "encoding": "utf-8-sig",
+      "format": "csv",
+      "hashing": "md5",
+      "name": "itensnotas2025_2",
+      "path": "data/itensnotas2025_2.csv",
+      "profile": "tabular-data-resource",
+      "schema": {
+        "fields": [
+          {
+            "name": "orgao_emissor",
+            "type": "string"
+          },
+          {
+            "name": "tipo_de_documento",
+            "type": "any"
+          },
+          {
+            "name": "fornecedor_cnpj_cpf",
+            "type": "string"
+          },
+          {
+            "name": "fornecedor_nome_empresarial",
+            "type": "string"
+          },
+          {
+            "name": "numero",
+            "type": "integer"
+          },
+          {
+            "name": "serie",
+            "type": "integer"
+          },
+          {
+            "name": "sequencial",
+            "type": "integer"
+          },
+          {
+            "name": "natureza",
+            "type": "string"
+          },
+          {
+            "name": "indicador_de_orcamento",
+            "type": "string"
+          },
+          {
+            "name": "item_da_nota_fiscal",
+            "type": "integer"
+          },
+          {
+            "name": "codigo_do_item",
+            "type": "integer"
+          },
+          {
+            "name": "desc_do_item_de_material",
+            "type": "string"
+          },
+          {
+            "name": "desc_da_unid_de_fornecimento",
+            "type": "string"
+          },
+          {
+            "name": "unid_orcamentaria",
+            "type": "integer"
+          },
+          {
+            "name": "elemento_item_de_despesa",
+            "type": "integer"
+          },
+          {
+            "name": "qtde_na_nota_fiscal",
+            "type": "string"
+          },
+          {
+            "name": "valor_unitario_r",
+            "type": "string"
+          },
+          {
+            "name": "valor_total_r",
+            "type": "string"
+          }
+        ]
+      },
+      "scheme": "file",
+      "title": "Insira um título humanamente legível para este recurso."
+    },
+    {
+      "description": "Insira a descrição/explicação detalhada deste recurso.",
+      "dialect": {
+        "delimiter": ";"
+      },
+      "encoding": "utf-8-sig",
+      "format": "csv",
+      "hashing": "md5",
+      "name": "itensnotas2025_3",
+      "path": "data/itensnotas2025_3.csv",
+      "profile": "tabular-data-resource",
+      "schema": {
+        "fields": [
+          {
+            "name": "orgao_emissor",
+            "type": "string"
+          },
+          {
+            "name": "tipo_de_documento",
+            "type": "string"
+          },
+          {
+            "name": "fornecedor_cnpj_cpf",
+            "type": "string"
+          },
+          {
+            "name": "fornecedor_nome_empresarial",
+            "type": "string"
+          },
+          {
+            "name": "numero",
+            "type": "integer"
+          },
+          {
+            "name": "serie",
+            "type": "string"
+          },
+          {
+            "name": "sequencial",
+            "type": "integer"
+          },
+          {
+            "name": "natureza",
+            "type": "string"
+          },
+          {
+            "name": "indicador_de_orcamento",
+            "type": "string"
+          },
+          {
+            "name": "item_da_nota_fiscal",
+            "type": "integer"
+          },
+          {
+            "name": "codigo_do_item",
+            "type": "integer"
+          },
+          {
+            "name": "desc_do_item_de_material",
+            "type": "string"
+          },
+          {
+            "name": "desc_da_unid_de_fornecimento",
+            "type": "string"
+          },
+          {
+            "name": "unid_orcamentaria",
+            "type": "integer"
+          },
+          {
+            "name": "elemento_item_de_despesa",
+            "type": "integer"
+          },
+          {
+            "name": "qtde_na_nota_fiscal",
+            "type": "string"
+          },
+          {
+            "name": "valor_unitario_r",
+            "type": "string"
+          },
+          {
+            "name": "valor_total_r",
+            "type": "string"
+          }
+        ]
+      },
+      "scheme": "file",
+      "title": "Insira um título humanamente legível para este recurso."
+    },
+    {
+      "description": "Insira a descrição/explicação detalhada deste recurso.",
+      "dialect": {
+        "delimiter": ";"
+      },
+      "encoding": "utf-8-sig",
+      "format": "csv",
+      "hashing": "md5",
+      "name": "itensnotas2025_4",
+      "path": "data/itensnotas2025_4.csv",
+      "profile": "tabular-data-resource",
+      "schema": {
+        "fields": [
+          {
+            "name": "orgao_emissor",
+            "type": "string"
+          },
+          {
+            "name": "tipo_de_documento",
+            "type": "string"
+          },
+          {
+            "name": "fornecedor_cnpj_cpf",
+            "type": "string"
+          },
+          {
+            "name": "fornecedor_nome_empresarial",
+            "type": "string"
+          },
+          {
+            "name": "numero",
+            "type": "integer"
+          },
+          {
+            "name": "serie",
+            "type": "any"
+          },
+          {
+            "name": "sequencial",
+            "type": "integer"
+          },
+          {
+            "name": "natureza",
+            "type": "string"
+          },
+          {
+            "name": "indicador_de_orcamento",
+            "type": "string"
+          },
+          {
+            "name": "item_da_nota_fiscal",
+            "type": "integer"
+          },
+          {
+            "name": "codigo_do_item",
+            "type": "integer"
+          },
+          {
+            "name": "desc_do_item_de_material",
+            "type": "string"
+          },
+          {
+            "name": "desc_da_unid_de_fornecimento",
+            "type": "string"
+          },
+          {
+            "name": "unid_orcamentaria",
+            "type": "integer"
+          },
+          {
+            "name": "elemento_item_de_despesa",
+            "type": "integer"
+          },
+          {
+            "name": "qtde_na_nota_fiscal",
+            "type": "string"
+          },
+          {
+            "name": "valor_unitario_r",
+            "type": "string"
+          },
+          {
+            "name": "valor_total_r",
+            "type": "string"
+          }
+        ]
+      },
+      "scheme": "file",
+      "title": "Insira um título humanamente legível para este recurso."
+    },
+    {
+      "description": "Insira a descrição/explicação detalhada deste recurso.",
+      "dialect": {
+        "delimiter": ";"
+      },
+      "encoding": "utf-8-sig",
+      "format": "csv",
+      "hashing": "md5",
+      "name": "itensnotas2025_5",
+      "path": "data/itensnotas2025_5.csv",
+      "profile": "tabular-data-resource",
+      "schema": {
+        "fields": [
+          {
+            "name": "orgao_emissor",
+            "type": "string"
+          },
+          {
+            "name": "tipo_de_documento",
+            "type": "string"
+          },
+          {
+            "name": "fornecedor_cnpj_cpf",
+            "type": "string"
+          },
+          {
+            "name": "fornecedor_nome_empresarial",
+            "type": "string"
+          },
+          {
+            "name": "numero",
+            "type": "integer"
+          },
+          {
+            "name": "serie",
+            "type": "string"
+          },
+          {
+            "name": "sequencial",
+            "type": "integer"
+          },
+          {
+            "name": "natureza",
+            "type": "string"
+          },
+          {
+            "name": "indicador_de_orcamento",
+            "type": "string"
+          },
+          {
+            "name": "item_da_nota_fiscal",
+            "type": "integer"
+          },
+          {
+            "name": "codigo_do_item",
+            "type": "integer"
+          },
+          {
+            "name": "desc_do_item_de_material",
+            "type": "string"
+          },
+          {
+            "name": "desc_da_unid_de_fornecimento",
+            "type": "string"
+          },
+          {
+            "name": "unid_orcamentaria",
+            "type": "integer"
+          },
+          {
+            "name": "elemento_item_de_despesa",
+            "type": "integer"
+          },
+          {
+            "name": "qtde_na_nota_fiscal",
+            "type": "string"
+          },
+          {
+            "name": "valor_unitario_r",
+            "type": "string"
+          },
+          {
+            "name": "valor_total_r",
+            "type": "string"
+          }
+        ]
+      },
+      "scheme": "file",
+      "title": "Insira um título humanamente legível para este recurso."
+    },
+    {
+      "description": "Insira a descrição/explicação detalhada deste recurso.",
+      "dialect": {
+        "delimiter": ";"
+      },
+      "encoding": "utf-8-sig",
+      "format": "csv",
+      "hashing": "md5",
+      "name": "itensnotas2025_6",
+      "path": "data/itensnotas2025_6.csv",
+      "profile": "tabular-data-resource",
+      "schema": {
+        "fields": [
+          {
+            "name": "orgao_emissor",
+            "type": "string"
+          },
+          {
+            "name": "tipo_de_documento",
+            "type": "string"
+          },
+          {
+            "name": "fornecedor_cnpj_cpf",
+            "type": "string"
+          },
+          {
+            "name": "fornecedor_nome_empresarial",
+            "type": "string"
+          },
+          {
+            "name": "numero",
+            "type": "integer"
+          },
+          {
+            "name": "serie",
+            "type": "string"
+          },
+          {
+            "name": "sequencial",
+            "type": "integer"
+          },
+          {
+            "name": "natureza",
+            "type": "string"
+          },
+          {
+            "name": "indicador_de_orcamento",
+            "type": "string"
+          },
+          {
+            "name": "item_da_nota_fiscal",
+            "type": "integer"
+          },
+          {
+            "name": "codigo_do_item",
+            "type": "integer"
+          },
+          {
+            "name": "desc_do_item_de_material",
+            "type": "string"
+          },
+          {
+            "name": "desc_da_unid_de_fornecimento",
+            "type": "string"
+          },
+          {
+            "name": "unid_orcamentaria",
+            "type": "string"
+          },
+          {
+            "name": "elemento_item_de_despesa",
+            "type": "integer"
+          },
+          {
+            "name": "qtde_na_nota_fiscal",
+            "type": "string"
+          },
+          {
+            "name": "valor_unitario_r",
+            "type": "string"
+          },
+          {
+            "name": "valor_total_r",
+            "type": "string"
+          }
+        ]
+      },
+      "scheme": "file",
+      "title": "Insira um título humanamente legível para este recurso."
+    },
+    {
+      "description": "Insira a descrição/explicação detalhada deste recurso.",
+      "dialect": {
+        "delimiter": ";"
+      },
+      "encoding": "utf-8-sig",
+      "format": "csv",
+      "hashing": "md5",
+      "name": "itensnotas2026_1",
+      "path": "data/itensnotas2026_1.csv",
+      "profile": "tabular-data-resource",
+      "schema": {
+        "fields": [
+          {
+            "name": "orgao_emissor",
+            "type": "string"
+          },
+          {
+            "name": "tipo_de_documento",
+            "type": "string"
+          },
+          {
+            "name": "fornecedor_cnpj_cpf",
+            "type": "string"
+          },
+          {
+            "name": "fornecedor_nome_empresarial",
+            "type": "string"
+          },
+          {
+            "name": "numero",
+            "type": "integer"
+          },
+          {
+            "name": "serie",
+            "type": "string"
+          },
+          {
+            "name": "sequencial",
+            "type": "integer"
+          },
+          {
+            "name": "natureza",
+            "type": "string"
+          },
+          {
+            "name": "indicador_de_orcamento",
+            "type": "string"
+          },
+          {
+            "name": "item_da_nota_fiscal",
+            "type": "integer"
+          },
+          {
+            "name": "codigo_do_item",
+            "type": "integer"
+          },
+          {
+            "name": "desc_do_item_de_material",
+            "type": "string"
+          },
+          {
+            "name": "desc_da_unid_de_fornecimento",
+            "type": "string"
+          },
+          {
+            "name": "unid_orcamentaria",
+            "type": "integer"
+          },
+          {
+            "name": "elemento_item_de_despesa",
+            "type": "integer"
+          },
+          {
+            "name": "qtde_na_nota_fiscal",
+            "type": "string"
+          },
+          {
+            "name": "valor_unitario_r",
+            "type": "string"
+          },
+          {
+            "name": "valor_total_r",
+            "type": "string"
+          }
+        ]
+      },
+      "scheme": "file",
+      "title": "Insira um título humanamente legível para este recurso."
+    },
+    {
+      "description": "Insira a descrição/explicação detalhada deste recurso.",
+      "dialect": {
+        "delimiter": ";"
+      },
+      "encoding": "utf-8-sig",
+      "format": "csv",
+      "hashing": "md5",
+      "name": "notas2025_1",
+      "path": "data/notas2025_1.csv",
+      "profile": "tabular-data-resource",
+      "schema": {
+        "fields": [
+          {
+            "name": "orgao_emissor",
+            "type": "string"
+          },
+          {
+            "name": "tipo_de_documento",
+            "type": "any"
+          },
+          {
+            "name": "fornecedor_cnpj_cpf",
+            "type": "string"
+          },
+          {
+            "name": "fornecedor_nome_empresarial",
+            "type": "string"
+          },
+          {
+            "name": "numero",
+            "type": "integer"
+          },
+          {
+            "name": "serie",
+            "type": "any"
+          },
+          {
+            "name": "sequencial",
+            "type": "integer"
+          },
+          {
+            "name": "situacao",
+            "type": "string"
+          },
+          {
+            "name": "natureza",
+            "type": "string"
+          },
+          {
+            "name": "indicador_de_orcamento",
+            "type": "string"
+          },
+          {
+            "name": "data_de_emissao",
+            "type": "date"
+          },
+          {
+            "name": "data_de_recebimento",
+            "type": "date"
+          },
+          {
+            "name": "data_de_registro",
+            "type": "date"
+          },
+          {
+            "name": "valor_total_com_impostos",
+            "type": "string"
+          },
+          {
+            "name": "nota_fiscal_para_aglutinacao",
+            "type": "string"
+          }
+        ]
+      },
+      "scheme": "file",
+      "title": "Insira um título humanamente legível para este recurso."
+    },
+    {
+      "description": "Insira a descrição/explicação detalhada deste recurso.",
+      "dialect": {
+        "delimiter": ";"
+      },
+      "encoding": "utf-8-sig",
+      "format": "csv",
+      "hashing": "md5",
+      "name": "notas2025_2",
+      "path": "data/notas2025_2.csv",
+      "profile": "tabular-data-resource",
+      "schema": {
+        "fields": [
+          {
+            "name": "orgao_emissor",
+            "type": "string"
+          },
+          {
+            "name": "tipo_de_documento",
+            "type": "string"
+          },
+          {
+            "name": "fornecedor_cnpj_cpf",
+            "type": "string"
+          },
+          {
+            "name": "fornecedor_nome_empresarial",
+            "type": "string"
+          },
+          {
+            "name": "numero",
+            "type": "integer"
+          },
+          {
+            "name": "serie",
+            "type": "any"
+          },
+          {
+            "name": "sequencial",
+            "type": "integer"
+          },
+          {
+            "name": "situacao",
+            "type": "string"
+          },
+          {
+            "name": "natureza",
+            "type": "string"
+          },
+          {
+            "name": "indicador_de_orcamento",
+            "type": "string"
+          },
+          {
+            "name": "data_de_emissao",
+            "type": "date"
+          },
+          {
+            "name": "data_de_recebimento",
+            "type": "date"
+          },
+          {
+            "name": "data_de_registro",
+            "type": "date"
+          },
+          {
+            "name": "valor_total_com_impostos",
+            "type": "string"
+          },
+          {
+            "name": "nota_fiscal_para_aglutinacao",
+            "type": "string"
+          }
+        ]
+      },
+      "scheme": "file",
+      "title": "Insira um título humanamente legível para este recurso."
+    },
+    {
+      "description": "Insira a descrição/explicação detalhada deste recurso.",
+      "dialect": {
+        "delimiter": ";"
+      },
+      "encoding": "utf-8-sig",
+      "format": "csv",
+      "hashing": "md5",
+      "name": "notas2026_1",
+      "path": "data/notas2026_1.csv",
+      "profile": "tabular-data-resource",
+      "schema": {
+        "fields": [
+          {
+            "name": "orgao_emissor",
+            "type": "string"
+          },
+          {
+            "name": "tipo_de_documento",
+            "type": "string"
+          },
+          {
+            "name": "fornecedor_cnpj_cpf",
+            "type": "string"
+          },
+          {
+            "name": "fornecedor_nome_empresarial",
+            "type": "string"
+          },
+          {
+            "name": "numero",
+            "type": "integer"
+          },
+          {
+            "name": "serie",
+            "type": "string"
+          },
+          {
+            "name": "sequencial",
+            "type": "integer"
+          },
+          {
+            "name": "situacao",
+            "type": "string"
+          },
+          {
+            "name": "natureza",
+            "type": "string"
+          },
+          {
+            "name": "indicador_de_orcamento",
+            "type": "string"
+          },
+          {
+            "name": "data_de_emissao",
+            "type": "date"
+          },
+          {
+            "name": "data_de_recebimento",
+            "type": "date"
+          },
+          {
+            "name": "data_de_registro",
+            "type": "date"
+          },
+          {
+            "name": "valor_total_com_impostos",
+            "type": "string"
+          },
+          {
+            "name": "nota_fiscal_para_aglutinacao",
+            "type": "string"
+          }
+        ]
+      },
+      "scheme": "file",
+      "title": "Insira um título humanamente legível para este recurso."
+    }
+  ],
+  "title": "Portal_notas_fiscais"
+}
