@@ -1,0 +1,4605 @@
+name: portal_notas_fiscais
+owner_org: ''
+profile: data-package
+resources:
+  - description: Insira a descrição/explicação detalhada deste recurso.
+    dialect:
+      delimiter: ;
+    encoding: utf-8-sig
+    format: csv
+    hashing: md5
+    name: itensnota_abr22
+    path: data/itensnota_abr22.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: orgao_emissor
+          type: string
+        - name: tipo_de_documento
+          type: any
+        - name: fornecedor_cnpj_cpf
+          type: string
+        - name: fornecedor_nome_empresarial
+          type: string
+        - name: numero
+          type: integer
+        - name: serie
+          type: any
+        - name: sequencial
+          type: integer
+        - name: natureza
+          type: string
+        - name: indicador_de_orcamento
+          type: string
+        - name: item_da_nota_fiscal
+          type: integer
+        - name: codigo_do_item
+          type: integer
+        - name: desc_do_item_de_material
+          type: string
+        - name: desc_da_unid_de_fornecimento
+          type: string
+        - name: unid_orcamentaria
+          type: integer
+        - name: elemento_item_de_despesa
+          type: integer
+        - name: qtde_na_nota_fiscal
+          type: string
+        - name: valor_unitario_r
+          type: string
+        - name: valor_total_r
+          type: string
+    scheme: file
+    title: Insira um título humanamente legível para este recurso.
+  - description: Insira a descrição/explicação detalhada deste recurso.
+    dialect:
+      delimiter: ;
+    encoding: utf-8-sig
+    format: csv
+    hashing: md5
+    name: itensnota_abr23
+    path: data/itensnota_abr23.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: orgao_emissor
+          type: string
+        - name: tipo_de_documento
+          type: any
+        - name: fornecedor_cnpj_cpf
+          type: string
+        - name: fornecedor_nome_empresarial
+          type: string
+        - name: numero
+          type: integer
+        - name: serie
+          type: integer
+        - name: sequencial
+          type: integer
+        - name: natureza
+          type: string
+        - name: indicador_de_orcamento
+          type: string
+        - name: item_da_nota_fiscal
+          type: integer
+        - name: codigo_do_item
+          type: integer
+        - name: desc_do_item_de_material
+          type: string
+        - name: desc_da_unid_de_fornecimento
+          type: string
+        - name: unid_orcamentaria
+          type: integer
+        - name: elemento_item_de_despesa
+          type: integer
+        - name: qtde_na_nota_fiscal
+          type: string
+        - name: valor_unitario_r
+          type: string
+        - name: valor_total_r
+          type: string
+    scheme: file
+    title: Insira um título humanamente legível para este recurso.
+  - description: Insira a descrição/explicação detalhada deste recurso.
+    dialect:
+      delimiter: ;
+    encoding: utf-8-sig
+    format: csv
+    hashing: md5
+    name: itensnota_abr24
+    path: data/itensnota_abr24.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: orgao_emissor
+          type: string
+        - name: tipo_de_documento
+          type: any
+        - name: fornecedor_cnpj_cpf
+          type: string
+        - name: fornecedor_nome_empresarial
+          type: string
+        - name: numero
+          type: integer
+        - name: serie
+          type: string
+        - name: sequencial
+          type: integer
+        - name: natureza
+          type: string
+        - name: indicador_de_orcamento
+          type: string
+        - name: item_da_nota_fiscal
+          type: integer
+        - name: codigo_do_item
+          type: integer
+        - name: desc_do_item_de_material
+          type: string
+        - name: desc_da_unid_de_fornecimento
+          type: string
+        - name: unid_orcamentaria
+          type: integer
+        - name: elemento_item_de_despesa
+          type: integer
+        - name: qtde_na_nota_fiscal
+          type: string
+        - name: valor_unitario_r
+          type: string
+        - name: valor_total_r
+          type: string
+    scheme: file
+    title: Insira um título humanamente legível para este recurso.
+  - description: Insira a descrição/explicação detalhada deste recurso.
+    dialect:
+      delimiter: ;
+    encoding: utf-8-sig
+    format: csv
+    hashing: md5
+    name: itensnota_abr25
+    path: data/itensnota_abr25.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: orgao_emissor
+          type: string
+        - name: tipo_de_documento
+          type: any
+        - name: fornecedor_cnpj_cpf
+          type: string
+        - name: fornecedor_nome_empresarial
+          type: string
+        - name: numero
+          type: integer
+        - name: serie
+          type: integer
+        - name: sequencial
+          type: integer
+        - name: natureza
+          type: string
+        - name: indicador_de_orcamento
+          type: string
+        - name: item_da_nota_fiscal
+          type: integer
+        - name: codigo_do_item
+          type: integer
+        - name: desc_do_item_de_material
+          type: string
+        - name: desc_da_unid_de_fornecimento
+          type: string
+        - name: unid_orcamentaria
+          type: integer
+        - name: elemento_item_de_despesa
+          type: integer
+        - name: qtde_na_nota_fiscal
+          type: string
+        - name: valor_unitario_r
+          type: string
+        - name: valor_total_r
+          type: string
+    scheme: file
+    title: Insira um título humanamente legível para este recurso.
+  - description: Insira a descrição/explicação detalhada deste recurso.
+    dialect:
+      delimiter: ;
+    encoding: utf-8-sig
+    format: csv
+    hashing: md5
+    name: itensnota_ago22
+    path: data/itensnota_ago22.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: orgao_emissor
+          type: string
+        - name: tipo_de_documento
+          type: any
+        - name: fornecedor_cnpj_cpf
+          type: string
+        - name: fornecedor_nome_empresarial
+          type: string
+        - name: numero
+          type: integer
+        - name: serie
+          type: any
+        - name: sequencial
+          type: integer
+        - name: natureza
+          type: string
+        - name: indicador_de_orcamento
+          type: string
+        - name: item_da_nota_fiscal
+          type: integer
+        - name: codigo_do_item
+          type: integer
+        - name: desc_do_item_de_material
+          type: string
+        - name: desc_da_unid_de_fornecimento
+          type: string
+        - name: unid_orcamentaria
+          type: integer
+        - name: elemento_item_de_despesa
+          type: integer
+        - name: qtde_na_nota_fiscal
+          type: string
+        - name: valor_unitario_r
+          type: string
+        - name: valor_total_r
+          type: string
+    scheme: file
+    title: Insira um título humanamente legível para este recurso.
+  - description: Insira a descrição/explicação detalhada deste recurso.
+    dialect:
+      delimiter: ;
+    encoding: utf-8-sig
+    format: csv
+    hashing: md5
+    name: itensnota_ago23
+    path: data/itensnota_ago23.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: orgao_emissor
+          type: string
+        - name: tipo_de_documento
+          type: any
+        - name: fornecedor_cnpj_cpf
+          type: string
+        - name: fornecedor_nome_empresarial
+          type: string
+        - name: numero
+          type: integer
+        - name: serie
+          type: string
+        - name: sequencial
+          type: integer
+        - name: natureza
+          type: string
+        - name: indicador_de_orcamento
+          type: string
+        - name: item_da_nota_fiscal
+          type: integer
+        - name: codigo_do_item
+          type: integer
+        - name: desc_do_item_de_material
+          type: string
+        - name: desc_da_unid_de_fornecimento
+          type: string
+        - name: unid_orcamentaria
+          type: integer
+        - name: elemento_item_de_despesa
+          type: integer
+        - name: qtde_na_nota_fiscal
+          type: string
+        - name: valor_unitario_r
+          type: string
+        - name: valor_total_r
+          type: string
+    scheme: file
+    title: Insira um título humanamente legível para este recurso.
+  - description: Insira a descrição/explicação detalhada deste recurso.
+    dialect:
+      delimiter: ;
+    encoding: utf-8-sig
+    format: csv
+    hashing: md5
+    name: itensnota_ago24
+    path: data/itensnota_ago24.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: orgao_emissor
+          type: string
+        - name: tipo_de_documento
+          type: any
+        - name: fornecedor_cnpj_cpf
+          type: string
+        - name: fornecedor_nome_empresarial
+          type: string
+        - name: numero
+          type: integer
+        - name: serie
+          type: any
+        - name: sequencial
+          type: integer
+        - name: natureza
+          type: string
+        - name: indicador_de_orcamento
+          type: string
+        - name: item_da_nota_fiscal
+          type: integer
+        - name: codigo_do_item
+          type: integer
+        - name: desc_do_item_de_material
+          type: string
+        - name: desc_da_unid_de_fornecimento
+          type: string
+        - name: unid_orcamentaria
+          type: integer
+        - name: elemento_item_de_despesa
+          type: integer
+        - name: qtde_na_nota_fiscal
+          type: string
+        - name: valor_unitario_r
+          type: string
+        - name: valor_total_r
+          type: string
+    scheme: file
+    title: Insira um título humanamente legível para este recurso.
+  - description: Insira a descrição/explicação detalhada deste recurso.
+    dialect:
+      delimiter: ;
+    encoding: utf-8-sig
+    format: csv
+    hashing: md5
+    name: itensnota_ago25
+    path: data/itensnota_ago25.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: orgao_emissor
+          type: string
+        - name: tipo_de_documento
+          type: string
+        - name: fornecedor_cnpj_cpf
+          type: string
+        - name: fornecedor_nome_empresarial
+          type: string
+        - name: numero
+          type: integer
+        - name: serie
+          type: any
+        - name: sequencial
+          type: integer
+        - name: natureza
+          type: string
+        - name: indicador_de_orcamento
+          type: string
+        - name: item_da_nota_fiscal
+          type: integer
+        - name: codigo_do_item
+          type: integer
+        - name: desc_do_item_de_material
+          type: string
+        - name: desc_da_unid_de_fornecimento
+          type: string
+        - name: unid_orcamentaria
+          type: integer
+        - name: elemento_item_de_despesa
+          type: integer
+        - name: qtde_na_nota_fiscal
+          type: string
+        - name: valor_unitario_r
+          type: string
+        - name: valor_total_r
+          type: string
+    scheme: file
+    title: Insira um título humanamente legível para este recurso.
+  - description: Insira a descrição/explicação detalhada deste recurso.
+    dialect:
+      delimiter: ;
+    encoding: utf-8-sig
+    format: csv
+    hashing: md5
+    name: itensnota_dez22
+    path: data/itensnota_dez22.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: orgao_emissor
+          type: string
+        - name: tipo_de_documento
+          type: any
+        - name: fornecedor_cnpj_cpf
+          type: string
+        - name: fornecedor_nome_empresarial
+          type: string
+        - name: numero
+          type: integer
+        - name: serie
+          type: string
+        - name: sequencial
+          type: integer
+        - name: natureza
+          type: string
+        - name: indicador_de_orcamento
+          type: string
+        - name: item_da_nota_fiscal
+          type: integer
+        - name: codigo_do_item
+          type: integer
+        - name: desc_do_item_de_material
+          type: string
+        - name: desc_da_unid_de_fornecimento
+          type: string
+        - name: unid_orcamentaria
+          type: integer
+        - name: elemento_item_de_despesa
+          type: integer
+        - name: qtde_na_nota_fiscal
+          type: string
+        - name: valor_unitario_r
+          type: string
+        - name: valor_total_r
+          type: string
+    scheme: file
+    title: Insira um título humanamente legível para este recurso.
+  - description: Insira a descrição/explicação detalhada deste recurso.
+    dialect:
+      delimiter: ;
+    encoding: utf-8-sig
+    format: csv
+    hashing: md5
+    name: itensnota_dez23
+    path: data/itensnota_dez23.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: orgao_emissor
+          type: string
+        - name: tipo_de_documento
+          type: any
+        - name: fornecedor_cnpj_cpf
+          type: string
+        - name: fornecedor_nome_empresarial
+          type: string
+        - name: numero
+          type: integer
+        - name: serie
+          type: any
+        - name: sequencial
+          type: integer
+        - name: natureza
+          type: string
+        - name: indicador_de_orcamento
+          type: string
+        - name: item_da_nota_fiscal
+          type: integer
+        - name: codigo_do_item
+          type: integer
+        - name: desc_do_item_de_material
+          type: string
+        - name: desc_da_unid_de_fornecimento
+          type: string
+        - name: unid_orcamentaria
+          type: integer
+        - name: elemento_item_de_despesa
+          type: integer
+        - name: qtde_na_nota_fiscal
+          type: string
+        - name: valor_unitario_r
+          type: string
+        - name: valor_total_r
+          type: string
+    scheme: file
+    title: Insira um título humanamente legível para este recurso.
+  - description: Insira a descrição/explicação detalhada deste recurso.
+    dialect:
+      delimiter: ;
+    encoding: utf-8-sig
+    format: csv
+    hashing: md5
+    name: itensnota_dez24
+    path: data/itensnota_dez24.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: orgao_emissor
+          type: string
+        - name: tipo_de_documento
+          type: any
+        - name: fornecedor_cnpj_cpf
+          type: string
+        - name: fornecedor_nome_empresarial
+          type: string
+        - name: numero
+          type: integer
+        - name: serie
+          type: integer
+        - name: sequencial
+          type: integer
+        - name: natureza
+          type: string
+        - name: indicador_de_orcamento
+          type: string
+        - name: item_da_nota_fiscal
+          type: integer
+        - name: codigo_do_item
+          type: integer
+        - name: desc_do_item_de_material
+          type: string
+        - name: desc_da_unid_de_fornecimento
+          type: string
+        - name: unid_orcamentaria
+          type: integer
+        - name: elemento_item_de_despesa
+          type: integer
+        - name: qtde_na_nota_fiscal
+          type: string
+        - name: valor_unitario_r
+          type: string
+        - name: valor_total_r
+          type: string
+    scheme: file
+    title: Insira um título humanamente legível para este recurso.
+  - description: Insira a descrição/explicação detalhada deste recurso.
+    dialect:
+      delimiter: ;
+    encoding: utf-8-sig
+    format: csv
+    hashing: md5
+    name: itensnota_dez25
+    path: data/itensnota_dez25.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: orgao_emissor
+          type: string
+        - name: tipo_de_documento
+          type: string
+        - name: fornecedor_cnpj_cpf
+          type: string
+        - name: fornecedor_nome_empresarial
+          type: string
+        - name: numero
+          type: integer
+        - name: serie
+          type: any
+        - name: sequencial
+          type: integer
+        - name: natureza
+          type: string
+        - name: indicador_de_orcamento
+          type: string
+        - name: item_da_nota_fiscal
+          type: integer
+        - name: codigo_do_item
+          type: integer
+        - name: desc_do_item_de_material
+          type: string
+        - name: desc_da_unid_de_fornecimento
+          type: string
+        - name: unid_orcamentaria
+          type: integer
+        - name: elemento_item_de_despesa
+          type: integer
+        - name: qtde_na_nota_fiscal
+          type: string
+        - name: valor_unitario_r
+          type: string
+        - name: valor_total_r
+          type: string
+    scheme: file
+    title: Insira um título humanamente legível para este recurso.
+  - description: Insira a descrição/explicação detalhada deste recurso.
+    dialect:
+      delimiter: ;
+    encoding: utf-8-sig
+    format: csv
+    hashing: md5
+    name: itensnota_fev22
+    path: data/itensnota_fev22.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: orgao_emissor
+          type: string
+        - name: tipo_de_documento
+          type: any
+        - name: fornecedor_cnpj_cpf
+          type: string
+        - name: fornecedor_nome_empresarial
+          type: string
+        - name: numero
+          type: integer
+        - name: serie
+          type: any
+        - name: sequencial
+          type: integer
+        - name: natureza
+          type: string
+        - name: indicador_de_orcamento
+          type: string
+        - name: item_da_nota_fiscal
+          type: integer
+        - name: codigo_do_item
+          type: integer
+        - name: desc_do_item_de_material
+          type: string
+        - name: desc_da_unid_de_fornecimento
+          type: string
+        - name: unid_orcamentaria
+          type: integer
+        - name: elemento_item_de_despesa
+          type: integer
+        - name: qtde_na_nota_fiscal
+          type: string
+        - name: valor_unitario_r
+          type: string
+        - name: valor_total_r
+          type: string
+    scheme: file
+    title: Insira um título humanamente legível para este recurso.
+  - description: Insira a descrição/explicação detalhada deste recurso.
+    dialect:
+      delimiter: ;
+    encoding: utf-8-sig
+    format: csv
+    hashing: md5
+    name: itensnota_fev23
+    path: data/itensnota_fev23.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: orgao_emissor
+          type: string
+        - name: tipo_de_documento
+          type: any
+        - name: fornecedor_cnpj_cpf
+          type: string
+        - name: fornecedor_nome_empresarial
+          type: string
+        - name: numero
+          type: integer
+        - name: serie
+          type: string
+        - name: sequencial
+          type: integer
+        - name: natureza
+          type: string
+        - name: indicador_de_orcamento
+          type: string
+        - name: item_da_nota_fiscal
+          type: integer
+        - name: codigo_do_item
+          type: integer
+        - name: desc_do_item_de_material
+          type: string
+        - name: desc_da_unid_de_fornecimento
+          type: string
+        - name: unid_orcamentaria
+          type: integer
+        - name: elemento_item_de_despesa
+          type: integer
+        - name: qtde_na_nota_fiscal
+          type: string
+        - name: valor_unitario_r
+          type: string
+        - name: valor_total_r
+          type: string
+    scheme: file
+    title: Insira um título humanamente legível para este recurso.
+  - description: Insira a descrição/explicação detalhada deste recurso.
+    dialect:
+      delimiter: ;
+    encoding: utf-8-sig
+    format: csv
+    hashing: md5
+    name: itensnota_fev24
+    path: data/itensnota_fev24.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: orgao_emissor
+          type: string
+        - name: tipo_de_documento
+          type: any
+        - name: fornecedor_cnpj_cpf
+          type: string
+        - name: fornecedor_nome_empresarial
+          type: string
+        - name: numero
+          type: integer
+        - name: serie
+          type: any
+        - name: sequencial
+          type: integer
+        - name: natureza
+          type: string
+        - name: indicador_de_orcamento
+          type: string
+        - name: item_da_nota_fiscal
+          type: integer
+        - name: codigo_do_item
+          type: integer
+        - name: desc_do_item_de_material
+          type: string
+        - name: desc_da_unid_de_fornecimento
+          type: string
+        - name: unid_orcamentaria
+          type: integer
+        - name: elemento_item_de_despesa
+          type: integer
+        - name: qtde_na_nota_fiscal
+          type: string
+        - name: valor_unitario_r
+          type: string
+        - name: valor_total_r
+          type: string
+    scheme: file
+    title: Insira um título humanamente legível para este recurso.
+  - description: Insira a descrição/explicação detalhada deste recurso.
+    dialect:
+      delimiter: ;
+    encoding: utf-8-sig
+    format: csv
+    hashing: md5
+    name: itensnota_fev25
+    path: data/itensnota_fev25.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: orgao_emissor
+          type: string
+        - name: tipo_de_documento
+          type: any
+        - name: fornecedor_cnpj_cpf
+          type: string
+        - name: fornecedor_nome_empresarial
+          type: string
+        - name: numero
+          type: integer
+        - name: serie
+          type: string
+        - name: sequencial
+          type: integer
+        - name: natureza
+          type: string
+        - name: indicador_de_orcamento
+          type: string
+        - name: item_da_nota_fiscal
+          type: integer
+        - name: codigo_do_item
+          type: integer
+        - name: desc_do_item_de_material
+          type: string
+        - name: desc_da_unid_de_fornecimento
+          type: string
+        - name: unid_orcamentaria
+          type: integer
+        - name: elemento_item_de_despesa
+          type: integer
+        - name: qtde_na_nota_fiscal
+          type: string
+        - name: valor_unitario_r
+          type: string
+        - name: valor_total_r
+          type: string
+    scheme: file
+    title: Insira um título humanamente legível para este recurso.
+  - description: Insira a descrição/explicação detalhada deste recurso.
+    dialect:
+      delimiter: ;
+    encoding: utf-8-sig
+    format: csv
+    hashing: md5
+    name: itensnota_fev26
+    path: data/itensnota_fev26.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: orgao_emissor
+          type: string
+        - name: tipo_de_documento
+          type: string
+        - name: fornecedor_cnpj_cpf
+          type: string
+        - name: fornecedor_nome_empresarial
+          type: string
+        - name: numero
+          type: integer
+        - name: serie
+          type: string
+        - name: sequencial
+          type: integer
+        - name: natureza
+          type: string
+        - name: indicador_de_orcamento
+          type: string
+        - name: item_da_nota_fiscal
+          type: integer
+        - name: codigo_do_item
+          type: integer
+        - name: desc_do_item_de_material
+          type: string
+        - name: desc_da_unid_de_fornecimento
+          type: string
+        - name: unid_orcamentaria
+          type: integer
+        - name: elemento_item_de_despesa
+          type: integer
+        - name: qtde_na_nota_fiscal
+          type: string
+        - name: valor_unitario_r
+          type: string
+        - name: valor_total_r
+          type: string
+    scheme: file
+    title: Insira um título humanamente legível para este recurso.
+  - description: Insira a descrição/explicação detalhada deste recurso.
+    dialect:
+      delimiter: ;
+    encoding: utf-8-sig
+    format: csv
+    hashing: md5
+    name: itensnota_jan22
+    path: data/itensnota_jan22.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: orgao_emissor
+          type: string
+        - name: tipo_de_documento
+          type: any
+        - name: fornecedor_cnpj_cpf
+          type: string
+        - name: fornecedor_nome_empresarial
+          type: string
+        - name: numero
+          type: integer
+        - name: serie
+          type: any
+        - name: sequencial
+          type: integer
+        - name: natureza
+          type: string
+        - name: indicador_de_orcamento
+          type: string
+        - name: item_da_nota_fiscal
+          type: integer
+        - name: codigo_do_item
+          type: integer
+        - name: desc_do_item_de_material
+          type: string
+        - name: desc_da_unid_de_fornecimento
+          type: string
+        - name: unid_orcamentaria
+          type: integer
+        - name: elemento_item_de_despesa
+          type: integer
+        - name: qtde_na_nota_fiscal
+          type: string
+        - name: valor_unitario_r
+          type: string
+        - name: valor_total_r
+          type: string
+    scheme: file
+    title: Insira um título humanamente legível para este recurso.
+  - description: Insira a descrição/explicação detalhada deste recurso.
+    dialect:
+      delimiter: ;
+    encoding: utf-8-sig
+    format: csv
+    hashing: md5
+    name: itensnota_jan23
+    path: data/itensnota_jan23.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: orgao_emissor
+          type: string
+        - name: tipo_de_documento
+          type: any
+        - name: fornecedor_cnpj_cpf
+          type: string
+        - name: fornecedor_nome_empresarial
+          type: string
+        - name: numero
+          type: integer
+        - name: serie
+          type: any
+        - name: sequencial
+          type: integer
+        - name: natureza
+          type: string
+        - name: indicador_de_orcamento
+          type: string
+        - name: item_da_nota_fiscal
+          type: integer
+        - name: codigo_do_item
+          type: integer
+        - name: desc_do_item_de_material
+          type: string
+        - name: desc_da_unid_de_fornecimento
+          type: string
+        - name: unid_orcamentaria
+          type: integer
+        - name: elemento_item_de_despesa
+          type: integer
+        - name: qtde_na_nota_fiscal
+          type: string
+        - name: valor_unitario_r
+          type: string
+        - name: valor_total_r
+          type: string
+    scheme: file
+    title: Insira um título humanamente legível para este recurso.
+  - description: Insira a descrição/explicação detalhada deste recurso.
+    dialect:
+      delimiter: ;
+    encoding: utf-8-sig
+    format: csv
+    hashing: md5
+    name: itensnota_jan24
+    path: data/itensnota_jan24.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: orgao_emissor
+          type: string
+        - name: tipo_de_documento
+          type: any
+        - name: fornecedor_cnpj_cpf
+          type: string
+        - name: fornecedor_nome_empresarial
+          type: string
+        - name: numero
+          type: integer
+        - name: serie
+          type: string
+        - name: sequencial
+          type: integer
+        - name: natureza
+          type: string
+        - name: indicador_de_orcamento
+          type: string
+        - name: item_da_nota_fiscal
+          type: integer
+        - name: codigo_do_item
+          type: integer
+        - name: desc_do_item_de_material
+          type: string
+        - name: desc_da_unid_de_fornecimento
+          type: string
+        - name: unid_orcamentaria
+          type: integer
+        - name: elemento_item_de_despesa
+          type: integer
+        - name: qtde_na_nota_fiscal
+          type: string
+        - name: valor_unitario_r
+          type: string
+        - name: valor_total_r
+          type: string
+    scheme: file
+    title: Insira um título humanamente legível para este recurso.
+  - description: Insira a descrição/explicação detalhada deste recurso.
+    dialect:
+      delimiter: ;
+    encoding: utf-8-sig
+    format: csv
+    hashing: md5
+    name: itensnota_jan25
+    path: data/itensnota_jan25.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: orgao_emissor
+          type: string
+        - name: tipo_de_documento
+          type: any
+        - name: fornecedor_cnpj_cpf
+          type: string
+        - name: fornecedor_nome_empresarial
+          type: string
+        - name: numero
+          type: integer
+        - name: serie
+          type: any
+        - name: sequencial
+          type: integer
+        - name: natureza
+          type: string
+        - name: indicador_de_orcamento
+          type: string
+        - name: item_da_nota_fiscal
+          type: integer
+        - name: codigo_do_item
+          type: integer
+        - name: desc_do_item_de_material
+          type: string
+        - name: desc_da_unid_de_fornecimento
+          type: string
+        - name: unid_orcamentaria
+          type: integer
+        - name: elemento_item_de_despesa
+          type: integer
+        - name: qtde_na_nota_fiscal
+          type: string
+        - name: valor_unitario_r
+          type: string
+        - name: valor_total_r
+          type: string
+    scheme: file
+    title: Insira um título humanamente legível para este recurso.
+  - description: Insira a descrição/explicação detalhada deste recurso.
+    dialect:
+      delimiter: ;
+    encoding: utf-8-sig
+    format: csv
+    hashing: md5
+    name: itensnota_jan26
+    path: data/itensnota_jan26.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: orgao_emissor
+          type: string
+        - name: tipo_de_documento
+          type: string
+        - name: fornecedor_cnpj_cpf
+          type: string
+        - name: fornecedor_nome_empresarial
+          type: string
+        - name: numero
+          type: integer
+        - name: serie
+          type: string
+        - name: sequencial
+          type: integer
+        - name: natureza
+          type: string
+        - name: indicador_de_orcamento
+          type: string
+        - name: item_da_nota_fiscal
+          type: integer
+        - name: codigo_do_item
+          type: integer
+        - name: desc_do_item_de_material
+          type: string
+        - name: desc_da_unid_de_fornecimento
+          type: string
+        - name: unid_orcamentaria
+          type: integer
+        - name: elemento_item_de_despesa
+          type: integer
+        - name: qtde_na_nota_fiscal
+          type: string
+        - name: valor_unitario_r
+          type: string
+        - name: valor_total_r
+          type: string
+    scheme: file
+    title: Insira um título humanamente legível para este recurso.
+  - description: Insira a descrição/explicação detalhada deste recurso.
+    dialect:
+      delimiter: ;
+    encoding: utf-8-sig
+    format: csv
+    hashing: md5
+    name: itensnota_jul22
+    path: data/itensnota_jul22.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: orgao_emissor
+          type: string
+        - name: tipo_de_documento
+          type: any
+        - name: fornecedor_cnpj_cpf
+          type: string
+        - name: fornecedor_nome_empresarial
+          type: string
+        - name: numero
+          type: integer
+        - name: serie
+          type: string
+        - name: sequencial
+          type: integer
+        - name: natureza
+          type: string
+        - name: indicador_de_orcamento
+          type: string
+        - name: item_da_nota_fiscal
+          type: integer
+        - name: codigo_do_item
+          type: integer
+        - name: desc_do_item_de_material
+          type: string
+        - name: desc_da_unid_de_fornecimento
+          type: string
+        - name: unid_orcamentaria
+          type: integer
+        - name: elemento_item_de_despesa
+          type: integer
+        - name: qtde_na_nota_fiscal
+          type: string
+        - name: valor_unitario_r
+          type: string
+        - name: valor_total_r
+          type: string
+    scheme: file
+    title: Insira um título humanamente legível para este recurso.
+  - description: Insira a descrição/explicação detalhada deste recurso.
+    dialect:
+      delimiter: ;
+    encoding: utf-8-sig
+    format: csv
+    hashing: md5
+    name: itensnota_jul23
+    path: data/itensnota_jul23.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: orgao_emissor
+          type: string
+        - name: tipo_de_documento
+          type: any
+        - name: fornecedor_cnpj_cpf
+          type: string
+        - name: fornecedor_nome_empresarial
+          type: string
+        - name: numero
+          type: integer
+        - name: serie
+          type: string
+        - name: sequencial
+          type: integer
+        - name: natureza
+          type: string
+        - name: indicador_de_orcamento
+          type: string
+        - name: item_da_nota_fiscal
+          type: integer
+        - name: codigo_do_item
+          type: integer
+        - name: desc_do_item_de_material
+          type: string
+        - name: desc_da_unid_de_fornecimento
+          type: string
+        - name: unid_orcamentaria
+          type: integer
+        - name: elemento_item_de_despesa
+          type: integer
+        - name: qtde_na_nota_fiscal
+          type: string
+        - name: valor_unitario_r
+          type: string
+        - name: valor_total_r
+          type: string
+    scheme: file
+    title: Insira um título humanamente legível para este recurso.
+  - description: Insira a descrição/explicação detalhada deste recurso.
+    dialect:
+      delimiter: ;
+    encoding: utf-8-sig
+    format: csv
+    hashing: md5
+    name: itensnota_jul24
+    path: data/itensnota_jul24.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: orgao_emissor
+          type: string
+        - name: tipo_de_documento
+          type: any
+        - name: fornecedor_cnpj_cpf
+          type: string
+        - name: fornecedor_nome_empresarial
+          type: string
+        - name: numero
+          type: integer
+        - name: serie
+          type: integer
+        - name: sequencial
+          type: integer
+        - name: natureza
+          type: string
+        - name: indicador_de_orcamento
+          type: string
+        - name: item_da_nota_fiscal
+          type: integer
+        - name: codigo_do_item
+          type: integer
+        - name: desc_do_item_de_material
+          type: string
+        - name: desc_da_unid_de_fornecimento
+          type: string
+        - name: unid_orcamentaria
+          type: integer
+        - name: elemento_item_de_despesa
+          type: integer
+        - name: qtde_na_nota_fiscal
+          type: string
+        - name: valor_unitario_r
+          type: string
+        - name: valor_total_r
+          type: string
+    scheme: file
+    title: Insira um título humanamente legível para este recurso.
+  - description: Insira a descrição/explicação detalhada deste recurso.
+    dialect:
+      delimiter: ;
+    encoding: utf-8-sig
+    format: csv
+    hashing: md5
+    name: itensnota_jul25
+    path: data/itensnota_jul25.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: orgao_emissor
+          type: string
+        - name: tipo_de_documento
+          type: string
+        - name: fornecedor_cnpj_cpf
+          type: string
+        - name: fornecedor_nome_empresarial
+          type: string
+        - name: numero
+          type: integer
+        - name: serie
+          type: any
+        - name: sequencial
+          type: integer
+        - name: natureza
+          type: string
+        - name: indicador_de_orcamento
+          type: string
+        - name: item_da_nota_fiscal
+          type: integer
+        - name: codigo_do_item
+          type: integer
+        - name: desc_do_item_de_material
+          type: string
+        - name: desc_da_unid_de_fornecimento
+          type: string
+        - name: unid_orcamentaria
+          type: integer
+        - name: elemento_item_de_despesa
+          type: integer
+        - name: qtde_na_nota_fiscal
+          type: string
+        - name: valor_unitario_r
+          type: string
+        - name: valor_total_r
+          type: string
+    scheme: file
+    title: Insira um título humanamente legível para este recurso.
+  - description: Insira a descrição/explicação detalhada deste recurso.
+    dialect:
+      delimiter: ;
+    encoding: utf-8-sig
+    format: csv
+    hashing: md5
+    name: itensnota_jun22
+    path: data/itensnota_jun22.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: orgao_emissor
+          type: string
+        - name: tipo_de_documento
+          type: any
+        - name: fornecedor_cnpj_cpf
+          type: string
+        - name: fornecedor_nome_empresarial
+          type: string
+        - name: numero
+          type: integer
+        - name: serie
+          type: any
+        - name: sequencial
+          type: integer
+        - name: natureza
+          type: string
+        - name: indicador_de_orcamento
+          type: string
+        - name: item_da_nota_fiscal
+          type: integer
+        - name: codigo_do_item
+          type: integer
+        - name: desc_do_item_de_material
+          type: string
+        - name: desc_da_unid_de_fornecimento
+          type: string
+        - name: unid_orcamentaria
+          type: integer
+        - name: elemento_item_de_despesa
+          type: integer
+        - name: qtde_na_nota_fiscal
+          type: string
+        - name: valor_unitario_r
+          type: string
+        - name: valor_total_r
+          type: string
+    scheme: file
+    title: Insira um título humanamente legível para este recurso.
+  - description: Insira a descrição/explicação detalhada deste recurso.
+    dialect:
+      delimiter: ;
+    encoding: utf-8-sig
+    format: csv
+    hashing: md5
+    name: itensnota_jun23
+    path: data/itensnota_jun23.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: orgao_emissor
+          type: string
+        - name: tipo_de_documento
+          type: any
+        - name: fornecedor_cnpj_cpf
+          type: string
+        - name: fornecedor_nome_empresarial
+          type: string
+        - name: numero
+          type: integer
+        - name: serie
+          type: any
+        - name: sequencial
+          type: integer
+        - name: natureza
+          type: string
+        - name: indicador_de_orcamento
+          type: string
+        - name: item_da_nota_fiscal
+          type: integer
+        - name: codigo_do_item
+          type: integer
+        - name: desc_do_item_de_material
+          type: string
+        - name: desc_da_unid_de_fornecimento
+          type: string
+        - name: unid_orcamentaria
+          type: integer
+        - name: elemento_item_de_despesa
+          type: integer
+        - name: qtde_na_nota_fiscal
+          type: string
+        - name: valor_unitario_r
+          type: string
+        - name: valor_total_r
+          type: string
+    scheme: file
+    title: Insira um título humanamente legível para este recurso.
+  - description: Insira a descrição/explicação detalhada deste recurso.
+    dialect:
+      delimiter: ;
+    encoding: utf-8-sig
+    format: csv
+    hashing: md5
+    name: itensnota_jun24
+    path: data/itensnota_jun24.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: orgao_emissor
+          type: string
+        - name: tipo_de_documento
+          type: any
+        - name: fornecedor_cnpj_cpf
+          type: string
+        - name: fornecedor_nome_empresarial
+          type: string
+        - name: numero
+          type: integer
+        - name: serie
+          type: any
+        - name: sequencial
+          type: integer
+        - name: natureza
+          type: string
+        - name: indicador_de_orcamento
+          type: string
+        - name: item_da_nota_fiscal
+          type: integer
+        - name: codigo_do_item
+          type: integer
+        - name: desc_do_item_de_material
+          type: string
+        - name: desc_da_unid_de_fornecimento
+          type: string
+        - name: unid_orcamentaria
+          type: integer
+        - name: elemento_item_de_despesa
+          type: integer
+        - name: qtde_na_nota_fiscal
+          type: string
+        - name: valor_unitario_r
+          type: string
+        - name: valor_total_r
+          type: string
+    scheme: file
+    title: Insira um título humanamente legível para este recurso.
+  - description: Insira a descrição/explicação detalhada deste recurso.
+    dialect:
+      delimiter: ;
+    encoding: utf-8-sig
+    format: csv
+    hashing: md5
+    name: itensnota_jun25
+    path: data/itensnota_jun25.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: orgao_emissor
+          type: string
+        - name: tipo_de_documento
+          type: string
+        - name: fornecedor_cnpj_cpf
+          type: string
+        - name: fornecedor_nome_empresarial
+          type: string
+        - name: numero
+          type: integer
+        - name: serie
+          type: string
+        - name: sequencial
+          type: integer
+        - name: natureza
+          type: string
+        - name: indicador_de_orcamento
+          type: string
+        - name: item_da_nota_fiscal
+          type: integer
+        - name: codigo_do_item
+          type: integer
+        - name: desc_do_item_de_material
+          type: string
+        - name: desc_da_unid_de_fornecimento
+          type: string
+        - name: unid_orcamentaria
+          type: integer
+        - name: elemento_item_de_despesa
+          type: integer
+        - name: qtde_na_nota_fiscal
+          type: string
+        - name: valor_unitario_r
+          type: string
+        - name: valor_total_r
+          type: string
+    scheme: file
+    title: Insira um título humanamente legível para este recurso.
+  - description: Insira a descrição/explicação detalhada deste recurso.
+    dialect:
+      delimiter: ;
+    encoding: utf-8-sig
+    format: csv
+    hashing: md5
+    name: itensnota_mai22
+    path: data/itensnota_mai22.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: orgao_emissor
+          type: string
+        - name: tipo_de_documento
+          type: any
+        - name: fornecedor_cnpj_cpf
+          type: string
+        - name: fornecedor_nome_empresarial
+          type: string
+        - name: numero
+          type: integer
+        - name: serie
+          type: string
+        - name: sequencial
+          type: integer
+        - name: natureza
+          type: string
+        - name: indicador_de_orcamento
+          type: string
+        - name: item_da_nota_fiscal
+          type: integer
+        - name: codigo_do_item
+          type: integer
+        - name: desc_do_item_de_material
+          type: string
+        - name: desc_da_unid_de_fornecimento
+          type: string
+        - name: unid_orcamentaria
+          type: integer
+        - name: elemento_item_de_despesa
+          type: integer
+        - name: qtde_na_nota_fiscal
+          type: string
+        - name: valor_unitario_r
+          type: string
+        - name: valor_total_r
+          type: string
+    scheme: file
+    title: Insira um título humanamente legível para este recurso.
+  - description: Insira a descrição/explicação detalhada deste recurso.
+    dialect:
+      delimiter: ;
+    encoding: utf-8-sig
+    format: csv
+    hashing: md5
+    name: itensnota_mai23
+    path: data/itensnota_mai23.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: orgao_emissor
+          type: string
+        - name: tipo_de_documento
+          type: any
+        - name: fornecedor_cnpj_cpf
+          type: string
+        - name: fornecedor_nome_empresarial
+          type: string
+        - name: numero
+          type: integer
+        - name: serie
+          type: integer
+        - name: sequencial
+          type: integer
+        - name: natureza
+          type: string
+        - name: indicador_de_orcamento
+          type: string
+        - name: item_da_nota_fiscal
+          type: integer
+        - name: codigo_do_item
+          type: integer
+        - name: desc_do_item_de_material
+          type: string
+        - name: desc_da_unid_de_fornecimento
+          type: string
+        - name: unid_orcamentaria
+          type: integer
+        - name: elemento_item_de_despesa
+          type: integer
+        - name: qtde_na_nota_fiscal
+          type: string
+        - name: valor_unitario_r
+          type: string
+        - name: valor_total_r
+          type: string
+    scheme: file
+    title: Insira um título humanamente legível para este recurso.
+  - description: Insira a descrição/explicação detalhada deste recurso.
+    dialect:
+      delimiter: ;
+    encoding: utf-8-sig
+    format: csv
+    hashing: md5
+    name: itensnota_mai24
+    path: data/itensnota_mai24.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: orgao_emissor
+          type: string
+        - name: tipo_de_documento
+          type: any
+        - name: fornecedor_cnpj_cpf
+          type: string
+        - name: fornecedor_nome_empresarial
+          type: string
+        - name: numero
+          type: integer
+        - name: serie
+          type: any
+        - name: sequencial
+          type: integer
+        - name: natureza
+          type: string
+        - name: indicador_de_orcamento
+          type: string
+        - name: item_da_nota_fiscal
+          type: integer
+        - name: codigo_do_item
+          type: integer
+        - name: desc_do_item_de_material
+          type: string
+        - name: desc_da_unid_de_fornecimento
+          type: string
+        - name: unid_orcamentaria
+          type: integer
+        - name: elemento_item_de_despesa
+          type: integer
+        - name: qtde_na_nota_fiscal
+          type: string
+        - name: valor_unitario_r
+          type: string
+        - name: valor_total_r
+          type: string
+    scheme: file
+    title: Insira um título humanamente legível para este recurso.
+  - description: Insira a descrição/explicação detalhada deste recurso.
+    dialect:
+      delimiter: ;
+    encoding: utf-8-sig
+    format: csv
+    hashing: md5
+    name: itensnota_mai25
+    path: data/itensnota_mai25.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: orgao_emissor
+          type: string
+        - name: tipo_de_documento
+          type: string
+        - name: fornecedor_cnpj_cpf
+          type: string
+        - name: fornecedor_nome_empresarial
+          type: string
+        - name: numero
+          type: integer
+        - name: serie
+          type: integer
+        - name: sequencial
+          type: integer
+        - name: natureza
+          type: string
+        - name: indicador_de_orcamento
+          type: string
+        - name: item_da_nota_fiscal
+          type: integer
+        - name: codigo_do_item
+          type: integer
+        - name: desc_do_item_de_material
+          type: string
+        - name: desc_da_unid_de_fornecimento
+          type: string
+        - name: unid_orcamentaria
+          type: integer
+        - name: elemento_item_de_despesa
+          type: integer
+        - name: qtde_na_nota_fiscal
+          type: string
+        - name: valor_unitario_r
+          type: string
+        - name: valor_total_r
+          type: string
+    scheme: file
+    title: Insira um título humanamente legível para este recurso.
+  - description: Insira a descrição/explicação detalhada deste recurso.
+    dialect:
+      delimiter: ;
+    encoding: utf-8-sig
+    format: csv
+    hashing: md5
+    name: itensnota_mar22
+    path: data/itensnota_mar22.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: orgao_emissor
+          type: string
+        - name: tipo_de_documento
+          type: any
+        - name: fornecedor_cnpj_cpf
+          type: string
+        - name: fornecedor_nome_empresarial
+          type: string
+        - name: numero
+          type: integer
+        - name: serie
+          type: integer
+        - name: sequencial
+          type: integer
+        - name: natureza
+          type: string
+        - name: indicador_de_orcamento
+          type: string
+        - name: item_da_nota_fiscal
+          type: integer
+        - name: codigo_do_item
+          type: integer
+        - name: desc_do_item_de_material
+          type: string
+        - name: desc_da_unid_de_fornecimento
+          type: string
+        - name: unid_orcamentaria
+          type: integer
+        - name: elemento_item_de_despesa
+          type: integer
+        - name: qtde_na_nota_fiscal
+          type: string
+        - name: valor_unitario_r
+          type: string
+        - name: valor_total_r
+          type: string
+    scheme: file
+    title: Insira um título humanamente legível para este recurso.
+  - description: Insira a descrição/explicação detalhada deste recurso.
+    dialect:
+      delimiter: ;
+    encoding: utf-8-sig
+    format: csv
+    hashing: md5
+    name: itensnota_mar23
+    path: data/itensnota_mar23.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: orgao_emissor
+          type: string
+        - name: tipo_de_documento
+          type: any
+        - name: fornecedor_cnpj_cpf
+          type: string
+        - name: fornecedor_nome_empresarial
+          type: string
+        - name: numero
+          type: integer
+        - name: serie
+          type: string
+        - name: sequencial
+          type: integer
+        - name: natureza
+          type: string
+        - name: indicador_de_orcamento
+          type: string
+        - name: item_da_nota_fiscal
+          type: integer
+        - name: codigo_do_item
+          type: integer
+        - name: desc_do_item_de_material
+          type: string
+        - name: desc_da_unid_de_fornecimento
+          type: string
+        - name: unid_orcamentaria
+          type: integer
+        - name: elemento_item_de_despesa
+          type: integer
+        - name: qtde_na_nota_fiscal
+          type: string
+        - name: valor_unitario_r
+          type: string
+        - name: valor_total_r
+          type: string
+    scheme: file
+    title: Insira um título humanamente legível para este recurso.
+  - description: Insira a descrição/explicação detalhada deste recurso.
+    dialect:
+      delimiter: ;
+    encoding: utf-8-sig
+    format: csv
+    hashing: md5
+    name: itensnota_mar24
+    path: data/itensnota_mar24.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: orgao_emissor
+          type: string
+        - name: tipo_de_documento
+          type: any
+        - name: fornecedor_cnpj_cpf
+          type: string
+        - name: fornecedor_nome_empresarial
+          type: string
+        - name: numero
+          type: integer
+        - name: serie
+          type: any
+        - name: sequencial
+          type: integer
+        - name: natureza
+          type: string
+        - name: indicador_de_orcamento
+          type: string
+        - name: item_da_nota_fiscal
+          type: integer
+        - name: codigo_do_item
+          type: integer
+        - name: desc_do_item_de_material
+          type: string
+        - name: desc_da_unid_de_fornecimento
+          type: string
+        - name: unid_orcamentaria
+          type: integer
+        - name: elemento_item_de_despesa
+          type: integer
+        - name: qtde_na_nota_fiscal
+          type: string
+        - name: valor_unitario_r
+          type: string
+        - name: valor_total_r
+          type: string
+    scheme: file
+    title: Insira um título humanamente legível para este recurso.
+  - description: Insira a descrição/explicação detalhada deste recurso.
+    dialect:
+      delimiter: ;
+    encoding: utf-8-sig
+    format: csv
+    hashing: md5
+    name: itensnota_mar25
+    path: data/itensnota_mar25.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: orgao_emissor
+          type: string
+        - name: tipo_de_documento
+          type: any
+        - name: fornecedor_cnpj_cpf
+          type: string
+        - name: fornecedor_nome_empresarial
+          type: string
+        - name: numero
+          type: integer
+        - name: serie
+          type: string
+        - name: sequencial
+          type: integer
+        - name: natureza
+          type: string
+        - name: indicador_de_orcamento
+          type: string
+        - name: item_da_nota_fiscal
+          type: integer
+        - name: codigo_do_item
+          type: integer
+        - name: desc_do_item_de_material
+          type: string
+        - name: desc_da_unid_de_fornecimento
+          type: string
+        - name: unid_orcamentaria
+          type: integer
+        - name: elemento_item_de_despesa
+          type: integer
+        - name: qtde_na_nota_fiscal
+          type: string
+        - name: valor_unitario_r
+          type: string
+        - name: valor_total_r
+          type: string
+    scheme: file
+    title: Insira um título humanamente legível para este recurso.
+  - description: Insira a descrição/explicação detalhada deste recurso.
+    dialect:
+      delimiter: ;
+    encoding: utf-8-sig
+    format: csv
+    hashing: md5
+    name: itensnota_mar26
+    path: data/itensnota_mar26.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: orgao_emissor
+          type: string
+        - name: tipo_de_documento
+          type: string
+        - name: fornecedor_cnpj_cpf
+          type: string
+        - name: fornecedor_nome_empresarial
+          type: string
+        - name: numero
+          type: integer
+        - name: serie
+          type: string
+        - name: sequencial
+          type: integer
+        - name: natureza
+          type: string
+        - name: indicador_de_orcamento
+          type: string
+        - name: item_da_nota_fiscal
+          type: integer
+        - name: codigo_do_item
+          type: integer
+        - name: desc_do_item_de_material
+          type: string
+        - name: desc_da_unid_de_fornecimento
+          type: string
+        - name: unid_orcamentaria
+          type: integer
+        - name: elemento_item_de_despesa
+          type: integer
+        - name: qtde_na_nota_fiscal
+          type: string
+        - name: valor_unitario_r
+          type: string
+        - name: valor_total_r
+          type: string
+    scheme: file
+    title: Insira um título humanamente legível para este recurso.
+  - description: Insira a descrição/explicação detalhada deste recurso.
+    dialect:
+      delimiter: ;
+    encoding: utf-8-sig
+    format: csv
+    hashing: md5
+    name: itensnota_nov22
+    path: data/itensnota_nov22.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: orgao_emissor
+          type: string
+        - name: tipo_de_documento
+          type: any
+        - name: fornecedor_cnpj_cpf
+          type: string
+        - name: fornecedor_nome_empresarial
+          type: string
+        - name: numero
+          type: integer
+        - name: serie
+          type: any
+        - name: sequencial
+          type: integer
+        - name: natureza
+          type: string
+        - name: indicador_de_orcamento
+          type: string
+        - name: item_da_nota_fiscal
+          type: integer
+        - name: codigo_do_item
+          type: integer
+        - name: desc_do_item_de_material
+          type: string
+        - name: desc_da_unid_de_fornecimento
+          type: string
+        - name: unid_orcamentaria
+          type: integer
+        - name: elemento_item_de_despesa
+          type: integer
+        - name: qtde_na_nota_fiscal
+          type: string
+        - name: valor_unitario_r
+          type: string
+        - name: valor_total_r
+          type: string
+    scheme: file
+    title: Insira um título humanamente legível para este recurso.
+  - description: Insira a descrição/explicação detalhada deste recurso.
+    dialect:
+      delimiter: ;
+    encoding: utf-8-sig
+    format: csv
+    hashing: md5
+    name: itensnota_nov23
+    path: data/itensnota_nov23.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: orgao_emissor
+          type: string
+        - name: tipo_de_documento
+          type: any
+        - name: fornecedor_cnpj_cpf
+          type: string
+        - name: fornecedor_nome_empresarial
+          type: string
+        - name: numero
+          type: integer
+        - name: serie
+          type: any
+        - name: sequencial
+          type: integer
+        - name: natureza
+          type: string
+        - name: indicador_de_orcamento
+          type: string
+        - name: item_da_nota_fiscal
+          type: integer
+        - name: codigo_do_item
+          type: integer
+        - name: desc_do_item_de_material
+          type: string
+        - name: desc_da_unid_de_fornecimento
+          type: string
+        - name: unid_orcamentaria
+          type: integer
+        - name: elemento_item_de_despesa
+          type: integer
+        - name: qtde_na_nota_fiscal
+          type: string
+        - name: valor_unitario_r
+          type: string
+        - name: valor_total_r
+          type: string
+    scheme: file
+    title: Insira um título humanamente legível para este recurso.
+  - description: Insira a descrição/explicação detalhada deste recurso.
+    dialect:
+      delimiter: ;
+    encoding: utf-8-sig
+    format: csv
+    hashing: md5
+    name: itensnota_nov24
+    path: data/itensnota_nov24.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: orgao_emissor
+          type: string
+        - name: tipo_de_documento
+          type: any
+        - name: fornecedor_cnpj_cpf
+          type: string
+        - name: fornecedor_nome_empresarial
+          type: string
+        - name: numero
+          type: integer
+        - name: serie
+          type: string
+        - name: sequencial
+          type: integer
+        - name: natureza
+          type: string
+        - name: indicador_de_orcamento
+          type: string
+        - name: item_da_nota_fiscal
+          type: integer
+        - name: codigo_do_item
+          type: integer
+        - name: desc_do_item_de_material
+          type: string
+        - name: desc_da_unid_de_fornecimento
+          type: string
+        - name: unid_orcamentaria
+          type: integer
+        - name: elemento_item_de_despesa
+          type: integer
+        - name: qtde_na_nota_fiscal
+          type: string
+        - name: valor_unitario_r
+          type: string
+        - name: valor_total_r
+          type: string
+    scheme: file
+    title: Insira um título humanamente legível para este recurso.
+  - description: Insira a descrição/explicação detalhada deste recurso.
+    dialect:
+      delimiter: ;
+    encoding: utf-8-sig
+    format: csv
+    hashing: md5
+    name: itensnota_out22
+    path: data/itensnota_out22.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: orgao_emissor
+          type: string
+        - name: tipo_de_documento
+          type: any
+        - name: fornecedor_cnpj_cpf
+          type: string
+        - name: fornecedor_nome_empresarial
+          type: string
+        - name: numero
+          type: integer
+        - name: serie
+          type: any
+        - name: sequencial
+          type: integer
+        - name: natureza
+          type: string
+        - name: indicador_de_orcamento
+          type: string
+        - name: item_da_nota_fiscal
+          type: integer
+        - name: codigo_do_item
+          type: integer
+        - name: desc_do_item_de_material
+          type: string
+        - name: desc_da_unid_de_fornecimento
+          type: string
+        - name: unid_orcamentaria
+          type: integer
+        - name: elemento_item_de_despesa
+          type: integer
+        - name: qtde_na_nota_fiscal
+          type: string
+        - name: valor_unitario_r
+          type: string
+        - name: valor_total_r
+          type: string
+    scheme: file
+    title: Insira um título humanamente legível para este recurso.
+  - description: Insira a descrição/explicação detalhada deste recurso.
+    dialect:
+      delimiter: ;
+    encoding: utf-8-sig
+    format: csv
+    hashing: md5
+    name: itensnota_out23
+    path: data/itensnota_out23.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: orgao_emissor
+          type: string
+        - name: tipo_de_documento
+          type: any
+        - name: fornecedor_cnpj_cpf
+          type: string
+        - name: fornecedor_nome_empresarial
+          type: string
+        - name: numero
+          type: integer
+        - name: serie
+          type: string
+        - name: sequencial
+          type: integer
+        - name: natureza
+          type: string
+        - name: indicador_de_orcamento
+          type: string
+        - name: item_da_nota_fiscal
+          type: integer
+        - name: codigo_do_item
+          type: integer
+        - name: desc_do_item_de_material
+          type: string
+        - name: desc_da_unid_de_fornecimento
+          type: string
+        - name: unid_orcamentaria
+          type: integer
+        - name: elemento_item_de_despesa
+          type: integer
+        - name: qtde_na_nota_fiscal
+          type: string
+        - name: valor_unitario_r
+          type: string
+        - name: valor_total_r
+          type: string
+    scheme: file
+    title: Insira um título humanamente legível para este recurso.
+  - description: Insira a descrição/explicação detalhada deste recurso.
+    dialect:
+      delimiter: ;
+    encoding: utf-8-sig
+    format: csv
+    hashing: md5
+    name: itensnota_out24
+    path: data/itensnota_out24.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: orgao_emissor
+          type: string
+        - name: tipo_de_documento
+          type: any
+        - name: fornecedor_cnpj_cpf
+          type: string
+        - name: fornecedor_nome_empresarial
+          type: string
+        - name: numero
+          type: integer
+        - name: serie
+          type: string
+        - name: sequencial
+          type: integer
+        - name: natureza
+          type: string
+        - name: indicador_de_orcamento
+          type: string
+        - name: item_da_nota_fiscal
+          type: integer
+        - name: codigo_do_item
+          type: integer
+        - name: desc_do_item_de_material
+          type: string
+        - name: desc_da_unid_de_fornecimento
+          type: string
+        - name: unid_orcamentaria
+          type: integer
+        - name: elemento_item_de_despesa
+          type: integer
+        - name: qtde_na_nota_fiscal
+          type: string
+        - name: valor_unitario_r
+          type: string
+        - name: valor_total_r
+          type: string
+    scheme: file
+    title: Insira um título humanamente legível para este recurso.
+  - description: Insira a descrição/explicação detalhada deste recurso.
+    dialect:
+      delimiter: ;
+    encoding: utf-8-sig
+    format: csv
+    hashing: md5
+    name: itensnota_out25
+    path: data/itensnota_out25.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: orgao_emissor
+          type: string
+        - name: tipo_de_documento
+          type: string
+        - name: fornecedor_cnpj_cpf
+          type: string
+        - name: fornecedor_nome_empresarial
+          type: string
+        - name: numero
+          type: integer
+        - name: serie
+          type: any
+        - name: sequencial
+          type: integer
+        - name: natureza
+          type: string
+        - name: indicador_de_orcamento
+          type: string
+        - name: item_da_nota_fiscal
+          type: integer
+        - name: codigo_do_item
+          type: integer
+        - name: desc_do_item_de_material
+          type: string
+        - name: desc_da_unid_de_fornecimento
+          type: string
+        - name: unid_orcamentaria
+          type: integer
+        - name: elemento_item_de_despesa
+          type: integer
+        - name: qtde_na_nota_fiscal
+          type: string
+        - name: valor_unitario_r
+          type: string
+        - name: valor_total_r
+          type: string
+    scheme: file
+    title: Insira um título humanamente legível para este recurso.
+  - description: Insira a descrição/explicação detalhada deste recurso.
+    dialect:
+      delimiter: ;
+    encoding: utf-8-sig
+    format: csv
+    hashing: md5
+    name: itensnota_set22
+    path: data/itensnota_set22.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: orgao_emissor
+          type: string
+        - name: tipo_de_documento
+          type: any
+        - name: fornecedor_cnpj_cpf
+          type: string
+        - name: fornecedor_nome_empresarial
+          type: string
+        - name: numero
+          type: integer
+        - name: serie
+          type: integer
+        - name: sequencial
+          type: integer
+        - name: natureza
+          type: string
+        - name: indicador_de_orcamento
+          type: string
+        - name: item_da_nota_fiscal
+          type: integer
+        - name: codigo_do_item
+          type: integer
+        - name: desc_do_item_de_material
+          type: string
+        - name: desc_da_unid_de_fornecimento
+          type: string
+        - name: unid_orcamentaria
+          type: integer
+        - name: elemento_item_de_despesa
+          type: integer
+        - name: qtde_na_nota_fiscal
+          type: string
+        - name: valor_unitario_r
+          type: string
+        - name: valor_total_r
+          type: string
+    scheme: file
+    title: Insira um título humanamente legível para este recurso.
+  - description: Insira a descrição/explicação detalhada deste recurso.
+    dialect:
+      delimiter: ;
+    encoding: utf-8-sig
+    format: csv
+    hashing: md5
+    name: itensnota_set23
+    path: data/itensnota_set23.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: orgao_emissor
+          type: string
+        - name: tipo_de_documento
+          type: any
+        - name: fornecedor_cnpj_cpf
+          type: string
+        - name: fornecedor_nome_empresarial
+          type: string
+        - name: numero
+          type: integer
+        - name: serie
+          type: string
+        - name: sequencial
+          type: integer
+        - name: natureza
+          type: string
+        - name: indicador_de_orcamento
+          type: string
+        - name: item_da_nota_fiscal
+          type: integer
+        - name: codigo_do_item
+          type: integer
+        - name: desc_do_item_de_material
+          type: string
+        - name: desc_da_unid_de_fornecimento
+          type: string
+        - name: unid_orcamentaria
+          type: integer
+        - name: elemento_item_de_despesa
+          type: integer
+        - name: qtde_na_nota_fiscal
+          type: string
+        - name: valor_unitario_r
+          type: string
+        - name: valor_total_r
+          type: string
+    scheme: file
+    title: Insira um título humanamente legível para este recurso.
+  - description: Insira a descrição/explicação detalhada deste recurso.
+    dialect:
+      delimiter: ;
+    encoding: utf-8-sig
+    format: csv
+    hashing: md5
+    name: itensnota_set24
+    path: data/itensnota_set24.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: orgao_emissor
+          type: string
+        - name: tipo_de_documento
+          type: any
+        - name: fornecedor_cnpj_cpf
+          type: string
+        - name: fornecedor_nome_empresarial
+          type: string
+        - name: numero
+          type: integer
+        - name: serie
+          type: any
+        - name: sequencial
+          type: integer
+        - name: natureza
+          type: string
+        - name: indicador_de_orcamento
+          type: string
+        - name: item_da_nota_fiscal
+          type: integer
+        - name: codigo_do_item
+          type: integer
+        - name: desc_do_item_de_material
+          type: string
+        - name: desc_da_unid_de_fornecimento
+          type: string
+        - name: unid_orcamentaria
+          type: integer
+        - name: elemento_item_de_despesa
+          type: integer
+        - name: qtde_na_nota_fiscal
+          type: string
+        - name: valor_unitario_r
+          type: string
+        - name: valor_total_r
+          type: string
+    scheme: file
+    title: Insira um título humanamente legível para este recurso.
+  - description: Insira a descrição/explicação detalhada deste recurso.
+    dialect:
+      delimiter: ;
+    encoding: utf-8-sig
+    format: csv
+    hashing: md5
+    name: itensnota_set25
+    path: data/itensnota_set25.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: orgao_emissor
+          type: string
+        - name: tipo_de_documento
+          type: string
+        - name: fornecedor_cnpj_cpf
+          type: string
+        - name: fornecedor_nome_empresarial
+          type: string
+        - name: numero
+          type: integer
+        - name: serie
+          type: any
+        - name: sequencial
+          type: integer
+        - name: natureza
+          type: string
+        - name: indicador_de_orcamento
+          type: string
+        - name: item_da_nota_fiscal
+          type: integer
+        - name: codigo_do_item
+          type: integer
+        - name: desc_do_item_de_material
+          type: string
+        - name: desc_da_unid_de_fornecimento
+          type: string
+        - name: unid_orcamentaria
+          type: integer
+        - name: elemento_item_de_despesa
+          type: integer
+        - name: qtde_na_nota_fiscal
+          type: string
+        - name: valor_unitario_r
+          type: string
+        - name: valor_total_r
+          type: string
+    scheme: file
+    title: Insira um título humanamente legível para este recurso.
+  - description: Insira a descrição/explicação detalhada deste recurso.
+    dialect:
+      delimiter: ;
+    encoding: utf-8-sig
+    format: csv
+    hashing: md5
+    name: notas_abr22
+    path: data/notas_abr22.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: orgao_emissor
+          type: string
+        - name: tipo_de_documento
+          type: any
+        - name: fornecedor_cnpj_cpf
+          type: string
+        - name: fornecedor_nome_empresarial
+          type: string
+        - name: numero
+          type: integer
+        - name: serie
+          type: string
+        - name: sequencial
+          type: integer
+        - name: situacao
+          type: string
+        - name: natureza
+          type: string
+        - name: indicador_de_orcamento
+          type: string
+        - name: data_de_emissao
+          type: date
+        - name: data_de_recebimento
+          type: date
+        - name: data_de_registro
+          type: date
+        - name: valor_total_com_impostos
+          type: string
+        - name: nota_fiscal_para_aglutinacao
+          type: string
+    scheme: file
+    title: Insira um título humanamente legível para este recurso.
+  - description: Insira a descrição/explicação detalhada deste recurso.
+    dialect:
+      delimiter: ;
+    encoding: utf-8-sig
+    format: csv
+    hashing: md5
+    name: notas_abr23
+    path: data/notas_abr23.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: orgao_emissor
+          type: string
+        - name: tipo_de_documento
+          type: any
+        - name: fornecedor_cnpj_cpf
+          type: string
+        - name: fornecedor_nome_empresarial
+          type: string
+        - name: numero
+          type: integer
+        - name: serie
+          type: integer
+        - name: sequencial
+          type: integer
+        - name: situacao
+          type: string
+        - name: natureza
+          type: string
+        - name: indicador_de_orcamento
+          type: string
+        - name: data_de_emissao
+          type: date
+        - name: data_de_recebimento
+          type: date
+        - name: data_de_registro
+          type: date
+        - name: valor_total_com_impostos
+          type: string
+        - name: nota_fiscal_para_aglutinacao
+          type: string
+    scheme: file
+    title: Insira um título humanamente legível para este recurso.
+  - description: Insira a descrição/explicação detalhada deste recurso.
+    dialect:
+      delimiter: ;
+    encoding: utf-8-sig
+    format: csv
+    hashing: md5
+    name: notas_abr24
+    path: data/notas_abr24.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: orgao_emissor
+          type: string
+        - name: tipo_de_documento
+          type: any
+        - name: fornecedor_cnpj_cpf
+          type: string
+        - name: fornecedor_nome_empresarial
+          type: string
+        - name: numero
+          type: integer
+        - name: serie
+          type: string
+        - name: sequencial
+          type: integer
+        - name: situacao
+          type: string
+        - name: natureza
+          type: string
+        - name: indicador_de_orcamento
+          type: string
+        - name: data_de_emissao
+          type: date
+        - name: data_de_recebimento
+          type: date
+        - name: data_de_registro
+          type: date
+        - name: valor_total_com_impostos
+          type: string
+        - name: nota_fiscal_para_aglutinacao
+          type: string
+    scheme: file
+    title: Insira um título humanamente legível para este recurso.
+  - description: Insira a descrição/explicação detalhada deste recurso.
+    dialect:
+      delimiter: ;
+    encoding: utf-8-sig
+    format: csv
+    hashing: md5
+    name: notas_abr25
+    path: data/notas_abr25.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: orgao_emissor
+          type: string
+        - name: tipo_de_documento
+          type: any
+        - name: fornecedor_cnpj_cpf
+          type: string
+        - name: fornecedor_nome_empresarial
+          type: string
+        - name: numero
+          type: integer
+        - name: serie
+          type: string
+        - name: sequencial
+          type: integer
+        - name: situacao
+          type: string
+        - name: natureza
+          type: string
+        - name: indicador_de_orcamento
+          type: string
+        - name: data_de_emissao
+          type: date
+        - name: data_de_recebimento
+          type: date
+        - name: data_de_registro
+          type: date
+        - name: valor_total_com_impostos
+          type: string
+        - name: nota_fiscal_para_aglutinacao
+          type: string
+    scheme: file
+    title: Insira um título humanamente legível para este recurso.
+  - description: Insira a descrição/explicação detalhada deste recurso.
+    dialect:
+      delimiter: ;
+    encoding: utf-8-sig
+    format: csv
+    hashing: md5
+    name: notas_ago22
+    path: data/notas_ago22.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: orgao_emissor
+          type: string
+        - name: tipo_de_documento
+          type: any
+        - name: fornecedor_cnpj_cpf
+          type: string
+        - name: fornecedor_nome_empresarial
+          type: string
+        - name: numero
+          type: integer
+        - name: serie
+          type: string
+        - name: sequencial
+          type: integer
+        - name: situacao
+          type: string
+        - name: natureza
+          type: string
+        - name: indicador_de_orcamento
+          type: string
+        - name: data_de_emissao
+          type: date
+        - name: data_de_recebimento
+          type: date
+        - name: data_de_registro
+          type: date
+        - name: valor_total_com_impostos
+          type: string
+        - name: nota_fiscal_para_aglutinacao
+          type: string
+    scheme: file
+    title: Insira um título humanamente legível para este recurso.
+  - description: Insira a descrição/explicação detalhada deste recurso.
+    dialect:
+      delimiter: ;
+    encoding: utf-8-sig
+    format: csv
+    hashing: md5
+    name: notas_ago23
+    path: data/notas_ago23.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: orgao_emissor
+          type: string
+        - name: tipo_de_documento
+          type: any
+        - name: fornecedor_cnpj_cpf
+          type: string
+        - name: fornecedor_nome_empresarial
+          type: string
+        - name: numero
+          type: integer
+        - name: serie
+          type: string
+        - name: sequencial
+          type: integer
+        - name: situacao
+          type: string
+        - name: natureza
+          type: string
+        - name: indicador_de_orcamento
+          type: string
+        - name: data_de_emissao
+          type: date
+        - name: data_de_recebimento
+          type: date
+        - name: data_de_registro
+          type: date
+        - name: valor_total_com_impostos
+          type: string
+        - name: nota_fiscal_para_aglutinacao
+          type: string
+    scheme: file
+    title: Insira um título humanamente legível para este recurso.
+  - description: Insira a descrição/explicação detalhada deste recurso.
+    dialect:
+      delimiter: ;
+    encoding: utf-8-sig
+    format: csv
+    hashing: md5
+    name: notas_ago24
+    path: data/notas_ago24.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: orgao_emissor
+          type: string
+        - name: tipo_de_documento
+          type: any
+        - name: fornecedor_cnpj_cpf
+          type: string
+        - name: fornecedor_nome_empresarial
+          type: string
+        - name: numero
+          type: integer
+        - name: serie
+          type: string
+        - name: sequencial
+          type: integer
+        - name: situacao
+          type: string
+        - name: natureza
+          type: string
+        - name: indicador_de_orcamento
+          type: string
+        - name: data_de_emissao
+          type: date
+        - name: data_de_recebimento
+          type: date
+        - name: data_de_registro
+          type: date
+        - name: valor_total_com_impostos
+          type: string
+        - name: nota_fiscal_para_aglutinacao
+          type: string
+    scheme: file
+    title: Insira um título humanamente legível para este recurso.
+  - description: Insira a descrição/explicação detalhada deste recurso.
+    dialect:
+      delimiter: ;
+    encoding: utf-8-sig
+    format: csv
+    hashing: md5
+    name: notas_ago25
+    path: data/notas_ago25.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: orgao_emissor
+          type: string
+        - name: tipo_de_documento
+          type: string
+        - name: fornecedor_cnpj_cpf
+          type: string
+        - name: fornecedor_nome_empresarial
+          type: string
+        - name: numero
+          type: integer
+        - name: serie
+          type: string
+        - name: sequencial
+          type: integer
+        - name: situacao
+          type: string
+        - name: natureza
+          type: string
+        - name: indicador_de_orcamento
+          type: string
+        - name: data_de_emissao
+          type: date
+        - name: data_de_recebimento
+          type: date
+        - name: data_de_registro
+          type: date
+        - name: valor_total_com_impostos
+          type: string
+        - name: nota_fiscal_para_aglutinacao
+          type: string
+    scheme: file
+    title: Insira um título humanamente legível para este recurso.
+  - description: Insira a descrição/explicação detalhada deste recurso.
+    dialect:
+      delimiter: ;
+    encoding: utf-8-sig
+    format: csv
+    hashing: md5
+    name: notas_dez22
+    path: data/notas_dez22.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: orgao_emissor
+          type: string
+        - name: tipo_de_documento
+          type: any
+        - name: fornecedor_cnpj_cpf
+          type: string
+        - name: fornecedor_nome_empresarial
+          type: string
+        - name: numero
+          type: integer
+        - name: serie
+          type: any
+        - name: sequencial
+          type: integer
+        - name: situacao
+          type: string
+        - name: natureza
+          type: string
+        - name: indicador_de_orcamento
+          type: string
+        - name: data_de_emissao
+          type: date
+        - name: data_de_recebimento
+          type: date
+        - name: data_de_registro
+          type: date
+        - name: valor_total_com_impostos
+          type: string
+        - name: nota_fiscal_para_aglutinacao
+          type: string
+    scheme: file
+    title: Insira um título humanamente legível para este recurso.
+  - description: Insira a descrição/explicação detalhada deste recurso.
+    dialect:
+      delimiter: ;
+    encoding: utf-8-sig
+    format: csv
+    hashing: md5
+    name: notas_dez23
+    path: data/notas_dez23.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: orgao_emissor
+          type: string
+        - name: tipo_de_documento
+          type: any
+        - name: fornecedor_cnpj_cpf
+          type: string
+        - name: fornecedor_nome_empresarial
+          type: string
+        - name: numero
+          type: integer
+        - name: serie
+          type: any
+        - name: sequencial
+          type: integer
+        - name: situacao
+          type: string
+        - name: natureza
+          type: string
+        - name: indicador_de_orcamento
+          type: string
+        - name: data_de_emissao
+          type: date
+        - name: data_de_recebimento
+          type: date
+        - name: data_de_registro
+          type: date
+        - name: valor_total_com_impostos
+          type: string
+        - name: nota_fiscal_para_aglutinacao
+          type: string
+    scheme: file
+    title: Insira um título humanamente legível para este recurso.
+  - description: Insira a descrição/explicação detalhada deste recurso.
+    dialect:
+      delimiter: ;
+    encoding: utf-8-sig
+    format: csv
+    hashing: md5
+    name: notas_dez24
+    path: data/notas_dez24.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: orgao_emissor
+          type: string
+        - name: tipo_de_documento
+          type: any
+        - name: fornecedor_cnpj_cpf
+          type: string
+        - name: fornecedor_nome_empresarial
+          type: string
+        - name: numero
+          type: integer
+        - name: serie
+          type: string
+        - name: sequencial
+          type: integer
+        - name: situacao
+          type: string
+        - name: natureza
+          type: string
+        - name: indicador_de_orcamento
+          type: string
+        - name: data_de_emissao
+          type: date
+        - name: data_de_recebimento
+          type: date
+        - name: data_de_registro
+          type: date
+        - name: valor_total_com_impostos
+          type: string
+        - name: nota_fiscal_para_aglutinacao
+          type: string
+    scheme: file
+    title: Insira um título humanamente legível para este recurso.
+  - description: Insira a descrição/explicação detalhada deste recurso.
+    dialect:
+      delimiter: ;
+    encoding: utf-8-sig
+    format: csv
+    hashing: md5
+    name: notas_dez25
+    path: data/notas_dez25.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: orgao_emissor
+          type: string
+        - name: tipo_de_documento
+          type: string
+        - name: fornecedor_cnpj_cpf
+          type: string
+        - name: fornecedor_nome_empresarial
+          type: string
+        - name: numero
+          type: integer
+        - name: serie
+          type: string
+        - name: sequencial
+          type: integer
+        - name: situacao
+          type: string
+        - name: natureza
+          type: string
+        - name: indicador_de_orcamento
+          type: string
+        - name: data_de_emissao
+          type: date
+        - name: data_de_recebimento
+          type: date
+        - name: data_de_registro
+          type: date
+        - name: valor_total_com_impostos
+          type: string
+        - name: nota_fiscal_para_aglutinacao
+          type: string
+    scheme: file
+    title: Insira um título humanamente legível para este recurso.
+  - description: Insira a descrição/explicação detalhada deste recurso.
+    dialect:
+      delimiter: ;
+    encoding: utf-8-sig
+    format: csv
+    hashing: md5
+    name: notas_fev22
+    path: data/notas_fev22.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: orgao_emissor
+          type: string
+        - name: tipo_de_documento
+          type: any
+        - name: fornecedor_cnpj_cpf
+          type: string
+        - name: fornecedor_nome_empresarial
+          type: string
+        - name: numero
+          type: integer
+        - name: serie
+          type: string
+        - name: sequencial
+          type: integer
+        - name: situacao
+          type: string
+        - name: natureza
+          type: string
+        - name: indicador_de_orcamento
+          type: string
+        - name: data_de_emissao
+          type: date
+        - name: data_de_recebimento
+          type: date
+        - name: data_de_registro
+          type: date
+        - name: valor_total_com_impostos
+          type: string
+        - name: nota_fiscal_para_aglutinacao
+          type: string
+    scheme: file
+    title: Insira um título humanamente legível para este recurso.
+  - description: Insira a descrição/explicação detalhada deste recurso.
+    dialect:
+      delimiter: ;
+    encoding: utf-8-sig
+    format: csv
+    hashing: md5
+    name: notas_fev23
+    path: data/notas_fev23.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: orgao_emissor
+          type: string
+        - name: tipo_de_documento
+          type: any
+        - name: fornecedor_cnpj_cpf
+          type: string
+        - name: fornecedor_nome_empresarial
+          type: string
+        - name: numero
+          type: integer
+        - name: serie
+          type: any
+        - name: sequencial
+          type: integer
+        - name: situacao
+          type: string
+        - name: natureza
+          type: string
+        - name: indicador_de_orcamento
+          type: string
+        - name: data_de_emissao
+          type: date
+        - name: data_de_recebimento
+          type: date
+        - name: data_de_registro
+          type: date
+        - name: valor_total_com_impostos
+          type: string
+        - name: nota_fiscal_para_aglutinacao
+          type: string
+    scheme: file
+    title: Insira um título humanamente legível para este recurso.
+  - description: Insira a descrição/explicação detalhada deste recurso.
+    dialect:
+      delimiter: ;
+    encoding: utf-8-sig
+    format: csv
+    hashing: md5
+    name: notas_fev24
+    path: data/notas_fev24.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: orgao_emissor
+          type: string
+        - name: tipo_de_documento
+          type: any
+        - name: fornecedor_cnpj_cpf
+          type: string
+        - name: fornecedor_nome_empresarial
+          type: string
+        - name: numero
+          type: integer
+        - name: serie
+          type: string
+        - name: sequencial
+          type: integer
+        - name: situacao
+          type: string
+        - name: natureza
+          type: string
+        - name: indicador_de_orcamento
+          type: string
+        - name: data_de_emissao
+          type: date
+        - name: data_de_recebimento
+          type: date
+        - name: data_de_registro
+          type: date
+        - name: valor_total_com_impostos
+          type: string
+        - name: nota_fiscal_para_aglutinacao
+          type: string
+    scheme: file
+    title: Insira um título humanamente legível para este recurso.
+  - description: Insira a descrição/explicação detalhada deste recurso.
+    dialect:
+      delimiter: ;
+    encoding: utf-8-sig
+    format: csv
+    hashing: md5
+    name: notas_fev25
+    path: data/notas_fev25.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: orgao_emissor
+          type: string
+        - name: tipo_de_documento
+          type: any
+        - name: fornecedor_cnpj_cpf
+          type: string
+        - name: fornecedor_nome_empresarial
+          type: string
+        - name: numero
+          type: integer
+        - name: serie
+          type: string
+        - name: sequencial
+          type: integer
+        - name: situacao
+          type: string
+        - name: natureza
+          type: string
+        - name: indicador_de_orcamento
+          type: string
+        - name: data_de_emissao
+          type: date
+        - name: data_de_recebimento
+          type: date
+        - name: data_de_registro
+          type: date
+        - name: valor_total_com_impostos
+          type: string
+        - name: nota_fiscal_para_aglutinacao
+          type: string
+    scheme: file
+    title: Insira um título humanamente legível para este recurso.
+  - description: Insira a descrição/explicação detalhada deste recurso.
+    dialect:
+      delimiter: ;
+    encoding: utf-8-sig
+    format: csv
+    hashing: md5
+    name: notas_fev26
+    path: data/notas_fev26.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: orgao_emissor
+          type: string
+        - name: tipo_de_documento
+          type: string
+        - name: fornecedor_cnpj_cpf
+          type: string
+        - name: fornecedor_nome_empresarial
+          type: string
+        - name: numero
+          type: integer
+        - name: serie
+          type: integer
+        - name: sequencial
+          type: integer
+        - name: situacao
+          type: string
+        - name: natureza
+          type: string
+        - name: indicador_de_orcamento
+          type: string
+        - name: data_de_emissao
+          type: date
+        - name: data_de_recebimento
+          type: date
+        - name: data_de_registro
+          type: date
+        - name: valor_total_com_impostos
+          type: string
+        - name: nota_fiscal_para_aglutinacao
+          type: string
+    scheme: file
+    title: Insira um título humanamente legível para este recurso.
+  - description: Insira a descrição/explicação detalhada deste recurso.
+    dialect:
+      delimiter: ;
+    encoding: utf-8-sig
+    format: csv
+    hashing: md5
+    name: notas_jan22
+    path: data/notas_jan22.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: orgao_emissor
+          type: string
+        - name: tipo_de_documento
+          type: any
+        - name: fornecedor_cnpj_cpf
+          type: string
+        - name: fornecedor_nome_empresarial
+          type: string
+        - name: numero
+          type: integer
+        - name: serie
+          type: any
+        - name: sequencial
+          type: integer
+        - name: situacao
+          type: string
+        - name: natureza
+          type: string
+        - name: indicador_de_orcamento
+          type: string
+        - name: data_de_emissao
+          type: date
+        - name: data_de_recebimento
+          type: date
+        - name: data_de_registro
+          type: date
+        - name: valor_total_com_impostos
+          type: string
+        - name: nota_fiscal_para_aglutinacao
+          type: string
+    scheme: file
+    title: Insira um título humanamente legível para este recurso.
+  - description: Insira a descrição/explicação detalhada deste recurso.
+    dialect:
+      delimiter: ;
+    encoding: utf-8-sig
+    format: csv
+    hashing: md5
+    name: notas_jan23
+    path: data/notas_jan23.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: orgao_emissor
+          type: string
+        - name: tipo_de_documento
+          type: any
+        - name: fornecedor_cnpj_cpf
+          type: string
+        - name: fornecedor_nome_empresarial
+          type: string
+        - name: numero
+          type: integer
+        - name: serie
+          type: any
+        - name: sequencial
+          type: integer
+        - name: situacao
+          type: string
+        - name: natureza
+          type: string
+        - name: indicador_de_orcamento
+          type: string
+        - name: data_de_emissao
+          type: date
+        - name: data_de_recebimento
+          type: date
+        - name: data_de_registro
+          type: date
+        - name: valor_total_com_impostos
+          type: string
+        - name: nota_fiscal_para_aglutinacao
+          type: string
+    scheme: file
+    title: Insira um título humanamente legível para este recurso.
+  - description: Insira a descrição/explicação detalhada deste recurso.
+    dialect:
+      delimiter: ;
+    encoding: utf-8-sig
+    format: csv
+    hashing: md5
+    name: notas_jan24
+    path: data/notas_jan24.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: orgao_emissor
+          type: string
+        - name: tipo_de_documento
+          type: any
+        - name: fornecedor_cnpj_cpf
+          type: string
+        - name: fornecedor_nome_empresarial
+          type: string
+        - name: numero
+          type: integer
+        - name: serie
+          type: any
+        - name: sequencial
+          type: integer
+        - name: situacao
+          type: string
+        - name: natureza
+          type: string
+        - name: indicador_de_orcamento
+          type: string
+        - name: data_de_emissao
+          type: date
+        - name: data_de_recebimento
+          type: date
+        - name: data_de_registro
+          type: date
+        - name: valor_total_com_impostos
+          type: string
+        - name: nota_fiscal_para_aglutinacao
+          type: string
+    scheme: file
+    title: Insira um título humanamente legível para este recurso.
+  - description: Insira a descrição/explicação detalhada deste recurso.
+    dialect:
+      delimiter: ;
+    encoding: utf-8-sig
+    format: csv
+    hashing: md5
+    name: notas_jan25
+    path: data/notas_jan25.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: orgao_emissor
+          type: string
+        - name: tipo_de_documento
+          type: any
+        - name: fornecedor_cnpj_cpf
+          type: string
+        - name: fornecedor_nome_empresarial
+          type: string
+        - name: numero
+          type: integer
+        - name: serie
+          type: any
+        - name: sequencial
+          type: integer
+        - name: situacao
+          type: string
+        - name: natureza
+          type: string
+        - name: indicador_de_orcamento
+          type: string
+        - name: data_de_emissao
+          type: date
+        - name: data_de_recebimento
+          type: date
+        - name: data_de_registro
+          type: date
+        - name: valor_total_com_impostos
+          type: string
+        - name: nota_fiscal_para_aglutinacao
+          type: string
+    scheme: file
+    title: Insira um título humanamente legível para este recurso.
+  - description: Insira a descrição/explicação detalhada deste recurso.
+    dialect:
+      delimiter: ;
+    encoding: utf-8-sig
+    format: csv
+    hashing: md5
+    name: notas_jan26
+    path: data/notas_jan26.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: orgao_emissor
+          type: string
+        - name: tipo_de_documento
+          type: string
+        - name: fornecedor_cnpj_cpf
+          type: string
+        - name: fornecedor_nome_empresarial
+          type: string
+        - name: numero
+          type: integer
+        - name: serie
+          type: string
+        - name: sequencial
+          type: integer
+        - name: situacao
+          type: string
+        - name: natureza
+          type: string
+        - name: indicador_de_orcamento
+          type: string
+        - name: data_de_emissao
+          type: date
+        - name: data_de_recebimento
+          type: date
+        - name: data_de_registro
+          type: date
+        - name: valor_total_com_impostos
+          type: string
+        - name: nota_fiscal_para_aglutinacao
+          type: string
+    scheme: file
+    title: Insira um título humanamente legível para este recurso.
+  - description: Insira a descrição/explicação detalhada deste recurso.
+    dialect:
+      delimiter: ;
+    encoding: utf-8-sig
+    format: csv
+    hashing: md5
+    name: notas_jul22
+    path: data/notas_jul22.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: orgao_emissor
+          type: string
+        - name: tipo_de_documento
+          type: any
+        - name: fornecedor_cnpj_cpf
+          type: string
+        - name: fornecedor_nome_empresarial
+          type: string
+        - name: numero
+          type: integer
+        - name: serie
+          type: string
+        - name: sequencial
+          type: integer
+        - name: situacao
+          type: string
+        - name: natureza
+          type: string
+        - name: indicador_de_orcamento
+          type: string
+        - name: data_de_emissao
+          type: date
+        - name: data_de_recebimento
+          type: date
+        - name: data_de_registro
+          type: date
+        - name: valor_total_com_impostos
+          type: string
+        - name: nota_fiscal_para_aglutinacao
+          type: string
+    scheme: file
+    title: Insira um título humanamente legível para este recurso.
+  - description: Insira a descrição/explicação detalhada deste recurso.
+    dialect:
+      delimiter: ;
+    encoding: utf-8-sig
+    format: csv
+    hashing: md5
+    name: notas_jul23
+    path: data/notas_jul23.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: orgao_emissor
+          type: string
+        - name: tipo_de_documento
+          type: any
+        - name: fornecedor_cnpj_cpf
+          type: string
+        - name: fornecedor_nome_empresarial
+          type: string
+        - name: numero
+          type: integer
+        - name: serie
+          type: string
+        - name: sequencial
+          type: integer
+        - name: situacao
+          type: string
+        - name: natureza
+          type: string
+        - name: indicador_de_orcamento
+          type: string
+        - name: data_de_emissao
+          type: date
+        - name: data_de_recebimento
+          type: date
+        - name: data_de_registro
+          type: date
+        - name: valor_total_com_impostos
+          type: string
+        - name: nota_fiscal_para_aglutinacao
+          type: string
+    scheme: file
+    title: Insira um título humanamente legível para este recurso.
+  - description: Insira a descrição/explicação detalhada deste recurso.
+    dialect:
+      delimiter: ;
+    encoding: utf-8-sig
+    format: csv
+    hashing: md5
+    name: notas_jul24
+    path: data/notas_jul24.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: orgao_emissor
+          type: string
+        - name: tipo_de_documento
+          type: any
+        - name: fornecedor_cnpj_cpf
+          type: string
+        - name: fornecedor_nome_empresarial
+          type: string
+        - name: numero
+          type: integer
+        - name: serie
+          type: string
+        - name: sequencial
+          type: integer
+        - name: situacao
+          type: string
+        - name: natureza
+          type: string
+        - name: indicador_de_orcamento
+          type: string
+        - name: data_de_emissao
+          type: date
+        - name: data_de_recebimento
+          type: date
+        - name: data_de_registro
+          type: date
+        - name: valor_total_com_impostos
+          type: string
+        - name: nota_fiscal_para_aglutinacao
+          type: string
+    scheme: file
+    title: Insira um título humanamente legível para este recurso.
+  - description: Insira a descrição/explicação detalhada deste recurso.
+    dialect:
+      delimiter: ;
+    encoding: utf-8-sig
+    format: csv
+    hashing: md5
+    name: notas_jul25
+    path: data/notas_jul25.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: orgao_emissor
+          type: string
+        - name: tipo_de_documento
+          type: string
+        - name: fornecedor_cnpj_cpf
+          type: string
+        - name: fornecedor_nome_empresarial
+          type: string
+        - name: numero
+          type: integer
+        - name: serie
+          type: any
+        - name: sequencial
+          type: integer
+        - name: situacao
+          type: string
+        - name: natureza
+          type: string
+        - name: indicador_de_orcamento
+          type: string
+        - name: data_de_emissao
+          type: date
+        - name: data_de_recebimento
+          type: date
+        - name: data_de_registro
+          type: date
+        - name: valor_total_com_impostos
+          type: string
+        - name: nota_fiscal_para_aglutinacao
+          type: string
+    scheme: file
+    title: Insira um título humanamente legível para este recurso.
+  - description: Insira a descrição/explicação detalhada deste recurso.
+    dialect:
+      delimiter: ;
+    encoding: utf-8-sig
+    format: csv
+    hashing: md5
+    name: notas_jun22
+    path: data/notas_jun22.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: orgao_emissor
+          type: string
+        - name: tipo_de_documento
+          type: any
+        - name: fornecedor_cnpj_cpf
+          type: string
+        - name: fornecedor_nome_empresarial
+          type: string
+        - name: numero
+          type: integer
+        - name: serie
+          type: integer
+        - name: sequencial
+          type: integer
+        - name: situacao
+          type: string
+        - name: natureza
+          type: string
+        - name: indicador_de_orcamento
+          type: string
+        - name: data_de_emissao
+          type: date
+        - name: data_de_recebimento
+          type: date
+        - name: data_de_registro
+          type: date
+        - name: valor_total_com_impostos
+          type: string
+        - name: nota_fiscal_para_aglutinacao
+          type: string
+    scheme: file
+    title: Insira um título humanamente legível para este recurso.
+  - description: Insira a descrição/explicação detalhada deste recurso.
+    dialect:
+      delimiter: ;
+    encoding: utf-8-sig
+    format: csv
+    hashing: md5
+    name: notas_jun23
+    path: data/notas_jun23.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: orgao_emissor
+          type: string
+        - name: tipo_de_documento
+          type: any
+        - name: fornecedor_cnpj_cpf
+          type: string
+        - name: fornecedor_nome_empresarial
+          type: string
+        - name: numero
+          type: integer
+        - name: serie
+          type: integer
+        - name: sequencial
+          type: integer
+        - name: situacao
+          type: string
+        - name: natureza
+          type: string
+        - name: indicador_de_orcamento
+          type: string
+        - name: data_de_emissao
+          type: date
+        - name: data_de_recebimento
+          type: date
+        - name: data_de_registro
+          type: date
+        - name: valor_total_com_impostos
+          type: string
+        - name: nota_fiscal_para_aglutinacao
+          type: string
+    scheme: file
+    title: Insira um título humanamente legível para este recurso.
+  - description: Insira a descrição/explicação detalhada deste recurso.
+    dialect:
+      delimiter: ;
+    encoding: utf-8-sig
+    format: csv
+    hashing: md5
+    name: notas_jun24
+    path: data/notas_jun24.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: orgao_emissor
+          type: string
+        - name: tipo_de_documento
+          type: any
+        - name: fornecedor_cnpj_cpf
+          type: string
+        - name: fornecedor_nome_empresarial
+          type: string
+        - name: numero
+          type: integer
+        - name: serie
+          type: string
+        - name: sequencial
+          type: integer
+        - name: situacao
+          type: string
+        - name: natureza
+          type: string
+        - name: indicador_de_orcamento
+          type: string
+        - name: data_de_emissao
+          type: date
+        - name: data_de_recebimento
+          type: date
+        - name: data_de_registro
+          type: date
+        - name: valor_total_com_impostos
+          type: string
+        - name: nota_fiscal_para_aglutinacao
+          type: string
+    scheme: file
+    title: Insira um título humanamente legível para este recurso.
+  - description: Insira a descrição/explicação detalhada deste recurso.
+    dialect:
+      delimiter: ;
+    encoding: utf-8-sig
+    format: csv
+    hashing: md5
+    name: notas_jun25
+    path: data/notas_jun25.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: orgao_emissor
+          type: string
+        - name: tipo_de_documento
+          type: string
+        - name: fornecedor_cnpj_cpf
+          type: string
+        - name: fornecedor_nome_empresarial
+          type: string
+        - name: numero
+          type: integer
+        - name: serie
+          type: string
+        - name: sequencial
+          type: integer
+        - name: situacao
+          type: string
+        - name: natureza
+          type: string
+        - name: indicador_de_orcamento
+          type: string
+        - name: data_de_emissao
+          type: date
+        - name: data_de_recebimento
+          type: date
+        - name: data_de_registro
+          type: date
+        - name: valor_total_com_impostos
+          type: string
+        - name: nota_fiscal_para_aglutinacao
+          type: string
+    scheme: file
+    title: Insira um título humanamente legível para este recurso.
+  - description: Insira a descrição/explicação detalhada deste recurso.
+    dialect:
+      delimiter: ;
+    encoding: utf-8-sig
+    format: csv
+    hashing: md5
+    name: notas_mai22
+    path: data/notas_mai22.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: orgao_emissor
+          type: string
+        - name: tipo_de_documento
+          type: any
+        - name: fornecedor_cnpj_cpf
+          type: string
+        - name: fornecedor_nome_empresarial
+          type: string
+        - name: numero
+          type: integer
+        - name: serie
+          type: string
+        - name: sequencial
+          type: integer
+        - name: situacao
+          type: string
+        - name: natureza
+          type: string
+        - name: indicador_de_orcamento
+          type: string
+        - name: data_de_emissao
+          type: date
+        - name: data_de_recebimento
+          type: date
+        - name: data_de_registro
+          type: date
+        - name: valor_total_com_impostos
+          type: string
+        - name: nota_fiscal_para_aglutinacao
+          type: string
+    scheme: file
+    title: Insira um título humanamente legível para este recurso.
+  - description: Insira a descrição/explicação detalhada deste recurso.
+    dialect:
+      delimiter: ;
+    encoding: utf-8-sig
+    format: csv
+    hashing: md5
+    name: notas_mai23
+    path: data/notas_mai23.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: orgao_emissor
+          type: string
+        - name: tipo_de_documento
+          type: any
+        - name: fornecedor_cnpj_cpf
+          type: string
+        - name: fornecedor_nome_empresarial
+          type: string
+        - name: numero
+          type: integer
+        - name: serie
+          type: integer
+        - name: sequencial
+          type: integer
+        - name: situacao
+          type: string
+        - name: natureza
+          type: string
+        - name: indicador_de_orcamento
+          type: string
+        - name: data_de_emissao
+          type: date
+        - name: data_de_recebimento
+          type: date
+        - name: data_de_registro
+          type: date
+        - name: valor_total_com_impostos
+          type: string
+        - name: nota_fiscal_para_aglutinacao
+          type: string
+    scheme: file
+    title: Insira um título humanamente legível para este recurso.
+  - description: Insira a descrição/explicação detalhada deste recurso.
+    dialect:
+      delimiter: ;
+    encoding: utf-8-sig
+    format: csv
+    hashing: md5
+    name: notas_mai24
+    path: data/notas_mai24.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: orgao_emissor
+          type: string
+        - name: tipo_de_documento
+          type: any
+        - name: fornecedor_cnpj_cpf
+          type: string
+        - name: fornecedor_nome_empresarial
+          type: string
+        - name: numero
+          type: integer
+        - name: serie
+          type: any
+        - name: sequencial
+          type: integer
+        - name: situacao
+          type: string
+        - name: natureza
+          type: string
+        - name: indicador_de_orcamento
+          type: string
+        - name: data_de_emissao
+          type: date
+        - name: data_de_recebimento
+          type: date
+        - name: data_de_registro
+          type: date
+        - name: valor_total_com_impostos
+          type: string
+        - name: nota_fiscal_para_aglutinacao
+          type: string
+    scheme: file
+    title: Insira um título humanamente legível para este recurso.
+  - description: Insira a descrição/explicação detalhada deste recurso.
+    dialect:
+      delimiter: ;
+    encoding: utf-8-sig
+    format: csv
+    hashing: md5
+    name: notas_mai25
+    path: data/notas_mai25.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: orgao_emissor
+          type: string
+        - name: tipo_de_documento
+          type: string
+        - name: fornecedor_cnpj_cpf
+          type: string
+        - name: fornecedor_nome_empresarial
+          type: string
+        - name: numero
+          type: integer
+        - name: serie
+          type: integer
+        - name: sequencial
+          type: integer
+        - name: situacao
+          type: string
+        - name: natureza
+          type: string
+        - name: indicador_de_orcamento
+          type: string
+        - name: data_de_emissao
+          type: date
+        - name: data_de_recebimento
+          type: date
+        - name: data_de_registro
+          type: date
+        - name: valor_total_com_impostos
+          type: string
+        - name: nota_fiscal_para_aglutinacao
+          type: string
+    scheme: file
+    title: Insira um título humanamente legível para este recurso.
+  - description: Insira a descrição/explicação detalhada deste recurso.
+    dialect:
+      delimiter: ;
+    encoding: utf-8-sig
+    format: csv
+    hashing: md5
+    name: notas_mar22
+    path: data/notas_mar22.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: orgao_emissor
+          type: string
+        - name: tipo_de_documento
+          type: any
+        - name: fornecedor_cnpj_cpf
+          type: string
+        - name: fornecedor_nome_empresarial
+          type: string
+        - name: numero
+          type: integer
+        - name: serie
+          type: integer
+        - name: sequencial
+          type: integer
+        - name: situacao
+          type: string
+        - name: natureza
+          type: string
+        - name: indicador_de_orcamento
+          type: string
+        - name: data_de_emissao
+          type: date
+        - name: data_de_recebimento
+          type: date
+        - name: data_de_registro
+          type: date
+        - name: valor_total_com_impostos
+          type: string
+        - name: nota_fiscal_para_aglutinacao
+          type: string
+    scheme: file
+    title: Insira um título humanamente legível para este recurso.
+  - description: Insira a descrição/explicação detalhada deste recurso.
+    dialect:
+      delimiter: ;
+    encoding: utf-8-sig
+    format: csv
+    hashing: md5
+    name: notas_mar23
+    path: data/notas_mar23.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: orgao_emissor
+          type: string
+        - name: tipo_de_documento
+          type: any
+        - name: fornecedor_cnpj_cpf
+          type: string
+        - name: fornecedor_nome_empresarial
+          type: string
+        - name: numero
+          type: integer
+        - name: serie
+          type: any
+        - name: sequencial
+          type: integer
+        - name: situacao
+          type: string
+        - name: natureza
+          type: string
+        - name: indicador_de_orcamento
+          type: string
+        - name: data_de_emissao
+          type: date
+        - name: data_de_recebimento
+          type: date
+        - name: data_de_registro
+          type: date
+        - name: valor_total_com_impostos
+          type: string
+        - name: nota_fiscal_para_aglutinacao
+          type: string
+    scheme: file
+    title: Insira um título humanamente legível para este recurso.
+  - description: Insira a descrição/explicação detalhada deste recurso.
+    dialect:
+      delimiter: ;
+    encoding: utf-8-sig
+    format: csv
+    hashing: md5
+    name: notas_mar24
+    path: data/notas_mar24.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: orgao_emissor
+          type: string
+        - name: tipo_de_documento
+          type: any
+        - name: fornecedor_cnpj_cpf
+          type: string
+        - name: fornecedor_nome_empresarial
+          type: string
+        - name: numero
+          type: integer
+        - name: serie
+          type: string
+        - name: sequencial
+          type: integer
+        - name: situacao
+          type: string
+        - name: natureza
+          type: string
+        - name: indicador_de_orcamento
+          type: string
+        - name: data_de_emissao
+          type: date
+        - name: data_de_recebimento
+          type: date
+        - name: data_de_registro
+          type: date
+        - name: valor_total_com_impostos
+          type: string
+        - name: nota_fiscal_para_aglutinacao
+          type: string
+    scheme: file
+    title: Insira um título humanamente legível para este recurso.
+  - description: Insira a descrição/explicação detalhada deste recurso.
+    dialect:
+      delimiter: ;
+    encoding: utf-8-sig
+    format: csv
+    hashing: md5
+    name: notas_mar25
+    path: data/notas_mar25.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: orgao_emissor
+          type: string
+        - name: tipo_de_documento
+          type: any
+        - name: fornecedor_cnpj_cpf
+          type: string
+        - name: fornecedor_nome_empresarial
+          type: string
+        - name: numero
+          type: integer
+        - name: serie
+          type: string
+        - name: sequencial
+          type: integer
+        - name: situacao
+          type: string
+        - name: natureza
+          type: string
+        - name: indicador_de_orcamento
+          type: string
+        - name: data_de_emissao
+          type: date
+        - name: data_de_recebimento
+          type: date
+        - name: data_de_registro
+          type: date
+        - name: valor_total_com_impostos
+          type: string
+        - name: nota_fiscal_para_aglutinacao
+          type: string
+    scheme: file
+    title: Insira um título humanamente legível para este recurso.
+  - description: Insira a descrição/explicação detalhada deste recurso.
+    dialect:
+      delimiter: ;
+    encoding: utf-8-sig
+    format: csv
+    hashing: md5
+    name: notas_mar26
+    path: data/notas_mar26.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: orgao_emissor
+          type: string
+        - name: tipo_de_documento
+          type: string
+        - name: fornecedor_cnpj_cpf
+          type: string
+        - name: fornecedor_nome_empresarial
+          type: string
+        - name: numero
+          type: integer
+        - name: serie
+          type: string
+        - name: sequencial
+          type: integer
+        - name: situacao
+          type: string
+        - name: natureza
+          type: string
+        - name: indicador_de_orcamento
+          type: string
+        - name: data_de_emissao
+          type: date
+        - name: data_de_recebimento
+          type: date
+        - name: data_de_registro
+          type: date
+        - name: valor_total_com_impostos
+          type: string
+        - name: nota_fiscal_para_aglutinacao
+          type: string
+    scheme: file
+    title: Insira um título humanamente legível para este recurso.
+  - description: Insira a descrição/explicação detalhada deste recurso.
+    dialect:
+      delimiter: ;
+    encoding: utf-8-sig
+    format: csv
+    hashing: md5
+    name: notas_nov22
+    path: data/notas_nov22.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: orgao_emissor
+          type: string
+        - name: tipo_de_documento
+          type: any
+        - name: fornecedor_cnpj_cpf
+          type: string
+        - name: fornecedor_nome_empresarial
+          type: string
+        - name: numero
+          type: integer
+        - name: serie
+          type: string
+        - name: sequencial
+          type: integer
+        - name: situacao
+          type: string
+        - name: natureza
+          type: string
+        - name: indicador_de_orcamento
+          type: string
+        - name: data_de_emissao
+          type: date
+        - name: data_de_recebimento
+          type: date
+        - name: data_de_registro
+          type: date
+        - name: valor_total_com_impostos
+          type: string
+        - name: nota_fiscal_para_aglutinacao
+          type: string
+    scheme: file
+    title: Insira um título humanamente legível para este recurso.
+  - description: Insira a descrição/explicação detalhada deste recurso.
+    dialect:
+      delimiter: ;
+    encoding: utf-8-sig
+    format: csv
+    hashing: md5
+    name: notas_nov23
+    path: data/notas_nov23.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: orgao_emissor
+          type: string
+        - name: tipo_de_documento
+          type: any
+        - name: fornecedor_cnpj_cpf
+          type: string
+        - name: fornecedor_nome_empresarial
+          type: string
+        - name: numero
+          type: integer
+        - name: serie
+          type: any
+        - name: sequencial
+          type: integer
+        - name: situacao
+          type: string
+        - name: natureza
+          type: string
+        - name: indicador_de_orcamento
+          type: string
+        - name: data_de_emissao
+          type: date
+        - name: data_de_recebimento
+          type: date
+        - name: data_de_registro
+          type: date
+        - name: valor_total_com_impostos
+          type: string
+        - name: nota_fiscal_para_aglutinacao
+          type: string
+    scheme: file
+    title: Insira um título humanamente legível para este recurso.
+  - description: Insira a descrição/explicação detalhada deste recurso.
+    dialect:
+      delimiter: ;
+    encoding: utf-8-sig
+    format: csv
+    hashing: md5
+    name: notas_nov24
+    path: data/notas_nov24.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: orgao_emissor
+          type: string
+        - name: tipo_de_documento
+          type: any
+        - name: fornecedor_cnpj_cpf
+          type: string
+        - name: fornecedor_nome_empresarial
+          type: string
+        - name: numero
+          type: integer
+        - name: serie
+          type: string
+        - name: sequencial
+          type: integer
+        - name: situacao
+          type: string
+        - name: natureza
+          type: string
+        - name: indicador_de_orcamento
+          type: string
+        - name: data_de_emissao
+          type: date
+        - name: data_de_recebimento
+          type: date
+        - name: data_de_registro
+          type: date
+        - name: valor_total_com_impostos
+          type: string
+        - name: nota_fiscal_para_aglutinacao
+          type: string
+    scheme: file
+    title: Insira um título humanamente legível para este recurso.
+  - description: Insira a descrição/explicação detalhada deste recurso.
+    dialect:
+      delimiter: ;
+    encoding: utf-8-sig
+    format: csv
+    hashing: md5
+    name: notas_nov25
+    path: data/notas_nov25.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: orgao_emissor
+          type: string
+        - name: tipo_de_documento
+          type: string
+        - name: fornecedor_cnpj_cpf
+          type: string
+        - name: fornecedor_nome_empresarial
+          type: string
+        - name: numero
+          type: integer
+        - name: serie
+          type: string
+        - name: sequencial
+          type: integer
+        - name: situacao
+          type: string
+        - name: natureza
+          type: string
+        - name: indicador_de_orcamento
+          type: string
+        - name: data_de_emissao
+          type: date
+        - name: data_de_recebimento
+          type: date
+        - name: data_de_registro
+          type: date
+        - name: valor_total_com_impostos
+          type: string
+        - name: nota_fiscal_para_aglutinacao
+          type: string
+    scheme: file
+    title: Insira um título humanamente legível para este recurso.
+  - description: Insira a descrição/explicação detalhada deste recurso.
+    dialect:
+      delimiter: ;
+    encoding: utf-8-sig
+    format: csv
+    hashing: md5
+    name: notas_out22
+    path: data/notas_out22.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: orgao_emissor
+          type: string
+        - name: tipo_de_documento
+          type: any
+        - name: fornecedor_cnpj_cpf
+          type: string
+        - name: fornecedor_nome_empresarial
+          type: string
+        - name: numero
+          type: integer
+        - name: serie
+          type: integer
+        - name: sequencial
+          type: integer
+        - name: situacao
+          type: string
+        - name: natureza
+          type: string
+        - name: indicador_de_orcamento
+          type: string
+        - name: data_de_emissao
+          type: date
+        - name: data_de_recebimento
+          type: date
+        - name: data_de_registro
+          type: date
+        - name: valor_total_com_impostos
+          type: string
+        - name: nota_fiscal_para_aglutinacao
+          type: string
+    scheme: file
+    title: Insira um título humanamente legível para este recurso.
+  - description: Insira a descrição/explicação detalhada deste recurso.
+    dialect:
+      delimiter: ;
+    encoding: utf-8-sig
+    format: csv
+    hashing: md5
+    name: notas_out23
+    path: data/notas_out23.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: orgao_emissor
+          type: string
+        - name: tipo_de_documento
+          type: any
+        - name: fornecedor_cnpj_cpf
+          type: string
+        - name: fornecedor_nome_empresarial
+          type: string
+        - name: numero
+          type: integer
+        - name: serie
+          type: string
+        - name: sequencial
+          type: integer
+        - name: situacao
+          type: string
+        - name: natureza
+          type: string
+        - name: indicador_de_orcamento
+          type: string
+        - name: data_de_emissao
+          type: date
+        - name: data_de_recebimento
+          type: date
+        - name: data_de_registro
+          type: date
+        - name: valor_total_com_impostos
+          type: string
+        - name: nota_fiscal_para_aglutinacao
+          type: string
+    scheme: file
+    title: Insira um título humanamente legível para este recurso.
+  - description: Insira a descrição/explicação detalhada deste recurso.
+    dialect:
+      delimiter: ;
+    encoding: utf-8-sig
+    format: csv
+    hashing: md5
+    name: notas_out24
+    path: data/notas_out24.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: orgao_emissor
+          type: string
+        - name: tipo_de_documento
+          type: any
+        - name: fornecedor_cnpj_cpf
+          type: string
+        - name: fornecedor_nome_empresarial
+          type: string
+        - name: numero
+          type: integer
+        - name: serie
+          type: string
+        - name: sequencial
+          type: integer
+        - name: situacao
+          type: string
+        - name: natureza
+          type: string
+        - name: indicador_de_orcamento
+          type: string
+        - name: data_de_emissao
+          type: date
+        - name: data_de_recebimento
+          type: date
+        - name: data_de_registro
+          type: date
+        - name: valor_total_com_impostos
+          type: string
+        - name: nota_fiscal_para_aglutinacao
+          type: string
+    scheme: file
+    title: Insira um título humanamente legível para este recurso.
+  - description: Insira a descrição/explicação detalhada deste recurso.
+    dialect:
+      delimiter: ;
+    encoding: utf-8-sig
+    format: csv
+    hashing: md5
+    name: notas_out25
+    path: data/notas_out25.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: orgao_emissor
+          type: string
+        - name: tipo_de_documento
+          type: string
+        - name: fornecedor_cnpj_cpf
+          type: string
+        - name: fornecedor_nome_empresarial
+          type: string
+        - name: numero
+          type: integer
+        - name: serie
+          type: string
+        - name: sequencial
+          type: integer
+        - name: situacao
+          type: string
+        - name: natureza
+          type: string
+        - name: indicador_de_orcamento
+          type: string
+        - name: data_de_emissao
+          type: date
+        - name: data_de_recebimento
+          type: date
+        - name: data_de_registro
+          type: date
+        - name: valor_total_com_impostos
+          type: string
+        - name: nota_fiscal_para_aglutinacao
+          type: string
+    scheme: file
+    title: Insira um título humanamente legível para este recurso.
+  - description: Insira a descrição/explicação detalhada deste recurso.
+    dialect:
+      delimiter: ;
+    encoding: utf-8-sig
+    format: csv
+    hashing: md5
+    name: notas_set23
+    path: data/notas_set23.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: orgao_emissor
+          type: string
+        - name: tipo_de_documento
+          type: any
+        - name: fornecedor_cnpj_cpf
+          type: string
+        - name: fornecedor_nome_empresarial
+          type: string
+        - name: numero
+          type: integer
+        - name: serie
+          type: any
+        - name: sequencial
+          type: integer
+        - name: situacao
+          type: string
+        - name: natureza
+          type: string
+        - name: indicador_de_orcamento
+          type: string
+        - name: data_de_emissao
+          type: date
+        - name: data_de_recebimento
+          type: date
+        - name: data_de_registro
+          type: date
+        - name: valor_total_com_impostos
+          type: string
+        - name: nota_fiscal_para_aglutinacao
+          type: string
+    scheme: file
+    title: Insira um título humanamente legível para este recurso.
+  - description: Insira a descrição/explicação detalhada deste recurso.
+    dialect:
+      delimiter: ;
+    encoding: utf-8-sig
+    format: csv
+    hashing: md5
+    name: notas_set24
+    path: data/notas_set24.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: orgao_emissor
+          type: string
+        - name: tipo_de_documento
+          type: any
+        - name: fornecedor_cnpj_cpf
+          type: string
+        - name: fornecedor_nome_empresarial
+          type: string
+        - name: numero
+          type: integer
+        - name: serie
+          type: integer
+        - name: sequencial
+          type: integer
+        - name: situacao
+          type: string
+        - name: natureza
+          type: string
+        - name: indicador_de_orcamento
+          type: string
+        - name: data_de_emissao
+          type: date
+        - name: data_de_recebimento
+          type: date
+        - name: data_de_registro
+          type: date
+        - name: valor_total_com_impostos
+          type: string
+        - name: nota_fiscal_para_aglutinacao
+          type: string
+    scheme: file
+    title: Insira um título humanamente legível para este recurso.
+  - description: Insira a descrição/explicação detalhada deste recurso.
+    dialect:
+      delimiter: ;
+    encoding: utf-8-sig
+    format: csv
+    hashing: md5
+    name: notas_set25
+    path: data/notas_set25.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: orgao_emissor
+          type: string
+        - name: tipo_de_documento
+          type: string
+        - name: fornecedor_cnpj_cpf
+          type: string
+        - name: fornecedor_nome_empresarial
+          type: string
+        - name: numero
+          type: integer
+        - name: serie
+          type: string
+        - name: sequencial
+          type: integer
+        - name: situacao
+          type: string
+        - name: natureza
+          type: string
+        - name: indicador_de_orcamento
+          type: string
+        - name: data_de_emissao
+          type: date
+        - name: data_de_recebimento
+          type: date
+        - name: data_de_registro
+          type: date
+        - name: valor_total_com_impostos
+          type: string
+        - name: nota_fiscal_para_aglutinacao
+          type: string
+    scheme: file
+    title: Insira um título humanamente legível para este recurso.
+title: Portal_notas_fiscais
