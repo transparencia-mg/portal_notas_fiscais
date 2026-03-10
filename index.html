@@ -841,18 +841,18 @@
             const html = `
                 <div class="filter-container">
                     <div class="row g-3">
+                         <div class="col-md-2">
+                            <label class="filter-label"><i class="material-icons">event</i>Ano</label>
+                            <select class="form-select" id="filtroAnoVG">
+                                <option value="">Todos</option>
+                                ${anos.map(a => `<option value="${a}">${a}</option>`).join('')}
+                            </select>
+                        </div>
                         <div class="col-md-3">
                             <label class="filter-label"><i class="material-icons">business</i>Órgão</label>
                             <select class="form-select" id="filtroOrgaoVG">
                                 <option value="">Todos</option>
                                 ${orgaos.map(o => `<option value="${o}">${o}</option>`).join('')}
-                            </select>
-                        </div>
-                        <div class="col-md-2">
-                            <label class="filter-label"><i class="material-icons">event</i>Ano</label>
-                            <select class="form-select" id="filtroAnoVG">
-                                <option value="">Todos</option>
-                                ${anos.map(a => `<option value="${a}">${a}</option>`).join('')}
                             </select>
                         </div>
                         <div class="col-md-3">
@@ -868,13 +868,24 @@
                                 <option value="">Todos</option>
                                 ${indicadores.map(i => `<option value="${i}">${i}</option>`).join('')}
                             </select>
-                        </div>
-                        <div class="col-md-2 d-flex align-items-end gap-2">
-                            <button class="btn-pesquisa" onclick="aplicarFiltrosVG()"><i class="material-icons me-2">search</i>Pesquisar</button>
-                            <button class="btn-secondary-custom" onclick="limparFiltrosVG()"><i class="material-icons me-2">clear</i>Limpar</button>
-                        </div>
-                    </div>
-                </div>
+        </div>
+        <div class="col-md-2">
+            <!-- Espaço vazio para alinhamento com as colunas acima -->
+        </div>
+    </div>
+    
+    <!-- Linha separada para os botões -->
+    <div class="row mt-3">
+        <div class="col-12 d-flex justify-content-start gap-2">
+            <button class="btn-pesquisa" onclick="aplicarFiltrosVG()">
+                <i class="material-icons me-2">search</i>Pesquisar
+            </button>
+            <button class="btn-secondary-custom" onclick="limparFiltrosVG()">
+                <i class="material-icons me-2">clear</i>Limpar
+            </button>
+        </div>
+    </div>
+</div>
 
                 <div class="row mb-4">
                     <div class="col-md-3"><div class="metric-card"><div class="metric-label">Total de Registros</div><div class="metric-value">${dadosVisaoGeralFiltrados.length}</div></div></div>
@@ -1094,12 +1105,24 @@
                             <label class="filter-label"><i class="material-icons">receipt</i>Nº Nota</label>
                             <input type="text" class="form-control" id="buscaNumeroNota" placeholder="Número...">
                         </div>
-                        <div class="col-md-2 d-flex align-items-end gap-2">
-                            <button class="btn-pesquisa" onclick="aplicarFiltrosNotas()"><i class="material-icons me-2">search</i>Pesquisar</button>
-                            <button class="btn-secondary-custom" onclick="limparFiltrosNotas()"><i class="material-icons me-2">clear</i>Limpar</button>
-                        </div>
-                    </div>
-                </div>
+        </div>
+        <div class="col-md-2">
+            <!-- Espaço vazio para alinhamento com as colunas acima -->
+        </div>
+    </div>
+    
+    <!-- Linha separada para os botões -->
+    <div class="row mt-3">
+        <div class="col-12 d-flex justify-content-start gap-2">
+            <button class="btn-pesquisa" onclick="aplicarFiltrosVG()">
+                <i class="material-icons me-2">search</i>Pesquisar
+            </button>
+            <button class="btn-secondary-custom" onclick="limparFiltrosVG()">
+                <i class="material-icons me-2">clear</i>Limpar
+            </button>
+        </div>
+    </div>
+</div>
 
                 <div class="d-flex justify-content-between align-items-center mb-3">
                     <div class="d-flex gap-2">
@@ -1346,12 +1369,24 @@
                             <label class="filter-label"><i class="material-icons">search</i>Item</label>
                             <input type="text" class="form-control" id="buscaItem" placeholder="Código ou descrição...">
                         </div>
-                        <div class="col-md-2 d-flex align-items-end gap-2">
-                            <button class="btn-pesquisa" onclick="aplicarFiltrosItens()"><i class="material-icons me-2">search</i>Pesquisar</button>
-                            <button class="btn-secondary-custom" onclick="limparFiltrosItens()"><i class="material-icons me-2">clear</i>Limpar</button>
-                        </div>
-                    </div>
-                </div>
+        </div>
+        <div class="col-md-2">
+            <!-- Espaço vazio para alinhamento com as colunas acima -->
+        </div>
+    </div>
+    
+    <!-- Linha separada para os botões -->
+    <div class="row mt-3">
+        <div class="col-12 d-flex justify-content-start gap-2">
+            <button class="btn-pesquisa" onclick="aplicarFiltrosVG()">
+                <i class="material-icons me-2">search</i>Pesquisar
+            </button>
+            <button class="btn-secondary-custom" onclick="limparFiltrosVG()">
+                <i class="material-icons me-2">clear</i>Limpar
+            </button>
+        </div>
+    </div>
+</div>
 
                 <div class="d-flex justify-content-between align-items-center mb-3">
                     <div class="d-flex gap-2">
