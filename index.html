@@ -11,11 +11,10 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Bibliotecas para PDF e CSV -->
+    <!-- Bibliotecas para PDF -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.29/jspdf.plugin.autotable.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
 
     <style>
         /* ==================== VARIÁVEIS DE CORES ==================== */
@@ -32,10 +31,9 @@
 
         /* ==================== ESTILOS GERAIS ==================== */
         body {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Montserrat', 'Open Sans', sans-serif;
             background-color: var(--background-light);
             padding-bottom: 15px;
-            overflow-x: hidden;
         }
 
         /* ==================== DATA ATUALIZAÇÃO ==================== */
@@ -134,39 +132,6 @@
             margin-bottom: 6px;
             text-transform: uppercase;
             letter-spacing: 0.3px;
-        }
-
-        /* ==================== CONTAINER DE GRÁFICOS ==================== */
-        .chart-container {
-            background: white;
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
-            margin-bottom: 20px;
-            height: 100%;
-            min-height: 320px;
-        }
-        
-        .chart-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-            padding-bottom: 15px;
-            border-bottom: 2px solid var(--background-light);
-        }
-        
-        .chart-title {
-            font-size: 15px;
-            font-weight: 600;
-            color: var(--primary-dark);
-            margin: 0;
-        }
-        
-        .chart-wrapper {
-            position: relative;
-            height: 240px;
-            width: 100%;
         }
 
         /* ==================== TABELAS ==================== */
@@ -465,7 +430,6 @@
             border-radius: 6px !important;
             padding: 8px 12px !important;
             font-size: 13px !important;
-            width: 250px !important;
             background-color: white;
             color: var(--primary-dark);
         }
@@ -488,8 +452,8 @@
         
         .text-right { text-align: right; }
         .text-center { text-align: center; }
-        .sortable { cursor: pointer; }
-        .sortable:hover { color: var(--accent-red); }
+        .sortable-header { cursor: pointer; }
+        .sortable-header:hover { color: var(--accent-red); }
         
         /* Badge para indicador de orçamento */
         .badge-orcamentaria {
@@ -509,6 +473,12 @@
             font-size: 11px;
             font-weight: 600;
             white-space: nowrap;
+        }
+        
+        .sort-icon {
+            font-size: 16px;
+            margin-left: 4px;
+            vertical-align: middle;
         }
     </style>
 </head>
@@ -576,1047 +546,399 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         // ============================================
-        // CONFIGURAÇÕES E VARIÁVEIS GLOBAIS
+        // CONFIGURAÇÕES
         // ============================================
-        const NOTAS_CSV_URL = 'https://raw.githubusercontent.com/transparencia-mg/portal_notas_fiscais/refs/heads/main/dataset/data/notas_mar26.csv';
-        const ITENS_CSV_URL = 'https://raw.githubusercontent.com/transparencia-mg/portal_notas_fiscais/refs/heads/main/dataset/data/itensnota_mar26.csv';
+        const BASE_URL = 'https://raw.githubusercontent.com/transparencia-mg/portal_notas_fiscais/refs/heads/main/dataset/data/';
         
+        const meses = ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez'];
+        const anosDisponiveis = ['2026', '2025', '2024', '2023', '2022'];
+        
+        // Cache de dados por ano
+        const cacheNotas = {};
+        const cacheItens = {};
+        
+        // Estado atual dos dados
         let dadosNotas = [];
         let dadosItens = [];
         let dadosCompletosNF = [];
-
-        // Dados para Visão Geral
         let dadosVisaoGeral = [];
         let dadosVisaoGeralFiltrados = [];
-
-        // Dados para Consulta de Notas
         let todasNotas = [];
         let notasFiltradas = [];
-        
-        // Dados para Consulta de Itens
         let todosItens = [];
         let itensFiltrados = [];
 
-        // Variáveis de Paginação
-        let paginaAtualNotas = 1, itensPorPaginaNotas = 10, totalPaginasNotas = 1;
-        let paginaAtualItens = 1, itensPorPaginaItens = 10, totalPaginasItens = 1;
-        
-        // Controle de Ordenação
-        let sortConfigNotas = { column: 'data_de_emissao', direction: 'desc' };
-        let sortConfigItens = { column: 'item_da_nota_fiscal', direction: 'asc' };
+        // Ano atualmente carregado
+        let anoAtual = '2026';
+        let carregando = false;
 
-        const chartPalette = ['#1a3a5c','#2c5f8a','#3a7cb8','#5a9fd4','#7ab8e0','#9dd1ec','#bde4f5','#d4a017','#c0392b','#27ae60'];
+        // Paginação
+        let paginaAtualNotas = 1;
+        let itensPorPaginaNotas = 10;
+        let totalPaginasNotas = 1;
+        let paginaAtualItens = 1;
+        let itensPorPaginaItens = 10;
+        let totalPaginasItens = 1;
+        
+        // Ordenação
+        let sortConfigNotas = { column: 'data_de_emissao', direction: 'desc' };
+        let sortConfigItens = { column: 'data_emissao', direction: 'desc' };
 
         // ============================================
         // FUNÇÕES AUXILIARES
         // ============================================
         function formatarMoeda(valor) {
-            if (valor === undefined || valor === null) return 'R$ 0,00';
-            const num = parseFloat(valor) || 0;
-            return num.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL', minimumFractionDigits: 2 });
+            if (valor === undefined || valor === null || isNaN(valor)) return 'R$ 0,00';
+            return parseFloat(valor).toLocaleString('pt-BR', { 
+                style: 'currency', 
+                currency: 'BRL',
+                minimumFractionDigits: 2 
+            });
         }
 
         function formatarData(dataStr) {
-            if (!dataStr || dataStr === '') return '-';
-            // Tenta extrair data no formato YYYY-MM-DD
+            if (!dataStr) return '-';
             const match = dataStr.match(/(\d{4})-(\d{2})-(\d{2})/);
-            if (match) {
-                return `${match[3]}/${match[2]}/${match[1]}`;
-            }
-            return dataStr;
+            return match ? `${match[3]}/${match[2]}/${match[1]}` : dataStr;
         }
 
         function extrairAno(dataStr) {
-            if (!dataStr || dataStr === '') return null;
+            if (!dataStr) return null;
             const match = dataStr.match(/(\d{4})/);
             return match ? match[1] : null;
         }
 
-        function parseCSV(texto, delimiter = ';') {
-            const linhas = texto.trim().split('\n');
-            const cabecalhos = linhas[0].split(delimiter).map(h => h.trim().replace(/^\uFEFF/, '').replace(/^"/, '').replace(/"$/, ''));
+        function parseCSV(texto) {
+            const linhas = texto.split('\n').filter(l => l.trim());
+            if (linhas.length === 0) return [];
+            
+            const cabecalhos = linhas[0].split(';').map(h => h.trim().replace(/^\uFEFF/, ''));
             const dados = [];
             
             for (let i = 1; i < linhas.length; i++) {
                 if (!linhas[i].trim()) continue;
                 
-                // Lidar com aspas nos campos
-                let linha = linhas[i];
-                const valores = [];
-                let dentroAspas = false;
-                let valorAtual = '';
+                const valores = linhas[i].split(';');
+                const linha = {};
                 
-                for (let char of linha) {
-                    if (char === '"') {
-                        dentroAspas = !dentroAspas;
-                    } else if (char === delimiter && !dentroAspas) {
-                        valores.push(valorAtual);
-                        valorAtual = '';
-                    } else {
-                        valorAtual += char;
-                    }
-                }
-                valores.push(valorAtual);
-                
-                const linhaObj = {};
                 cabecalhos.forEach((cab, idx) => {
                     let valor = valores[idx] || '';
-                    // Remove aspas do início e fim se existirem
-                    valor = valor.replace(/^"/, '').replace(/"$/, '').trim();
+                    valor = valor.trim().replace(/^"/, '').replace(/"$/, '');
                     
-                    // Converte números
-                    if (cab.includes('valor') || cab.includes('Valor') || cab === 'total' || cab.includes('preco') || cab.includes('qtde')) {
+                    if (cab.includes('valor') || cab.includes('Valor') || cab.includes('qtde')) {
                         valor = parseFloat(valor.replace(',', '.')) || 0;
                     }
-                    linhaObj[cab] = valor;
+                    linha[cab] = valor;
                 });
-                dados.push(linhaObj);
+                
+                dados.push(linha);
             }
+            
             return dados;
         }
 
-        // ============================================
-        // CARREGAMENTO DE DADOS
-        // ============================================
-        async function carregarDados() {
-            mostrarLoading(true);
+        async function carregarDadosAno(ano, mostrarLoadingScreen = true) {
+            if (cacheNotas[ano] && cacheItens[ano]) {
+                console.log(`Usando cache para ${ano}`);
+                return {
+                    notas: cacheNotas[ano],
+                    itens: cacheItens[ano]
+                };
+            }
+
+            if (mostrarLoadingScreen) mostrarLoading(true);
+            
             try {
-                console.log('Carregando dados...');
+                console.log(`Carregando dados de ${ano}...`);
                 
-                const [resNotas, resItens] = await Promise.all([
-                    fetch(NOTAS_CSV_URL),
-                    fetch(ITENS_CSV_URL)
-                ]);
+                const arquivosNotas = [];
+                const arquivosItens = [];
                 
-                if (!resNotas.ok || !resItens.ok) {
-                    throw new Error('Erro ao carregar arquivos CSV');
-                }
-                
-                const textoNotas = await resNotas.text();
-                const textoItens = await resItens.text();
-                
-                console.log('Texto notas carregado, tamanho:', textoNotas.length);
-                console.log('Texto itens carregado, tamanho:', textoItens.length);
-                
-                dadosNotas = parseCSV(textoNotas);
-                dadosItens = parseCSV(textoItens);
-                
-                console.log('Notas carregadas:', dadosNotas.length);
-                console.log('Itens carregados:', dadosItens.length);
-                console.log('Primeira nota:', dadosNotas[0]);
-                console.log('Primeiro item:', dadosItens[0]);
-                
-                // Criar mapa de itens por nota
-                const itensPorNota = {};
-                dadosItens.forEach(item => {
-                    const chave = `${item.orgao_emissor}|${item.numero}|${item.serie || ''}|${item.sequencial || ''}`;
-                    if (!itensPorNota[chave]) itensPorNota[chave] = [];
-                    itensPorNota[chave].push(item);
+                meses.forEach(mes => {
+                    if (ano < '2026' || (ano === '2026' && ['jan', 'fev', 'mar'].includes(mes))) {
+                        arquivosNotas.push(`${BASE_URL}notas_${mes}${ano.slice(-2)}.csv`);
+                        arquivosItens.push(`${BASE_URL}itensnota_${mes}${ano.slice(-2)}.csv`);
+                    }
                 });
-                
-                // Enriquecer notas com itens e ano
-                dadosCompletosNF = dadosNotas.map(nota => ({
+
+                let notas = [];
+                for (let url of arquivosNotas) {
+                    try {
+                        const response = await fetch(url);
+                        if (response.ok) {
+                            const texto = await response.text();
+                            notas.push(...parseCSV(texto));
+                        }
+                    } catch (e) {}
+                }
+
+                let itens = [];
+                for (let url of arquivosItens) {
+                    try {
+                        const response = await fetch(url);
+                        if (response.ok) {
+                            const texto = await response.text();
+                            itens.push(...parseCSV(texto));
+                        }
+                    } catch (e) {}
+                }
+
+                notas = notas.map(nota => ({
                     ...nota,
                     ano: extrairAno(nota.data_de_emissao),
-                    numero_nota: `${nota.numero}${nota.serie ? '-'+nota.serie : ''}`,
-                    itens: itensPorNota[`${nota.orgao_emissor}|${nota.numero}|${nota.serie || ''}|${nota.sequencial || ''}`] || []
+                    numero_nota: `${nota.numero}${nota.serie ? '-'+nota.serie : ''}`
                 }));
 
-                // Preparar dados para visão geral - desmembrado
-                const mapaVisaoGeral = new Map();
+                cacheNotas[ano] = notas;
+                cacheItens[ano] = itens;
                 
-                dadosCompletosNF.forEach(nota => {
-                    if (!nota.valor_total_com_impostos) return;
-                    
-                    const natureza = nota.natureza || 'Não informado';
-                    const indicador = nota.indicador_de_orcamento || 'Não informado';
-                    const chave = `${nota.orgao_emissor}|${natureza}|${indicador}`;
-                    
-                    if (!mapaVisaoGeral.has(chave)) {
-                        mapaVisaoGeral.set(chave, {
-                            orgao: nota.orgao_emissor,
-                            natureza: natureza,
-                            indicador: indicador,
-                            total: 0,
-                            notas: []
-                        });
-                    }
-                    const registro = mapaVisaoGeral.get(chave);
-                    registro.total += parseFloat(nota.valor_total_com_impostos) || 0;
-                    registro.notas.push(nota);
-                });
+                return { notas, itens };
                 
-                dadosVisaoGeral = Array.from(mapaVisaoGeral.values()).sort((a, b) => b.total - a.total);
-                dadosVisaoGeralFiltrados = [...dadosVisaoGeral];
-                
-                // Preparar consulta de notas
-                todasNotas = dadosCompletosNF.sort((a, b) => {
-                    const dateA = a.data_de_emissao ? new Date(a.data_de_emissao) : new Date(0);
-                    const dateB = b.data_de_emissao ? new Date(b.data_de_emissao) : new Date(0);
-                    return dateB - dateA;
-                });
-                notasFiltradas = [...todasNotas];
-                
-                // Preparar consulta de itens com dados da nota
-                const mapaNotas = new Map();
-                dadosCompletosNF.forEach(nota => {
-                    const chave = `${nota.orgao_emissor}|${nota.numero}|${nota.serie || ''}|${nota.sequencial || ''}`;
-                    mapaNotas.set(chave, {
-                        natureza: nota.natureza,
-                        ano: nota.ano,
-                        fornecedor: nota.fornecedor_nome_empresarial,
-                        data_emissao: nota.data_de_emissao
-                    });
-                });
-                
-                todosItens = dadosItens.map(item => {
-                    const chave = `${item.orgao_emissor}|${item.numero}|${item.serie || ''}|${item.sequencial || ''}`;
-                    const notaInfo = mapaNotas.get(chave) || {};
-                    return {
-                        ...item,
-                        ano: notaInfo.ano,
-                        natureza: notaInfo.natureza,
-                        fornecedor_nome: notaInfo.fornecedor,
-                        data_emissao: notaInfo.data_emissao,
-                        chave_nota: chave
-                    };
-                }).sort((a, b) => {
-                    const dateA = a.data_emissao ? new Date(a.data_emissao) : new Date(0);
-                    const dateB = b.data_emissao ? new Date(b.data_emissao) : new Date(0);
-                    return dateB - dateA;
-                });
-                itensFiltrados = [...todosItens];
-                
-                console.log('Dados processados com sucesso');
-                console.log('Total registros visão geral:', dadosVisaoGeral.length);
-                console.log('Total notas:', todasNotas.length);
-                console.log('Total itens:', todosItens.length);
-                
-                // Renderizar tudo
+            } catch (error) {
+                console.error(`Erro ao carregar ${ano}:`, error);
+                return { notas: [], itens: [] };
+            } finally {
+                if (mostrarLoadingScreen) mostrarLoading(false);
+            }
+        }
+
+        async function carregarAnoInicial() {
+            mostrarLoading(true);
+            try {
+                const { notas, itens } = await carregarDadosAno('2026', false);
+                dadosNotas = notas;
+                dadosItens = itens;
+                processarDados();
                 renderizarVisaoGeral();
                 renderizarConsultaNotas();
                 renderizarConsultaItens();
                 renderizarDownloads();
-                
-                // Atualizar data
-                setupAtualizacaoData();
-                
-            } catch (erro) {
-                console.error('Erro detalhado:', erro);
-                showError('Erro ao carregar dados: ' + erro.message);
+                document.getElementById('data-atualizacao-header').textContent = new Date().toLocaleString('pt-BR');
+            } catch (error) {
+                console.error('Erro:', error);
             } finally {
                 mostrarLoading(false);
             }
         }
 
-        function setupAtualizacaoData() {
-            const now = new Date();
-            document.getElementById('data-atualizacao-header').textContent = 
-                now.toLocaleDateString('pt-BR') + ' ' + now.toLocaleTimeString('pt-BR');
+        async function alterarAno(ano, componente) {
+            if (ano === anoAtual || carregando) return;
+            carregando = true;
+            mostrarLoading(true);
+            
+            try {
+                const { notas, itens } = await carregarDadosAno(ano, false);
+                anoAtual = ano;
+                dadosNotas = notas;
+                dadosItens = itens;
+                processarDados();
+                
+                if (componente === 'vg') renderizarVisaoGeral();
+                else if (componente === 'notas') renderizarConsultaNotas();
+                else if (componente === 'itens') renderizarConsultaItens();
+                
+            } finally {
+                carregando = false;
+                mostrarLoading(false);
+            }
+        }
+
+        function processarDados() {
+            const itensPorNota = {};
+            dadosItens.forEach(item => {
+                const chave = `${item.orgao_emissor}|${item.numero}|${item.serie || ''}|${item.sequencial || ''}`;
+                if (!itensPorNota[chave]) itensPorNota[chave] = [];
+                itensPorNota[chave].push(item);
+            });
+            
+            dadosCompletosNF = dadosNotas.map(nota => ({
+                ...nota,
+                itens: itensPorNota[`${nota.orgao_emissor}|${nota.numero}|${nota.serie || ''}|${nota.sequencial || ''}`] || []
+            }));
+            
+            const mapaVG = new Map();
+            dadosCompletosNF.forEach(nota => {
+                if (!nota.valor_total_com_impostos) return;
+                const natureza = nota.natureza || 'Não informado';
+                const indicador = nota.indicador_de_orcamento || 'Não informado';
+                const chave = `${nota.orgao_emissor}|${natureza}|${indicador}`;
+                
+                if (!mapaVG.has(chave)) {
+                    mapaVG.set(chave, {
+                        orgao: nota.orgao_emissor,
+                        natureza: natureza,
+                        indicador: indicador,
+                        total: 0,
+                        notas: []
+                    });
+                }
+                const reg = mapaVG.get(chave);
+                reg.total += parseFloat(nota.valor_total_com_impostos) || 0;
+                reg.notas.push(nota);
+            });
+            
+            dadosVisaoGeral = Array.from(mapaVG.values());
+            dadosVisaoGeralFiltrados = [...dadosVisaoGeral];
+            todasNotas = [...dadosCompletosNF];
+            notasFiltradas = [...todasNotas];
+            
+            const mapaNotas = new Map();
+            dadosCompletosNF.forEach(nota => {
+                const chave = `${nota.orgao_emissor}|${nota.numero}|${nota.serie || ''}|${nota.sequencial || ''}`;
+                mapaNotas.set(chave, {
+                    natureza: nota.natureza,
+                    ano: nota.ano,
+                    fornecedor: nota.fornecedor_nome_empresarial,
+                    data_emissao: nota.data_de_emissao
+                });
+            });
+            
+            todosItens = dadosItens.map(item => {
+                const chave = `${item.orgao_emissor}|${item.numero}|${item.serie || ''}|${item.sequencial || ''}`;
+                const notaInfo = mapaNotas.get(chave) || {};
+                return {
+                    ...item,
+                    ano: notaInfo.ano,
+                    natureza: notaInfo.natureza,
+                    fornecedor_nome: notaInfo.fornecedor,
+                    data_emissao: notaInfo.data_emissao,
+                    chave_nota: chave
+                };
+            });
+            
+            itensFiltrados = [...todosItens];
         }
 
         function mostrarLoading(show) {
             document.getElementById('loadingOverlay').style.display = show ? 'flex' : 'none';
         }
 
-        function showError(message) {
-            const errorDiv = document.createElement('div');
-            errorDiv.className = 'alert alert-danger alert-dismissible fade show';
-            errorDiv.innerHTML = `<i class="material-icons me-2">warning</i>${message}<button type="button" class="btn-close" data-bs-dismiss="alert"></button>`;
-            document.querySelector('.container-fluid').prepend(errorDiv);
-            setTimeout(() => errorDiv.remove(), 5000);
+        function getSortIcon(column, config) {
+            if (config.column !== column) return 'unfold_more';
+            return config.direction === 'asc' ? 'arrow_upward' : 'arrow_downward';
         }
 
         // ============================================
-        // RENDERIZAÇÃO VISÃO GERAL
+        // COMPARTILHAMENTO
         // ============================================
-        function renderizarVisaoGeral() {
-            const orgaos = [...new Set(dadosVisaoGeral.map(o => o.orgao))].sort();
-            const naturezas = [...new Set(dadosVisaoGeral.map(o => o.natureza))].filter(Boolean).sort();
-            const indicadores = [...new Set(dadosVisaoGeral.map(o => o.indicador))].filter(Boolean).sort();
-            const anos = [...new Set(dadosCompletosNF.map(n => n.ano))].filter(Boolean).sort().reverse();
-            
-            const totalGeral = dadosVisaoGeralFiltrados.reduce((acc, item) => acc + item.total, 0);
-            
-            const html = `
-                <div class="filter-container">
-                    <div class="row g-3">
-                         <div class="col-md-2">
-                            <label class="filter-label"><i class="material-icons">event</i>Ano</label>
-                            <select class="form-select" id="filtroAnoVG">
-                                <option value="">Todos</option>
-                                ${anos.map(a => `<option value="${a}">${a}</option>`).join('')}
-                            </select>
-                        </div>
-                        <div class="col-md-3">
-                            <label class="filter-label"><i class="material-icons">business</i>Órgão</label>
-                            <select class="form-select" id="filtroOrgaoVG">
-                                <option value="">Todos</option>
-                                ${orgaos.map(o => `<option value="${o}">${o}</option>`).join('')}
-                            </select>
-                        </div>
-                        <div class="col-md-3">
-                            <label class="filter-label"><i class="material-icons">category</i>Natureza</label>
-                            <select class="form-select" id="filtroNaturezaVG">
-                                <option value="">Todas</option>
-                                ${naturezas.map(n => `<option value="${n}">${n}</option>`).join('')}
-                            </select>
-                        </div>
-                        <div class="col-md-2">
-                            <label class="filter-label"><i class="material-icons">account_balance</i>Indicador</label>
-                            <select class="form-select" id="filtroIndicadorVG">
-                                <option value="">Todos</option>
-                                ${indicadores.map(i => `<option value="${i}">${i}</option>`).join('')}
-                            </select>
-        </div>
-        <div class="col-md-2">
-            <!-- Espaço vazio para alinhamento com as colunas acima -->
-        </div>
-    </div>
-    
-    <!-- Linha separada para os botões -->
-    <div class="row mt-3">
-        <div class="col-12 d-flex justify-content-start gap-2">
-            <button class="btn-pesquisa" onclick="aplicarFiltrosVG()">
-                <i class="material-icons me-2">search</i>Pesquisar
-            </button>
-            <button class="btn-secondary-custom" onclick="limparFiltrosVG()">
-                <i class="material-icons me-2">clear</i>Limpar
-            </button>
-        </div>
-    </div>
-</div>
-
-                <div class="row mb-4">
-                    <div class="col-md-3"><div class="metric-card"><div class="metric-label">Total de Registros</div><div class="metric-value">${dadosVisaoGeralFiltrados.length}</div></div></div>
-                    <div class="col-md-3"><div class="metric-card"><div class="metric-label">Total de Notas</div><div class="metric-value">${dadosCompletosNF.length.toLocaleString()}</div></div></div>
-                    <div class="col-md-3"><div class="metric-card"><div class="metric-label">Valor Total</div><div class="metric-value">${formatarMoeda(totalGeral)}</div></div></div>
-                    <div class="col-md-3"><div class="metric-card"><div class="metric-label">Média por Registro</div><div class="metric-value">${formatarMoeda(totalGeral / (dadosVisaoGeralFiltrados.length || 1))}</div></div></div>
-                </div>
-
-                <div class="row mb-4">
-                    <div class="col-md-6"><div class="chart-container"><div class="chart-header"><h4 class="chart-title">Top 10 Órgãos por Valor</h4></div><div class="chart-wrapper"><canvas id="chartOrgaosVG"></canvas></div></div></div>
-                    <div class="col-md-6"><div class="chart-container"><div class="chart-header"><h4 class="chart-title">Distribuição por Indicador</h4></div><div class="chart-wrapper"><canvas id="chartIndicadorVG"></canvas></div></div></div>
-                </div>
-
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                    <div class="d-flex gap-2">
-                        <button class="btn-export" onclick="exportarTabelaVGCSV()"><i class="material-icons me-2">description</i>CSV</button>
-                        <button class="btn-export" onclick="exportarTabelaVGPDF()"><i class="material-icons me-2">print</i>PDF</button>
-                        <div class="share-dropdown">
-                            <button class="btn-export" onclick="toggleShare(1)"><i class="material-icons me-2">share</i>Compartilhar</button>
-                            <div class="share-options" id="shareOptions1">${opcoesCompartilhamento(1)}</div>
-                        </div>
-                    </div>
-                    <span class="table-badge">${dadosVisaoGeralFiltrados.length} registros</span>
-                </div>
-
-                <div class="table-container">
-                    <div class="table-fixed-header-container">
-                        <table class="table">
-                            <thead><tr>
-                                <th>Órgão</th>
-                                <th>Natureza</th>
-                                <th>Indicador de Orçamento</th>
-                                <th class="text-right">Valor Total</th>
-                                <th class="text-center">Ações</th>
-                            </tr></thead>
-                            <tbody>${gerarLinhasTabelaVG()}</tbody>
-                            <tfoot><tr>
-                                <td colspan="3" class="fw-bold">Total Geral</td>
-                                <td class="text-right fw-bold">${formatarMoeda(totalGeral)}</td>
-                                <td></td>
-                            </tr></tfoot>
-                        </table>
-                    </div>
-                </div>
+        function opcoesCompartilhamento(id) {
+            return `
+                <a href="#" onclick="copiarLink(event,${id})"><i class="fas fa-link"></i> Copiar Link</a>
+                <a href="#" onclick="compartilharFacebook(event,${id})"><i class="fab fa-facebook-f"></i> Facebook</a>
+                <a href="#" onclick="compartilharTwitter(event,${id})"><i class="fab fa-twitter"></i> Twitter</a>
+                <a href="#" onclick="compartilharLinkedIn(event,${id})"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+                <a href="#" onclick="compartilharWhatsApp(event,${id})"><i class="fab fa-whatsapp"></i> WhatsApp</a>
             `;
-            
-            document.getElementById('visao-geral-content').innerHTML = html;
-            criarGraficosVG();
         }
 
-        function gerarLinhasTabelaVG() {
-            return dadosVisaoGeralFiltrados.map(o => {
-                const badgeClass = o.indicador.toLowerCase().includes('orçamentária') ? 'badge-orcamentaria' : 'badge-extra';
-                return `<tr>
-                    <td><a href="#" class="orgao-link" onclick="irParaConsultaNotas('${o.orgao.replace(/'/g, "\\'")}')">${o.orgao}</a></td>
-                    <td>${o.natureza}</td>
-                    <td><span class="${badgeClass}">${o.indicador}</span></td>
-                    <td class="text-right">${formatarMoeda(o.total)}</td>
-                    <td class="text-center"><button class="btn-action" onclick="irParaConsultaNotas('${o.orgao.replace(/'/g, "\\'")}')"><i class="material-icons">visibility</i></button></td>
-                </tr>`;
-            }).join('');
-        }
-
-        function criarGraficosVG() {
-            setTimeout(() => {
-                // Gráfico de Órgãos
-                const ctxOrgaos = document.getElementById('chartOrgaosVG')?.getContext('2d');
-                if (ctxOrgaos) {
-                    const orgaosAgrupados = {};
-                    dadosVisaoGeralFiltrados.forEach(item => {
-                        orgaosAgrupados[item.orgao] = (orgaosAgrupados[item.orgao] || 0) + item.total;
-                    });
-                    
-                    const topOrgaos = Object.entries(orgaosAgrupados)
-                        .sort((a, b) => b[1] - a[1])
-                        .slice(0, 10);
-                    
-                    new Chart(ctxOrgaos, {
-                        type: 'bar',
-                        data: { 
-                            labels: topOrgaos.map(o => o[0].split('-')[0].trim()), 
-                            datasets: [{ 
-                                label: 'Valor Total', 
-                                data: topOrgaos.map(o => o[1]), 
-                                backgroundColor: chartPalette 
-                            }] 
-                        },
-                        options: { 
-                            responsive: true, 
-                            maintainAspectRatio: false,
-                            plugins: { 
-                                tooltip: { 
-                                    callbacks: { 
-                                        label: ctx => formatarMoeda(ctx.raw) 
-                                    } 
-                                } 
-                            }
-                        }
-                    });
-                }
-                
-                // Gráfico de Indicadores
-                const ctxIndicador = document.getElementById('chartIndicadorVG')?.getContext('2d');
-                if (ctxIndicador) {
-                    const indicadorCount = {};
-                    dadosVisaoGeralFiltrados.forEach(item => {
-                        indicadorCount[item.indicador] = (indicadorCount[item.indicador] || 0) + item.total;
-                    });
-                    
-                    new Chart(ctxIndicador, {
-                        type: 'pie',
-                        data: { 
-                            labels: Object.keys(indicadorCount), 
-                            datasets: [{ 
-                                data: Object.values(indicadorCount), 
-                                backgroundColor: chartPalette 
-                            }] 
-                        },
-                        options: { 
-                            responsive: true, 
-                            maintainAspectRatio: false,
-                            plugins: { 
-                                legend: { position: 'bottom' },
-                                tooltip: {
-                                    callbacks: {
-                                        label: ctx => `${ctx.label}: ${formatarMoeda(ctx.raw)}`
-                                    }
-                                }
-                            } 
-                        }
-                    });
-                }
-            }, 100);
-        }
-
-        window.aplicarFiltrosVG = function() {
-            const orgao = document.getElementById('filtroOrgaoVG')?.value;
-            const ano = document.getElementById('filtroAnoVG')?.value;
-            const natureza = document.getElementById('filtroNaturezaVG')?.value;
-            const indicador = document.getElementById('filtroIndicadorVG')?.value;
-            
-            dadosVisaoGeralFiltrados = dadosVisaoGeral.filter(item => {
-                if (orgao && !item.orgao.includes(orgao)) return false;
-                if (natureza && item.natureza !== natureza) return false;
-                if (indicador && item.indicador !== indicador) return false;
-                
-                if (ano) {
-                    const notasDoRegistro = item.notas || [];
-                    const temNotaNoAno = notasDoRegistro.some(nota => extrairAno(nota.data_de_emissao) === ano);
-                    if (!temNotaNoAno) return false;
-                }
-                
-                return true;
-            });
-            
-            renderizarVisaoGeral();
+        window.toggleShare = function(id) {
+            document.querySelectorAll('.share-options').forEach(opt => opt.classList.remove('show'));
+            document.getElementById(`shareOptions${id}`)?.classList.toggle('show');
         };
 
-        window.limparFiltrosVG = function() {
-            document.getElementById('filtroOrgaoVG').value = '';
-            document.getElementById('filtroAnoVG').value = '';
-            document.getElementById('filtroNaturezaVG').value = '';
-            document.getElementById('filtroIndicadorVG').value = '';
-            dadosVisaoGeralFiltrados = [...dadosVisaoGeral];
-            renderizarVisaoGeral();
+        window.copiarLink = function(e, id) { 
+            e.preventDefault(); 
+            navigator.clipboard.writeText(window.location.href).then(() => alert('Link copiado!')); 
+            document.getElementById(`shareOptions${id}`).classList.remove('show'); 
         };
-
-        window.irParaConsultaNotas = function(orgao) {
-            document.getElementById('consulta-notas-tab').click();
-            setTimeout(() => {
-                const filtroOrgao = document.getElementById('filtroOrgaoNotas');
-                if (filtroOrgao) { 
-                    filtroOrgao.value = orgao; 
-                    aplicarFiltrosNotas(); 
-                }
-            }, 300);
+        
+        window.compartilharFacebook = function(e, id) { 
+            e.preventDefault(); 
+            window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`, '_blank'); 
+            document.getElementById(`shareOptions${id}`).classList.remove('show'); 
         };
-
-        // ============================================
-        // RENDERIZAÇÃO CONSULTA DE NOTAS
-        // ============================================
-        function renderizarConsultaNotas() {
-            const orgaos = [...new Set(todasNotas.map(n => n.orgao_emissor))].sort();
-            const naturezas = [...new Set(todasNotas.map(n => n.natureza))].filter(Boolean).sort();
-            const anos = [...new Set(todasNotas.map(n => n.ano))].filter(Boolean).sort().reverse();
-            
-            const container = document.getElementById('consulta-notas-content');
-            container.innerHTML = `
-                <div class="filter-container">
-                    <div class="row g-3">
-                        <div class="col-md-2">
-                            <label class="filter-label"><i class="material-icons">business</i>Órgão</label>
-                            <select class="form-select" id="filtroOrgaoNotas">
-                                <option value="">Todos</option>
-                                ${orgaos.map(o => `<option value="${o}">${o}</option>`).join('')}
-                            </select>
-                        </div>
-                        <div class="col-md-1">
-                            <label class="filter-label"><i class="material-icons">event</i>Ano</label>
-                            <select class="form-select" id="filtroAnoNotas">
-                                <option value="">Todos</option>
-                                ${anos.map(a => `<option value="${a}">${a}</option>`).join('')}
-                            </select>
-                        </div>
-                        <div class="col-md-2">
-                            <label class="filter-label"><i class="material-icons">category</i>Natureza</label>
-                            <select class="form-select" id="filtroNaturezaNotas">
-                                <option value="">Todas</option>
-                                ${naturezas.map(n => `<option value="${n}">${n}</option>`).join('')}
-                            </select>
-                        </div>
-                        <div class="col-md-3">
-                            <label class="filter-label"><i class="material-icons">person</i>Fornecedor</label>
-                            <input type="text" class="form-control" id="buscaFornecedorNotas" placeholder="Nome ou CNPJ...">
-                        </div>
-                        <div class="col-md-2">
-                            <label class="filter-label"><i class="material-icons">receipt</i>Nº Nota</label>
-                            <input type="text" class="form-control" id="buscaNumeroNota" placeholder="Número...">
-                        </div>
-        </div>
-        <div class="col-md-2">
-            <!-- Espaço vazio para alinhamento com as colunas acima -->
-        </div>
-    </div>
-    
-    <!-- Linha separada para os botões -->
-    <div class="row mt-3">
-        <div class="col-12 d-flex justify-content-start gap-2">
-            <button class="btn-pesquisa" onclick="aplicarFiltrosVG()">
-                <i class="material-icons me-2">search</i>Pesquisar
-            </button>
-            <button class="btn-secondary-custom" onclick="limparFiltrosVG()">
-                <i class="material-icons me-2">clear</i>Limpar
-            </button>
-        </div>
-    </div>
-</div>
-
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                    <div class="d-flex gap-2">
-                        <button class="btn-export" onclick="exportarTabelaNotasCSV()"><i class="material-icons me-2">description</i>CSV</button>
-                        <button class="btn-export" onclick="exportarTabelaNotasPDF()"><i class="material-icons me-2">print</i>PDF</button>
-                        <div class="share-dropdown">
-                            <button class="btn-export" onclick="toggleShare(2)"><i class="material-icons me-2">share</i>Compartilhar</button>
-                            <div class="share-options" id="shareOptions2">${opcoesCompartilhamento(2)}</div>
-                        </div>
-                    </div>
-                    <div class="d-flex align-items-center gap-3">
-                        <span class="table-badge" id="totalNotasBadge">${notasFiltradas.length} notas</span>
-                        <select class="items-per-page" id="itensPorPaginaNotas" onchange="alterarItensPorPaginaNotas()">
-                            <option value="5">5</option><option value="10" selected>10</option><option value="20">20</option><option value="50">50</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="table-container">
-                    <div class="table-fixed-header-container">
-                        <table class="table" id="tabelaNotas">
-                            <thead><tr>
-                                <th class="sortable" onclick="ordenarNotas('orgao_emissor')">Órgão</th>
-                                <th class="sortable" onclick="ordenarNotas('numero_nota')">Número NF</th>
-                                <th class="sortable" onclick="ordenarNotas('fornecedor_nome_empresarial')">Fornecedor</th>
-                                <th class="sortable" onclick="ordenarNotas('fornecedor_cnpj_cpf')">CNPJ/CPF</th>
-                                <th>Natureza</th>
-                                <th>Indicador</th>
-                                <th class="sortable text-right" onclick="ordenarNotas('valor_total_com_impostos')">Valor Total</th>
-                                <th class="text-center">Ações</th>
-                            </tr></thead>
-                            <tbody id="tabelaNotasBody"></tbody>
-                        </table>
-                    </div>
-                    <div class="pagination-container" id="paginacaoNotas"></div>
-                </div>
-            `;
-            
-            aplicarFiltrosNotas();
-        }
-
-        function gerarLinhasTabelaNotas(notas) {
-            return notas.map(n => {
-                const badgeClass = n.indicador_de_orcamento?.toLowerCase().includes('orçamentária') ? 'badge-orcamentaria' : 'badge-extra';
-                return `<tr>
-                    <td>${n.orgao_emissor || '-'}</td>
-                    <td>${n.numero_nota || '-'}</td>
-                    <td>${n.fornecedor_nome_empresarial || '-'}</td>
-                    <td>${n.fornecedor_cnpj_cpf || '-'}</td>
-                    <td>${n.natureza || '-'}</td>
-                    <td><span class="${badgeClass}">${n.indicador_de_orcamento || '-'}</span></td>
-                    <td class="text-right">${formatarMoeda(n.valor_total_com_impostos)}</td>
-                    <td class="text-center"><button class="btn-action" onclick="verDetalhesNota('${n.orgao_emissor?.replace(/'/g, "\\'")}', '${n.numero}', '${n.serie || ''}', '${n.sequencial || ''}')"><i class="material-icons">receipt</i></button></td>
-                </tr>`;
-            }).join('');
-        }
-
-        window.verDetalhesNota = function(orgao, numero, serie, sequencial) {
-            const nota = dadosCompletosNF.find(n => 
-                n.orgao_emissor === orgao && 
-                String(n.numero) === String(numero) && 
-                String(n.serie || '') === String(serie || '') && 
-                String(n.sequencial || '') === String(sequencial || '')
-            );
-            
-            if (!nota) {
-                showError('Nota fiscal não encontrada.');
-                return;
-            }
-            
-            const itens = nota.itens || [];
-            const totalItens = itens.reduce((acc, i) => acc + (parseFloat(i.valor_total_r) || 0), 0);
-            
-            document.getElementById('modalContent').innerHTML = `
-                <div class="row">
-                    <div class="col-md-6"><div class="info-card primary"><div class="info-label">Fornecedor</div><div class="info-value highlight">${nota.fornecedor_nome_empresarial || '-'}</div><div class="info-label mt-2">CNPJ/CPF</div><div class="info-value">${nota.fornecedor_cnpj_cpf || '-'}</div></div></div>
-                    <div class="col-md-6"><div class="info-card"><div class="info-label">Nota Fiscal</div><div class="info-value">${nota.numero}${nota.serie ? ' Série '+nota.serie : ''} - Seq ${nota.sequencial || ''}</div><div class="info-label mt-2">Órgão</div><div class="info-value">${nota.orgao_emissor || '-'}</div></div></div>
-                </div>
-                <div class="row">
-                    <div class="col-md-3"><div class="info-card"><div class="info-label">Valor Total</div><div class="info-value highlight">${formatarMoeda(nota.valor_total_com_impostos)}</div></div></div>
-                    <div class="col-md-3"><div class="info-card"><div class="info-label">Data Emissão</div><div class="info-value">${formatarData(nota.data_de_emissao)}</div></div></div>
-                    <div class="col-md-3"><div class="info-card"><div class="info-label">Natureza</div><div class="info-value">${nota.natureza || '-'}</div></div></div>
-                    <div class="col-md-3"><div class="info-card"><div class="info-label">Indicador</div><div class="info-value">${nota.indicador_de_orcamento || '-'}</div></div></div>
-                </div>
-                <div class="row">
-                    <div class="col-md-3"><div class="info-card"><div class="info-label">Data Recebimento</div><div class="info-value">${formatarData(nota.data_de_recebimento)}</div></div></div>
-                    <div class="col-md-3"><div class="info-card"><div class="info-label">Data Registro</div><div class="info-value">${formatarData(nota.data_de_registro)}</div></div></div>
-                    <div class="col-md-3"><div class="info-card"><div class="info-label">Situação</div><div class="info-value">${nota.situacao || '-'}</div></div></div>
-                    <div class="col-md-3"><div class="info-card"><div class="info-label">Tipo Documento</div><div class="info-value">${nota.tipo_de_documento || '-'}</div></div></div>
-                </div>
-                <h6 class="mt-4 fw-bold">Itens da Nota (${itens.length})</h6>
-                <div style="max-height:250px; overflow-y:auto;">
-                    <table class="table table-sm table-striped">
-                        <thead><tr>
-                            <th>Item</th>
-                            <th>Código</th>
-                            <th>Descrição</th>
-                            <th class="text-right">Qtde</th>
-                            <th class="text-right">Unitário</th>
-                            <th class="text-right">Total</th>
-                        </tr></thead>
-                        <tbody>
-                            ${itens.map(i => `<tr>
-                                <td>${i.item_da_nota_fiscal || '-'}</td>
-                                <td>${i.codigo_do_item || '-'}</td>
-                                <td>${(i.desc_do_item_de_material || '').substring(0,80)}...</td>
-                                <td class="text-right">${(parseFloat(i.qtde_na_nota_fiscal) || 0).toLocaleString('pt-BR')}</td>
-                                <td class="text-right">${formatarMoeda(i.valor_unitario_r)}</td>
-                                <td class="text-right">${formatarMoeda(i.valor_total_r)}</td>
-                            </tr>`).join('')}
-                        </tbody>
-                        <tfoot><tr>
-                            <td colspan="5" class="fw-bold">Total dos Itens</td>
-                            <td class="text-right fw-bold">${formatarMoeda(totalItens)}</td>
-                        </tr></tfoot>
-                    </table>
-                </div>
-            `;
-            new bootstrap.Modal(document.getElementById('detailModal')).show();
+        
+        window.compartilharTwitter = function(e, id) { 
+            e.preventDefault(); 
+            window.open(`https://twitter.com/intent/tweet?url=${encodeURIComponent(window.location.href)}&text=Dashboard de Notas Fiscais`, '_blank'); 
+            document.getElementById(`shareOptions${id}`).classList.remove('show'); 
         };
-
-        function aplicarFiltrosNotas() {
-            const orgao = document.getElementById('filtroOrgaoNotas')?.value;
-            const ano = document.getElementById('filtroAnoNotas')?.value;
-            const natureza = document.getElementById('filtroNaturezaNotas')?.value;
-            const buscaFornecedor = (document.getElementById('buscaFornecedorNotas')?.value || '').toLowerCase();
-            const buscaNumero = (document.getElementById('buscaNumeroNota')?.value || '').toLowerCase();
-            
-            notasFiltradas = todasNotas.filter(n => {
-                if (orgao && !n.orgao_emissor?.includes(orgao)) return false;
-                if (ano && n.ano !== ano) return false;
-                if (natureza && n.natureza !== natureza) return false;
-                if (buscaFornecedor && !(n.fornecedor_nome_empresarial?.toLowerCase().includes(buscaFornecedor) || n.fornecedor_cnpj_cpf?.includes(buscaFornecedor))) return false;
-                if (buscaNumero && !n.numero_nota?.toLowerCase().includes(buscaNumero)) return false;
-                return true;
-            });
-            
-            paginaAtualNotas = 1;
-            ordenarNotas(sortConfigNotas.column);
-        }
-
-        window.ordenarNotas = function(coluna) {
-            if (sortConfigNotas.column === coluna) {
-                sortConfigNotas.direction = sortConfigNotas.direction === 'asc' ? 'desc' : 'asc';
-            } else {
-                sortConfigNotas.column = coluna;
-                sortConfigNotas.direction = 'asc';
-            }
-            
-            const sorted = [...notasFiltradas].sort((a, b) => {
-                let valA = a[coluna] !== undefined ? a[coluna] : '';
-                let valB = b[coluna] !== undefined ? b[coluna] : '';
-                
-                if (coluna === 'valor_total_com_impostos') {
-                    valA = parseFloat(valA) || 0;
-                    valB = parseFloat(valB) || 0;
-                } else {
-                    valA = String(valA).toLowerCase();
-                    valB = String(valB).toLowerCase();
-                }
-                
-                if (valA < valB) return sortConfigNotas.direction === 'asc' ? -1 : 1;
-                if (valA > valB) return sortConfigNotas.direction === 'asc' ? 1 : -1;
-                return 0;
-            });
-            
-            notasFiltradas = sorted;
-            atualizarTabelaNotas();
+        
+        window.compartilharLinkedIn = function(e, id) { 
+            e.preventDefault(); 
+            window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(window.location.href)}`, '_blank'); 
+            document.getElementById(`shareOptions${id}`).classList.remove('show'); 
         };
-
-        function atualizarTabelaNotas() {
-            const inicio = (paginaAtualNotas - 1) * itensPorPaginaNotas;
-            const fim = Math.min(inicio + itensPorPaginaNotas, notasFiltradas.length);
-            const dadosPagina = notasFiltradas.slice(inicio, fim);
-            
-            document.getElementById('tabelaNotasBody').innerHTML = gerarLinhasTabelaNotas(dadosPagina);
-            document.getElementById('totalNotasBadge').innerText = notasFiltradas.length + ' notas';
-            
-            totalPaginasNotas = Math.ceil(notasFiltradas.length / itensPorPaginaNotas);
-            renderizarPaginacao('paginacaoNotas', paginaAtualNotas, totalPaginasNotas, 'mudarPaginaNotas');
-        }
-
-        window.mudarPaginaNotas = function(pagina) {
-            if (pagina < 1 || pagina > totalPaginasNotas) return;
-            paginaAtualNotas = pagina;
-            atualizarTabelaNotas();
+        
+        window.compartilharWhatsApp = function(e, id) { 
+            e.preventDefault(); 
+            window.open(`https://wa.me/?text=${encodeURIComponent('Dashboard de Notas Fiscais ' + window.location.href)}`, '_blank'); 
+            document.getElementById(`shareOptions${id}`).classList.remove('show'); 
         };
-
-        window.alterarItensPorPaginaNotas = function() {
-            itensPorPaginaNotas = parseInt(document.getElementById('itensPorPaginaNotas').value);
-            paginaAtualNotas = 1;
-            atualizarTabelaNotas();
-        };
-
-        window.limparFiltrosNotas = function() {
-            document.getElementById('filtroOrgaoNotas').value = '';
-            document.getElementById('filtroAnoNotas').value = '';
-            document.getElementById('filtroNaturezaNotas').value = '';
-            document.getElementById('buscaFornecedorNotas').value = '';
-            document.getElementById('buscaNumeroNota').value = '';
-            notasFiltradas = [...todasNotas];
-            paginaAtualNotas = 1;
-            ordenarNotas('data_de_emissao');
-        };
-
-        // ============================================
-        // RENDERIZAÇÃO CONSULTA DE ITENS
-        // ============================================
-        function renderizarConsultaItens() {
-            const orgaos = [...new Set(todosItens.map(i => i.orgao_emissor))].sort();
-            const naturezas = [...new Set(todosItens.map(i => i.natureza))].filter(Boolean).sort();
-            const anos = [...new Set(todosItens.map(i => i.ano))].filter(Boolean).sort().reverse();
-            
-            const container = document.getElementById('consulta-itens-content');
-            container.innerHTML = `
-                <div class="filter-container">
-                    <div class="row g-3">
-                        <div class="col-md-2">
-                            <label class="filter-label"><i class="material-icons">business</i>Órgão</label>
-                            <select class="form-select" id="filtroOrgaoItens">
-                                <option value="">Todos</option>
-                                ${orgaos.map(o => `<option value="${o}">${o}</option>`).join('')}
-                            </select>
-                        </div>
-                        <div class="col-md-1">
-                            <label class="filter-label"><i class="material-icons">event</i>Ano</label>
-                            <select class="form-select" id="filtroAnoItens">
-                                <option value="">Todos</option>
-                                ${anos.map(a => `<option value="${a}">${a}</option>`).join('')}
-                            </select>
-                        </div>
-                        <div class="col-md-2">
-                            <label class="filter-label"><i class="material-icons">category</i>Natureza</label>
-                            <select class="form-select" id="filtroNaturezaItens">
-                                <option value="">Todas</option>
-                                ${naturezas.map(n => `<option value="${n}">${n}</option>`).join('')}
-                            </select>
-                        </div>
-                        <div class="col-md-3">
-                            <label class="filter-label"><i class="material-icons">person</i>Fornecedor</label>
-                            <input type="text" class="form-control" id="buscaFornecedorItens" placeholder="Nome do fornecedor...">
-                        </div>
-                        <div class="col-md-2">
-                            <label class="filter-label"><i class="material-icons">search</i>Item</label>
-                            <input type="text" class="form-control" id="buscaItem" placeholder="Código ou descrição...">
-                        </div>
-        </div>
-        <div class="col-md-2">
-            <!-- Espaço vazio para alinhamento com as colunas acima -->
-        </div>
-    </div>
-    
-    <!-- Linha separada para os botões -->
-    <div class="row mt-3">
-        <div class="col-12 d-flex justify-content-start gap-2">
-            <button class="btn-pesquisa" onclick="aplicarFiltrosVG()">
-                <i class="material-icons me-2">search</i>Pesquisar
-            </button>
-            <button class="btn-secondary-custom" onclick="limparFiltrosVG()">
-                <i class="material-icons me-2">clear</i>Limpar
-            </button>
-        </div>
-    </div>
-</div>
-
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                    <div class="d-flex gap-2">
-                        <button class="btn-export" onclick="exportarTabelaItensCSV()"><i class="material-icons me-2">description</i>CSV</button>
-                        <button class="btn-export" onclick="exportarTabelaItensPDF()"><i class="material-icons me-2">print</i>PDF</button>
-                        <div class="share-dropdown">
-                            <button class="btn-export" onclick="toggleShare(3)"><i class="material-icons me-2">share</i>Compartilhar</button>
-                            <div class="share-options" id="shareOptions3">${opcoesCompartilhamento(3)}</div>
-                        </div>
-                    </div>
-                    <div class="d-flex align-items-center gap-3">
-                        <span class="table-badge" id="totalItensBadge">${itensFiltrados.length} itens</span>
-                        <select class="items-per-page" id="itensPorPaginaItens" onchange="alterarItensPorPaginaItens()">
-                            <option value="5">5</option><option value="10" selected>10</option><option value="20">20</option><option value="50">50</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="table-container">
-                    <div class="table-fixed-header-container">
-                        <table class="table" id="tabelaItens">
-                            <thead><tr>
-                                <th class="sortable" onclick="ordenarItens('orgao_emissor')">Órgão</th>
-                                <th class="sortable" onclick="ordenarItens('item_da_nota_fiscal')">Item</th>
-                                <th class="sortable" onclick="ordenarItens('codigo_do_item')">Código</th>
-                                <th>Descrição</th>
-                                <th>Natureza</th>
-                                <th class="sortable" onclick="ordenarItens('fornecedor_nome')">Fornecedor</th>
-                                <th class="sortable text-right" onclick="ordenarItens('qtde_na_nota_fiscal')">Qtde</th>
-                                <th class="sortable text-right" onclick="ordenarItens('valor_total_r')">Valor Total</th>
-                                <th class="text-center">Ações</th>
-                            </tr></thead>
-                            <tbody id="tabelaItensBody"></tbody>
-                        </table>
-                    </div>
-                    <div class="pagination-container" id="paginacaoItens"></div>
-                </div>
-            `;
-            
-            aplicarFiltrosItens();
-        }
-
-        function gerarLinhasTabelaItens(itens) {
-            return itens.map(i => {
-                const [orgao, num, serie, seq] = i.chave_nota.split('|');
-                return `<tr>
-                    <td>${i.orgao_emissor || '-'}</td>
-                    <td>${i.item_da_nota_fiscal || '-'}</td>
-                    <td>${i.codigo_do_item || '-'}</td>
-                    <td>${(i.desc_do_item_de_material || '').substring(0,50)}...</td>
-                    <td>${i.natureza || '-'}</td>
-                    <td>${i.fornecedor_nome || '-'}</td>
-                    <td class="text-right">${(parseFloat(i.qtde_na_nota_fiscal) || 0).toLocaleString('pt-BR')}</td>
-                    <td class="text-right">${formatarMoeda(i.valor_total_r)}</td>
-                    <td class="text-center"><button class="btn-action" onclick="verDetalhesNota('${orgao?.replace(/'/g, "\\'")}', '${num}', '${serie || ''}', '${seq || ''}')"><i class="material-icons">receipt</i></button></td>
-                </tr>`;
-            }).join('');
-        }
-
-        function aplicarFiltrosItens() {
-            const orgao = document.getElementById('filtroOrgaoItens')?.value;
-            const ano = document.getElementById('filtroAnoItens')?.value;
-            const natureza = document.getElementById('filtroNaturezaItens')?.value;
-            const buscaFornecedor = (document.getElementById('buscaFornecedorItens')?.value || '').toLowerCase();
-            const buscaItem = (document.getElementById('buscaItem')?.value || '').toLowerCase();
-            
-            itensFiltrados = todosItens.filter(i => {
-                if (orgao && !i.orgao_emissor?.includes(orgao)) return false;
-                if (ano && i.ano !== ano) return false;
-                if (natureza && i.natureza !== natureza) return false;
-                if (buscaFornecedor && !(i.fornecedor_nome?.toLowerCase().includes(buscaFornecedor))) return false;
-                if (buscaItem && !(i.desc_do_item_de_material?.toLowerCase().includes(buscaItem) || i.codigo_do_item?.toLowerCase().includes(buscaItem))) return false;
-                return true;
-            });
-            
-            paginaAtualItens = 1;
-            ordenarItens(sortConfigItens.column);
-        }
-
-        window.ordenarItens = function(coluna) {
-            if (sortConfigItens.column === coluna) {
-                sortConfigItens.direction = sortConfigItens.direction === 'asc' ? 'desc' : 'asc';
-            } else {
-                sortConfigItens.column = coluna;
-                sortConfigItens.direction = 'asc';
-            }
-            
-            const sorted = [...itensFiltrados].sort((a, b) => {
-                let valA = a[coluna] !== undefined ? a[coluna] : '';
-                let valB = b[coluna] !== undefined ? b[coluna] : '';
-                
-                if (coluna.includes('valor') || coluna.includes('qtde')) {
-                    valA = parseFloat(valA) || 0;
-                    valB = parseFloat(valB) || 0;
-                } else {
-                    valA = String(valA).toLowerCase();
-                    valB = String(valB).toLowerCase();
-                }
-                
-                if (valA < valB) return sortConfigItens.direction === 'asc' ? -1 : 1;
-                if (valA > valB) return sortConfigItens.direction === 'asc' ? 1 : -1;
-                return 0;
-            });
-            
-            itensFiltrados = sorted;
-            atualizarTabelaItens();
-        };
-
-        function atualizarTabelaItens() {
-            const inicio = (paginaAtualItens - 1) * itensPorPaginaItens;
-            const fim = Math.min(inicio + itensPorPaginaItens, itensFiltrados.length);
-            const dadosPagina = itensFiltrados.slice(inicio, fim);
-            
-            document.getElementById('tabelaItensBody').innerHTML = gerarLinhasTabelaItens(dadosPagina);
-            document.getElementById('totalItensBadge').innerText = itensFiltrados.length + ' itens';
-            
-            totalPaginasItens = Math.ceil(itensFiltrados.length / itensPorPaginaItens);
-            renderizarPaginacao('paginacaoItens', paginaAtualItens, totalPaginasItens, 'mudarPaginaItens');
-        }
-
-        window.mudarPaginaItens = function(pagina) {
-            if (pagina < 1 || pagina > totalPaginasItens) return;
-            paginaAtualItens = pagina;
-            atualizarTabelaItens();
-        };
-
-        window.alterarItensPorPaginaItens = function() {
-            itensPorPaginaItens = parseInt(document.getElementById('itensPorPaginaItens').value);
-            paginaAtualItens = 1;
-            atualizarTabelaItens();
-        };
-
-        window.limparFiltrosItens = function() {
-            document.getElementById('filtroOrgaoItens').value = '';
-            document.getElementById('filtroAnoItens').value = '';
-            document.getElementById('filtroNaturezaItens').value = '';
-            document.getElementById('buscaFornecedorItens').value = '';
-            document.getElementById('buscaItem').value = '';
-            itensFiltrados = [...todosItens];
-            paginaAtualItens = 1;
-            ordenarItens('item_da_nota_fiscal');
-        };
-
-        // ============================================
-        // FUNÇÕES DE PAGINAÇÃO
-        // ============================================
-        function renderizarPaginacao(containerId, paginaAtual, totalPaginas, funcaoMudar) {
-            const container = document.getElementById(containerId);
-            if (!container) return;
-            
-            if (totalPaginas <= 1) {
-                container.innerHTML = '';
-                return;
-            }
-            
-            let html = `<div class="pagination-info">Página ${paginaAtual} de ${totalPaginas}</div><nav><ul class="pagination mb-0">`;
-            html += `<li class="page-item ${paginaAtual === 1 ? 'disabled' : ''}"><a class="page-link" href="#" onclick="${funcaoMudar}(${paginaAtual-1}); return false;">&laquo;</a></li>`;
-            
-            let inicio = Math.max(1, paginaAtual - 2);
-            let fim = Math.min(totalPaginas, inicio + 4);
-            
-            for (let i = inicio; i <= fim; i++) {
-                html += `<li class="page-item ${i === paginaAtual ? 'active' : ''}"><a class="page-link" href="#" onclick="${funcaoMudar}(${i}); return false;">${i}</a></li>`;
-            }
-            
-            html += `<li class="page-item ${paginaAtual === totalPaginas ? 'disabled' : ''}"><a class="page-link" href="#" onclick="${funcaoMudar}(${paginaAtual+1}); return false;">&raquo;</a></li>`;
-            html += '</ul></nav>';
-            container.innerHTML = html;
-        }
 
         // ============================================
         // EXPORTAÇÕES
         // ============================================
-        window.exportarTabelaVGCSV = function() { 
-            exportarCSV(dadosVisaoGeralFiltrados, ['orgao', 'natureza', 'indicador', 'total'], 'visao_geral.csv'); 
+        window.exportarTabelaVGCSV = function() {
+            exportarCSV(dadosVisaoGeralFiltrados, 
+                ['orgao', 'natureza', 'indicador', 'total'], 
+                'visao_geral.csv');
         };
-        
-        window.exportarTabelaNotasCSV = function() { 
-            exportarCSV(notasFiltradas, ['orgao_emissor', 'numero_nota', 'fornecedor_nome_empresarial', 'fornecedor_cnpj_cpf', 'natureza', 'indicador_de_orcamento', 'valor_total_com_impostos'], 'consulta_notas.csv'); 
+
+        window.exportarTabelaNotasCSV = function() {
+            exportarCSV(notasFiltradas, [
+                'orgao_emissor', 'numero_nota', 'fornecedor_nome_empresarial', 
+                'fornecedor_cnpj_cpf', 'natureza', 'indicador_de_orcamento', 'valor_total_com_impostos'
+            ], 'consulta_notas.csv');
         };
-        
-        window.exportarTabelaItensCSV = function() { 
-            exportarCSV(itensFiltrados, ['orgao_emissor', 'item_da_nota_fiscal', 'codigo_do_item', 'desc_do_item_de_material', 'natureza', 'fornecedor_nome', 'qtde_na_nota_fiscal', 'valor_total_r'], 'consulta_itens.csv'); 
+
+        window.exportarTabelaItensCSV = function() {
+            exportarCSV(itensFiltrados, [
+                'orgao_emissor', 'item_da_nota_fiscal', 'codigo_do_item', 
+                'desc_do_item_de_material', 'natureza', 'fornecedor_nome', 
+                'qtde_na_nota_fiscal', 'valor_total_r'
+            ], 'consulta_itens.csv');
         };
 
         function exportarCSV(dados, colunas, nomeArquivo) {
-            try {
-                const cabecalhos = colunas.join(';');
-                const linhas = dados.map(item => {
-                    return colunas.map(col => {
-                        let valor = item[col] !== undefined ? item[col] : '';
-                        if (typeof valor === 'number') {
-                            valor = valor.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).replace(/\./g, '').replace(',', '.');
-                        } else if (valor && typeof valor === 'string') {
-                            valor = valor.replace(/"/g, '""');
-                        }
-                        return `"${valor}"`;
-                    }).join(';');
-                }).join('\n');
-                
-                const blob = new Blob(['\uFEFF' + cabecalhos + '\n' + linhas], { type: 'text/csv;charset=utf-8;' });
-                const link = document.createElement('a');
-                link.href = URL.createObjectURL(blob);
-                link.download = nomeArquivo;
-                link.click();
-            } catch (error) {
-                console.error('Erro ao exportar CSV:', error);
-                showError('Erro ao gerar arquivo CSV.');
-            }
+            const cabecalhos = colunas.join(';');
+            const linhas = dados.map(item => {
+                return colunas.map(col => {
+                    let valor = item[col] !== undefined ? item[col] : '';
+                    if (typeof valor === 'number') {
+                        valor = valor.toString().replace('.', ',');
+                    } else if (valor && typeof valor === 'string') {
+                        valor = valor.replace(/"/g, '""');
+                    }
+                    return `"${valor}"`;
+                }).join(';');
+            }).join('\n');
+            
+            const blob = new Blob(['\uFEFF' + cabecalhos + '\n' + linhas], { type: 'text/csv;charset=utf-8;' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = nomeArquivo;
+            link.click();
         }
 
-        window.exportarTabelaVGPDF = function() { 
+        window.exportarTabelaVGPDF = function() {
             exportarPDF('Visão Geral', 
                 [['Órgão', 'Natureza', 'Indicador', 'Valor Total']], 
                 dadosVisaoGeralFiltrados.map(o => [o.orgao, o.natureza, o.indicador, formatarMoeda(o.total)]), 
-                'visao_geral.pdf'); 
+                'visao_geral.pdf');
         };
-        
-        window.exportarTabelaNotasPDF = function() { 
-            exportarPDF('Consulta de Notas', 
+
+        window.exportarTabelaNotasPDF = function() {
+            exportarPDF('Consulta de Notas Fiscais', 
                 [['Órgão', 'Número NF', 'Fornecedor', 'CNPJ/CPF', 'Natureza', 'Indicador', 'Valor Total']], 
-                notasFiltradas.map(n => [n.orgao_emissor, n.numero_nota, n.fornecedor_nome_empresarial, n.fornecedor_cnpj_cpf, n.natureza, n.indicador_de_orcamento, formatarMoeda(n.valor_total_com_impostos)]), 
-                'consulta_notas.pdf'); 
+                notasFiltradas.map(n => [
+                    n.orgao_emissor, n.numero_nota, n.fornecedor_nome_empresarial, 
+                    n.fornecedor_cnpj_cpf, n.natureza, n.indicador_de_orcamento, 
+                    formatarMoeda(n.valor_total_com_impostos)
+                ]), 
+                'consulta_notas.pdf');
         };
-        
-        window.exportarTabelaItensPDF = function() { 
+
+        window.exportarTabelaItensPDF = function() {
             exportarPDF('Consulta de Itens', 
                 [['Órgão', 'Item', 'Código', 'Descrição', 'Natureza', 'Fornecedor', 'Quantidade', 'Valor Total']], 
-                itensFiltrados.map(i => [i.orgao_emissor, i.item_da_nota_fiscal, i.codigo_do_item, (i.desc_do_item_de_material || '').substring(0,50), i.natureza, i.fornecedor_nome, (parseFloat(i.qtde_na_nota_fiscal) || 0).toLocaleString('pt-BR'), formatarMoeda(i.valor_total_r)]), 
-                'consulta_itens.pdf'); 
+                itensFiltrados.map(i => [
+                    i.orgao_emissor, i.item_da_nota_fiscal, i.codigo_do_item, 
+                    (i.desc_do_item_de_material || '').substring(0,50), i.natureza, 
+                    i.fornecedor_nome, parseFloat(i.qtde_na_nota_fiscal).toLocaleString('pt-BR'), 
+                    formatarMoeda(i.valor_total_r)
+                ]), 
+                'consulta_itens.pdf');
         };
 
         function exportarPDF(titulo, cabecalho, corpo, nomeArquivo) {
@@ -1644,108 +966,686 @@
         }
 
         // ============================================
+        // VISÃO GERAL
+        // ============================================
+        function renderizarVisaoGeral() {
+            const orgaos = [...new Set(dadosVisaoGeral.map(o => o.orgao))].sort();
+            const naturezas = [...new Set(dadosVisaoGeral.map(o => o.natureza))].filter(Boolean).sort();
+            const indicadores = [...new Set(dadosVisaoGeral.map(o => o.indicador))].filter(Boolean).sort();
+            
+            const totalGeral = dadosVisaoGeralFiltrados.reduce((acc, i) => acc + i.total, 0);
+            
+            const html = `
+                <div class="filter-container">
+                    <div class="row g-3">
+                        <div class="col-md-2">
+                            <label class="filter-label"><i class="material-icons">event</i>Ano</label>
+                            <select class="form-select" id="filtroAnoVG" onchange="mudarAnoVG()">
+                                ${anosDisponiveis.map(a => `<option value="${a}" ${a === anoAtual ? 'selected' : ''}>${a}</option>`).join('')}
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <label class="filter-label"><i class="material-icons">business</i>Órgão</label>
+                            <select class="form-select" id="filtroOrgaoVG">
+                                <option value="">Todos</option>
+                                ${orgaos.map(o => `<option value="${o}">${o}</option>`).join('')}
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <label class="filter-label"><i class="material-icons">category</i>Natureza</label>
+                            <select class="form-select" id="filtroNaturezaVG">
+                                <option value="">Todas</option>
+                                ${naturezas.map(n => `<option value="${n}">${n}</option>`).join('')}
+                            </select>
+                        </div>
+                        <div class="col-md-2">
+                            <label class="filter-label"><i class="material-icons">account_balance</i>Indicador</label>
+                            <select class="form-select" id="filtroIndicadorVG">
+                                <option value="">Todos</option>
+                                ${indicadores.map(i => `<option value="${i}">${i}</option>`).join('')}
+                            </select>
+                        </div>
+                        <div class="col-md-2"></div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-12 d-flex gap-2">
+                            <button class="btn-pesquisa" onclick="aplicarFiltrosVG()"><i class="material-icons me-2">search</i>Pesquisar</button>
+                            <button class="btn-secondary-custom" onclick="limparFiltrosVG()"><i class="material-icons me-2">clear</i>Limpar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mb-4">
+                    <div class="col-md-3"><div class="metric-card"><div class="metric-label">Total de Registros</div><div class="metric-value">${dadosVisaoGeralFiltrados.length.toLocaleString()}</div></div></div>
+                    <div class="col-md-3"><div class="metric-card"><div class="metric-label">Total de Notas</div><div class="metric-value">${dadosCompletosNF.length.toLocaleString()}</div></div></div>
+                    <div class="col-md-3"><div class="metric-card"><div class="metric-label">Valor Total</div><div class="metric-value">${formatarMoeda(totalGeral)}</div></div></div>
+                    <div class="col-md-3"><div class="metric-card"><div class="metric-label">Média por Registro</div><div class="metric-value">${formatarMoeda(totalGeral / (dadosVisaoGeralFiltrados.length || 1))}</div></div></div>
+                </div>
+
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <div class="d-flex gap-2">
+                        <button class="btn-export" onclick="exportarTabelaVGCSV()"><i class="material-icons me-2">description</i>CSV</button>
+                        <button class="btn-export" onclick="exportarTabelaVGPDF()"><i class="material-icons me-2">print</i>PDF</button>
+                        <div class="share-dropdown">
+                            <button class="btn-export" onclick="toggleShare(1)"><i class="material-icons me-2">share</i>Compartilhar</button>
+                            <div class="share-options" id="shareOptions1">${opcoesCompartilhamento(1)}</div>
+                        </div>
+                    </div>
+                    <span class="table-badge">${dadosVisaoGeralFiltrados.length} registros</span>
+                </div>
+
+                <div class="table-container">
+                    <div class="table-fixed-header-container">
+                        <table class="table">
+                            <thead><tr>
+                                <th>Órgão</th>
+                                <th>Natureza</th>
+                                <th>Indicador de Orçamento</th>
+                                <th class="text-right">Valor Total</th>
+                                <th class="text-center">Ações</th>
+                            </tr></thead>
+                            <tbody>
+                                ${dadosVisaoGeralFiltrados.map(item => {
+                                    const badgeClass = item.indicador.toLowerCase().includes('orçamentária') ? 'badge-orcamentaria' : 'badge-extra';
+                                    return `<tr>
+                                        <td><a href="#" class="orgao-link" onclick="irParaNotas('${item.orgao.replace(/'/g, "\\'")}')">${item.orgao}</a></td>
+                                        <td>${item.natureza}</td>
+                                        <td><span class="${badgeClass}">${item.indicador}</span></td>
+                                        <td class="text-right fw-bold">${formatarMoeda(item.total)}</td>
+                                        <td class="text-center"><button class="btn-action" onclick="irParaNotas('${item.orgao.replace(/'/g, "\\'")}')"><i class="material-icons">visibility</i></button></td>
+                                    </tr>`;
+                                }).join('')}
+                            </tbody>
+                            <tfoot><tr class="fw-bold">
+                                <td colspan="3">TOTAL GERAL</td>
+                                <td class="text-right">${formatarMoeda(totalGeral)}</td>
+                                <td></td>
+                            </tr></tfoot>
+                        </table>
+                    </div>
+                </div>
+            `;
+            
+            document.getElementById('visao-geral-content').innerHTML = html;
+        }
+
+        window.mudarAnoVG = function() {
+            const ano = document.getElementById('filtroAnoVG')?.value;
+            if (ano && ano !== anoAtual) alterarAno(ano, 'vg');
+        };
+
+        window.aplicarFiltrosVG = function() {
+            const ano = document.getElementById('filtroAnoVG')?.value;
+            const orgao = document.getElementById('filtroOrgaoVG')?.value;
+            const natureza = document.getElementById('filtroNaturezaVG')?.value;
+            const indicador = document.getElementById('filtroIndicadorVG')?.value;
+            
+            dadosVisaoGeralFiltrados = dadosVisaoGeral.filter(item => {
+                if (orgao && !item.orgao.includes(orgao)) return false;
+                if (natureza && item.natureza !== natureza) return false;
+                if (indicador && item.indicador !== indicador) return false;
+                return true;
+            });
+            renderizarVisaoGeral();
+        };
+
+        window.limparFiltrosVG = function() {
+            document.getElementById('filtroOrgaoVG').value = '';
+            document.getElementById('filtroNaturezaVG').value = '';
+            document.getElementById('filtroIndicadorVG').value = '';
+            dadosVisaoGeralFiltrados = [...dadosVisaoGeral];
+            renderizarVisaoGeral();
+        };
+
+        window.irParaNotas = function(orgao) {
+            document.getElementById('consulta-notas-tab').click();
+            setTimeout(() => {
+                const filtro = document.getElementById('filtroOrgaoNotas');
+                if (filtro) { filtro.value = orgao; aplicarFiltrosNotas(); }
+            }, 300);
+        };
+
+        // ============================================
+        // CONSULTA DE NOTAS
+        // ============================================
+        function renderizarConsultaNotas() {
+            const orgaos = [...new Set(todasNotas.map(n => n.orgao_emissor))].sort();
+            const naturezas = [...new Set(todasNotas.map(n => n.natureza))].filter(Boolean).sort();
+            
+            const html = `
+                <div class="filter-container">
+                    <div class="row g-3">
+                        <div class="col-md-2">
+                            <label class="filter-label"><i class="material-icons">event</i>Ano</label>
+                            <select class="form-select" id="filtroAnoNotas" onchange="mudarAnoNotas()">
+                                ${anosDisponiveis.map(a => `<option value="${a}" ${a === anoAtual ? 'selected' : ''}>${a}</option>`).join('')}
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <label class="filter-label"><i class="material-icons">business</i>Órgão</label>
+                            <select class="form-select" id="filtroOrgaoNotas">
+                                <option value="">Todos</option>
+                                ${orgaos.map(o => `<option value="${o}">${o}</option>`).join('')}
+                            </select>
+                        </div>
+                        <div class="col-md-2">
+                            <label class="filter-label"><i class="material-icons">category</i>Natureza</label>
+                            <select class="form-select" id="filtroNaturezaNotas">
+                                <option value="">Todas</option>
+                                ${naturezas.map(n => `<option value="${n}">${n}</option>`).join('')}
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <label class="filter-label"><i class="material-icons">person</i>Fornecedor</label>
+                            <input type="text" class="form-control" id="buscaFornecedorNotas" placeholder="Nome ou CNPJ...">
+                        </div>
+                        <div class="col-md-2">
+                            <label class="filter-label"><i class="material-icons">receipt</i>Nº Nota</label>
+                            <input type="text" class="form-control" id="buscaNumeroNota" placeholder="Número...">
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-12 d-flex gap-2">
+                            <button class="btn-pesquisa" onclick="aplicarFiltrosNotas()"><i class="material-icons me-2">search</i>Pesquisar</button>
+                            <button class="btn-secondary-custom" onclick="limparFiltrosNotas()"><i class="material-icons me-2">clear</i>Limpar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <div class="d-flex gap-2">
+                        <button class="btn-export" onclick="exportarTabelaNotasCSV()"><i class="material-icons me-2">description</i>CSV</button>
+                        <button class="btn-export" onclick="exportarTabelaNotasPDF()"><i class="material-icons me-2">print</i>PDF</button>
+                        <div class="share-dropdown">
+                            <button class="btn-export" onclick="toggleShare(2)"><i class="material-icons me-2">share</i>Compartilhar</button>
+                            <div class="share-options" id="shareOptions2">${opcoesCompartilhamento(2)}</div>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center gap-3">
+                        <span class="table-badge" id="totalNotasBadge">${notasFiltradas.length} notas</span>
+                        <select class="items-per-page" id="itensPorPaginaNotas" onchange="alterarItensPorPaginaNotas()">
+                            <option value="5">5</option><option value="10" selected>10</option><option value="20">20</option><option value="50">50</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="table-container">
+                    <div class="table-fixed-header-container">
+                        <table class="table">
+                            <thead><tr>
+                                <th class="sortable-header" onclick="ordenarNotas('orgao_emissor')">Órgão <i class="material-icons sort-icon">${getSortIcon('orgao_emissor', sortConfigNotas)}</i></th>
+                                <th class="sortable-header" onclick="ordenarNotas('numero_nota')">Número NF <i class="material-icons sort-icon">${getSortIcon('numero_nota', sortConfigNotas)}</i></th>
+                                <th class="sortable-header" onclick="ordenarNotas('fornecedor_nome_empresarial')">Fornecedor <i class="material-icons sort-icon">${getSortIcon('fornecedor_nome_empresarial', sortConfigNotas)}</i></th>
+                                <th class="sortable-header" onclick="ordenarNotas('fornecedor_cnpj_cpf')">CNPJ/CPF <i class="material-icons sort-icon">${getSortIcon('fornecedor_cnpj_cpf', sortConfigNotas)}</i></th>
+                                <th>Natureza</th>
+                                <th>Indicador</th>
+                                <th class="sortable-header text-right" onclick="ordenarNotas('valor_total_com_impostos')">Valor Total <i class="material-icons sort-icon">${getSortIcon('valor_total_com_impostos', sortConfigNotas)}</i></th>
+                                <th class="text-center">Ações</th>
+                            </tr></thead>
+                            <tbody id="tabelaNotasBody"></tbody>
+                        </table>
+                    </div>
+                    <div class="pagination-container" id="paginacaoNotas"></div>
+                </div>
+            `;
+            
+            document.getElementById('consulta-notas-content').innerHTML = html;
+            atualizarTabelaNotas();
+        }
+
+        window.mudarAnoNotas = function() {
+            const ano = document.getElementById('filtroAnoNotas')?.value;
+            if (ano && ano !== anoAtual) alterarAno(ano, 'notas');
+        };
+
+        function aplicarFiltrosNotas() {
+            const ano = document.getElementById('filtroAnoNotas')?.value;
+            const orgao = document.getElementById('filtroOrgaoNotas')?.value;
+            const natureza = document.getElementById('filtroNaturezaNotas')?.value;
+            const buscaFornecedor = (document.getElementById('buscaFornecedorNotas')?.value || '').toLowerCase();
+            const buscaNumero = (document.getElementById('buscaNumeroNota')?.value || '').toLowerCase();
+            
+            notasFiltradas = todasNotas.filter(n => {
+                if (orgao && !n.orgao_emissor?.includes(orgao)) return false;
+                if (natureza && n.natureza !== natureza) return false;
+                if (buscaFornecedor && !(n.fornecedor_nome_empresarial?.toLowerCase().includes(buscaFornecedor) || n.fornecedor_cnpj_cpf?.includes(buscaFornecedor))) return false;
+                if (buscaNumero && !n.numero_nota?.toLowerCase().includes(buscaNumero)) return false;
+                return true;
+            });
+            
+            paginaAtualNotas = 1;
+            ordenarNotas(sortConfigNotas.column);
+        }
+
+        window.ordenarNotas = function(coluna) {
+            if (sortConfigNotas.column === coluna) {
+                sortConfigNotas.direction = sortConfigNotas.direction === 'asc' ? 'desc' : 'asc';
+            } else {
+                sortConfigNotas.column = coluna;
+                sortConfigNotas.direction = 'asc';
+            }
+            
+            notasFiltradas.sort((a, b) => {
+                let valA = a[coluna] !== undefined ? a[coluna] : '';
+                let valB = b[coluna] !== undefined ? b[coluna] : '';
+                
+                if (coluna === 'valor_total_com_impostos') {
+                    valA = parseFloat(valA) || 0;
+                    valB = parseFloat(valB) || 0;
+                } else if (coluna === 'data_de_emissao') {
+                    valA = valA ? new Date(valA) : new Date(0);
+                    valB = valB ? new Date(valB) : new Date(0);
+                } else {
+                    valA = String(valA).toLowerCase();
+                    valB = String(valB).toLowerCase();
+                }
+                
+                if (valA < valB) return sortConfigNotas.direction === 'asc' ? -1 : 1;
+                if (valA > valB) return sortConfigNotas.direction === 'asc' ? 1 : -1;
+                return 0;
+            });
+            
+            atualizarTabelaNotas();
+            renderizarConsultaNotas();
+        };
+
+        function atualizarTabelaNotas() {
+            const inicio = (paginaAtualNotas - 1) * itensPorPaginaNotas;
+            const fim = Math.min(inicio + itensPorPaginaNotas, notasFiltradas.length);
+            const dadosPagina = notasFiltradas.slice(inicio, fim);
+            
+            document.getElementById('tabelaNotasBody').innerHTML = dadosPagina.map(n => {
+                const badgeClass = n.indicador_de_orcamento?.toLowerCase().includes('orçamentária') ? 'badge-orcamentaria' : 'badge-extra';
+                return `<tr>
+                    <td>${n.orgao_emissor || '-'}</td>
+                    <td>${n.numero_nota || '-'}</td>
+                    <td>${n.fornecedor_nome_empresarial || '-'}</td>
+                    <td>${n.fornecedor_cnpj_cpf || '-'}</td>
+                    <td>${n.natureza || '-'}</td>
+                    <td><span class="${badgeClass}">${n.indicador_de_orcamento || '-'}</span></td>
+                    <td class="text-right fw-bold">${formatarMoeda(n.valor_total_com_impostos)}</td>
+                    <td class="text-center"><button class="btn-action" onclick="verDetalhesNota('${n.orgao_emissor?.replace(/'/g, "\\'")}', '${n.numero}', '${n.serie || ''}', '${n.sequencial || ''}')"><i class="material-icons">receipt</i></button></td>
+                </tr>`;
+            }).join('');
+            
+            document.getElementById('totalNotasBadge').innerText = notasFiltradas.length + ' notas';
+            
+            totalPaginasNotas = Math.ceil(notasFiltradas.length / itensPorPaginaNotas);
+            renderizarPaginacao('paginacaoNotas', paginaAtualNotas, totalPaginasNotas, 'mudarPaginaNotas');
+        }
+
+        window.mudarPaginaNotas = function(pagina) {
+            if (pagina < 1 || pagina > totalPaginasNotas) return;
+            paginaAtualNotas = pagina;
+            atualizarTabelaNotas();
+        };
+
+        window.alterarItensPorPaginaNotas = function() {
+            itensPorPaginaNotas = parseInt(document.getElementById('itensPorPaginaNotas').value);
+            paginaAtualNotas = 1;
+            atualizarTabelaNotas();
+        };
+
+        window.limparFiltrosNotas = function() {
+            document.getElementById('filtroOrgaoNotas').value = '';
+            document.getElementById('filtroNaturezaNotas').value = '';
+            document.getElementById('buscaFornecedorNotas').value = '';
+            document.getElementById('buscaNumeroNota').value = '';
+            notasFiltradas = [...todasNotas];
+            paginaAtualNotas = 1;
+            ordenarNotas('data_de_emissao');
+        };
+
+        // ============================================
+        // CONSULTA DE ITENS
+        // ============================================
+        function renderizarConsultaItens() {
+            const orgaos = [...new Set(todosItens.map(i => i.orgao_emissor))].sort();
+            const naturezas = [...new Set(todosItens.map(i => i.natureza))].filter(Boolean).sort();
+            
+            const html = `
+                <div class="filter-container">
+                    <div class="row g-3">
+                        <div class="col-md-2">
+                            <label class="filter-label"><i class="material-icons">event</i>Ano</label>
+                            <select class="form-select" id="filtroAnoItens" onchange="mudarAnoItens()">
+                                ${anosDisponiveis.map(a => `<option value="${a}" ${a === anoAtual ? 'selected' : ''}>${a}</option>`).join('')}
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <label class="filter-label"><i class="material-icons">business</i>Órgão</label>
+                            <select class="form-select" id="filtroOrgaoItens">
+                                <option value="">Todos</option>
+                                ${orgaos.map(o => `<option value="${o}">${o}</option>`).join('')}
+                            </select>
+                        </div>
+                        <div class="col-md-2">
+                            <label class="filter-label"><i class="material-icons">category</i>Natureza</label>
+                            <select class="form-select" id="filtroNaturezaItens">
+                                <option value="">Todas</option>
+                                ${naturezas.map(n => `<option value="${n}">${n}</option>`).join('')}
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <label class="filter-label"><i class="material-icons">person</i>Fornecedor</label>
+                            <input type="text" class="form-control" id="buscaFornecedorItens" placeholder="Nome do fornecedor...">
+                        </div>
+                        <div class="col-md-2">
+                            <label class="filter-label"><i class="material-icons">search</i>Item</label>
+                            <input type="text" class="form-control" id="buscaItem" placeholder="Código ou descrição...">
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-12 d-flex gap-2">
+                            <button class="btn-pesquisa" onclick="aplicarFiltrosItens()"><i class="material-icons me-2">search</i>Pesquisar</button>
+                            <button class="btn-secondary-custom" onclick="limparFiltrosItens()"><i class="material-icons me-2">clear</i>Limpar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <div class="d-flex gap-2">
+                        <button class="btn-export" onclick="exportarTabelaItensCSV()"><i class="material-icons me-2">description</i>CSV</button>
+                        <button class="btn-export" onclick="exportarTabelaItensPDF()"><i class="material-icons me-2">print</i>PDF</button>
+                        <div class="share-dropdown">
+                            <button class="btn-export" onclick="toggleShare(3)"><i class="material-icons me-2">share</i>Compartilhar</button>
+                            <div class="share-options" id="shareOptions3">${opcoesCompartilhamento(3)}</div>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center gap-3">
+                        <span class="table-badge" id="totalItensBadge">${itensFiltrados.length} itens</span>
+                        <select class="items-per-page" id="itensPorPaginaItens" onchange="alterarItensPorPaginaItens()">
+                            <option value="5">5</option><option value="10" selected>10</option><option value="20">20</option><option value="50">50</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="table-container">
+                    <div class="table-fixed-header-container">
+                        <table class="table">
+                            <thead><tr>
+                                <th class="sortable-header" onclick="ordenarItens('orgao_emissor')">Órgão <i class="material-icons sort-icon">${getSortIcon('orgao_emissor', sortConfigItens)}</i></th>
+                                <th class="sortable-header" onclick="ordenarItens('item_da_nota_fiscal')">Item <i class="material-icons sort-icon">${getSortIcon('item_da_nota_fiscal', sortConfigItens)}</i></th>
+                                <th class="sortable-header" onclick="ordenarItens('codigo_do_item')">Código <i class="material-icons sort-icon">${getSortIcon('codigo_do_item', sortConfigItens)}</i></th>
+                                <th>Descrição</th>
+                                <th>Natureza</th>
+                                <th class="sortable-header" onclick="ordenarItens('fornecedor_nome')">Fornecedor <i class="material-icons sort-icon">${getSortIcon('fornecedor_nome', sortConfigItens)}</i></th>
+                                <th class="sortable-header text-right" onclick="ordenarItens('qtde_na_nota_fiscal')">Qtde <i class="material-icons sort-icon">${getSortIcon('qtde_na_nota_fiscal', sortConfigItens)}</i></th>
+                                <th class="sortable-header text-right" onclick="ordenarItens('valor_total_r')">Valor Total <i class="material-icons sort-icon">${getSortIcon('valor_total_r', sortConfigItens)}</i></th>
+                                <th class="text-center">Ações</th>
+                            </tr></thead>
+                            <tbody id="tabelaItensBody"></tbody>
+                        </table>
+                    </div>
+                    <div class="pagination-container" id="paginacaoItens"></div>
+                </div>
+            `;
+            
+            document.getElementById('consulta-itens-content').innerHTML = html;
+            atualizarTabelaItens();
+        }
+
+        window.mudarAnoItens = function() {
+            const ano = document.getElementById('filtroAnoItens')?.value;
+            if (ano && ano !== anoAtual) alterarAno(ano, 'itens');
+        };
+
+        function aplicarFiltrosItens() {
+            const ano = document.getElementById('filtroAnoItens')?.value;
+            const orgao = document.getElementById('filtroOrgaoItens')?.value;
+            const natureza = document.getElementById('filtroNaturezaItens')?.value;
+            const buscaFornecedor = (document.getElementById('buscaFornecedorItens')?.value || '').toLowerCase();
+            const buscaItem = (document.getElementById('buscaItem')?.value || '').toLowerCase();
+            
+            itensFiltrados = todosItens.filter(i => {
+                if (orgao && !i.orgao_emissor?.includes(orgao)) return false;
+                if (natureza && i.natureza !== natureza) return false;
+                if (buscaFornecedor && !i.fornecedor_nome?.toLowerCase().includes(buscaFornecedor)) return false;
+                if (buscaItem && !(i.desc_do_item_de_material?.toLowerCase().includes(buscaItem) || i.codigo_do_item?.toLowerCase().includes(buscaItem))) return false;
+                return true;
+            });
+            
+            paginaAtualItens = 1;
+            ordenarItens(sortConfigItens.column);
+        }
+
+        window.ordenarItens = function(coluna) {
+            if (sortConfigItens.column === coluna) {
+                sortConfigItens.direction = sortConfigItens.direction === 'asc' ? 'desc' : 'asc';
+            } else {
+                sortConfigItens.column = coluna;
+                sortConfigItens.direction = 'asc';
+            }
+            
+            itensFiltrados.sort((a, b) => {
+                let valA = a[coluna] !== undefined ? a[coluna] : '';
+                let valB = b[coluna] !== undefined ? b[coluna] : '';
+                
+                if (coluna.includes('valor') || coluna.includes('qtde')) {
+                    valA = parseFloat(valA) || 0;
+                    valB = parseFloat(valB) || 0;
+                } else if (coluna === 'data_emissao') {
+                    valA = valA ? new Date(valA) : new Date(0);
+                    valB = valB ? new Date(valB) : new Date(0);
+                } else {
+                    valA = String(valA).toLowerCase();
+                    valB = String(valB).toLowerCase();
+                }
+                
+                if (valA < valB) return sortConfigItens.direction === 'asc' ? -1 : 1;
+                if (valA > valB) return sortConfigItens.direction === 'asc' ? 1 : -1;
+                return 0;
+            });
+            
+            atualizarTabelaItens();
+            renderizarConsultaItens();
+        };
+
+        function atualizarTabelaItens() {
+            const inicio = (paginaAtualItens - 1) * itensPorPaginaItens;
+            const fim = Math.min(inicio + itensPorPaginaItens, itensFiltrados.length);
+            const dadosPagina = itensFiltrados.slice(inicio, fim);
+            
+            document.getElementById('tabelaItensBody').innerHTML = dadosPagina.map(i => {
+                const [orgao, num, serie, seq] = i.chave_nota.split('|');
+                return `<tr>
+                    <td>${i.orgao_emissor || '-'}</td>
+                    <td>${i.item_da_nota_fiscal || '-'}</td>
+                    <td>${i.codigo_do_item || '-'}</td>
+                    <td>${(i.desc_do_item_de_material || '').substring(0,50)}...</td>
+                    <td>${i.natureza || '-'}</td>
+                    <td>${i.fornecedor_nome || '-'}</td>
+                    <td class="text-right">${parseFloat(i.qtde_na_nota_fiscal).toLocaleString('pt-BR')}</td>
+                    <td class="text-right fw-bold">${formatarMoeda(i.valor_total_r)}</td>
+                    <td class="text-center"><button class="btn-action" onclick="verDetalhesNota('${orgao?.replace(/'/g, "\\'")}', '${num}', '${serie || ''}', '${seq || ''}')"><i class="material-icons">receipt</i></button></td>
+                </tr>`;
+            }).join('');
+            
+            document.getElementById('totalItensBadge').innerText = itensFiltrados.length + ' itens';
+            
+            totalPaginasItens = Math.ceil(itensFiltrados.length / itensPorPaginaItens);
+            renderizarPaginacao('paginacaoItens', paginaAtualItens, totalPaginasItens, 'mudarPaginaItens');
+        }
+
+        window.mudarPaginaItens = function(pagina) {
+            if (pagina < 1 || pagina > totalPaginasItens) return;
+            paginaAtualItens = pagina;
+            atualizarTabelaItens();
+        };
+
+        window.alterarItensPorPaginaItens = function() {
+            itensPorPaginaItens = parseInt(document.getElementById('itensPorPaginaItens').value);
+            paginaAtualItens = 1;
+            atualizarTabelaItens();
+        };
+
+        window.limparFiltrosItens = function() {
+            document.getElementById('filtroOrgaoItens').value = '';
+            document.getElementById('filtroNaturezaItens').value = '';
+            document.getElementById('buscaFornecedorItens').value = '';
+            document.getElementById('buscaItem').value = '';
+            itensFiltrados = [...todosItens];
+            paginaAtualItens = 1;
+            ordenarItens('data_emissao');
+        };
+
+        window.verDetalhesNota = function(orgao, numero, serie, sequencial) {
+            const nota = dadosCompletosNF.find(n => 
+                n.orgao_emissor === orgao && 
+                String(n.numero) === String(numero) && 
+                String(n.serie || '') === String(serie || '') && 
+                String(n.sequencial || '') === String(sequencial || '')
+            );
+            
+            if (!nota) return;
+            
+            const itens = nota.itens || [];
+            
+            document.getElementById('modalContent').innerHTML = `
+                <div class="row">
+                    <div class="col-md-6"><div class="info-card primary"><div class="info-label">Fornecedor</div><div class="info-value highlight">${nota.fornecedor_nome_empresarial}</div><div class="info-label mt-2">CNPJ/CPF</div><div class="info-value">${nota.fornecedor_cnpj_cpf}</div></div></div>
+                    <div class="col-md-6"><div class="info-card"><div class="info-label">Nota Fiscal</div><div class="info-value">${nota.numero}${nota.serie ? ' Série '+nota.serie : ''} - Seq ${nota.sequencial || ''}</div><div class="info-label mt-2">Órgão</div><div class="info-value">${nota.orgao_emissor}</div></div></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3"><div class="info-card"><div class="info-label">Valor Total</div><div class="info-value highlight">${formatarMoeda(nota.valor_total_com_impostos)}</div></div></div>
+                    <div class="col-md-3"><div class="info-card"><div class="info-label">Data Emissão</div><div class="info-value">${formatarData(nota.data_de_emissao)}</div></div></div>
+                    <div class="col-md-3"><div class="info-card"><div class="info-label">Natureza</div><div class="info-value">${nota.natureza}</div></div></div>
+                    <div class="col-md-3"><div class="info-card"><div class="info-label">Indicador</div><div class="info-value">${nota.indicador_de_orcamento}</div></div></div>
+                </div>
+                <h6 class="mt-4 fw-bold">Itens da Nota (${itens.length})</h6>
+                <div style="max-height:250px; overflow-y:auto;">
+                    <table class="table table-sm"><thead><tr>
+                        <th>Item</th><th>Código</th><th>Descrição</th><th class="text-right">Qtde</th><th class="text-right">Unitário</th><th class="text-right">Total</th>
+                    </tr></thead><tbody>
+                        ${itens.map(i => `<tr>
+                            <td>${i.item_da_nota_fiscal}</td>
+                            <td>${i.codigo_do_item}</td>
+                            <td>${(i.desc_do_item_de_material || '').substring(0,60)}...</td>
+                            <td class="text-right">${parseFloat(i.qtde_na_nota_fiscal).toLocaleString('pt-BR')}</td>
+                            <td class="text-right">${formatarMoeda(i.valor_unitario_r)}</td>
+                            <td class="text-right fw-bold">${formatarMoeda(i.valor_total_r)}</td>
+                        </tr>`).join('')}
+                    </tbody></table>
+                </div>
+            `;
+            new bootstrap.Modal(document.getElementById('detailModal')).show();
+        };
+
+        // ============================================
+        // PAGINAÇÃO
+        // ============================================
+        function renderizarPaginacao(containerId, paginaAtual, totalPaginas, funcaoMudar) {
+            const container = document.getElementById(containerId);
+            if (!container) return;
+            
+            if (totalPaginas <= 1) {
+                container.innerHTML = '';
+                return;
+            }
+            
+            let html = `<div class="pagination-info">Página ${paginaAtual} de ${totalPaginas}</div><nav><ul class="pagination mb-0">`;
+            html += `<li class="page-item ${paginaAtual === 1 ? 'disabled' : ''}"><a class="page-link" href="#" onclick="${funcaoMudar}(${paginaAtual-1}); return false;">&laquo;</a></li>`;
+            
+            let inicio = Math.max(1, paginaAtual - 2);
+            let fim = Math.min(totalPaginas, inicio + 4);
+            
+            for (let i = inicio; i <= fim; i++) {
+                html += `<li class="page-item ${i === paginaAtual ? 'active' : ''}"><a class="page-link" href="#" onclick="${funcaoMudar}(${i}); return false;">${i}</a></li>`;
+            }
+            
+            html += `<li class="page-item ${paginaAtual === totalPaginas ? 'disabled' : ''}"><a class="page-link" href="#" onclick="${funcaoMudar}(${paginaAtual+1}); return false;">&raquo;</a></li>`;
+            html += '</ul></nav>';
+            container.innerHTML = html;
+        }
+
+        // ============================================
         // DOWNLOADS
         // ============================================
         function renderizarDownloads() {
             document.getElementById('downloads-content').innerHTML = `
                 <div class="filter-container">
-                    <h3 class="filter-label mb-3"><i class="material-icons">download</i> Downloads</h3>
-                    <div class="row">
-                        <div class="col-md-4 mb-3">
-                            <div class="p-4 bg-white rounded shadow-sm h-100">
-                                <h4 class="fw-bold"><i class="material-icons me-2">description</i> Notas Fiscais</h4>
-                                <p class="text-muted small">Arquivo CSV com todas as notas fiscais (${dadosNotas.length} registros).</p>
-                                <button onclick="baixarNotasCSV()" class="btn-export"><i class="material-icons me-2">download</i>Baixar Notas</button>
-                            </div>
-                        </div>
-                        <div class="col-md-4 mb-3">
-                            <div class="p-4 bg-white rounded shadow-sm h-100">
-                                <h4 class="fw-bold"><i class="material-icons me-2">list</i> Itens de Nota</h4>
-                                <p class="text-muted small">Arquivo CSV com todos os itens (${dadosItens.length} registros).</p>
-                                <button onclick="baixarItensCSV()" class="btn-export"><i class="material-icons me-2">download</i>Baixar Itens</button>
-                            </div>
-                        </div>
-                        <div class="col-md-4 mb-3">
-                            <div class="p-4 bg-white rounded shadow-sm h-100">
-                                <h4 class="fw-bold"><i class="material-icons me-2">open_in_new</i> Portal de Dados Abertos</h4>
-                                <p class="text-muted small">Acesse o conjunto de dados completo no Portal de Dados Abertos de Minas Gerais.</p>
-                                <a href="https://dados.mg.gov.br/" target="_blank" class="btn-export"><i class="material-icons me-2">launch</i>Acessar Portal</a>
+                    <h4 class="mb-4"><i class="material-icons me-2">download</i> Downloads</h4>
+                    
+                    <div class="row mb-4">
+                        <div class="col-md-6">
+                            <div class="bg-white p-4 rounded shadow-sm">
+                                <h5 class="fw-bold mb-3"><i class="material-icons text-primary me-2">open_in_new</i> Portal de Dados Abertos</h5>
+                                <p>Acesse o conjunto de dados completo no Portal de Dados Abertos de Minas Gerais.</p>
+                                <a href="https://dados.mg.gov.br/dataset/portal_notas_fiscais" target="_blank" class="btn-export text-decoration-none d-inline-block"><i class="material-icons me-2">launch</i>Acessar Portal</a>
                             </div>
                         </div>
                     </div>
-                    <div class="metadata-card">
-                        <h6 class="fw-bold"><i class="material-icons me-2">info</i> Metadados</h6>
-                        <div class="metadata-item"><strong>Total de Notas:</strong> ${dadosNotas.length}</div>
-                        <div class="metadata-item"><strong>Total de Itens:</strong> ${dadosItens.length}</div>
-                        <div class="metadata-item"><strong>Período:</strong> ${Math.min(...dadosNotas.map(n => parseInt(extrairAno(n.data_de_emissao)) || 9999))} - ${Math.max(...dadosNotas.map(n => parseInt(extrairAno(n.data_de_emissao)) || 0))}</div>
-                        <div class="metadata-item"><strong>Última atualização:</strong> ${document.getElementById('data-atualizacao-header').textContent}</div>
+
+                    <h5 class="fw-bold mb-3">Metadados</h5>
+                    
+                    <div class="accordion" id="accordionMetadados">
+                        <!-- Notas -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNotas">Notas Fiscais</button></h2>
+                            <div id="collapseNotas" class="accordion-collapse collapse show">
+                                <div class="accordion-body p-0">
+                                    <table class="table table-sm table-bordered mb-0">
+                                        <thead class="table-dark"><tr><th>Campo</th><th>Descrição</th><th>Domínio</th></tr></thead>
+                                        <tbody>
+                                            <tr><td><strong>Órgão emissor</strong></td><td>Identifica o órgão responsável pela emissão da Nota Fiscal.</td><td class="text-muted">-</td></tr>
+                                            <tr><td><strong>Tipo de documento</strong></td><td>Identifica o tipo de documento relacionado ao registro.</td><td class="text-muted">- Nota fiscal<br>- Outros tipos de documentos</td></tr>
+                                            <tr><td><strong>Fornecedor: CNPJ/CPF</strong></td><td>Número de identificação do fornecedor (CNPJ ou CPF).</td><td class="text-muted">-</td></tr>
+                                            <tr><td><strong>Fornecedor: nome empresarial</strong></td><td>Razão social / Nome do fornecedor.</td><td class="text-muted">-</td></tr>
+                                            <tr><td><strong>Número</strong></td><td>Número da nota fiscal.</td><td class="text-muted">-</td></tr>
+                                            <tr><td><strong>Série</strong></td><td>Série da nota fiscal.</td><td class="text-muted">-</td></tr>
+                                            <tr><td><strong>Sequencial</strong></td><td>Número sequencial da nota fiscal.</td><td class="text-muted">-</td></tr>
+                                            <tr><td><strong>Situação</strong></td><td>Indica o status da nota conforme fluxo do sistema.</td><td class="text-muted">- Completa<br>- Incompleta<br>- Completa - Disponível para recebimento definitivo<br>- Completa - Recebimento definitivo<br>- Completa - Recebimento provisório</td></tr>
+                                            <tr><td><strong>Natureza</strong></td><td>Natureza de despesa da nota fiscal, conforme os itens que compõem a nota.</td><td class="text-muted">- Permanente<br>- Consumo<br>- Serviço</td></tr>
+                                            <tr><td><strong>Indicador de orçamento</strong></td><td>Indicador relacionado ao orçamento corrente ou de anos anteriores.</td><td class="text-muted">- Despesa orçamentária<br>- Despesa extraorçamentária</td></tr>
+                                            <tr><td><strong>Data de emissão</strong></td><td>Data da emissão do documento fiscal.</td><td class="text-muted">-</td></tr>
+                                            <tr><td><strong>Data de recebimento</strong></td><td>Data do recebimento do documento fiscal.</td><td class="text-muted">-</td></tr>
+                                            <tr><td><strong>Data de registro</strong></td><td>Data em que o documento foi registrado no sistema.</td><td class="text-muted">-</td></tr>
+                                            <tr><td><strong>Valor total com impostos</strong></td><td>Valor total do documento incluindo impostos.</td><td class="text-muted">-</td></tr>
+                                            <tr><td><strong>Nota fiscal para aglutinação?</strong></td><td>Indica se a nota fiscal deve ser considerada para aglutinação.</td><td class="text-muted">- Sim<br>- Não</td></tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Itens -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseItens">Itens da Nota</button></h2>
+                            <div id="collapseItens" class="accordion-collapse collapse">
+                                <div class="accordion-body p-0">
+                                    <table class="table table-sm table-bordered mb-0">
+                                        <thead class="table-dark"><tr><th>Campo</th><th>Descrição</th><th>Domínio</th></tr></thead>
+                                        <tbody>
+                                            <tr><td><strong>Órgão emissor</strong></td><td>Identifica o órgão responsável pela emissão da Nota Fiscal.</td><td class="text-muted">-</td></tr>
+                                            <tr><td><strong>Tipo de documento</strong></td><td>Identifica o tipo de documento relacionado ao registro.</td><td class="text-muted">- Nota fiscal<br>- Outros tipos de documentos</td></tr>
+                                            <tr><td><strong>Fornecedor: CNPJ/CPF</strong></td><td>Número de identificação do fornecedor (CNPJ ou CPF).</td><td class="text-muted">-</td></tr>
+                                            <tr><td><strong>Fornecedor: nome empresarial</strong></td><td>Razão social / Nome do fornecedor.</td><td class="text-muted">-</td></tr>
+                                            <tr><td><strong>Número</strong></td><td>Número da nota fiscal.</td><td class="text-muted">-</td></tr>
+                                            <tr><td><strong>Série</strong></td><td>Série da nota fiscal.</td><td class="text-muted">-</td></tr>
+                                            <tr><td><strong>Sequencial</strong></td><td>Número sequencial da nota fiscal.</td><td class="text-muted">-</td></tr>
+                                            <tr><td><strong>Natureza</strong></td><td>Natureza de despesa da nota fiscal, conforme os itens que compõem a nota.</td><td class="text-muted">- Permanente<br>- Consumo<br>- Serviço</td></tr>
+                                            <tr><td><strong>Indicador de orçamento</strong></td><td>Indicador relacionado ao orçamento corrente ou de anos anteriores.</td><td class="text-muted">- Despesa orçamentária<br>- Despesa extraorçamentária</td></tr>
+                                            <tr><td><strong>Item da nota fiscal</strong></td><td>Identificação do item na nota fiscal.</td><td class="text-muted">-</td></tr>
+                                            <tr><td><strong>Código do item</strong></td><td>Código do item registrado na nota.</td><td class="text-muted">-</td></tr>
+                                            <tr><td><strong>Desc. do item de material</strong></td><td>Descrição detalhada do item.</td><td class="text-muted">-</td></tr>
+                                            <tr><td><strong>Desc. da unid. de fornecimento</strong></td><td>Descrição da unidade de aquisição ou fornecimento.</td><td class="text-muted">-</td></tr>
+                                            <tr><td><strong>Unid. orçamentária</strong></td><td>Código da Unidade Orçamentária responsável pela nota.</td><td class="text-muted">-</td></tr>
+                                            <tr><td><strong>Elemento-item de despesa</strong></td><td>Código do Elemento-item de Despesa vinculado aos itens da nota.</td><td class="text-muted">-</td></tr>
+                                            <tr><td><strong>Qtde. na nota fiscal</strong></td><td>Quantidade do item na nota fiscal.</td><td class="text-muted">-</td></tr>
+                                            <tr><td><strong>Valor unitário (R$)</strong></td><td>Valor unitário.</td><td class="text-muted">-</td></tr>
+                                            <tr><td><strong>Valor total (R$)</strong></td><td>Valor total do item da nota.</td><td class="text-muted">-</td></tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             `;
         }
 
-        window.baixarNotasCSV = function() {
-            const cabecalhos = ['orgao_emissor', 'tipo_de_documento', 'fornecedor_cnpj_cpf', 'fornecedor_nome_empresarial', 'numero', 'serie', 'sequencial', 'situacao', 'natureza', 'indicador_de_orcamento', 'data_de_emissao', 'data_de_recebimento', 'data_de_registro', 'valor_total_com_impostos', 'nota_fiscal_para_aglutinacao'];
-            exportarCSV(dadosNotas, cabecalhos, 'notas_fiscais_completo.csv');
-        };
-
-        window.baixarItensCSV = function() {
-            const cabecalhos = ['orgao_emissor', 'tipo_de_documento', 'fornecedor_cnpj_cpf', 'fornecedor_nome_empresarial', 'numero', 'serie', 'sequencial', 'natureza', 'indicador_de_orcamento', 'item_da_nota_fiscal', 'codigo_do_item', 'desc_do_item_de_material', 'desc_da_unid_de_fornecimento', 'unid_orcamentaria', 'elemento_item_de_despesa', 'qtde_na_nota_fiscal', 'valor_unitario_r', 'valor_total_r'];
-            exportarCSV(dadosItens, cabecalhos, 'itens_nota_fiscal_completo.csv');
-        };
-
-        // ============================================
-        // COMPARTILHAMENTO
-        // ============================================
-        function opcoesCompartilhamento(id) {
-            return `
-                <a href="#" onclick="copiarLink(event,${id})"><i class="fas fa-link"></i> Copiar Link</a>
-                <a href="#" onclick="compartilharFacebook(event,${id})"><i class="fab fa-facebook-f"></i> Facebook</a>
-                <a href="#" onclick="compartilharTwitter(event,${id})"><i class="fab fa-twitter"></i> Twitter</a>
-                <a href="#" onclick="compartilharLinkedIn(event,${id})"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
-                <a href="#" onclick="compartilharWhatsApp(event,${id})"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-            `;
-        }
-
-        window.toggleShare = (id) => {
-            document.querySelectorAll('.share-options').forEach(opt => opt.classList.remove('show'));
-            document.getElementById(`shareOptions${id}`)?.classList.toggle('show');
-        };
-
-        window.copiarLink = (e, id) => { 
-            e.preventDefault(); 
-            navigator.clipboard.writeText(window.location.href).then(() => alert('Link copiado!')); 
-            document.getElementById(`shareOptions${id}`).classList.remove('show'); 
-        };
-        
-        window.compartilharFacebook = (e, id) => { 
-            e.preventDefault(); 
-            window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`, '_blank'); 
-            document.getElementById(`shareOptions${id}`).classList.remove('show'); 
-        };
-        
-        window.compartilharTwitter = (e, id) => { 
-            e.preventDefault(); 
-            window.open(`https://twitter.com/intent/tweet?url=${encodeURIComponent(window.location.href)}&text=Dashboard de Notas Fiscais`, '_blank'); 
-            document.getElementById(`shareOptions${id}`).classList.remove('show'); 
-        };
-        
-        window.compartilharLinkedIn = (e, id) => { 
-            e.preventDefault(); 
-            window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(window.location.href)}`, '_blank'); 
-            document.getElementById(`shareOptions${id}`).classList.remove('show'); 
-        };
-        
-        window.compartilharWhatsApp = (e, id) => { 
-            e.preventDefault(); 
-            window.open(`https://wa.me/?text=${encodeURIComponent('Dashboard de Notas Fiscais ' + window.location.href)}`, '_blank'); 
-            document.getElementById(`shareOptions${id}`).classList.remove('show'); 
-        };
-
-        // Inicializar
-        document.addEventListener('DOMContentLoaded', function() {
-            carregarDados();
-        });
+        // INICIALIZAÇÃO
+        document.addEventListener('DOMContentLoaded', carregarAnoInicial);
     </script>
 </body>
 </html>
