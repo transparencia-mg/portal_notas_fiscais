@@ -10,11 +10,14 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     
     <!-- Bibliotecas para PDF -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.29/jspdf.plugin.autotable.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
     <style>
         /* ==================== VARIÁVEIS DE CORES ==================== */
@@ -98,6 +101,22 @@
         .form-control:focus, .form-select:focus {
             border-color: var(--accent-red);
             box-shadow: 0 0 0 2px rgba(185, 60, 66, 0.15);
+        }
+
+        /* Estilo para Select2 */
+        .select2-container--default .select2-selection--single {
+            height: 42px;
+            border: 2px solid #e9ecef;
+            border-radius: 6px;
+        }
+        
+        .select2-container--default .select2-selection--single .select2-selection__rendered {
+            line-height: 38px;
+            padding-left: 12px;
+        }
+        
+        .select2-container--default .select2-selection--single .select2-selection__arrow {
+            height: 38px;
         }
 
         /* ==================== CARDS DE MÉTRICAS ==================== */
@@ -294,6 +313,28 @@
         }
         .btn-action:hover { background-color: var(--accent-red); }
 
+        /* ==================== BARRA DE PESQUISA ==================== */
+        .search-box-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .search-box {
+            border: 2px solid var(--primary-dark) !important;
+            border-radius: 6px !important;
+            padding: 8px 12px !important;
+            font-size: 13px !important;
+            background-color: white;
+            color: var(--primary-dark);
+            min-width: 250px;
+        }
+        .search-box:focus {
+            border-color: var(--accent-red) !important;
+            box-shadow: 0 0 0 2px rgba(185, 60, 66, 0.15);
+            outline: none;
+        }
+
         /* ==================== BOTÃO COMPARTILHAR ==================== */
         .share-dropdown {
             position: relative;
@@ -424,38 +465,100 @@
             font-weight: 600;
             cursor: pointer;
         }
-        
-        .search-box {
-            border: 2px solid var(--primary-dark) !important;
-            border-radius: 6px !important;
-            padding: 8px 12px !important;
-            font-size: 13px !important;
-            background-color: white;
-            color: var(--primary-dark);
-        }
-        .search-box:focus {
-            border-color: var(--accent-red) !important;
-            box-shadow: 0 0 0 2px rgba(185, 60, 66, 0.15);
-            outline: none;
-        }
 
         /* ==================== METADADOS ==================== */
-        .metadata-card {
+        .metadata-table {
+            width: 100%;
+            border-collapse: collapse;
             background: white;
             border-radius: 8px;
-            padding: 20px;
-            margin-top: 20px;
-            border-left: 4px solid var(--info-blue);
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
         }
-        .metadata-item { font-size: 13px; padding: 8px 0; border-bottom: 1px dashed #eee; }
-        .metadata-item strong { color: var(--primary-dark); width: 180px; display: inline-block; }
         
-        .text-right { text-align: right; }
-        .text-center { text-align: center; }
-        .sortable-header { cursor: pointer; }
-        .sortable-header:hover { color: var(--accent-red); }
+        .metadata-table th {
+            background: var(--primary-dark);
+            color: white;
+            font-weight: 600;
+            font-size: 13px;
+            padding: 12px 15px;
+            text-transform: uppercase;
+        }
         
-        /* Badge para indicador de orçamento */
+        .metadata-table td {
+            padding: 10px 15px;
+            font-size: 13px;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .metadata-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .metadata-table td:first-child {
+            font-weight: 600;
+            color: var(--primary-dark);
+        }
+        
+        .metadata-table td:nth-child(2) {
+            color: #495057;
+        }
+        
+        .metadata-table td:last-child {
+            color: #6c757d;
+            font-style: italic;
+        }
+        
+        .portal-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            border: 2px dashed var(--primary-dark);
+            transition: all 0.3s ease;
+            margin-bottom: 30px;
+        }
+        
+        .portal-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border-color: var(--accent-red);
+        }
+        
+        .portal-card i {
+            font-size: 48px;
+            color: var(--primary-dark);
+            margin-bottom: 15px;
+        }
+        
+        .portal-card h3 {
+            color: var(--primary-dark);
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .portal-card p {
+            color: #6c757d;
+            margin-bottom: 20px;
+        }
+        
+        .portal-link {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary-darker));
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+        
+        .portal-link:hover {
+            background: linear-gradient(135deg, var(--accent-red), #a32c32);
+            color: white;
+            transform: scale(1.05);
+        }
+
         .badge-orcamentaria {
             background-color: #d4edda;
             color: #155724;
@@ -480,6 +583,11 @@
             margin-left: 4px;
             vertical-align: middle;
         }
+        
+        .text-right { text-align: right; }
+        .text-center { text-align: center; }
+        .sortable-header { cursor: pointer; }
+        .sortable-header:hover { color: var(--accent-red); }
     </style>
 </head>
 <body>
@@ -651,37 +759,45 @@
             try {
                 console.log(`Carregando dados de ${ano}...`);
                 
+                // Carregar apenas arquivos existentes para o ano
                 const arquivosNotas = [];
                 const arquivosItens = [];
                 
-                meses.forEach(mes => {
-                    if (ano < '2026' || (ano === '2026' && ['jan', 'fev', 'mar'].includes(mes))) {
-                        arquivosNotas.push(`${BASE_URL}notas_${mes}${ano.slice(-2)}.csv`);
-                        arquivosItens.push(`${BASE_URL}itensnota_${mes}${ano.slice(-2)}.csv`);
+                // Determinar meses disponíveis para cada ano
+                if (ano === '2026') {
+                    // Para 2026, carregar apenas jan, fev, mar
+                    ['jan', 'fev', 'mar'].forEach(mes => {
+                        arquivosNotas.push(`${BASE_URL}notas_${mes}26.csv`);
+                        arquivosItens.push(`${BASE_URL}itensnota_${mes}26.csv`);
+                    });
+                } else {
+                    // Para anos anteriores, carregar todos os meses
+                    meses.forEach(mes => {
+                        const anoDoisDigitos = ano.slice(-2);
+                        arquivosNotas.push(`${BASE_URL}notas_${mes}${anoDoisDigitos}.csv`);
+                        arquivosItens.push(`${BASE_URL}itensnota_${mes}${anoDoisDigitos}.csv`);
+                    });
+                }
+
+                // Carregar todos os arquivos em paralelo para melhor performance
+                const [notasResults, itensResults] = await Promise.all([
+                    Promise.allSettled(arquivosNotas.map(url => fetch(url).then(r => r.ok ? r.text() : null))),
+                    Promise.allSettled(arquivosItens.map(url => fetch(url).then(r => r.ok ? r.text() : null)))
+                ]);
+
+                let notas = [];
+                notasResults.forEach(result => {
+                    if (result.status === 'fulfilled' && result.value) {
+                        notas.push(...parseCSV(result.value));
                     }
                 });
 
-                let notas = [];
-                for (let url of arquivosNotas) {
-                    try {
-                        const response = await fetch(url);
-                        if (response.ok) {
-                            const texto = await response.text();
-                            notas.push(...parseCSV(texto));
-                        }
-                    } catch (e) {}
-                }
-
                 let itens = [];
-                for (let url of arquivosItens) {
-                    try {
-                        const response = await fetch(url);
-                        if (response.ok) {
-                            const texto = await response.text();
-                            itens.push(...parseCSV(texto));
-                        }
-                    } catch (e) {}
-                }
+                itensResults.forEach(result => {
+                    if (result.status === 'fulfilled' && result.value) {
+                        itens.push(...parseCSV(result.value));
+                    }
+                });
 
                 notas = notas.map(nota => ({
                     ...nota,
@@ -744,6 +860,7 @@
         }
 
         function processarDados() {
+            // Processar itens por nota
             const itensPorNota = {};
             dadosItens.forEach(item => {
                 const chave = `${item.orgao_emissor}|${item.numero}|${item.serie || ''}|${item.sequencial || ''}`;
@@ -756,6 +873,7 @@
                 itens: itensPorNota[`${nota.orgao_emissor}|${nota.numero}|${nota.serie || ''}|${nota.sequencial || ''}`] || []
             }));
             
+            // Visão Geral
             const mapaVG = new Map();
             dadosCompletosNF.forEach(nota => {
                 if (!nota.valor_total_com_impostos) return;
@@ -779,9 +897,12 @@
             
             dadosVisaoGeral = Array.from(mapaVG.values());
             dadosVisaoGeralFiltrados = [...dadosVisaoGeral];
+            
+            // Todas as notas
             todasNotas = [...dadosCompletosNF];
             notasFiltradas = [...todasNotas];
             
+            // Processar itens com informações da nota
             const mapaNotas = new Map();
             dadosCompletosNF.forEach(nota => {
                 const chave = `${nota.orgao_emissor}|${nota.numero}|${nota.serie || ''}|${nota.sequencial || ''}`;
@@ -877,7 +998,7 @@
 
         window.exportarTabelaNotasCSV = function() {
             exportarCSV(notasFiltradas, [
-                'orgao_emissor', 'numero_nota', 'fornecedor_nome_empresarial', 
+                'orgao_emissor', 'numero_nota', 'data_de_emissao', 'fornecedor_nome_empresarial', 
                 'fornecedor_cnpj_cpf', 'natureza', 'indicador_de_orcamento', 'valor_total_com_impostos'
             ], 'consulta_notas.csv');
         };
@@ -920,9 +1041,9 @@
 
         window.exportarTabelaNotasPDF = function() {
             exportarPDF('Consulta de Notas Fiscais', 
-                [['Órgão', 'Número NF', 'Fornecedor', 'CNPJ/CPF', 'Natureza', 'Indicador', 'Valor Total']], 
+                [['Órgão', 'Número NF', 'Data Emissão', 'Fornecedor', 'CNPJ/CPF', 'Natureza', 'Indicador', 'Valor Total']], 
                 notasFiltradas.map(n => [
-                    n.orgao_emissor, n.numero_nota, n.fornecedor_nome_empresarial, 
+                    n.orgao_emissor, n.numero_nota, formatarData(n.data_de_emissao), n.fornecedor_nome_empresarial, 
                     n.fornecedor_cnpj_cpf, n.natureza, n.indicador_de_orcamento, 
                     formatarMoeda(n.valor_total_com_impostos)
                 ]), 
@@ -964,6 +1085,45 @@
             
             doc.save(nomeArquivo);
         }
+
+        // ============================================
+        // FUNÇÕES DE PESQUISA RÁPIDA
+        // ============================================
+        window.pesquisarNotas = function() {
+            const termo = document.getElementById('pesquisaRapidaNotas')?.value.toLowerCase() || '';
+            
+            if (!termo) {
+                notasFiltradas = [...todasNotas];
+            } else {
+                notasFiltradas = todasNotas.filter(n => 
+                    (n.orgao_emissor && n.orgao_emissor.toLowerCase().includes(termo)) ||
+                    (n.numero_nota && n.numero_nota.toLowerCase().includes(termo)) ||
+                    (n.fornecedor_nome_empresarial && n.fornecedor_nome_empresarial.toLowerCase().includes(termo)) ||
+                    (n.fornecedor_cnpj_cpf && n.fornecedor_cnpj_cpf.includes(termo))
+                );
+            }
+            
+            paginaAtualNotas = 1;
+            ordenarNotas(sortConfigNotas.column);
+        };
+
+        window.pesquisarItens = function() {
+            const termo = document.getElementById('pesquisaRapidaItens')?.value.toLowerCase() || '';
+            
+            if (!termo) {
+                itensFiltrados = [...todosItens];
+            } else {
+                itensFiltrados = todosItens.filter(i => 
+                    (i.orgao_emissor && i.orgao_emissor.toLowerCase().includes(termo)) ||
+                    (i.desc_do_item_de_material && i.desc_do_item_de_material.toLowerCase().includes(termo)) ||
+                    (i.codigo_do_item && i.codigo_do_item.toLowerCase().includes(termo)) ||
+                    (i.fornecedor_nome && i.fornecedor_nome.toLowerCase().includes(termo))
+                );
+            }
+            
+            paginaAtualItens = 1;
+            ordenarItens(sortConfigItens.column);
+        };
 
         // ============================================
         // VISÃO GERAL
@@ -1075,7 +1235,6 @@
         };
 
         window.aplicarFiltrosVG = function() {
-            const ano = document.getElementById('filtroAnoVG')?.value;
             const orgao = document.getElementById('filtroOrgaoVG')?.value;
             const natureza = document.getElementById('filtroNaturezaVG')?.value;
             const indicador = document.getElementById('filtroIndicadorVG')?.value;
@@ -1101,7 +1260,10 @@
             document.getElementById('consulta-notas-tab').click();
             setTimeout(() => {
                 const filtro = document.getElementById('filtroOrgaoNotas');
-                if (filtro) { filtro.value = orgao; aplicarFiltrosNotas(); }
+                if (filtro) { 
+                    filtro.value = orgao; 
+                    aplicarFiltrosNotas();
+                }
             }, 300);
         };
 
@@ -1111,6 +1273,7 @@
         function renderizarConsultaNotas() {
             const orgaos = [...new Set(todasNotas.map(n => n.orgao_emissor))].sort();
             const naturezas = [...new Set(todasNotas.map(n => n.natureza))].filter(Boolean).sort();
+            const fornecedores = [...new Set(todasNotas.map(n => n.fornecedor_nome_empresarial))].filter(Boolean).sort();
             
             const html = `
                 <div class="filter-container">
@@ -1137,11 +1300,14 @@
                         </div>
                         <div class="col-md-3">
                             <label class="filter-label"><i class="material-icons">person</i>Fornecedor</label>
-                            <input type="text" class="form-control" id="buscaFornecedorNotas" placeholder="Nome ou CNPJ...">
+                            <select class="form-select" id="filtroFornecedorNotas">
+                                <option value="">Todos</option>
+                                ${fornecedores.map(f => `<option value="${f}">${f.substring(0,50)}</option>`).join('')}
+                            </select>
                         </div>
                         <div class="col-md-2">
                             <label class="filter-label"><i class="material-icons">receipt</i>Nº Nota</label>
-                            <input type="text" class="form-control" id="buscaNumeroNota" placeholder="Número...">
+                            <input type="text" class="form-control" id="filtroNumeroNota" placeholder="Número...">
                         </div>
                     </div>
                     <div class="row mt-3">
@@ -1162,6 +1328,10 @@
                         </div>
                     </div>
                     <div class="d-flex align-items-center gap-3">
+                        <div class="search-box-container">
+                            <input type="text" class="form-control search-box" id="pesquisaRapidaNotas" placeholder="Buscar na tabela..." onkeyup="pesquisarNotas()">
+                            <i class="material-icons" style="color: var(--primary-dark);">search</i>
+                        </div>
                         <span class="table-badge" id="totalNotasBadge">${notasFiltradas.length} notas</span>
                         <select class="items-per-page" id="itensPorPaginaNotas" onchange="alterarItensPorPaginaNotas()">
                             <option value="5">5</option><option value="10" selected>10</option><option value="20">20</option><option value="50">50</option>
@@ -1175,6 +1345,7 @@
                             <thead><tr>
                                 <th class="sortable-header" onclick="ordenarNotas('orgao_emissor')">Órgão <i class="material-icons sort-icon">${getSortIcon('orgao_emissor', sortConfigNotas)}</i></th>
                                 <th class="sortable-header" onclick="ordenarNotas('numero_nota')">Número NF <i class="material-icons sort-icon">${getSortIcon('numero_nota', sortConfigNotas)}</i></th>
+                                <th class="sortable-header" onclick="ordenarNotas('data_de_emissao')">Data Emissão <i class="material-icons sort-icon">${getSortIcon('data_de_emissao', sortConfigNotas)}</i></th>
                                 <th class="sortable-header" onclick="ordenarNotas('fornecedor_nome_empresarial')">Fornecedor <i class="material-icons sort-icon">${getSortIcon('fornecedor_nome_empresarial', sortConfigNotas)}</i></th>
                                 <th class="sortable-header" onclick="ordenarNotas('fornecedor_cnpj_cpf')">CNPJ/CPF <i class="material-icons sort-icon">${getSortIcon('fornecedor_cnpj_cpf', sortConfigNotas)}</i></th>
                                 <th>Natureza</th>
@@ -1199,16 +1370,15 @@
         };
 
         function aplicarFiltrosNotas() {
-            const ano = document.getElementById('filtroAnoNotas')?.value;
             const orgao = document.getElementById('filtroOrgaoNotas')?.value;
             const natureza = document.getElementById('filtroNaturezaNotas')?.value;
-            const buscaFornecedor = (document.getElementById('buscaFornecedorNotas')?.value || '').toLowerCase();
-            const buscaNumero = (document.getElementById('buscaNumeroNota')?.value || '').toLowerCase();
+            const fornecedor = document.getElementById('filtroFornecedorNotas')?.value;
+            const buscaNumero = (document.getElementById('filtroNumeroNota')?.value || '').toLowerCase();
             
             notasFiltradas = todasNotas.filter(n => {
                 if (orgao && !n.orgao_emissor?.includes(orgao)) return false;
                 if (natureza && n.natureza !== natureza) return false;
-                if (buscaFornecedor && !(n.fornecedor_nome_empresarial?.toLowerCase().includes(buscaFornecedor) || n.fornecedor_cnpj_cpf?.includes(buscaFornecedor))) return false;
+                if (fornecedor && n.fornecedor_nome_empresarial !== fornecedor) return false;
                 if (buscaNumero && !n.numero_nota?.toLowerCase().includes(buscaNumero)) return false;
                 return true;
             });
@@ -1246,7 +1416,6 @@
             });
             
             atualizarTabelaNotas();
-            renderizarConsultaNotas();
         };
 
         function atualizarTabelaNotas() {
@@ -1259,6 +1428,7 @@
                 return `<tr>
                     <td>${n.orgao_emissor || '-'}</td>
                     <td>${n.numero_nota || '-'}</td>
+                    <td>${formatarData(n.data_de_emissao)}</td>
                     <td>${n.fornecedor_nome_empresarial || '-'}</td>
                     <td>${n.fornecedor_cnpj_cpf || '-'}</td>
                     <td>${n.natureza || '-'}</td>
@@ -1289,8 +1459,9 @@
         window.limparFiltrosNotas = function() {
             document.getElementById('filtroOrgaoNotas').value = '';
             document.getElementById('filtroNaturezaNotas').value = '';
-            document.getElementById('buscaFornecedorNotas').value = '';
-            document.getElementById('buscaNumeroNota').value = '';
+            document.getElementById('filtroFornecedorNotas').value = '';
+            document.getElementById('filtroNumeroNota').value = '';
+            document.getElementById('pesquisaRapidaNotas').value = '';
             notasFiltradas = [...todasNotas];
             paginaAtualNotas = 1;
             ordenarNotas('data_de_emissao');
@@ -1302,6 +1473,7 @@
         function renderizarConsultaItens() {
             const orgaos = [...new Set(todosItens.map(i => i.orgao_emissor))].sort();
             const naturezas = [...new Set(todosItens.map(i => i.natureza))].filter(Boolean).sort();
+            const fornecedores = [...new Set(todosItens.map(i => i.fornecedor_nome))].filter(Boolean).sort();
             
             const html = `
                 <div class="filter-container">
@@ -1328,11 +1500,14 @@
                         </div>
                         <div class="col-md-3">
                             <label class="filter-label"><i class="material-icons">person</i>Fornecedor</label>
-                            <input type="text" class="form-control" id="buscaFornecedorItens" placeholder="Nome do fornecedor...">
+                            <select class="form-select" id="filtroFornecedorItens">
+                                <option value="">Todos</option>
+                                ${fornecedores.map(f => `<option value="${f}">${f.substring(0,50)}</option>`).join('')}
+                            </select>
                         </div>
                         <div class="col-md-2">
                             <label class="filter-label"><i class="material-icons">search</i>Item</label>
-                            <input type="text" class="form-control" id="buscaItem" placeholder="Código ou descrição...">
+                            <input type="text" class="form-control" id="filtroItem" placeholder="Código ou descrição...">
                         </div>
                     </div>
                     <div class="row mt-3">
@@ -1353,6 +1528,10 @@
                         </div>
                     </div>
                     <div class="d-flex align-items-center gap-3">
+                        <div class="search-box-container">
+                            <input type="text" class="form-control search-box" id="pesquisaRapidaItens" placeholder="Buscar na tabela..." onkeyup="pesquisarItens()">
+                            <i class="material-icons" style="color: var(--primary-dark);">search</i>
+                        </div>
                         <span class="table-badge" id="totalItensBadge">${itensFiltrados.length} itens</span>
                         <select class="items-per-page" id="itensPorPaginaItens" onchange="alterarItensPorPaginaItens()">
                             <option value="5">5</option><option value="10" selected>10</option><option value="20">20</option><option value="50">50</option>
@@ -1391,16 +1570,15 @@
         };
 
         function aplicarFiltrosItens() {
-            const ano = document.getElementById('filtroAnoItens')?.value;
             const orgao = document.getElementById('filtroOrgaoItens')?.value;
             const natureza = document.getElementById('filtroNaturezaItens')?.value;
-            const buscaFornecedor = (document.getElementById('buscaFornecedorItens')?.value || '').toLowerCase();
-            const buscaItem = (document.getElementById('buscaItem')?.value || '').toLowerCase();
+            const fornecedor = document.getElementById('filtroFornecedorItens')?.value;
+            const buscaItem = (document.getElementById('filtroItem')?.value || '').toLowerCase();
             
             itensFiltrados = todosItens.filter(i => {
                 if (orgao && !i.orgao_emissor?.includes(orgao)) return false;
                 if (natureza && i.natureza !== natureza) return false;
-                if (buscaFornecedor && !i.fornecedor_nome?.toLowerCase().includes(buscaFornecedor)) return false;
+                if (fornecedor && i.fornecedor_nome !== fornecedor) return false;
                 if (buscaItem && !(i.desc_do_item_de_material?.toLowerCase().includes(buscaItem) || i.codigo_do_item?.toLowerCase().includes(buscaItem))) return false;
                 return true;
             });
@@ -1438,7 +1616,6 @@
             });
             
             atualizarTabelaItens();
-            renderizarConsultaItens();
         };
 
         function atualizarTabelaItens() {
@@ -1482,8 +1659,9 @@
         window.limparFiltrosItens = function() {
             document.getElementById('filtroOrgaoItens').value = '';
             document.getElementById('filtroNaturezaItens').value = '';
-            document.getElementById('buscaFornecedorItens').value = '';
-            document.getElementById('buscaItem').value = '';
+            document.getElementById('filtroFornecedorItens').value = '';
+            document.getElementById('filtroItem').value = '';
+            document.getElementById('pesquisaRapidaItens').value = '';
             itensFiltrados = [...todosItens];
             paginaAtualItens = 1;
             ordenarItens('data_emissao');
@@ -1563,82 +1741,78 @@
         // ============================================
         function renderizarDownloads() {
             document.getElementById('downloads-content').innerHTML = `
-                <div class="filter-container">
-                    <h4 class="mb-4"><i class="material-icons me-2">download</i> Downloads</h4>
-                    
-                    <div class="row mb-4">
-                        <div class="col-md-6">
-                            <div class="bg-white p-4 rounded shadow-sm">
-                                <h5 class="fw-bold mb-3"><i class="material-icons text-primary me-2">open_in_new</i> Portal de Dados Abertos</h5>
-                                <p>Acesse o conjunto de dados completo no Portal de Dados Abertos de Minas Gerais.</p>
-                                <a href="https://dados.mg.gov.br/dataset/portal_notas_fiscais" target="_blank" class="btn-export text-decoration-none d-inline-block"><i class="material-icons me-2">launch</i>Acessar Portal</a>
-                            </div>
-                        </div>
+                <div class="portal-card">
+                    <i class="material-icons">cloud_download</i>
+                    <h3>Portal de Dados Abertos</h3>
+                    <p>Acesse o conjunto de dados completo no Portal de Dados Abertos de Minas Gerais. Dados documentados conforme especificações Frictionless Data.</p>
+                    <a href="https://dados.mg.gov.br/dataset/portal_notas_fiscais" target="_blank" class="portal-link">
+                        <i class="material-icons me-2">open_in_new</i> Acessar Portal de Dados MG
+                    </a>
+                </div>
+
+                <h4 class="mb-3 fw-bold">Metadados</h4>
+                
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5 class="mb-3">Notas Fiscais</h5>
+                        <table class="metadata-table">
+                            <thead>
+                                <tr>
+                                    <th>CAMPO</th>
+                                    <th>DESCRIÇÃO</th>
+                                    <th>TIPO</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>orgao_emissor</td><td>Órgão responsável pela emissão da Nota Fiscal</td><td>Texto</td></tr>
+                                <tr><td>tipo_documento</td><td>Tipo de documento relacionado ao registro</td><td>Texto</td></tr>
+                                <tr><td>fornecedor_cnpj_cpf</td><td>CNPJ ou CPF do fornecedor</td><td>Texto</td></tr>
+                                <tr><td>fornecedor_nome_empresarial</td><td>Razão social / Nome do fornecedor</td><td>Texto</td></tr>
+                                <tr><td>numero</td><td>Número da nota fiscal</td><td>Texto</td></tr>
+                                <tr><td>serie</td><td>Série da nota fiscal</td><td>Texto</td></tr>
+                                <tr><td>sequencial</td><td>Número sequencial da nota</td><td>Texto</td></tr>
+                                <tr><td>situacao</td><td>Status da nota no sistema</td><td>Texto</td></tr>
+                                <tr><td>natureza</td><td>Natureza da despesa</td><td>Texto</td></tr>
+                                <tr><td>indicador_de_orcamento</td><td>Indicador de orçamento</td><td>Texto</td></tr>
+                                <tr><td>data_de_emissao</td><td>Data de emissão</td><td>Data</td></tr>
+                                <tr><td>data_de_recebimento</td><td>Data de recebimento</td><td>Data</td></tr>
+                                <tr><td>data_de_registro</td><td>Data de registro</td><td>Data</td></tr>
+                                <tr><td>valor_total_com_impostos</td><td>Valor total com impostos</td><td>Número</td></tr>
+                                <tr><td>nota_fiscal_para_aglutinacao</td><td>Indicador de aglutinação</td><td>Texto</td></tr>
+                            </tbody>
+                        </table>
                     </div>
-
-                    <h5 class="fw-bold mb-3">Metadados</h5>
-                    
-                    <div class="accordion" id="accordionMetadados">
-                        <!-- Notas -->
-                        <div class="accordion-item">
-                            <h2 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNotas">Notas Fiscais</button></h2>
-                            <div id="collapseNotas" class="accordion-collapse collapse show">
-                                <div class="accordion-body p-0">
-                                    <table class="table table-sm table-bordered mb-0">
-                                        <thead class="table-dark"><tr><th>Campo</th><th>Descrição</th><th>Domínio</th></tr></thead>
-                                        <tbody>
-                                            <tr><td><strong>Órgão emissor</strong></td><td>Identifica o órgão responsável pela emissão da Nota Fiscal.</td><td class="text-muted">-</td></tr>
-                                            <tr><td><strong>Tipo de documento</strong></td><td>Identifica o tipo de documento relacionado ao registro.</td><td class="text-muted">- Nota fiscal<br>- Outros tipos de documentos</td></tr>
-                                            <tr><td><strong>Fornecedor: CNPJ/CPF</strong></td><td>Número de identificação do fornecedor (CNPJ ou CPF).</td><td class="text-muted">-</td></tr>
-                                            <tr><td><strong>Fornecedor: nome empresarial</strong></td><td>Razão social / Nome do fornecedor.</td><td class="text-muted">-</td></tr>
-                                            <tr><td><strong>Número</strong></td><td>Número da nota fiscal.</td><td class="text-muted">-</td></tr>
-                                            <tr><td><strong>Série</strong></td><td>Série da nota fiscal.</td><td class="text-muted">-</td></tr>
-                                            <tr><td><strong>Sequencial</strong></td><td>Número sequencial da nota fiscal.</td><td class="text-muted">-</td></tr>
-                                            <tr><td><strong>Situação</strong></td><td>Indica o status da nota conforme fluxo do sistema.</td><td class="text-muted">- Completa<br>- Incompleta<br>- Completa - Disponível para recebimento definitivo<br>- Completa - Recebimento definitivo<br>- Completa - Recebimento provisório</td></tr>
-                                            <tr><td><strong>Natureza</strong></td><td>Natureza de despesa da nota fiscal, conforme os itens que compõem a nota.</td><td class="text-muted">- Permanente<br>- Consumo<br>- Serviço</td></tr>
-                                            <tr><td><strong>Indicador de orçamento</strong></td><td>Indicador relacionado ao orçamento corrente ou de anos anteriores.</td><td class="text-muted">- Despesa orçamentária<br>- Despesa extraorçamentária</td></tr>
-                                            <tr><td><strong>Data de emissão</strong></td><td>Data da emissão do documento fiscal.</td><td class="text-muted">-</td></tr>
-                                            <tr><td><strong>Data de recebimento</strong></td><td>Data do recebimento do documento fiscal.</td><td class="text-muted">-</td></tr>
-                                            <tr><td><strong>Data de registro</strong></td><td>Data em que o documento foi registrado no sistema.</td><td class="text-muted">-</td></tr>
-                                            <tr><td><strong>Valor total com impostos</strong></td><td>Valor total do documento incluindo impostos.</td><td class="text-muted">-</td></tr>
-                                            <tr><td><strong>Nota fiscal para aglutinação?</strong></td><td>Indica se a nota fiscal deve ser considerada para aglutinação.</td><td class="text-muted">- Sim<br>- Não</td></tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Itens -->
-                        <div class="accordion-item">
-                            <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseItens">Itens da Nota</button></h2>
-                            <div id="collapseItens" class="accordion-collapse collapse">
-                                <div class="accordion-body p-0">
-                                    <table class="table table-sm table-bordered mb-0">
-                                        <thead class="table-dark"><tr><th>Campo</th><th>Descrição</th><th>Domínio</th></tr></thead>
-                                        <tbody>
-                                            <tr><td><strong>Órgão emissor</strong></td><td>Identifica o órgão responsável pela emissão da Nota Fiscal.</td><td class="text-muted">-</td></tr>
-                                            <tr><td><strong>Tipo de documento</strong></td><td>Identifica o tipo de documento relacionado ao registro.</td><td class="text-muted">- Nota fiscal<br>- Outros tipos de documentos</td></tr>
-                                            <tr><td><strong>Fornecedor: CNPJ/CPF</strong></td><td>Número de identificação do fornecedor (CNPJ ou CPF).</td><td class="text-muted">-</td></tr>
-                                            <tr><td><strong>Fornecedor: nome empresarial</strong></td><td>Razão social / Nome do fornecedor.</td><td class="text-muted">-</td></tr>
-                                            <tr><td><strong>Número</strong></td><td>Número da nota fiscal.</td><td class="text-muted">-</td></tr>
-                                            <tr><td><strong>Série</strong></td><td>Série da nota fiscal.</td><td class="text-muted">-</td></tr>
-                                            <tr><td><strong>Sequencial</strong></td><td>Número sequencial da nota fiscal.</td><td class="text-muted">-</td></tr>
-                                            <tr><td><strong>Natureza</strong></td><td>Natureza de despesa da nota fiscal, conforme os itens que compõem a nota.</td><td class="text-muted">- Permanente<br>- Consumo<br>- Serviço</td></tr>
-                                            <tr><td><strong>Indicador de orçamento</strong></td><td>Indicador relacionado ao orçamento corrente ou de anos anteriores.</td><td class="text-muted">- Despesa orçamentária<br>- Despesa extraorçamentária</td></tr>
-                                            <tr><td><strong>Item da nota fiscal</strong></td><td>Identificação do item na nota fiscal.</td><td class="text-muted">-</td></tr>
-                                            <tr><td><strong>Código do item</strong></td><td>Código do item registrado na nota.</td><td class="text-muted">-</td></tr>
-                                            <tr><td><strong>Desc. do item de material</strong></td><td>Descrição detalhada do item.</td><td class="text-muted">-</td></tr>
-                                            <tr><td><strong>Desc. da unid. de fornecimento</strong></td><td>Descrição da unidade de aquisição ou fornecimento.</td><td class="text-muted">-</td></tr>
-                                            <tr><td><strong>Unid. orçamentária</strong></td><td>Código da Unidade Orçamentária responsável pela nota.</td><td class="text-muted">-</td></tr>
-                                            <tr><td><strong>Elemento-item de despesa</strong></td><td>Código do Elemento-item de Despesa vinculado aos itens da nota.</td><td class="text-muted">-</td></tr>
-                                            <tr><td><strong>Qtde. na nota fiscal</strong></td><td>Quantidade do item na nota fiscal.</td><td class="text-muted">-</td></tr>
-                                            <tr><td><strong>Valor unitário (R$)</strong></td><td>Valor unitário.</td><td class="text-muted">-</td></tr>
-                                            <tr><td><strong>Valor total (R$)</strong></td><td>Valor total do item da nota.</td><td class="text-muted">-</td></tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="col-md-6">
+                        <h5 class="mb-3">Itens da Nota</h5>
+                        <table class="metadata-table">
+                            <thead>
+                                <tr>
+                                    <th>CAMPO</th>
+                                    <th>DESCRIÇÃO</th>
+                                    <th>TIPO</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>orgao_emissor</td><td>Órgão responsável pela emissão</td><td>Texto</td></tr>
+                                <tr><td>tipo_documento</td><td>Tipo de documento</td><td>Texto</td></tr>
+                                <tr><td>fornecedor_cnpj_cpf</td><td>CNPJ ou CPF do fornecedor</td><td>Texto</td></tr>
+                                <tr><td>fornecedor_nome_empresarial</td><td>Nome do fornecedor</td><td>Texto</td></tr>
+                                <tr><td>numero</td><td>Número da nota</td><td>Texto</td></tr>
+                                <tr><td>serie</td><td>Série da nota</td><td>Texto</td></tr>
+                                <tr><td>sequencial</td><td>Sequencial da nota</td><td>Texto</td></tr>
+                                <tr><td>natureza</td><td>Natureza da despesa</td><td>Texto</td></tr>
+                                <tr><td>indicador_de_orcamento</td><td>Indicador de orçamento</td><td>Texto</td></tr>
+                                <tr><td>item_da_nota_fiscal</td><td>Identificação do item</td><td>Texto</td></tr>
+                                <tr><td>codigo_do_item</td><td>Código do item</td><td>Texto</td></tr>
+                                <tr><td>desc_do_item_de_material</td><td>Descrição do item</td><td>Texto</td></tr>
+                                <tr><td>desc_da_unid_de_fornecimento</td><td>Unidade de fornecimento</td><td>Texto</td></tr>
+                                <tr><td>unid_orcamentaria</td><td>Unidade orçamentária</td><td>Texto</td></tr>
+                                <tr><td>elemento_item_de_despesa</td><td>Elemento da despesa</td><td>Texto</td></tr>
+                                <tr><td>qtde_na_nota_fiscal</td><td>Quantidade</td><td>Número</td></tr>
+                                <tr><td>valor_unitario_r</td><td>Valor unitário</td><td>Número</td></tr>
+                                <tr><td>valor_total_r</td><td>Valor total</td><td>Número</td></tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             `;
