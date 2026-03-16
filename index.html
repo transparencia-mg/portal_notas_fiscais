@@ -32,11 +32,26 @@
             --info-blue: #17a2b8;
         }
 
-        /* ==================== ESTILOS GERAIS ==================== */
-        body {
+        /* ==================== ESTILOS GERAIS E CONTROLE DE IFRAME ==================== */
+        html, body {
             font-family: 'Montserrat', 'Open Sans', sans-serif;
             background-color: var(--background-light);
+            overflow-y: visible !important;
+            overflow-x: hidden !important;
+            height: auto !important;
+            min-height: auto !important;
             padding-bottom: 15px;
+            margin: 0;
+        }
+
+        .container-fluid, .tab-content, .tab-pane {
+            overflow: visible !important;
+            height: auto !important;
+            min-height: auto !important;
+        }
+
+        .table-container {
+            overflow: visible !important;
         }
 
         /* ==================== DATA ATUALIZAÇÃO ==================== */
@@ -693,6 +708,43 @@
         let sortConfigItens = { column: 'data_emissao', direction: 'desc' };
 
         // ============================================
+        // FUNÇÃO PARA AJUSTAR ALTURA DO IFRAME
+        // ============================================
+        function iframeUpdateHeight() {
+            console.log('Atualizando altura do iframe...');
+            
+            // Forçar reflow
+            document.body.style.display = 'none';
+            document.body.offsetHeight; // Força reflow
+            document.body.style.display = '';
+            
+            const html = document.documentElement;
+            const body = document.body;
+            
+            const scrollHeight = Math.max(
+                body.scrollHeight, 
+                html.scrollHeight,
+                body.offsetHeight, 
+                html.offsetHeight,
+                document.querySelector('.container-fluid')?.scrollHeight || 0
+            );
+            
+            const finalHeight = scrollHeight + 20; // Pequena margem de segurança
+            
+            console.log('Altura calculada:', finalHeight);
+            
+            try {
+                window.parent.postMessage({ 
+                    iframeHeight: finalHeight 
+                }, '*');
+            } catch (error) {
+                console.warn('Erro ao enviar mensagem para o pai:', error);
+            }
+            
+            return finalHeight;
+        }
+
+        // ============================================
         // FUNÇÕES AUXILIARES
         // ============================================
         function formatarMoeda(valor) {
@@ -830,6 +882,9 @@
                 renderizarConsultaItens();
                 renderizarDownloads();
                 document.getElementById('data-atualizacao-header').textContent = new Date().toLocaleString('pt-BR');
+                
+                // Atualizar altura do iframe após carregar
+                setTimeout(iframeUpdateHeight, 500);
             } catch (error) {
                 console.error('Erro:', error);
             } finally {
@@ -852,6 +907,9 @@
                 if (componente === 'vg') renderizarVisaoGeral();
                 else if (componente === 'notas') renderizarConsultaNotas();
                 else if (componente === 'itens') renderizarConsultaItens();
+                
+                // Atualizar altura do iframe
+                setTimeout(iframeUpdateHeight, 200);
                 
             } finally {
                 carregando = false;
@@ -1030,6 +1088,9 @@
             link.href = URL.createObjectURL(blob);
             link.download = nomeArquivo;
             link.click();
+            
+            // Atualizar altura após exportação
+            setTimeout(iframeUpdateHeight, 100);
         }
 
         window.exportarTabelaVGPDF = function() {
@@ -1227,6 +1288,9 @@
             `;
             
             document.getElementById('visao-geral-content').innerHTML = html;
+            
+            // Atualizar altura do iframe
+            setTimeout(iframeUpdateHeight, 100);
         }
 
         window.mudarAnoVG = function() {
@@ -1362,6 +1426,9 @@
             
             document.getElementById('consulta-notas-content').innerHTML = html;
             atualizarTabelaNotas();
+            
+            // Atualizar altura do iframe
+            setTimeout(iframeUpdateHeight, 100);
         }
 
         window.mudarAnoNotas = function() {
@@ -1442,6 +1509,9 @@
             
             totalPaginasNotas = Math.ceil(notasFiltradas.length / itensPorPaginaNotas);
             renderizarPaginacao('paginacaoNotas', paginaAtualNotas, totalPaginasNotas, 'mudarPaginaNotas');
+            
+            // Atualizar altura do iframe
+            setTimeout(iframeUpdateHeight, 50);
         }
 
         window.mudarPaginaNotas = function(pagina) {
@@ -1562,6 +1632,9 @@
             
             document.getElementById('consulta-itens-content').innerHTML = html;
             atualizarTabelaItens();
+            
+            // Atualizar altura do iframe
+            setTimeout(iframeUpdateHeight, 100);
         }
 
         window.mudarAnoItens = function() {
@@ -1642,6 +1715,9 @@
             
             totalPaginasItens = Math.ceil(itensFiltrados.length / itensPorPaginaItens);
             renderizarPaginacao('paginacaoItens', paginaAtualItens, totalPaginasItens, 'mudarPaginaItens');
+            
+            // Atualizar altura do iframe
+            setTimeout(iframeUpdateHeight, 50);
         }
 
         window.mudarPaginaItens = function(pagina) {
@@ -1707,6 +1783,9 @@
                 </div>
             `;
             new bootstrap.Modal(document.getElementById('detailModal')).show();
+            
+            // Atualizar altura do iframe após abrir modal (embora o modal seja fixed, não afeta o iframe)
+            setTimeout(iframeUpdateHeight, 300);
         };
 
         // ============================================
@@ -1816,10 +1895,34 @@
                     </div>
                 </div>
             `;
+            
+            // Atualizar altura do iframe
+            setTimeout(iframeUpdateHeight, 100);
         }
 
-        // INICIALIZAÇÃO
-        document.addEventListener('DOMContentLoaded', carregarAnoInicial);
+        // ============================================
+        // LISTENER PARA MUDANÇA DE ABAS
+        // ============================================
+        document.addEventListener('DOMContentLoaded', function() {
+            carregarAnoInicial();
+            
+            // Adicionar listener para mudanças de aba
+            const tabs = document.querySelectorAll('[data-bs-toggle="tab"]');
+            tabs.forEach(tab => {
+                tab.addEventListener('shown.bs.tab', function() {
+                    setTimeout(iframeUpdateHeight, 200);
+                });
+            });
+            
+            // Fechar compartilhamento ao clicar fora
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('.share-dropdown')) {
+                    document.querySelectorAll('.share-options').forEach(opt => {
+                        opt.classList.remove('show');
+                    });
+                }
+            });
+        });
     </script>
 </body>
 </html>
