@@ -1820,14 +1820,32 @@
         // ============================================
         function renderizarDownloads() {
             document.getElementById('downloads-content').innerHTML = `
-                <div class="portal-card">
-                    <i class="material-icons">cloud_download</i>
-                    <h3>Portal de Dados Abertos</h3>
-                    <p>Acesse o conjunto de dados completo no Portal de Dados Abertos de Minas Gerais. Dados documentados conforme especificações Frictionless Data.</p>
-                    <a href="https://dados.mg.gov.br/dataset/portal_notas_fiscais" target="_blank" class="portal-link">
-                        <i class="material-icons me-2">open_in_new</i> Acessar Portal de Dados MG
-                    </a>
+<div class="table-container mt-4">
+    <div class="p-4">
+        <div class="row">
+            <div class="col-md-6 col-12">
+                <div class="card-stats p-4 bg-white rounded shadow-sm h-100">
+                    <div class="d-flex align-items-center gap-2 mb-3">
+                        <i class="material-icons" style="color: var(--primary-dark);">cloud_download</i>
+                        <h4 class="fw-bold text-start mb-0">Portal de Dados Abertos</h4>
+                    </div>
+                    <p class="text-muted text-justify" style="font-size: 13px; text-align: justify;">
+                        Acesse o conjunto de dados completo no Portal de Dados Abertos de Minas Gerais. Dados documentados conforme especificações Frictionless Data.
+                    </p>
+                    <div class="mt-4 text-end">
+                        <a href="https://dados.mg.gov.br/dataset/portal_notas_fiscais" 
+                           target="_blank" 
+                           class="btn-export text-decoration-none fw-bold d-inline-block px-4 py-2"
+                           style="color: var(--primary-dark); background-color: white; border: 1px solid var(--primary-dark); border-radius: 4px; transition: all 0.3s ease;">
+                            <i class="material-icons me-2" style="font-size: 18px; vertical-align: middle;">open_in_new</i>
+                            Acessar Portal de Dados MG
+                        </a>
+                    </div>
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
 
                 <h4 class="mb-3 fw-bold">Metadados</h4>
                 
