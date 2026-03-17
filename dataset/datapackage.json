@@ -5716,7 +5716,7 @@
           },
           {
             "name": "tipo_de_documento",
-            "type": "any"
+            "type": "string"
           },
           {
             "name": "fornecedor_cnpj_cpf",
@@ -5870,7 +5870,7 @@
           },
           {
             "name": "tipo_de_documento",
-            "type": "any"
+            "type": "string"
           },
           {
             "name": "fornecedor_cnpj_cpf",
@@ -5947,7 +5947,7 @@
           },
           {
             "name": "tipo_de_documento",
-            "type": "any"
+            "type": "string"
           },
           {
             "name": "fornecedor_cnpj_cpf",
@@ -6024,7 +6024,7 @@
           },
           {
             "name": "tipo_de_documento",
-            "type": "any"
+            "type": "string"
           },
           {
             "name": "fornecedor_cnpj_cpf",
@@ -6101,7 +6101,7 @@
           },
           {
             "name": "tipo_de_documento",
-            "type": "any"
+            "type": "string"
           },
           {
             "name": "fornecedor_cnpj_cpf",
@@ -6255,7 +6255,7 @@
           },
           {
             "name": "tipo_de_documento",
-            "type": "any"
+            "type": "string"
           },
           {
             "name": "fornecedor_cnpj_cpf",
@@ -6332,7 +6332,7 @@
           },
           {
             "name": "tipo_de_documento",
-            "type": "any"
+            "type": "string"
           },
           {
             "name": "fornecedor_cnpj_cpf",
@@ -6409,7 +6409,7 @@
           },
           {
             "name": "tipo_de_documento",
-            "type": "any"
+            "type": "string"
           },
           {
             "name": "fornecedor_cnpj_cpf",
@@ -6563,7 +6563,7 @@
           },
           {
             "name": "tipo_de_documento",
-            "type": "any"
+            "type": "string"
           },
           {
             "name": "fornecedor_cnpj_cpf",
@@ -6640,7 +6640,7 @@
           },
           {
             "name": "tipo_de_documento",
-            "type": "any"
+            "type": "string"
           },
           {
             "name": "fornecedor_cnpj_cpf",
@@ -6717,7 +6717,7 @@
           },
           {
             "name": "tipo_de_documento",
-            "type": "any"
+            "type": "string"
           },
           {
             "name": "fornecedor_cnpj_cpf",
@@ -6871,7 +6871,7 @@
           },
           {
             "name": "tipo_de_documento",
-            "type": "any"
+            "type": "string"
           },
           {
             "name": "fornecedor_cnpj_cpf",
@@ -6948,7 +6948,7 @@
           },
           {
             "name": "tipo_de_documento",
-            "type": "any"
+            "type": "string"
           },
           {
             "name": "fornecedor_cnpj_cpf",
@@ -7025,7 +7025,7 @@
           },
           {
             "name": "tipo_de_documento",
-            "type": "any"
+            "type": "string"
           },
           {
             "name": "fornecedor_cnpj_cpf",
@@ -7179,7 +7179,7 @@
           },
           {
             "name": "tipo_de_documento",
-            "type": "any"
+            "type": "string"
           },
           {
             "name": "fornecedor_cnpj_cpf",
@@ -7256,7 +7256,7 @@
           },
           {
             "name": "tipo_de_documento",
-            "type": "any"
+            "type": "string"
           },
           {
             "name": "fornecedor_cnpj_cpf",
@@ -7333,7 +7333,7 @@
           },
           {
             "name": "tipo_de_documento",
-            "type": "any"
+            "type": "string"
           },
           {
             "name": "fornecedor_cnpj_cpf",
@@ -7410,7 +7410,7 @@
           },
           {
             "name": "tipo_de_documento",
-            "type": "any"
+            "type": "string"
           },
           {
             "name": "fornecedor_cnpj_cpf",
@@ -7564,7 +7564,7 @@
           },
           {
             "name": "tipo_de_documento",
-            "type": "any"
+            "type": "string"
           },
           {
             "name": "fornecedor_cnpj_cpf",
@@ -7641,7 +7641,7 @@
           },
           {
             "name": "tipo_de_documento",
-            "type": "any"
+            "type": "string"
           },
           {
             "name": "fornecedor_cnpj_cpf",
@@ -7718,7 +7718,7 @@
           },
           {
             "name": "tipo_de_documento",
-            "type": "any"
+            "type": "string"
           },
           {
             "name": "fornecedor_cnpj_cpf",
@@ -7872,7 +7872,7 @@
           },
           {
             "name": "tipo_de_documento",
-            "type": "any"
+            "type": "string"
           },
           {
             "name": "fornecedor_cnpj_cpf",
@@ -7949,7 +7949,7 @@
           },
           {
             "name": "tipo_de_documento",
-            "type": "any"
+            "type": "string"
           },
           {
             "name": "fornecedor_cnpj_cpf",
@@ -8026,7 +8026,7 @@
           },
           {
             "name": "tipo_de_documento",
-            "type": "any"
+            "type": "string"
           },
           {
             "name": "fornecedor_cnpj_cpf",
@@ -8180,7 +8180,7 @@
           },
           {
             "name": "tipo_de_documento",
-            "type": "any"
+            "type": "string"
           },
           {
             "name": "fornecedor_cnpj_cpf",
