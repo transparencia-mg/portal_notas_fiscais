@@ -3094,7 +3094,7 @@ resources:
         - name: orgao_emissor
           type: string
         - name: tipo_de_documento
-          type: any
+          type: string
         - name: fornecedor_cnpj_cpf
           type: string
         - name: fornecedor_nome_empresarial
@@ -3178,7 +3178,7 @@ resources:
         - name: orgao_emissor
           type: string
         - name: tipo_de_documento
-          type: any
+          type: string
         - name: fornecedor_cnpj_cpf
           type: string
         - name: fornecedor_nome_empresarial
@@ -3220,7 +3220,7 @@ resources:
         - name: orgao_emissor
           type: string
         - name: tipo_de_documento
-          type: any
+          type: string
         - name: fornecedor_cnpj_cpf
           type: string
         - name: fornecedor_nome_empresarial
@@ -3262,7 +3262,7 @@ resources:
         - name: orgao_emissor
           type: string
         - name: tipo_de_documento
-          type: any
+          type: string
         - name: fornecedor_cnpj_cpf
           type: string
         - name: fornecedor_nome_empresarial
@@ -3304,7 +3304,7 @@ resources:
         - name: orgao_emissor
           type: string
         - name: tipo_de_documento
-          type: any
+          type: string
         - name: fornecedor_cnpj_cpf
           type: string
         - name: fornecedor_nome_empresarial
@@ -3388,7 +3388,7 @@ resources:
         - name: orgao_emissor
           type: string
         - name: tipo_de_documento
-          type: any
+          type: string
         - name: fornecedor_cnpj_cpf
           type: string
         - name: fornecedor_nome_empresarial
@@ -3430,7 +3430,7 @@ resources:
         - name: orgao_emissor
           type: string
         - name: tipo_de_documento
-          type: any
+          type: string
         - name: fornecedor_cnpj_cpf
           type: string
         - name: fornecedor_nome_empresarial
@@ -3472,7 +3472,7 @@ resources:
         - name: orgao_emissor
           type: string
         - name: tipo_de_documento
-          type: any
+          type: string
         - name: fornecedor_cnpj_cpf
           type: string
         - name: fornecedor_nome_empresarial
@@ -3556,7 +3556,7 @@ resources:
         - name: orgao_emissor
           type: string
         - name: tipo_de_documento
-          type: any
+          type: string
         - name: fornecedor_cnpj_cpf
           type: string
         - name: fornecedor_nome_empresarial
@@ -3598,7 +3598,7 @@ resources:
         - name: orgao_emissor
           type: string
         - name: tipo_de_documento
-          type: any
+          type: string
         - name: fornecedor_cnpj_cpf
           type: string
         - name: fornecedor_nome_empresarial
@@ -3640,7 +3640,7 @@ resources:
         - name: orgao_emissor
           type: string
         - name: tipo_de_documento
-          type: any
+          type: string
         - name: fornecedor_cnpj_cpf
           type: string
         - name: fornecedor_nome_empresarial
@@ -3724,7 +3724,7 @@ resources:
         - name: orgao_emissor
           type: string
         - name: tipo_de_documento
-          type: any
+          type: string
         - name: fornecedor_cnpj_cpf
           type: string
         - name: fornecedor_nome_empresarial
@@ -3766,7 +3766,7 @@ resources:
         - name: orgao_emissor
           type: string
         - name: tipo_de_documento
-          type: any
+          type: string
         - name: fornecedor_cnpj_cpf
           type: string
         - name: fornecedor_nome_empresarial
@@ -3808,7 +3808,7 @@ resources:
         - name: orgao_emissor
           type: string
         - name: tipo_de_documento
-          type: any
+          type: string
         - name: fornecedor_cnpj_cpf
           type: string
         - name: fornecedor_nome_empresarial
@@ -3892,7 +3892,7 @@ resources:
         - name: orgao_emissor
           type: string
         - name: tipo_de_documento
-          type: any
+          type: string
         - name: fornecedor_cnpj_cpf
           type: string
         - name: fornecedor_nome_empresarial
@@ -3934,7 +3934,7 @@ resources:
         - name: orgao_emissor
           type: string
         - name: tipo_de_documento
-          type: any
+          type: string
         - name: fornecedor_cnpj_cpf
           type: string
         - name: fornecedor_nome_empresarial
@@ -3976,7 +3976,7 @@ resources:
         - name: orgao_emissor
           type: string
         - name: tipo_de_documento
-          type: any
+          type: string
         - name: fornecedor_cnpj_cpf
           type: string
         - name: fornecedor_nome_empresarial
@@ -4018,7 +4018,7 @@ resources:
         - name: orgao_emissor
           type: string
         - name: tipo_de_documento
-          type: any
+          type: string
         - name: fornecedor_cnpj_cpf
           type: string
         - name: fornecedor_nome_empresarial
@@ -4102,7 +4102,7 @@ resources:
         - name: orgao_emissor
           type: string
         - name: tipo_de_documento
-          type: any
+          type: string
         - name: fornecedor_cnpj_cpf
           type: string
         - name: fornecedor_nome_empresarial
@@ -4144,7 +4144,7 @@ resources:
         - name: orgao_emissor
           type: string
         - name: tipo_de_documento
-          type: any
+          type: string
         - name: fornecedor_cnpj_cpf
           type: string
         - name: fornecedor_nome_empresarial
@@ -4186,7 +4186,7 @@ resources:
         - name: orgao_emissor
           type: string
         - name: tipo_de_documento
-          type: any
+          type: string
         - name: fornecedor_cnpj_cpf
           type: string
         - name: fornecedor_nome_empresarial
@@ -4270,7 +4270,7 @@ resources:
         - name: orgao_emissor
           type: string
         - name: tipo_de_documento
-          type: any
+          type: string
         - name: fornecedor_cnpj_cpf
           type: string
         - name: fornecedor_nome_empresarial
@@ -4312,7 +4312,7 @@ resources:
         - name: orgao_emissor
           type: string
         - name: tipo_de_documento
-          type: any
+          type: string
         - name: fornecedor_cnpj_cpf
           type: string
         - name: fornecedor_nome_empresarial
@@ -4354,7 +4354,7 @@ resources:
         - name: orgao_emissor
           type: string
         - name: tipo_de_documento
-          type: any
+          type: string
         - name: fornecedor_cnpj_cpf
           type: string
         - name: fornecedor_nome_empresarial
@@ -4438,7 +4438,7 @@ resources:
         - name: orgao_emissor
           type: string
         - name: tipo_de_documento
-          type: any
+          type: string
         - name: fornecedor_cnpj_cpf
           type: string
         - name: fornecedor_nome_empresarial
