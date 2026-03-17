@@ -944,7 +944,7 @@ resources:
           type: string
     scheme: file
     title: Notas Fiscais Novembro 2022
- - dialect:
+  - dialect:
       delimiter: ;
     encoding: utf-8-sig
     format: csv
