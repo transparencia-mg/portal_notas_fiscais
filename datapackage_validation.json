@@ -1,11 +1,10 @@
 {
   "version": "4.16.6",
-  "time": 109.718,
+  "time": 113.481,
   "errors": [],
   "tasks": [
     {
       "resource": {
-        "description": "Insira a descrição/explicação detalhada deste recurso.",
         "dialect": {
           "delimiter": ";"
         },
@@ -92,7 +91,7 @@
           ]
         },
         "scheme": "file",
-        "title": "Insira um título humanamente legível para este recurso.",
+        "title": "Itens Notas Abril 2022",
         "stats": {
           "hash": "5a6c27e566d0e05d12acf0bc902d522c",
           "bytes": 9592674,
@@ -100,7 +99,7 @@
           "rows": 32159
         }
       },
-      "time": 1.002,
+      "time": 1.003,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -130,7 +129,6 @@
     },
     {
       "resource": {
-        "description": "Insira a descrição/explicação detalhada deste recurso.",
         "dialect": {
           "delimiter": ";"
         },
@@ -217,7 +215,7 @@
           ]
         },
         "scheme": "file",
-        "title": "Insira um título humanamente legível para este recurso.",
+        "title": "Itens Notas Abril 2023",
         "stats": {
           "hash": "",
           "bytes": 0,
@@ -225,7 +223,7 @@
           "rows": 0
         }
       },
-      "time": 0.744,
+      "time": 0.752,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -38256,7 +38254,6 @@
     },
     {
       "resource": {
-        "description": "Insira a descrição/explicação detalhada deste recurso.",
         "dialect": {
           "delimiter": ";"
         },
@@ -38343,7 +38340,7 @@
           ]
         },
         "scheme": "file",
-        "title": "Insira um título humanamente legível para este recurso.",
+        "title": "Itens Notas Abril 2024",
         "stats": {
           "hash": "7b5b6fdef61ba0dc064e6e53e4dfd455",
           "bytes": 12212966,
@@ -38351,7 +38348,7 @@
           "rows": 41802
         }
       },
-      "time": 1.294,
+      "time": 1.313,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -38381,7 +38378,6 @@
     },
     {
       "resource": {
-        "description": "Insira a descrição/explicação detalhada deste recurso.",
         "dialect": {
           "delimiter": ";"
         },
@@ -38468,7 +38464,7 @@
           ]
         },
         "scheme": "file",
-        "title": "Insira um título humanamente legível para este recurso.",
+        "title": "Itens Notas Abril 2025",
         "stats": {
           "hash": "",
           "bytes": 0,
@@ -38476,7 +38472,7 @@
           "rows": 0
         }
       },
-      "time": 0.58,
+      "time": 0.593,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -76507,7 +76503,6 @@
     },
     {
       "resource": {
-        "description": "Insira a descrição/explicação detalhada deste recurso.",
         "dialect": {
           "delimiter": ";"
         },
@@ -76594,7 +76589,7 @@
           ]
         },
         "scheme": "file",
-        "title": "Insira um título humanamente legível para este recurso.",
+        "title": "Itens Notas Agosto 2022",
         "stats": {
           "hash": "d89d8beadc3b8a79b82ebd8d4548fd92",
           "bytes": 11618530,
@@ -76602,7 +76597,7 @@
           "rows": 38550
         }
       },
-      "time": 1.199,
+      "time": 1.203,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -76632,7 +76627,6 @@
     },
     {
       "resource": {
-        "description": "Insira a descrição/explicação detalhada deste recurso.",
         "dialect": {
           "delimiter": ";"
         },
@@ -76719,7 +76713,7 @@
           ]
         },
         "scheme": "file",
-        "title": "Insira um título humanamente legível para este recurso.",
+        "title": "Itens Notas Agosto 2023",
         "stats": {
           "hash": "b216c31b83329533acb94c377719b429",
           "bytes": 11201805,
@@ -76727,7 +76721,7 @@
           "rows": 36868
         }
       },
-      "time": 1.187,
+      "time": 1.148,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -76757,7 +76751,6 @@
     },
     {
       "resource": {
-        "description": "Insira a descrição/explicação detalhada deste recurso.",
         "dialect": {
           "delimiter": ";"
         },
@@ -76844,7 +76837,7 @@
           ]
         },
         "scheme": "file",
-        "title": "Insira um título humanamente legível para este recurso.",
+        "title": "Itens Notas Agosto 2024",
         "stats": {
           "hash": "3145a56fe5ebdb44fa08445fe86b5a60",
           "bytes": 11219194,
@@ -76852,7 +76845,7 @@
           "rows": 38249
         }
       },
-      "time": 1.183,
+      "time": 1.186,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -76882,7 +76875,6 @@
     },
     {
       "resource": {
-        "description": "Insira a descrição/explicação detalhada deste recurso.",
         "dialect": {
           "delimiter": ";"
         },
@@ -76969,7 +76961,7 @@
           ]
         },
         "scheme": "file",
-        "title": "Insira um título humanamente legível para este recurso.",
+        "title": "Itens Notas Agosto 2025",
         "stats": {
           "hash": "5923efcbd43829dcb150a1e95c72e320",
           "bytes": 10104864,
@@ -76977,7 +76969,7 @@
           "rows": 33557
         }
       },
-      "time": 1.052,
+      "time": 1.059,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -77007,7 +76999,6 @@
     },
     {
       "resource": {
-        "description": "Insira a descrição/explicação detalhada deste recurso.",
         "dialect": {
           "delimiter": ";"
         },
@@ -77094,7 +77085,7 @@
           ]
         },
         "scheme": "file",
-        "title": "Insira um título humanamente legível para este recurso.",
+        "title": "Itens Notas Dezembro 2022",
         "stats": {
           "hash": "9f7853251fca4a6873ed2cf17ece16e7",
           "bytes": 12604767,
@@ -77102,7 +77093,7 @@
           "rows": 41522
         }
       },
-      "time": 1.31,
+      "time": 1.304,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -77132,7 +77123,6 @@
     },
     {
       "resource": {
-        "description": "Insira a descrição/explicação detalhada deste recurso.",
         "dialect": {
           "delimiter": ";"
         },
@@ -77219,7 +77209,7 @@
           ]
         },
         "scheme": "file",
-        "title": "Insira um título humanamente legível para este recurso.",
+        "title": "Itens Notas Dezembro 2023",
         "stats": {
           "hash": "9ed777ee56b833327f72a85d338e7913",
           "bytes": 12507250,
@@ -77227,7 +77217,7 @@
           "rows": 42659
         }
       },
-      "time": 1.318,
+      "time": 1.305,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -77257,7 +77247,6 @@
     },
     {
       "resource": {
-        "description": "Insira a descrição/explicação detalhada deste recurso.",
         "dialect": {
           "delimiter": ";"
         },
@@ -77344,7 +77333,7 @@
           ]
         },
         "scheme": "file",
-        "title": "Insira um título humanamente legível para este recurso.",
+        "title": "Itens Notas Dezembro 2024",
         "stats": {
           "hash": "",
           "bytes": 0,
@@ -77352,7 +77341,7 @@
           "rows": 0
         }
       },
-      "time": 0.577,
+      "time": 0.576,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -115383,7 +115372,6 @@
     },
     {
       "resource": {
-        "description": "Insira a descrição/explicação detalhada deste recurso.",
         "dialect": {
           "delimiter": ";"
         },
@@ -115470,7 +115458,7 @@
           ]
         },
         "scheme": "file",
-        "title": "Insira um título humanamente legível para este recurso.",
+        "title": "Itens Notas Dezembro 2025",
         "stats": {
           "hash": "7cee4e8748d90c31f75924a1181b32a1",
           "bytes": 10777663,
@@ -115478,7 +115466,7 @@
           "rows": 35359
         }
       },
-      "time": 1.107,
+      "time": 1.12,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -115508,7 +115496,6 @@
     },
     {
       "resource": {
-        "description": "Insira a descrição/explicação detalhada deste recurso.",
         "dialect": {
           "delimiter": ";"
         },
@@ -115595,7 +115582,7 @@
           ]
         },
         "scheme": "file",
-        "title": "Insira um título humanamente legível para este recurso.",
+        "title": "Itens Notas Fevereiro 2022",
         "stats": {
           "hash": "411dc54d06680298727e5c6869b6efb1",
           "bytes": 9083942,
@@ -115603,7 +115590,7 @@
           "rows": 30284
         }
       },
-      "time": 0.941,
+      "time": 0.943,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -115633,7 +115620,6 @@
     },
     {
       "resource": {
-        "description": "Insira a descrição/explicação detalhada deste recurso.",
         "dialect": {
           "delimiter": ";"
         },
@@ -115720,7 +115706,7 @@
           ]
         },
         "scheme": "file",
-        "title": "Insira um título humanamente legível para este recurso.",
+        "title": "Itens Notas Fevereiro 2023",
         "stats": {
           "hash": "00fc3ce2d970fd06252414e4f033e312",
           "bytes": 8525393,
@@ -115728,7 +115714,7 @@
           "rows": 29074
         }
       },
-      "time": 0.9,
+      "time": 0.914,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -115758,7 +115744,6 @@
     },
     {
       "resource": {
-        "description": "Insira a descrição/explicação detalhada deste recurso.",
         "dialect": {
           "delimiter": ";"
         },
@@ -115845,7 +115830,7 @@
           ]
         },
         "scheme": "file",
-        "title": "Insira um título humanamente legível para este recurso.",
+        "title": "Itens Notas Fevereiro 2024",
         "stats": {
           "hash": "86b6801fb366b1e1a27f3aaf13213edd",
           "bytes": 9767694,
@@ -115883,7 +115868,6 @@
     },
     {
       "resource": {
-        "description": "Insira a descrição/explicação detalhada deste recurso.",
         "dialect": {
           "delimiter": ";"
         },
@@ -115970,7 +115954,7 @@
           ]
         },
         "scheme": "file",
-        "title": "Insira um título humanamente legível para este recurso.",
+        "title": "Itens Notas Fevereiro 2025",
         "stats": {
           "hash": "2d2f9ada1393c351366140991b7f059b",
           "bytes": 8955702,
@@ -115978,7 +115962,7 @@
           "rows": 30426
         }
       },
-      "time": 0.946,
+      "time": 0.959,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -116008,7 +115992,6 @@
     },
     {
       "resource": {
-        "description": "Insira a descrição/explicação detalhada deste recurso.",
         "dialect": {
           "delimiter": ";"
         },
@@ -116095,7 +116078,7 @@
           ]
         },
         "scheme": "file",
-        "title": "Insira um título humanamente legível para este recurso.",
+        "title": "Itens Notas Fevereiro 2026",
         "stats": {
           "hash": "c404529b190caed3e7a7b1f3e1cc72d7",
           "bytes": 10003373,
@@ -116103,7 +116086,7 @@
           "rows": 33037
         }
       },
-      "time": 1.037,
+      "time": 1.04,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -116133,7 +116116,6 @@
     },
     {
       "resource": {
-        "description": "Insira a descrição/explicação detalhada deste recurso.",
         "dialect": {
           "delimiter": ";"
         },
@@ -116220,7 +116202,7 @@
           ]
         },
         "scheme": "file",
-        "title": "Insira um título humanamente legível para este recurso.",
+        "title": "Itens Notas Janeiro 2022",
         "stats": {
           "hash": "4b28017a8a44d961c26632f036ef8635",
           "bytes": 7543567,
@@ -116228,7 +116210,7 @@
           "rows": 24334
         }
       },
-      "time": 0.769,
+      "time": 0.765,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -116258,7 +116240,6 @@
     },
     {
       "resource": {
-        "description": "Insira a descrição/explicação detalhada deste recurso.",
         "dialect": {
           "delimiter": ";"
         },
@@ -116345,7 +116326,7 @@
           ]
         },
         "scheme": "file",
-        "title": "Insira um título humanamente legível para este recurso.",
+        "title": "Itens Notas Janeiro 2023",
         "stats": {
           "hash": "fa100fe4aa7dc994620d5a43935aff85",
           "bytes": 8831409,
@@ -116353,7 +116334,7 @@
           "rows": 27431
         }
       },
-      "time": 0.862,
+      "time": 0.863,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -116383,7 +116364,6 @@
     },
     {
       "resource": {
-        "description": "Insira a descrição/explicação detalhada deste recurso.",
         "dialect": {
           "delimiter": ";"
         },
@@ -116470,7 +116450,7 @@
           ]
         },
         "scheme": "file",
-        "title": "Insira um título humanamente legível para este recurso.",
+        "title": "Itens Notas Janeiro 2024",
         "stats": {
           "hash": "fe0ac0beab33482521adb5047c93a480",
           "bytes": 8571163,
@@ -116478,7 +116458,7 @@
           "rows": 27276
         }
       },
-      "time": 0.858,
+      "time": 0.866,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -116508,7 +116488,6 @@
     },
     {
       "resource": {
-        "description": "Insira a descrição/explicação detalhada deste recurso.",
         "dialect": {
           "delimiter": ";"
         },
@@ -116595,7 +116574,7 @@
           ]
         },
         "scheme": "file",
-        "title": "Insira um título humanamente legível para este recurso.",
+        "title": "Itens Notas Janeiro 2025",
         "stats": {
           "hash": "1f9e62dadf25c3401a60697b8703fcdd",
           "bytes": 8356956,
@@ -116603,7 +116582,7 @@
           "rows": 27111
         }
       },
-      "time": 0.845,
+      "time": 0.855,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -116633,7 +116612,6 @@
     },
     {
       "resource": {
-        "description": "Insira a descrição/explicação detalhada deste recurso.",
         "dialect": {
           "delimiter": ";"
         },
@@ -116720,7 +116698,7 @@
           ]
         },
         "scheme": "file",
-        "title": "Insira um título humanamente legível para este recurso.",
+        "title": "Itens Notas Janeiro 2026",
         "stats": {
           "hash": "ae6d78ff0bf01b40b102b06103792483",
           "bytes": 9930655,
@@ -116728,7 +116706,7 @@
           "rows": 31293
         }
       },
-      "time": 0.984,
+      "time": 0.988,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -116758,7 +116736,6 @@
     },
     {
       "resource": {
-        "description": "Insira a descrição/explicação detalhada deste recurso.",
         "dialect": {
           "delimiter": ";"
         },
@@ -116845,7 +116822,7 @@
           ]
         },
         "scheme": "file",
-        "title": "Insira um título humanamente legível para este recurso.",
+        "title": "Itens Notas Julho 2022",
         "stats": {
           "hash": "4144bf15765ea84dfece708fdfffa7ce",
           "bytes": 10305358,
@@ -116853,7 +116830,7 @@
           "rows": 33590
         }
       },
-      "time": 1.066,
+      "time": 1.06,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -116883,7 +116860,6 @@
     },
     {
       "resource": {
-        "description": "Insira a descrição/explicação detalhada deste recurso.",
         "dialect": {
           "delimiter": ";"
         },
@@ -116970,7 +116946,7 @@
           ]
         },
         "scheme": "file",
-        "title": "Insira um título humanamente legível para este recurso.",
+        "title": "Itens Notas Julho 2023",
         "stats": {
           "hash": "d331cdd9e3f6dc8e88db530ecd2c30b1",
           "bytes": 10217100,
@@ -116978,7 +116954,7 @@
           "rows": 34455
         }
       },
-      "time": 1.066,
+      "time": 1.08,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -117008,7 +116984,6 @@
     },
     {
       "resource": {
-        "description": "Insira a descrição/explicação detalhada deste recurso.",
         "dialect": {
           "delimiter": ";"
         },
@@ -117095,7 +117070,7 @@
           ]
         },
         "scheme": "file",
-        "title": "Insira um título humanamente legível para este recurso.",
+        "title": "Itens Notas Julho 2024",
         "stats": {
           "hash": "",
           "bytes": 0,
@@ -117103,7 +117078,7 @@
           "rows": 0
         }
       },
-      "time": 0.564,
+      "time": 0.57,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -155134,7 +155109,6 @@
     },
     {
       "resource": {
-        "description": "Insira a descrição/explicação detalhada deste recurso.",
         "dialect": {
           "delimiter": ";"
         },
@@ -155221,7 +155195,7 @@
           ]
         },
         "scheme": "file",
-        "title": "Insira um título humanamente legível para este recurso.",
+        "title": "Itens Notas Julho 2025",
         "stats": {
           "hash": "74cccd9373bfa0cbdd12f4097efde4d0",
           "bytes": 11429168,
@@ -155229,7 +155203,7 @@
           "rows": 37432
         }
       },
-      "time": 1.148,
+      "time": 1.167,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -155259,7 +155233,6 @@
     },
     {
       "resource": {
-        "description": "Insira a descrição/explicação detalhada deste recurso.",
         "dialect": {
           "delimiter": ";"
         },
@@ -155346,7 +155319,7 @@
           ]
         },
         "scheme": "file",
-        "title": "Insira um título humanamente legível para este recurso.",
+        "title": "Itens Notas Junho 2022",
         "stats": {
           "hash": "f260dea02cf6ebe4ff359cf89e8616a6",
           "bytes": 10184859,
@@ -155354,7 +155327,7 @@
           "rows": 33806
         }
       },
-      "time": 1.043,
+      "time": 1.052,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -155384,7 +155357,6 @@
     },
     {
       "resource": {
-        "description": "Insira a descrição/explicação detalhada deste recurso.",
         "dialect": {
           "delimiter": ";"
         },
@@ -155471,7 +155443,7 @@
           ]
         },
         "scheme": "file",
-        "title": "Insira um título humanamente legível para este recurso.",
+        "title": "Itens Notas Junho 2023",
         "stats": {
           "hash": "2a25234be9b62d093f80710d8ab3853e",
           "bytes": 11163259,
@@ -155479,7 +155451,7 @@
           "rows": 37780
         }
       },
-      "time": 1.163,
+      "time": 1.173,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -155509,7 +155481,6 @@
     },
     {
       "resource": {
-        "description": "Insira a descrição/explicação detalhada deste recurso.",
         "dialect": {
           "delimiter": ";"
         },
@@ -155596,7 +155567,7 @@
           ]
         },
         "scheme": "file",
-        "title": "Insira um título humanamente legível para este recurso.",
+        "title": "Itens Notas Junho 2024",
         "stats": {
           "hash": "eba808270da7797ddc825111773e4938",
           "bytes": 10771824,
@@ -155604,7 +155575,7 @@
           "rows": 36217
         }
       },
-      "time": 1.121,
+      "time": 1.122,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -155634,7 +155605,6 @@
     },
     {
       "resource": {
-        "description": "Insira a descrição/explicação detalhada deste recurso.",
         "dialect": {
           "delimiter": ";"
         },
@@ -155721,7 +155691,7 @@
           ]
         },
         "scheme": "file",
-        "title": "Insira um título humanamente legível para este recurso.",
+        "title": "Itens Notas Junho 2025",
         "stats": {
           "hash": "26ee5e19eef276c6df1762ead45e716e",
           "bytes": 10317548,
@@ -155729,7 +155699,7 @@
           "rows": 33413
         }
       },
-      "time": 1.047,
+      "time": 1.045,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -155759,7 +155729,6 @@
     },
     {
       "resource": {
-        "description": "Insira a descrição/explicação detalhada deste recurso.",
         "dialect": {
           "delimiter": ";"
         },
@@ -155846,7 +155815,7 @@
           ]
         },
         "scheme": "file",
-        "title": "Insira um título humanamente legível para este recurso.",
+        "title": "Itens Notas Maio 2022",
         "stats": {
           "hash": "f8ca2532277cf309de1fc62156fc35c6",
           "bytes": 12282246,
@@ -155854,7 +155823,7 @@
           "rows": 40580
         }
       },
-      "time": 1.24,
+      "time": 1.269,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -155884,7 +155853,6 @@
     },
     {
       "resource": {
-        "description": "Insira a descrição/explicação detalhada deste recurso.",
         "dialect": {
           "delimiter": ";"
         },
@@ -155971,7 +155939,7 @@
           ]
         },
         "scheme": "file",
-        "title": "Insira um título humanamente legível para este recurso.",
+        "title": "Itens Notas Maio 2023",
         "stats": {
           "hash": "",
           "bytes": 0,
@@ -155979,7 +155947,7 @@
           "rows": 0
         }
       },
-      "time": 0.615,
+      "time": 0.627,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -194010,7 +193978,6 @@
     },
     {
       "resource": {
-        "description": "Insira a descrição/explicação detalhada deste recurso.",
         "dialect": {
           "delimiter": ";"
         },
@@ -194097,7 +194064,7 @@
           ]
         },
         "scheme": "file",
-        "title": "Insira um título humanamente legível para este recurso.",
+        "title": "Itens Notas Maio 2024",
         "stats": {
           "hash": "611fc940e0260e7488e47b76b78c9a11",
           "bytes": 10392521,
@@ -194105,7 +194072,7 @@
           "rows": 35060
         }
       },
-      "time": 1.074,
+      "time": 1.089,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -194135,7 +194102,6 @@
     },
     {
       "resource": {
-        "description": "Insira a descrição/explicação detalhada deste recurso.",
         "dialect": {
           "delimiter": ";"
         },
@@ -194222,7 +194188,7 @@
           ]
         },
         "scheme": "file",
-        "title": "Insira um título humanamente legível para este recurso.",
+        "title": "Itens Notas Maio 2025",
         "stats": {
           "hash": "",
           "bytes": 0,
@@ -194230,7 +194196,7 @@
           "rows": 0
         }
       },
-      "time": 0.549,
+      "time": 0.59,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -232261,7 +232227,6 @@
     },
     {
       "resource": {
-        "description": "Insira a descrição/explicação detalhada deste recurso.",
         "dialect": {
           "delimiter": ";"
         },
@@ -232348,7 +232313,7 @@
           ]
         },
         "scheme": "file",
-        "title": "Insira um título humanamente legível para este recurso.",
+        "title": "Itens Notas Março 2022",
         "stats": {
           "hash": "",
           "bytes": 0,
@@ -232356,7 +232321,7 @@
           "rows": 0
         }
       },
-      "time": 0.587,
+      "time": 0.555,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -270387,7 +270352,6 @@
     },
     {
       "resource": {
-        "description": "Insira a descrição/explicação detalhada deste recurso.",
         "dialect": {
           "delimiter": ";"
         },
@@ -270474,7 +270438,7 @@
           ]
         },
         "scheme": "file",
-        "title": "Insira um título humanamente legível para este recurso.",
+        "title": "Itens Notas Março 2023",
         "stats": {
           "hash": "6481534b9f1b4fc050a21eaa2b24c507",
           "bytes": 11218518,
@@ -270482,7 +270446,7 @@
           "rows": 37365
         }
       },
-      "time": 1.152,
+      "time": 1.156,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -270512,7 +270476,6 @@
     },
     {
       "resource": {
-        "description": "Insira a descrição/explicação detalhada deste recurso.",
         "dialect": {
           "delimiter": ";"
         },
@@ -270599,7 +270562,7 @@
           ]
         },
         "scheme": "file",
-        "title": "Insira um título humanamente legível para este recurso.",
+        "title": "Itens Notas Março 2024",
         "stats": {
           "hash": "745689bf5955aa2bfa042cc8f4b9acd3",
           "bytes": 9748086,
@@ -270607,7 +270570,7 @@
           "rows": 33047
         }
       },
-      "time": 1.017,
+      "time": 1.023,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -270637,7 +270600,6 @@
     },
     {
       "resource": {
-        "description": "Insira a descrição/explicação detalhada deste recurso.",
         "dialect": {
           "delimiter": ";"
         },
@@ -270724,7 +270686,7 @@
           ]
         },
         "scheme": "file",
-        "title": "Insira um título humanamente legível para este recurso.",
+        "title": "Itens Notas Março 2025",
         "stats": {
           "hash": "ea5002a06beaf051a0c7ea326d7ca413",
           "bytes": 9064636,
@@ -270732,7 +270694,7 @@
           "rows": 30693
         }
       },
-      "time": 0.95,
+      "time": 0.962,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -270762,7 +270724,6 @@
     },
     {
       "resource": {
-        "description": "Insira a descrição/explicação detalhada deste recurso.",
         "dialect": {
           "delimiter": ";"
         },
@@ -270849,7 +270810,7 @@
           ]
         },
         "scheme": "file",
-        "title": "Insira um título humanamente legível para este recurso.",
+        "title": "Itens Notas Março 2026",
         "stats": {
           "hash": "cf0911ffdd4582e00e788f1c741be076",
           "bytes": 4097613,
@@ -270887,7 +270848,6 @@
     },
     {
       "resource": {
-        "description": "Insira a descrição/explicação detalhada deste recurso.",
         "dialect": {
           "delimiter": ";"
         },
@@ -270974,7 +270934,7 @@
           ]
         },
         "scheme": "file",
-        "title": "Insira um título humanamente legível para este recurso.",
+        "title": "Itens Notas Novembro 2022",
         "stats": {
           "hash": "cce841daf8891235e640be3940c82a7d",
           "bytes": 10184540,
@@ -270982,7 +270942,7 @@
           "rows": 33575
         }
       },
-      "time": 1.039,
+      "time": 1.051,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -271012,7 +270972,6 @@
     },
     {
       "resource": {
-        "description": "Insira a descrição/explicação detalhada deste recurso.",
         "dialect": {
           "delimiter": ";"
         },
@@ -271099,7 +271058,7 @@
           ]
         },
         "scheme": "file",
-        "title": "Insira um título humanamente legível para este recurso.",
+        "title": "Itens Notas Novembro 2023",
         "stats": {
           "hash": "168de4f3a2690503a855bfe34c41994c",
           "bytes": 10064716,
@@ -271107,7 +271066,7 @@
           "rows": 34214
         }
       },
-      "time": 1.064,
+      "time": 1.069,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -271137,7 +271096,6 @@
     },
     {
       "resource": {
-        "description": "Insira a descrição/explicação detalhada deste recurso.",
         "dialect": {
           "delimiter": ";"
         },
@@ -271224,7 +271182,7 @@
           ]
         },
         "scheme": "file",
-        "title": "Insira um título humanamente legível para este recurso.",
+        "title": "Itens Notas Novembro 2024",
         "stats": {
           "hash": "62fe71dc5a64fe4e43aa6289c5ce38fd",
           "bytes": 10222046,
@@ -271232,7 +271190,7 @@
           "rows": 34891
         }
       },
-      "time": 1.079,
+      "time": 1.089,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -271262,7 +271220,130 @@
     },
     {
       "resource": {
-        "description": "Insira a descrição/explicação detalhada deste recurso.",
+        "dialect": {
+          "delimiter": ";"
+        },
+        "encoding": "utf-8-sig",
+        "format": "csv",
+        "hashing": "md5",
+        "name": "itensnota_nov25",
+        "path": "data/itensnota_nov25.csv",
+        "profile": "tabular-data-resource",
+        "schema": {
+          "fields": [
+            {
+              "name": "orgao_emissor",
+              "type": "string"
+            },
+            {
+              "name": "tipo_de_documento",
+              "type": "any"
+            },
+            {
+              "name": "fornecedor_cnpj_cpf",
+              "type": "string"
+            },
+            {
+              "name": "fornecedor_nome_empresarial",
+              "type": "string"
+            },
+            {
+              "name": "numero",
+              "type": "integer"
+            },
+            {
+              "name": "serie",
+              "type": "string"
+            },
+            {
+              "name": "sequencial",
+              "type": "integer"
+            },
+            {
+              "name": "natureza",
+              "type": "string"
+            },
+            {
+              "name": "indicador_de_orcamento",
+              "type": "string"
+            },
+            {
+              "name": "item_da_nota_fiscal",
+              "type": "integer"
+            },
+            {
+              "name": "codigo_do_item",
+              "type": "integer"
+            },
+            {
+              "name": "desc_do_item_de_material",
+              "type": "string"
+            },
+            {
+              "name": "desc_da_unid_de_fornecimento",
+              "type": "string"
+            },
+            {
+              "name": "unid_orcamentaria",
+              "type": "integer"
+            },
+            {
+              "name": "elemento_item_de_despesa",
+              "type": "integer"
+            },
+            {
+              "name": "qtde_na_nota_fiscal",
+              "type": "string"
+            },
+            {
+              "name": "valor_unitario_r",
+              "type": "string"
+            },
+            {
+              "name": "valor_total_r",
+              "type": "string"
+            }
+          ]
+        },
+        "scheme": "file",
+        "title": "Itens Notas Novembro 2025",
+        "stats": {
+          "hash": "4f3db47140bf1c6597a966b291895a35",
+          "bytes": 9424769,
+          "fields": 18,
+          "rows": 30933
+        }
+      },
+      "time": 0.972,
+      "scope": [
+        "hash-count-error",
+        "byte-count-error",
+        "field-count-error",
+        "row-count-error",
+        "blank-header",
+        "extra-label",
+        "missing-label",
+        "blank-label",
+        "duplicate-label",
+        "incorrect-label",
+        "blank-row",
+        "primary-key-error",
+        "foreign-key-error",
+        "extra-cell",
+        "missing-cell",
+        "type-error",
+        "constraint-error",
+        "unique-error"
+      ],
+      "partial": false,
+      "errors": [],
+      "stats": {
+        "errors": 0
+      },
+      "valid": true
+    },
+    {
+      "resource": {
         "dialect": {
           "delimiter": ";"
         },
@@ -271349,7 +271430,7 @@
           ]
         },
         "scheme": "file",
-        "title": "Insira um título humanamente legível para este recurso.",
+        "title": "Itens Notas Outubro 2022",
         "stats": {
           "hash": "9741fda0d36f5d18000911d0db6426ba",
           "bytes": 11060072,
@@ -271357,7 +271438,7 @@
           "rows": 35726
         }
       },
-      "time": 1.118,
+      "time": 1.116,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -271387,7 +271468,6 @@
     },
     {
       "resource": {
-        "description": "Insira a descrição/explicação detalhada deste recurso.",
         "dialect": {
           "delimiter": ";"
         },
@@ -271474,7 +271554,7 @@
           ]
         },
         "scheme": "file",
-        "title": "Insira um título humanamente legível para este recurso.",
+        "title": "Itens Notas Outubro 2023",
         "stats": {
           "hash": "d58afdc7b80d000ccb2885f64ce511bc",
           "bytes": 10841098,
@@ -271482,7 +271562,7 @@
           "rows": 36353
         }
       },
-      "time": 1.134,
+      "time": 1.136,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -271512,7 +271592,6 @@
     },
     {
       "resource": {
-        "description": "Insira a descrição/explicação detalhada deste recurso.",
         "dialect": {
           "delimiter": ";"
         },
@@ -271599,7 +271678,7 @@
           ]
         },
         "scheme": "file",
-        "title": "Insira um título humanamente legível para este recurso.",
+        "title": "Itens Notas Outubro 2024",
         "stats": {
           "hash": "b1e0f5d3ea1c2e5384060f5a5f08914a",
           "bytes": 11213933,
@@ -271607,7 +271686,7 @@
           "rows": 37658
         }
       },
-      "time": 1.169,
+      "time": 1.162,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -271637,7 +271716,6 @@
     },
     {
       "resource": {
-        "description": "Insira a descrição/explicação detalhada deste recurso.",
         "dialect": {
           "delimiter": ";"
         },
@@ -271724,7 +271802,7 @@
           ]
         },
         "scheme": "file",
-        "title": "Insira um título humanamente legível para este recurso.",
+        "title": "Itens Notas Outubro 2025",
         "stats": {
           "hash": "86d3e3c5f12cd150eac32ab23146d59d",
           "bytes": 10895239,
@@ -271732,7 +271810,7 @@
           "rows": 35593
         }
       },
-      "time": 1.13,
+      "time": 1.118,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -271762,7 +271840,6 @@
     },
     {
       "resource": {
-        "description": "Insira a descrição/explicação detalhada deste recurso.",
         "dialect": {
           "delimiter": ";"
         },
@@ -271849,7 +271926,7 @@
           ]
         },
         "scheme": "file",
-        "title": "Insira um título humanamente legível para este recurso.",
+        "title": "Itens Notas Setembro 2022",
         "stats": {
           "hash": "",
           "bytes": 0,
@@ -271857,7 +271934,7 @@
           "rows": 0
         }
       },
-      "time": 0.715,
+      "time": 0.726,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -309888,7 +309965,6 @@
     },
     {
       "resource": {
-        "description": "Insira a descrição/explicação detalhada deste recurso.",
         "dialect": {
           "delimiter": ";"
         },
@@ -309975,7 +310051,7 @@
           ]
         },
         "scheme": "file",
-        "title": "Insira um título humanamente legível para este recurso.",
+        "title": "Itens Notas Setembro 2023",
         "stats": {
           "hash": "f3ab49ed5c099278c0cc32c8a88f6799",
           "bytes": 10207015,
@@ -309983,7 +310059,7 @@
           "rows": 34307
         }
       },
-      "time": 1.053,
+      "time": 1.067,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -310013,7 +310089,6 @@
     },
     {
       "resource": {
-        "description": "Insira a descrição/explicação detalhada deste recurso.",
         "dialect": {
           "delimiter": ";"
         },
@@ -310100,7 +310175,7 @@
           ]
         },
         "scheme": "file",
-        "title": "Insira um título humanamente legível para este recurso.",
+        "title": "Itens Notas Setembro 2024",
         "stats": {
           "hash": "5f468b7ff889d3384179f83082143d26",
           "bytes": 10694439,
@@ -310108,7 +310183,7 @@
           "rows": 35604
         }
       },
-      "time": 1.102,
+      "time": 1.115,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -310138,7 +310213,6 @@
     },
     {
       "resource": {
-        "description": "Insira a descrição/explicação detalhada deste recurso.",
         "dialect": {
           "delimiter": ";"
         },
@@ -310225,7 +310299,7 @@
           ]
         },
         "scheme": "file",
-        "title": "Insira um título humanamente legível para este recurso.",
+        "title": "Itens Notas Setembro 2025",
         "stats": {
           "hash": "e913d61998db54dd620049970c12d38d",
           "bytes": 10910935,
@@ -310233,7 +310307,7 @@
           "rows": 35971
         }
       },
-      "time": 1.122,
+      "time": 1.134,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -310263,7 +310337,6 @@
     },
     {
       "resource": {
-        "description": "Insira a descrição/explicação detalhada deste recurso.",
         "dialect": {
           "delimiter": ";"
         },
@@ -310338,7 +310411,7 @@
           ]
         },
         "scheme": "file",
-        "title": "Insira um título humanamente legível para este recurso.",
+        "title": "Notas Fiscais Abril 2022",
         "stats": {
           "hash": "62b1a3f500634b7e6100d2dca9cabee0",
           "bytes": 4765715,
@@ -310346,7 +310419,7 @@
           "rows": 22597
         }
       },
-      "time": 1.183,
+      "time": 1.206,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -310376,7 +310449,6 @@
     },
     {
       "resource": {
-        "description": "Insira a descrição/explicação detalhada deste recurso.",
         "dialect": {
           "delimiter": ";"
         },
@@ -310451,7 +310523,7 @@
           ]
         },
         "scheme": "file",
-        "title": "Insira um título humanamente legível para este recurso.",
+        "title": "Notas Fiscais Abril 2023",
         "stats": {
           "hash": "",
           "bytes": 0,
@@ -310459,7 +310531,7 @@
           "rows": 0
         }
       },
-      "time": 1.05,
+      "time": 1.074,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -345490,7 +345562,6 @@
     },
     {
       "resource": {
-        "description": "Insira a descrição/explicação detalhada deste recurso.",
         "dialect": {
           "delimiter": ";"
         },
@@ -345565,7 +345636,7 @@
           ]
         },
         "scheme": "file",
-        "title": "Insira um título humanamente legível para este recurso.",
+        "title": "Notas Fiscais Abril 2024",
         "stats": {
           "hash": "d40ef68c7e77679f91c45e0261d3d783",
           "bytes": 6023006,
@@ -345573,7 +345644,7 @@
           "rows": 28542
         }
       },
-      "time": 1.478,
+      "time": 1.499,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -345603,7 +345674,6 @@
     },
     {
       "resource": {
-        "description": "Insira a descrição/explicação detalhada deste recurso.",
         "dialect": {
           "delimiter": ";"
         },
@@ -345678,7 +345748,7 @@
           ]
         },
         "scheme": "file",
-        "title": "Insira um título humanamente legível para este recurso.",
+        "title": "Notas Fiscais Abril 2025",
         "stats": {
           "hash": "be2509f26b5345d34cc1c281708df62c",
           "bytes": 5054510,
@@ -345686,7 +345756,7 @@
           "rows": 22879
         }
       },
-      "time": 1.207,
+      "time": 1.218,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -345716,7 +345786,6 @@
     },
     {
       "resource": {
-        "description": "Insira a descrição/explicação detalhada deste recurso.",
         "dialect": {
           "delimiter": ";"
         },
@@ -345791,7 +345860,7 @@
           ]
         },
         "scheme": "file",
-        "title": "Insira um título humanamente legível para este recurso.",
+        "title": "Notas Fiscais Agosto 2022",
         "stats": {
           "hash": "517d7e6def477e597c34060224190f5f",
           "bytes": 5455326,
@@ -345799,7 +345868,7 @@
           "rows": 25814
         }
       },
-      "time": 1.36,
+      "time": 1.352,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -345829,7 +345898,6 @@
     },
     {
       "resource": {
-        "description": "Insira a descrição/explicação detalhada deste recurso.",
         "dialect": {
           "delimiter": ";"
         },
@@ -345904,7 +345972,7 @@
           ]
         },
         "scheme": "file",
-        "title": "Insira um título humanamente legível para este recurso.",
+        "title": "Notas Fiscais Agosto 2023",
         "stats": {
           "hash": "6e6644b73cee2eb940a69f60a566ec13",
           "bytes": 5285945,
@@ -345912,7 +345980,7 @@
           "rows": 25002
         }
       },
-      "time": 1.31,
+      "time": 1.328,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -346017,7 +346085,7 @@
           ]
         },
         "scheme": "file",
-        "title": "Insira um título humanamente legível para este recurso.",
+        "title": "Notas Fiscais Agosto 2024",
         "stats": {
           "hash": "9b7ee9e54171e1b6bdefa8b418352097",
           "bytes": 5496823,
@@ -346025,7 +346093,7 @@
           "rows": 26050
         }
       },
-      "time": 1.379,
+      "time": 1.372,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -346055,7 +346123,6 @@
     },
     {
       "resource": {
-        "description": "Insira a descrição/explicação detalhada deste recurso.",
         "dialect": {
           "delimiter": ";"
         },
@@ -346130,7 +346197,7 @@
           ]
         },
         "scheme": "file",
-        "title": "Insira um título humanamente legível para este recurso.",
+        "title": "Notas Fiscais Agosto 2025",
         "stats": {
           "hash": "26bfc64596bcc52fab1d112353ed1f10",
           "bytes": 5149633,
@@ -346138,7 +346205,7 @@
           "rows": 23421
         }
       },
-      "time": 1.233,
+      "time": 1.237,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -346168,7 +346235,6 @@
     },
     {
       "resource": {
-        "description": "Insira a descrição/explicação detalhada deste recurso.",
         "dialect": {
           "delimiter": ";"
         },
@@ -346243,7 +346309,7 @@
           ]
         },
         "scheme": "file",
-        "title": "Insira um título humanamente legível para este recurso.",
+        "title": "Notas Fiscais Dezembro 2022",
         "stats": {
           "hash": "e258c54dc6dd7c872dabddc01b4d4531",
           "bytes": 5745078,
@@ -346251,7 +346317,7 @@
           "rows": 27263
         }
       },
-      "time": 1.404,
+      "time": 1.434,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -346281,7 +346347,6 @@
     },
     {
       "resource": {
-        "description": "Insira a descrição/explicação detalhada deste recurso.",
         "dialect": {
           "delimiter": ";"
         },
@@ -346356,7 +346421,7 @@
           ]
         },
         "scheme": "file",
-        "title": "Insira um título humanamente legível para este recurso.",
+        "title": "Notas Fiscais Dezembro 2023",
         "stats": {
           "hash": "15901dc42235e54c52b030184e214547",
           "bytes": 5947818,
@@ -346364,7 +346429,7 @@
           "rows": 28401
         }
       },
-      "time": 1.477,
+      "time": 1.498,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -346394,7 +346459,6 @@
     },
     {
       "resource": {
-        "description": "Insira a descrição/explicação detalhada deste recurso.",
         "dialect": {
           "delimiter": ";"
         },
@@ -346469,7 +346533,7 @@
           ]
         },
         "scheme": "file",
-        "title": "Insira um título humanamente legível para este recurso.",
+        "title": "Notas Fiscais Dezembro 2024",
         "stats": {
           "hash": "ab5309846690086c41a1ca427ac0e263",
           "bytes": 5612508,
@@ -346477,7 +346541,7 @@
           "rows": 26738
         }
       },
-      "time": 1.405,
+      "time": 1.417,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -346507,7 +346571,6 @@
     },
     {
       "resource": {
-        "description": "Insira a descrição/explicação detalhada deste recurso.",
         "dialect": {
           "delimiter": ";"
         },
@@ -346582,7 +346645,7 @@
           ]
         },
         "scheme": "file",
-        "title": "Insira um título humanamente legível para este recurso.",
+        "title": "Notas Fiscais Dezembro 2025",
         "stats": {
           "hash": "0b6eecd3945fed709514dc74ebfdc988",
           "bytes": 5260981,
@@ -346590,7 +346653,7 @@
           "rows": 24038
         }
       },
-      "time": 1.271,
+      "time": 1.279,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -346620,7 +346683,6 @@
     },
     {
       "resource": {
-        "description": "Insira a descrição/explicação detalhada deste recurso.",
         "dialect": {
           "delimiter": ";"
         },
@@ -346695,7 +346757,7 @@
           ]
         },
         "scheme": "file",
-        "title": "Insira um título humanamente legível para este recurso.",
+        "title": "Notas Fiscais Fevereiro 2022",
         "stats": {
           "hash": "bbbc453ff1532f65ce6fecc90b467fb1",
           "bytes": 4267475,
@@ -346703,7 +346765,7 @@
           "rows": 20031
         }
       },
-      "time": 1.056,
+      "time": 1.066,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -346733,7 +346795,6 @@
     },
     {
       "resource": {
-        "description": "Insira a descrição/explicação detalhada deste recurso.",
         "dialect": {
           "delimiter": ";"
         },
@@ -346808,7 +346869,7 @@
           ]
         },
         "scheme": "file",
-        "title": "Insira um título humanamente legível para este recurso.",
+        "title": "Notas Fiscais Fevereiro 2023",
         "stats": {
           "hash": "53a56d0f302223a7a1a863e639528456",
           "bytes": 4064278,
@@ -346816,7 +346877,7 @@
           "rows": 19172
         }
       },
-      "time": 1.009,
+      "time": 1.033,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -346846,7 +346907,6 @@
     },
     {
       "resource": {
-        "description": "Insira a descrição/explicação detalhada deste recurso.",
         "dialect": {
           "delimiter": ";"
         },
@@ -346921,7 +346981,7 @@
           ]
         },
         "scheme": "file",
-        "title": "Insira um título humanamente legível para este recurso.",
+        "title": "Notas Fiscais Fevereiro 2024",
         "stats": {
           "hash": "57a091aa285a4c9e9c271a6d2a8549b0",
           "bytes": 4716282,
@@ -346929,7 +346989,7 @@
           "rows": 22101
         }
       },
-      "time": 1.165,
+      "time": 1.181,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -346959,7 +347019,6 @@
     },
     {
       "resource": {
-        "description": "Insira a descrição/explicação detalhada deste recurso.",
         "dialect": {
           "delimiter": ";"
         },
@@ -347034,7 +347093,7 @@
           ]
         },
         "scheme": "file",
-        "title": "Insira um título humanamente legível para este recurso.",
+        "title": "Notas Fiscais Fevereiro 2025",
         "stats": {
           "hash": "eab146d721b84372aeb0550ab2d09137",
           "bytes": 4221875,
@@ -347042,7 +347101,7 @@
           "rows": 19932
         }
       },
-      "time": 1.057,
+      "time": 1.07,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -347072,7 +347131,6 @@
     },
     {
       "resource": {
-        "description": "Insira a descrição/explicação detalhada deste recurso.",
         "dialect": {
           "delimiter": ";"
         },
@@ -347147,7 +347205,7 @@
           ]
         },
         "scheme": "file",
-        "title": "Insira um título humanamente legível para este recurso.",
+        "title": "Notas Fiscais Fevereiro 2026",
         "stats": {
           "hash": "",
           "bytes": 0,
@@ -347155,7 +347213,7 @@
           "rows": 0
         }
       },
-      "time": 1.06,
+      "time": 1.073,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -382186,7 +382244,6 @@
     },
     {
       "resource": {
-        "description": "Insira a descrição/explicação detalhada deste recurso.",
         "dialect": {
           "delimiter": ";"
         },
@@ -382261,7 +382318,7 @@
           ]
         },
         "scheme": "file",
-        "title": "Insira um título humanamente legível para este recurso.",
+        "title": "Notas Fiscais Janeiro 2022",
         "stats": {
           "hash": "2b967f73779a0fb6a768b0bf338843bc",
           "bytes": 3590842,
@@ -382269,7 +382326,7 @@
           "rows": 16586
         }
       },
-      "time": 0.876,
+      "time": 0.89,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -382299,7 +382356,6 @@
     },
     {
       "resource": {
-        "description": "Insira a descrição/explicação detalhada deste recurso.",
         "dialect": {
           "delimiter": ";"
         },
@@ -382374,7 +382430,7 @@
           ]
         },
         "scheme": "file",
-        "title": "Insira um título humanamente legível para este recurso.",
+        "title": "Notas Fiscais Janeiro 2023",
         "stats": {
           "hash": "a421a3370402f482ab9b1887eef809c1",
           "bytes": 4010246,
@@ -382382,7 +382438,7 @@
           "rows": 18309
         }
       },
-      "time": 0.973,
+      "time": 0.984,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -382412,7 +382468,6 @@
     },
     {
       "resource": {
-        "description": "Insira a descrição/explicação detalhada deste recurso.",
         "dialect": {
           "delimiter": ";"
         },
@@ -382487,7 +382542,7 @@
           ]
         },
         "scheme": "file",
-        "title": "Insira um título humanamente legível para este recurso.",
+        "title": "Notas Fiscais Janeiro 2024",
         "stats": {
           "hash": "c076e1937e9bf58bcef43fb8a75dd846",
           "bytes": 4321345,
@@ -382495,7 +382550,7 @@
           "rows": 19886
         }
       },
-      "time": 1.04,
+      "time": 1.057,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -382525,7 +382580,6 @@
     },
     {
       "resource": {
-        "description": "Insira a descrição/explicação detalhada deste recurso.",
         "dialect": {
           "delimiter": ";"
         },
@@ -382600,7 +382654,7 @@
           ]
         },
         "scheme": "file",
-        "title": "Insira um título humanamente legível para este recurso.",
+        "title": "Notas Fiscais Janeiro 2025",
         "stats": {
           "hash": "7e9221545dceecd4efb5f89eef0bc7f0",
           "bytes": 4039265,
@@ -382608,7 +382662,7 @@
           "rows": 18579
         }
       },
-      "time": 0.987,
+      "time": 1.01,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -382638,7 +382692,6 @@
     },
     {
       "resource": {
-        "description": "Insira a descrição/explicação detalhada deste recurso.",
         "dialect": {
           "delimiter": ";"
         },
@@ -382713,7 +382766,7 @@
           ]
         },
         "scheme": "file",
-        "title": "Insira um título humanamente legível para este recurso.",
+        "title": "Notas Fiscais Janeiro 2026",
         "stats": {
           "hash": "d6bf819b49b5ee349f0d61ed09e1e08e",
           "bytes": 5059094,
@@ -382721,7 +382774,7 @@
           "rows": 22238
         }
       },
-      "time": 1.171,
+      "time": 1.195,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -382751,7 +382804,6 @@
     },
     {
       "resource": {
-        "description": "Insira a descrição/explicação detalhada deste recurso.",
         "dialect": {
           "delimiter": ";"
         },
@@ -382826,7 +382878,7 @@
           ]
         },
         "scheme": "file",
-        "title": "Insira um título humanamente legível para este recurso.",
+        "title": "Notas Fiscais Julho 2022",
         "stats": {
           "hash": "eeb2363b3e6e5c01489af14953f460b0",
           "bytes": 4842861,
@@ -382834,7 +382886,7 @@
           "rows": 22978
         }
       },
-      "time": 1.209,
+      "time": 1.225,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -382864,7 +382916,6 @@
     },
     {
       "resource": {
-        "description": "Insira a descrição/explicação detalhada deste recurso.",
         "dialect": {
           "delimiter": ";"
         },
@@ -382939,7 +382990,7 @@
           ]
         },
         "scheme": "file",
-        "title": "Insira um título humanamente legível para este recurso.",
+        "title": "Notas Fiscais Julho 2023",
         "stats": {
           "hash": "ce2d39a35a80ac4771113657ced32f4a",
           "bytes": 4865290,
@@ -382947,7 +382998,7 @@
           "rows": 23139
         }
       },
-      "time": 1.202,
+      "time": 1.226,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -382977,7 +383028,6 @@
     },
     {
       "resource": {
-        "description": "Insira a descrição/explicação detalhada deste recurso.",
         "dialect": {
           "delimiter": ";"
         },
@@ -383052,7 +383102,7 @@
           ]
         },
         "scheme": "file",
-        "title": "Insira um título humanamente legível para este recurso.",
+        "title": "Notas Fiscais Julho 2024",
         "stats": {
           "hash": "85282e0002035169137e15886d770101",
           "bytes": 5381549,
@@ -383060,7 +383110,7 @@
           "rows": 25553
         }
       },
-      "time": 1.348,
+      "time": 1.38,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -383090,7 +383140,6 @@
     },
     {
       "resource": {
-        "description": "Insira a descrição/explicação detalhada deste recurso.",
         "dialect": {
           "delimiter": ";"
         },
@@ -383165,7 +383214,7 @@
           ]
         },
         "scheme": "file",
-        "title": "Insira um título humanamente legível para este recurso.",
+        "title": "Notas Fiscais Julho 2025",
         "stats": {
           "hash": "f3e76bd1dc5bdcb34087e1e071457329",
           "bytes": 5656827,
@@ -383173,7 +383222,7 @@
           "rows": 25579
         }
       },
-      "time": 1.328,
+      "time": 1.366,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -383203,7 +383252,6 @@
     },
     {
       "resource": {
-        "description": "Insira a descrição/explicação detalhada deste recurso.",
         "dialect": {
           "delimiter": ";"
         },
@@ -383278,7 +383326,7 @@
           ]
         },
         "scheme": "file",
-        "title": "Insira um título humanamente legível para este recurso.",
+        "title": "Notas Fiscais Junho 2022",
         "stats": {
           "hash": "b229d64e2195f87c5aac117c5f76ef5b",
           "bytes": 4965398,
@@ -383286,7 +383334,7 @@
           "rows": 23506
         }
       },
-      "time": 1.303,
+      "time": 1.319,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -413767,7 +413815,6 @@
     },
     {
       "resource": {
-        "description": "Insira a descrição/explicação detalhada deste recurso.",
         "dialect": {
           "delimiter": ";"
         },
@@ -413842,7 +413889,7 @@
           ]
         },
         "scheme": "file",
-        "title": "Insira um título humanamente legível para este recurso.",
+        "title": "Notas Fiscais Junho 2023",
         "stats": {
           "hash": "",
           "bytes": 0,
@@ -413850,7 +413897,7 @@
           "rows": 0
         }
       },
-      "time": 0.884,
+      "time": 0.902,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -448881,7 +448928,6 @@
     },
     {
       "resource": {
-        "description": "Insira a descrição/explicação detalhada deste recurso.",
         "dialect": {
           "delimiter": ";"
         },
@@ -448956,7 +449002,7 @@
           ]
         },
         "scheme": "file",
-        "title": "Insira um título humanamente legível para este recurso.",
+        "title": "Notas Fiscais Junho 2024",
         "stats": {
           "hash": "9bdb65da48c52160f9e01ccc9a9e77b6",
           "bytes": 5200875,
@@ -448964,7 +449010,7 @@
           "rows": 24661
         }
       },
-      "time": 1.297,
+      "time": 1.322,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -448994,7 +449040,6 @@
     },
     {
       "resource": {
-        "description": "Insira a descrição/explicação detalhada deste recurso.",
         "dialect": {
           "delimiter": ";"
         },
@@ -449069,7 +449114,7 @@
           ]
         },
         "scheme": "file",
-        "title": "Insira um título humanamente legível para este recurso.",
+        "title": "Notas Fiscais Junho 2025",
         "stats": {
           "hash": "db7a02a5f61f37ea99d3b2d0d901c550",
           "bytes": 4986421,
@@ -449077,7 +449122,7 @@
           "rows": 22541
         }
       },
-      "time": 1.181,
+      "time": 1.218,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -449107,7 +449152,6 @@
     },
     {
       "resource": {
-        "description": "Insira a descrição/explicação detalhada deste recurso.",
         "dialect": {
           "delimiter": ";"
         },
@@ -449182,7 +449226,7 @@
           ]
         },
         "scheme": "file",
-        "title": "Insira um título humanamente legível para este recurso.",
+        "title": "Notas Fiscais Maio 2022",
         "stats": {
           "hash": "68d82b7cfa00eef12b04b6fe9677c707",
           "bytes": 5762103,
@@ -449190,7 +449234,7 @@
           "rows": 27192
         }
       },
-      "time": 1.401,
+      "time": 1.453,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -449220,7 +449264,6 @@
     },
     {
       "resource": {
-        "description": "Insira a descrição/explicação detalhada deste recurso.",
         "dialect": {
           "delimiter": ";"
         },
@@ -449295,7 +449338,7 @@
           ]
         },
         "scheme": "file",
-        "title": "Insira um título humanamente legível para este recurso.",
+        "title": "Notas Fiscais Maio 2023",
         "stats": {
           "hash": "79200bdacbf290fdd0b7336d09a464f7",
           "bytes": 4990348,
@@ -449303,7 +449346,7 @@
           "rows": 23646
         }
       },
-      "time": 1.312,
+      "time": 1.354,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -483669,7 +483712,6 @@
     },
     {
       "resource": {
-        "description": "Insira a descrição/explicação detalhada deste recurso.",
         "dialect": {
           "delimiter": ";"
         },
@@ -483744,7 +483786,7 @@
           ]
         },
         "scheme": "file",
-        "title": "Insira um título humanamente legível para este recurso.",
+        "title": "Notas Fiscais Maio 2024",
         "stats": {
           "hash": "5213a2b7256e5e2c640aade9e5588a7d",
           "bytes": 5145425,
@@ -483752,7 +483794,7 @@
           "rows": 24506
         }
       },
-      "time": 1.271,
+      "time": 1.302,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -483782,7 +483824,6 @@
     },
     {
       "resource": {
-        "description": "Insira a descrição/explicação detalhada deste recurso.",
         "dialect": {
           "delimiter": ";"
         },
@@ -483857,7 +483898,7 @@
           ]
         },
         "scheme": "file",
-        "title": "Insira um título humanamente legível para este recurso.",
+        "title": "Notas Fiscais Maio 2025",
         "stats": {
           "hash": "",
           "bytes": 0,
@@ -483865,7 +483906,7 @@
           "rows": 0
         }
       },
-      "time": 0.905,
+      "time": 0.931,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -518896,7 +518937,6 @@
     },
     {
       "resource": {
-        "description": "Insira a descrição/explicação detalhada deste recurso.",
         "dialect": {
           "delimiter": ";"
         },
@@ -518971,7 +519011,7 @@
           ]
         },
         "scheme": "file",
-        "title": "Insira um título humanamente legível para este recurso.",
+        "title": "Notas Fiscais Março 2022",
         "stats": {
           "hash": "",
           "bytes": 0,
@@ -518979,7 +519019,7 @@
           "rows": 0
         }
       },
-      "time": 1.218,
+      "time": 1.245,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -554010,7 +554050,6 @@
     },
     {
       "resource": {
-        "description": "Insira a descrição/explicação detalhada deste recurso.",
         "dialect": {
           "delimiter": ";"
         },
@@ -554085,7 +554124,7 @@
           ]
         },
         "scheme": "file",
-        "title": "Insira um título humanamente legível para este recurso.",
+        "title": "Notas Fiscais Março 2022",
         "stats": {
           "hash": "903cc34fb51592a38fd71969775a2e0e",
           "bytes": 5344482,
@@ -554093,7 +554132,7 @@
           "rows": 25142
         }
       },
-      "time": 1.283,
+      "time": 1.343,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -554123,7 +554162,6 @@
     },
     {
       "resource": {
-        "description": "Insira a descrição/explicação detalhada deste recurso.",
         "dialect": {
           "delimiter": ";"
         },
@@ -554198,7 +554236,7 @@
           ]
         },
         "scheme": "file",
-        "title": "Insira um título humanamente legível para este recurso.",
+        "title": "Notas Fiscais Março 2024",
         "stats": {
           "hash": "56cb1eb8a020630aacad9a27acba2d6c",
           "bytes": 4894413,
@@ -554206,7 +554244,7 @@
           "rows": 23198
         }
       },
-      "time": 1.195,
+      "time": 1.24,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -554236,7 +554274,6 @@
     },
     {
       "resource": {
-        "description": "Insira a descrição/explicação detalhada deste recurso.",
         "dialect": {
           "delimiter": ";"
         },
@@ -554311,7 +554348,7 @@
           ]
         },
         "scheme": "file",
-        "title": "Insira um título humanamente legível para este recurso.",
+        "title": "Notas Fiscais Março 2025",
         "stats": {
           "hash": "c82cf60ddb66763d867c5bccdb157389",
           "bytes": 4363391,
@@ -554319,7 +554356,7 @@
           "rows": 20736
         }
       },
-      "time": 1.072,
+      "time": 1.116,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -554349,7 +554386,6 @@
     },
     {
       "resource": {
-        "description": "Insira a descrição/explicação detalhada deste recurso.",
         "dialect": {
           "delimiter": ";"
         },
@@ -554424,7 +554460,7 @@
           ]
         },
         "scheme": "file",
-        "title": "Insira um título humanamente legível para este recurso.",
+        "title": "Notas Fiscais Março 2026",
         "stats": {
           "hash": "e9d96f09fb50bd38555c4a551ee142f5",
           "bytes": 2029357,
@@ -554432,7 +554468,7 @@
           "rows": 9143
         }
       },
-      "time": 0.49,
+      "time": 0.499,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -554462,7 +554498,6 @@
     },
     {
       "resource": {
-        "description": "Insira a descrição/explicação detalhada deste recurso.",
         "dialect": {
           "delimiter": ";"
         },
@@ -554537,7 +554572,7 @@
           ]
         },
         "scheme": "file",
-        "title": "Insira um título humanamente legível para este recurso.",
+        "title": "Notas Fiscais Novembro 2022",
         "stats": {
           "hash": "2251854a3f1cb603b444e71d22f686d9",
           "bytes": 4793056,
@@ -554545,7 +554580,7 @@
           "rows": 22741
         }
       },
-      "time": 1.19,
+      "time": 1.208,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -554575,7 +554610,6 @@
     },
     {
       "resource": {
-        "description": "Insira a descrição/explicação detalhada deste recurso.",
         "dialect": {
           "delimiter": ";"
         },
@@ -554650,7 +554684,7 @@
           ]
         },
         "scheme": "file",
-        "title": "Insira um título humanamente legível para este recurso.",
+        "title": "Notas Fiscais Novembro 2023",
         "stats": {
           "hash": "e343cae7da26a7b6cf12e4c28e00fada",
           "bytes": 4874344,
@@ -554658,7 +554692,7 @@
           "rows": 23201
         }
       },
-      "time": 1.216,
+      "time": 1.237,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -554688,7 +554722,6 @@
     },
     {
       "resource": {
-        "description": "Insira a descrição/explicação detalhada deste recurso.",
         "dialect": {
           "delimiter": ";"
         },
@@ -554763,7 +554796,7 @@
           ]
         },
         "scheme": "file",
-        "title": "Insira um título humanamente legível para este recurso.",
+        "title": "Notas Fiscais Novembro 2024",
         "stats": {
           "hash": "0c7a2f9cff4800a0f332c6ec2a449737",
           "bytes": 5036134,
@@ -554771,7 +554804,7 @@
           "rows": 24057
         }
       },
-      "time": 1.246,
+      "time": 1.275,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -554801,7 +554834,6 @@
     },
     {
       "resource": {
-        "description": "Insira a descrição/explicação detalhada deste recurso.",
         "dialect": {
           "delimiter": ";"
         },
@@ -554876,7 +554908,7 @@
           ]
         },
         "scheme": "file",
-        "title": "Insira um título humanamente legível para este recurso.",
+        "title": "Notas Fiscais Novembro 2025",
         "stats": {
           "hash": "ed8a14b9976f2a754bb89765119f4b4d",
           "bytes": 4602435,
@@ -554884,7 +554916,7 @@
           "rows": 20951
         }
       },
-      "time": 1.091,
+      "time": 1.122,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -554914,7 +554946,6 @@
     },
     {
       "resource": {
-        "description": "Insira a descrição/explicação detalhada deste recurso.",
         "dialect": {
           "delimiter": ";"
         },
@@ -554989,7 +555020,7 @@
           ]
         },
         "scheme": "file",
-        "title": "Insira um título humanamente legível para este recurso.",
+        "title": "Notas Fiscais Outubro 2022",
         "stats": {
           "hash": "",
           "bytes": 0,
@@ -554997,7 +555028,7 @@
           "rows": 0
         }
       },
-      "time": 1.157,
+      "time": 1.188,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -590028,7 +590059,6 @@
     },
     {
       "resource": {
-        "description": "Insira a descrição/explicação detalhada deste recurso.",
         "dialect": {
           "delimiter": ";"
         },
@@ -590103,7 +590133,7 @@
           ]
         },
         "scheme": "file",
-        "title": "Insira um título humanamente legível para este recurso.",
+        "title": "Notas Fiscais Outubro 2023",
         "stats": {
           "hash": "f420c38379afa7210c6311ebc9be0012",
           "bytes": 5191119,
@@ -590111,7 +590141,7 @@
           "rows": 24710
         }
       },
-      "time": 1.287,
+      "time": 1.313,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -590141,7 +590171,6 @@
     },
     {
       "resource": {
-        "description": "Insira a descrição/explicação detalhada deste recurso.",
         "dialect": {
           "delimiter": ";"
         },
@@ -590216,7 +590245,7 @@
           ]
         },
         "scheme": "file",
-        "title": "Insira um título humanamente legível para este recurso.",
+        "title": "Notas Fiscais Outubro 2024",
         "stats": {
           "hash": "ecf88537b8b2021a899f9ab26659d451",
           "bytes": 5413359,
@@ -590224,7 +590253,7 @@
           "rows": 25794
         }
       },
-      "time": 1.332,
+      "time": 1.404,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -590254,7 +590283,6 @@
     },
     {
       "resource": {
-        "description": "Insira a descrição/explicação detalhada deste recurso.",
         "dialect": {
           "delimiter": ";"
         },
@@ -590329,7 +590357,7 @@
           ]
         },
         "scheme": "file",
-        "title": "Insira um título humanamente legível para este recurso.",
+        "title": "Notas Fiscais Outubro 2025",
         "stats": {
           "hash": "5d941b8740b921137ea5d2aeb2870407",
           "bytes": 5305576,
@@ -590337,7 +590365,7 @@
           "rows": 24012
         }
       },
-      "time": 1.255,
+      "time": 1.316,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -590367,7 +590395,118 @@
     },
     {
       "resource": {
-        "description": "Insira a descrição/explicação detalhada deste recurso.",
+        "dialect": {
+          "delimiter": ";"
+        },
+        "encoding": "utf-8-sig",
+        "format": "csv",
+        "hashing": "md5",
+        "name": "notas_set22",
+        "path": "data/notas_set22.csv",
+        "profile": "tabular-data-resource",
+        "schema": {
+          "fields": [
+            {
+              "name": "orgao_emissor",
+              "type": "string"
+            },
+            {
+              "name": "tipo_de_documento",
+              "type": "any"
+            },
+            {
+              "name": "fornecedor_cnpj_cpf",
+              "type": "string"
+            },
+            {
+              "name": "fornecedor_nome_empresarial",
+              "type": "string"
+            },
+            {
+              "name": "numero",
+              "type": "integer"
+            },
+            {
+              "name": "serie",
+              "type": "any"
+            },
+            {
+              "name": "sequencial",
+              "type": "integer"
+            },
+            {
+              "name": "situacao",
+              "type": "string"
+            },
+            {
+              "name": "natureza",
+              "type": "string"
+            },
+            {
+              "name": "indicador_de_orcamento",
+              "type": "string"
+            },
+            {
+              "name": "data_de_emissao",
+              "type": "date"
+            },
+            {
+              "name": "data_de_recebimento",
+              "type": "date"
+            },
+            {
+              "name": "data_de_registro",
+              "type": "date"
+            },
+            {
+              "name": "valor_total_com_impostos",
+              "type": "string"
+            },
+            {
+              "name": "nota_fiscal_para_aglutinacao",
+              "type": "string"
+            }
+          ]
+        },
+        "scheme": "file",
+        "title": "Notas Fiscais Setembro 2022",
+        "stats": {
+          "hash": "ffbaf8b6d29721a6d1cc9a93d3392c65",
+          "bytes": 5031538,
+          "fields": 15,
+          "rows": 23785
+        }
+      },
+      "time": 1.284,
+      "scope": [
+        "hash-count-error",
+        "byte-count-error",
+        "field-count-error",
+        "row-count-error",
+        "blank-header",
+        "extra-label",
+        "missing-label",
+        "blank-label",
+        "duplicate-label",
+        "incorrect-label",
+        "blank-row",
+        "primary-key-error",
+        "foreign-key-error",
+        "extra-cell",
+        "missing-cell",
+        "type-error",
+        "constraint-error",
+        "unique-error"
+      ],
+      "partial": false,
+      "errors": [],
+      "stats": {
+        "errors": 0
+      },
+      "valid": true
+    },
+    {
+      "resource": {
         "dialect": {
           "delimiter": ";"
         },
@@ -590442,7 +590581,7 @@
           ]
         },
         "scheme": "file",
-        "title": "Insira um título humanamente legível para este recurso.",
+        "title": "Notas Fiscais Setembro 2023",
         "stats": {
           "hash": "f99248b3202dd3a5a407fe134db8dc8b",
           "bytes": 4863210,
@@ -590450,7 +590589,7 @@
           "rows": 23090
         }
       },
-      "time": 1.2,
+      "time": 1.24,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -590480,7 +590619,6 @@
     },
     {
       "resource": {
-        "description": "Insira a descrição/explicação detalhada deste recurso.",
         "dialect": {
           "delimiter": ";"
         },
@@ -590555,7 +590693,7 @@
           ]
         },
         "scheme": "file",
-        "title": "Insira um título humanamente legível para este recurso.",
+        "title": "Notas Fiscais Setembro 2024",
         "stats": {
           "hash": "",
           "bytes": 0,
@@ -590563,7 +590701,7 @@
           "rows": 0
         }
       },
-      "time": 0.892,
+      "time": 0.921,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -625594,7 +625732,6 @@
     },
     {
       "resource": {
-        "description": "Insira a descrição/explicação detalhada deste recurso.",
         "dialect": {
           "delimiter": ";"
         },
@@ -625669,7 +625806,7 @@
           ]
         },
         "scheme": "file",
-        "title": "Insira um título humanamente legível para este recurso.",
+        "title": "Notas Fiscais Setembro 2025",
         "stats": {
           "hash": "1e38c39ea6dcd27176024c21e46f0324",
           "bytes": 5413473,
@@ -625677,7 +625814,7 @@
           "rows": 24497
         }
       },
-      "time": 1.277,
+      "time": 1.304,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -625708,7 +625845,7 @@
   ],
   "stats": {
     "errors": 16851,
-    "tasks": 100
+    "tasks": 102
   },
   "valid": false
 }
