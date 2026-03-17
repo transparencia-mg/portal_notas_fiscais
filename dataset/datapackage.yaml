@@ -1,9 +1,8 @@
 name: portal_notas_fiscais
-owner_org: ''
+owner_org: 'secretaria-de-estado-de-planejamento-e-gestao-seplag'
 profile: data-package
 resources:
-  - description: Insira a descrição/explicação detalhada deste recurso.
-    dialect:
+  - dialect:
       delimiter: ;
     encoding: utf-8-sig
     format: csv
@@ -50,9 +49,8 @@ resources:
         - name: valor_total_r
           type: string
     scheme: file
-    title: Insira um título humanamente legível para este recurso.
-  - description: Insira a descrição/explicação detalhada deste recurso.
-    dialect:
+    title: Itens Notas Abril 2022
+  - dialect:
       delimiter: ;
     encoding: utf-8-sig
     format: csv
@@ -99,9 +97,8 @@ resources:
         - name: valor_total_r
           type: string
     scheme: file
-    title: Insira um título humanamente legível para este recurso.
-  - description: Insira a descrição/explicação detalhada deste recurso.
-    dialect:
+    title: Itens Notas Abril 2023
+  - dialect:
       delimiter: ;
     encoding: utf-8-sig
     format: csv
@@ -148,9 +145,8 @@ resources:
         - name: valor_total_r
           type: string
     scheme: file
-    title: Insira um título humanamente legível para este recurso.
-  - description: Insira a descrição/explicação detalhada deste recurso.
-    dialect:
+    title: Itens Notas Abril 2024
+  - dialect:
       delimiter: ;
     encoding: utf-8-sig
     format: csv
@@ -197,9 +193,8 @@ resources:
         - name: valor_total_r
           type: string
     scheme: file
-    title: Insira um título humanamente legível para este recurso.
-  - description: Insira a descrição/explicação detalhada deste recurso.
-    dialect:
+    title: Itens Notas Abril 2025
+  - dialect:
       delimiter: ;
     encoding: utf-8-sig
     format: csv
@@ -246,9 +241,8 @@ resources:
         - name: valor_total_r
           type: string
     scheme: file
-    title: Insira um título humanamente legível para este recurso.
-  - description: Insira a descrição/explicação detalhada deste recurso.
-    dialect:
+    title: Itens Notas Agosto 2022
+  - dialect:
       delimiter: ;
     encoding: utf-8-sig
     format: csv
@@ -295,9 +289,8 @@ resources:
         - name: valor_total_r
           type: string
     scheme: file
-    title: Insira um título humanamente legível para este recurso.
-  - description: Insira a descrição/explicação detalhada deste recurso.
-    dialect:
+    title: Itens Notas Agosto 2023
+  - dialect:
       delimiter: ;
     encoding: utf-8-sig
     format: csv
@@ -344,9 +337,8 @@ resources:
         - name: valor_total_r
           type: string
     scheme: file
-    title: Insira um título humanamente legível para este recurso.
-  - description: Insira a descrição/explicação detalhada deste recurso.
-    dialect:
+    title: Itens Notas Agosto 2024
+  - dialect:
       delimiter: ;
     encoding: utf-8-sig
     format: csv
@@ -393,9 +385,8 @@ resources:
         - name: valor_total_r
           type: string
     scheme: file
-    title: Insira um título humanamente legível para este recurso.
-  - description: Insira a descrição/explicação detalhada deste recurso.
-    dialect:
+    title: Itens Notas Agosto 2025
+  - dialect:
       delimiter: ;
     encoding: utf-8-sig
     format: csv
@@ -442,9 +433,8 @@ resources:
         - name: valor_total_r
           type: string
     scheme: file
-    title: Insira um título humanamente legível para este recurso.
-  - description: Insira a descrição/explicação detalhada deste recurso.
-    dialect:
+    title: Itens Notas Dezembro 2022
+  - dialect:
       delimiter: ;
     encoding: utf-8-sig
     format: csv
@@ -491,9 +481,8 @@ resources:
         - name: valor_total_r
           type: string
     scheme: file
-    title: Insira um título humanamente legível para este recurso.
-  - description: Insira a descrição/explicação detalhada deste recurso.
-    dialect:
+    title: Itens Notas Dezembro 2023
+  - dialect:
       delimiter: ;
     encoding: utf-8-sig
     format: csv
@@ -540,9 +529,8 @@ resources:
         - name: valor_total_r
           type: string
     scheme: file
-    title: Insira um título humanamente legível para este recurso.
-  - description: Insira a descrição/explicação detalhada deste recurso.
-    dialect:
+    title: Itens Notas Dezembro 2024
+  - dialect:
       delimiter: ;
     encoding: utf-8-sig
     format: csv
@@ -589,9 +577,8 @@ resources:
         - name: valor_total_r
           type: string
     scheme: file
-    title: Insira um título humanamente legível para este recurso.
-  - description: Insira a descrição/explicação detalhada deste recurso.
-    dialect:
+    title: Itens Notas Dezembro 2025
+  - dialect:
       delimiter: ;
     encoding: utf-8-sig
     format: csv
@@ -638,9 +625,8 @@ resources:
         - name: valor_total_r
           type: string
     scheme: file
-    title: Insira um título humanamente legível para este recurso.
-  - description: Insira a descrição/explicação detalhada deste recurso.
-    dialect:
+    title: Itens Notas Fevereiro 2022
+  - dialect:
       delimiter: ;
     encoding: utf-8-sig
     format: csv
@@ -687,9 +673,8 @@ resources:
         - name: valor_total_r
           type: string
     scheme: file
-    title: Insira um título humanamente legível para este recurso.
-  - description: Insira a descrição/explicação detalhada deste recurso.
-    dialect:
+    title: Itens Notas Fevereiro 2023
+  - dialect:
       delimiter: ;
     encoding: utf-8-sig
     format: csv
@@ -736,9 +721,8 @@ resources:
         - name: valor_total_r
           type: string
     scheme: file
-    title: Insira um título humanamente legível para este recurso.
-  - description: Insira a descrição/explicação detalhada deste recurso.
-    dialect:
+    title: Itens Notas Fevereiro 2024
+  - dialect:
       delimiter: ;
     encoding: utf-8-sig
     format: csv
@@ -785,9 +769,8 @@ resources:
         - name: valor_total_r
           type: string
     scheme: file
-    title: Insira um título humanamente legível para este recurso.
-  - description: Insira a descrição/explicação detalhada deste recurso.
-    dialect:
+    title: Itens Notas Fevereiro 2025
+  - dialect:
       delimiter: ;
     encoding: utf-8-sig
     format: csv
@@ -834,9 +817,8 @@ resources:
         - name: valor_total_r
           type: string
     scheme: file
-    title: Insira um título humanamente legível para este recurso.
-  - description: Insira a descrição/explicação detalhada deste recurso.
-    dialect:
+    title: Itens Notas Fevereiro 2026
+  - dialect:
       delimiter: ;
     encoding: utf-8-sig
     format: csv
@@ -883,9 +865,8 @@ resources:
         - name: valor_total_r
           type: string
     scheme: file
-    title: Insira um título humanamente legível para este recurso.
-  - description: Insira a descrição/explicação detalhada deste recurso.
-    dialect:
+    title: Itens Notas Janeiro 2022
+  - dialect:
       delimiter: ;
     encoding: utf-8-sig
     format: csv
@@ -932,9 +913,8 @@ resources:
         - name: valor_total_r
           type: string
     scheme: file
-    title: Insira um título humanamente legível para este recurso.
-  - description: Insira a descrição/explicação detalhada deste recurso.
-    dialect:
+    title: Itens Notas Janeiro 2023
+  - dialect:
       delimiter: ;
     encoding: utf-8-sig
     format: csv
@@ -981,9 +961,8 @@ resources:
         - name: valor_total_r
           type: string
     scheme: file
-    title: Insira um título humanamente legível para este recurso.
-  - description: Insira a descrição/explicação detalhada deste recurso.
-    dialect:
+    title: Itens Notas Janeiro 2024
+  - dialect:
       delimiter: ;
     encoding: utf-8-sig
     format: csv
@@ -1030,9 +1009,8 @@ resources:
         - name: valor_total_r
           type: string
     scheme: file
-    title: Insira um título humanamente legível para este recurso.
-  - description: Insira a descrição/explicação detalhada deste recurso.
-    dialect:
+    title: Itens Notas Janeiro 2025
+  - dialect:
       delimiter: ;
     encoding: utf-8-sig
     format: csv
@@ -1079,9 +1057,8 @@ resources:
         - name: valor_total_r
           type: string
     scheme: file
-    title: Insira um título humanamente legível para este recurso.
-  - description: Insira a descrição/explicação detalhada deste recurso.
-    dialect:
+    title: Itens Notas Janeiro 2026
+  - dialect:
       delimiter: ;
     encoding: utf-8-sig
     format: csv
@@ -1128,9 +1105,8 @@ resources:
         - name: valor_total_r
           type: string
     scheme: file
-    title: Insira um título humanamente legível para este recurso.
-  - description: Insira a descrição/explicação detalhada deste recurso.
-    dialect:
+    title: Itens Notas Julho 2022
+  - dialect:
       delimiter: ;
     encoding: utf-8-sig
     format: csv
@@ -1177,9 +1153,8 @@ resources:
         - name: valor_total_r
           type: string
     scheme: file
-    title: Insira um título humanamente legível para este recurso.
-  - description: Insira a descrição/explicação detalhada deste recurso.
-    dialect:
+    title: Itens Notas Julho 2023
+  - dialect:
       delimiter: ;
     encoding: utf-8-sig
     format: csv
@@ -1226,9 +1201,8 @@ resources:
         - name: valor_total_r
           type: string
     scheme: file
-    title: Insira um título humanamente legível para este recurso.
-  - description: Insira a descrição/explicação detalhada deste recurso.
-    dialect:
+    title: Itens Notas Julho 2024
+  - dialect:
       delimiter: ;
     encoding: utf-8-sig
     format: csv
@@ -1275,9 +1249,8 @@ resources:
         - name: valor_total_r
           type: string
     scheme: file
-    title: Insira um título humanamente legível para este recurso.
-  - description: Insira a descrição/explicação detalhada deste recurso.
-    dialect:
+    title: Itens Notas Julho 2025
+  - dialect:
       delimiter: ;
     encoding: utf-8-sig
     format: csv
@@ -1324,9 +1297,8 @@ resources:
         - name: valor_total_r
           type: string
     scheme: file
-    title: Insira um título humanamente legível para este recurso.
-  - description: Insira a descrição/explicação detalhada deste recurso.
-    dialect:
+    title: Itens Notas Junho 2022
+  - dialect:
       delimiter: ;
     encoding: utf-8-sig
     format: csv
@@ -1373,9 +1345,8 @@ resources:
         - name: valor_total_r
           type: string
     scheme: file
-    title: Insira um título humanamente legível para este recurso.
-  - description: Insira a descrição/explicação detalhada deste recurso.
-    dialect:
+    title: Itens Notas Junho 2023
+  - dialect:
       delimiter: ;
     encoding: utf-8-sig
     format: csv
@@ -1422,9 +1393,8 @@ resources:
         - name: valor_total_r
           type: string
     scheme: file
-    title: Insira um título humanamente legível para este recurso.
-  - description: Insira a descrição/explicação detalhada deste recurso.
-    dialect:
+    title: Itens Notas Junho 2024
+  - dialect:
       delimiter: ;
     encoding: utf-8-sig
     format: csv
@@ -1471,9 +1441,8 @@ resources:
         - name: valor_total_r
           type: string
     scheme: file
-    title: Insira um título humanamente legível para este recurso.
-  - description: Insira a descrição/explicação detalhada deste recurso.
-    dialect:
+    title: Itens Notas Junho 2025
+  - dialect:
       delimiter: ;
     encoding: utf-8-sig
     format: csv
@@ -1520,9 +1489,8 @@ resources:
         - name: valor_total_r
           type: string
     scheme: file
-    title: Insira um título humanamente legível para este recurso.
-  - description: Insira a descrição/explicação detalhada deste recurso.
-    dialect:
+    title: Itens Notas Maio 2022
+  - dialect:
       delimiter: ;
     encoding: utf-8-sig
     format: csv
@@ -1569,9 +1537,8 @@ resources:
         - name: valor_total_r
           type: string
     scheme: file
-    title: Insira um título humanamente legível para este recurso.
-  - description: Insira a descrição/explicação detalhada deste recurso.
-    dialect:
+    title: Itens Notas Maio 2023
+  - dialect:
       delimiter: ;
     encoding: utf-8-sig
     format: csv
@@ -1618,9 +1585,8 @@ resources:
         - name: valor_total_r
           type: string
     scheme: file
-    title: Insira um título humanamente legível para este recurso.
-  - description: Insira a descrição/explicação detalhada deste recurso.
-    dialect:
+    title: Itens Notas Maio 2024
+  - dialect:
       delimiter: ;
     encoding: utf-8-sig
     format: csv
@@ -1667,9 +1633,8 @@ resources:
         - name: valor_total_r
           type: string
     scheme: file
-    title: Insira um título humanamente legível para este recurso.
-  - description: Insira a descrição/explicação detalhada deste recurso.
-    dialect:
+    title: Itens Notas Maio 2025
+  - dialect:
       delimiter: ;
     encoding: utf-8-sig
     format: csv
@@ -1716,9 +1681,8 @@ resources:
         - name: valor_total_r
           type: string
     scheme: file
-    title: Insira um título humanamente legível para este recurso.
-  - description: Insira a descrição/explicação detalhada deste recurso.
-    dialect:
+    title: Itens Notas Março 2022
+  - dialect:
       delimiter: ;
     encoding: utf-8-sig
     format: csv
@@ -1765,9 +1729,8 @@ resources:
         - name: valor_total_r
           type: string
     scheme: file
-    title: Insira um título humanamente legível para este recurso.
-  - description: Insira a descrição/explicação detalhada deste recurso.
-    dialect:
+    title: Itens Notas Março 2023
+  - dialect:
       delimiter: ;
     encoding: utf-8-sig
     format: csv
@@ -1814,9 +1777,8 @@ resources:
         - name: valor_total_r
           type: string
     scheme: file
-    title: Insira um título humanamente legível para este recurso.
-  - description: Insira a descrição/explicação detalhada deste recurso.
-    dialect:
+    title: Itens Notas Março 2024
+  - dialect:
       delimiter: ;
     encoding: utf-8-sig
     format: csv
@@ -1863,9 +1825,8 @@ resources:
         - name: valor_total_r
           type: string
     scheme: file
-    title: Insira um título humanamente legível para este recurso.
-  - description: Insira a descrição/explicação detalhada deste recurso.
-    dialect:
+    title: Itens Notas Março 2025
+  - dialect:
       delimiter: ;
     encoding: utf-8-sig
     format: csv
@@ -1912,9 +1873,8 @@ resources:
         - name: valor_total_r
           type: string
     scheme: file
-    title: Insira um título humanamente legível para este recurso.
-  - description: Insira a descrição/explicação detalhada deste recurso.
-    dialect:
+    title: Itens Notas Março 2026
+  - dialect:
       delimiter: ;
     encoding: utf-8-sig
     format: csv
@@ -1961,9 +1921,8 @@ resources:
         - name: valor_total_r
           type: string
     scheme: file
-    title: Insira um título humanamente legível para este recurso.
-  - description: Insira a descrição/explicação detalhada deste recurso.
-    dialect:
+    title: Itens Notas Novembro 2022
+  - dialect:
       delimiter: ;
     encoding: utf-8-sig
     format: csv
@@ -2010,9 +1969,8 @@ resources:
         - name: valor_total_r
           type: string
     scheme: file
-    title: Insira um título humanamente legível para este recurso.
-  - description: Insira a descrição/explicação detalhada deste recurso.
-    dialect:
+    title: Itens Notas Novembro 2023
+  - dialect:
       delimiter: ;
     encoding: utf-8-sig
     format: csv
@@ -2059,9 +2017,56 @@ resources:
         - name: valor_total_r
           type: string
     scheme: file
-    title: Insira um título humanamente legível para este recurso.
-  - description: Insira a descrição/explicação detalhada deste recurso.
-    dialect:
+    title: Itens Notas Novembro 2024
+  - dialect:
+      delimiter: ;
+    encoding: utf-8-sig
+    format: csv
+    hashing: md5
+    name: itensnota_nov25
+    path: data/itensnota_nov25.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: orgao_emissor
+          type: string
+        - name: tipo_de_documento
+          type: any
+        - name: fornecedor_cnpj_cpf
+          type: string
+        - name: fornecedor_nome_empresarial
+          type: string
+        - name: numero
+          type: integer
+        - name: serie
+          type: string
+        - name: sequencial
+          type: integer
+        - name: natureza
+          type: string
+        - name: indicador_de_orcamento
+          type: string
+        - name: item_da_nota_fiscal
+          type: integer
+        - name: codigo_do_item
+          type: integer
+        - name: desc_do_item_de_material
+          type: string
+        - name: desc_da_unid_de_fornecimento
+          type: string
+        - name: unid_orcamentaria
+          type: integer
+        - name: elemento_item_de_despesa
+          type: integer
+        - name: qtde_na_nota_fiscal
+          type: string
+        - name: valor_unitario_r
+          type: string
+        - name: valor_total_r
+          type: string
+    scheme: file
+    title: Itens Notas Novembro 2025
+  - dialect:
       delimiter: ;
     encoding: utf-8-sig
     format: csv
@@ -2108,9 +2113,8 @@ resources:
         - name: valor_total_r
           type: string
     scheme: file
-    title: Insira um título humanamente legível para este recurso.
-  - description: Insira a descrição/explicação detalhada deste recurso.
-    dialect:
+    title: Itens Notas Outubro 2022
+  - dialect:
       delimiter: ;
     encoding: utf-8-sig
     format: csv
@@ -2157,9 +2161,8 @@ resources:
         - name: valor_total_r
           type: string
     scheme: file
-    title: Insira um título humanamente legível para este recurso.
-  - description: Insira a descrição/explicação detalhada deste recurso.
-    dialect:
+    title: Itens Notas Outubro 2023
+  - dialect:
       delimiter: ;
     encoding: utf-8-sig
     format: csv
@@ -2206,9 +2209,8 @@ resources:
         - name: valor_total_r
           type: string
     scheme: file
-    title: Insira um título humanamente legível para este recurso.
-  - description: Insira a descrição/explicação detalhada deste recurso.
-    dialect:
+    title: Itens Notas Outubro 2024
+  - dialect:
       delimiter: ;
     encoding: utf-8-sig
     format: csv
@@ -2255,9 +2257,8 @@ resources:
         - name: valor_total_r
           type: string
     scheme: file
-    title: Insira um título humanamente legível para este recurso.
-  - description: Insira a descrição/explicação detalhada deste recurso.
-    dialect:
+    title: Itens Notas Outubro 2025
+  - dialect:
       delimiter: ;
     encoding: utf-8-sig
     format: csv
@@ -2304,9 +2305,8 @@ resources:
         - name: valor_total_r
           type: string
     scheme: file
-    title: Insira um título humanamente legível para este recurso.
-  - description: Insira a descrição/explicação detalhada deste recurso.
-    dialect:
+    title: Itens Notas Setembro 2022
+  - dialect:
       delimiter: ;
     encoding: utf-8-sig
     format: csv
@@ -2353,9 +2353,8 @@ resources:
         - name: valor_total_r
           type: string
     scheme: file
-    title: Insira um título humanamente legível para este recurso.
-  - description: Insira a descrição/explicação detalhada deste recurso.
-    dialect:
+    title: Itens Notas Setembro 2023
+  - dialect:
       delimiter: ;
     encoding: utf-8-sig
     format: csv
@@ -2402,9 +2401,8 @@ resources:
         - name: valor_total_r
           type: string
     scheme: file
-    title: Insira um título humanamente legível para este recurso.
-  - description: Insira a descrição/explicação detalhada deste recurso.
-    dialect:
+    title: Itens Notas Setembro 2024
+  - dialect:
       delimiter: ;
     encoding: utf-8-sig
     format: csv
@@ -2451,9 +2449,8 @@ resources:
         - name: valor_total_r
           type: string
     scheme: file
-    title: Insira um título humanamente legível para este recurso.
-  - description: Insira a descrição/explicação detalhada deste recurso.
-    dialect:
+    title: Itens Notas Setembro 2025
+  - dialect:
       delimiter: ;
     encoding: utf-8-sig
     format: csv
@@ -2494,9 +2491,8 @@ resources:
         - name: nota_fiscal_para_aglutinacao
           type: string
     scheme: file
-    title: Insira um título humanamente legível para este recurso.
-  - description: Insira a descrição/explicação detalhada deste recurso.
-    dialect:
+    title: Notas Fiscais Abril 2022
+  - dialect:
       delimiter: ;
     encoding: utf-8-sig
     format: csv
@@ -2537,9 +2533,8 @@ resources:
         - name: nota_fiscal_para_aglutinacao
           type: string
     scheme: file
-    title: Insira um título humanamente legível para este recurso.
-  - description: Insira a descrição/explicação detalhada deste recurso.
-    dialect:
+    title: Notas Fiscais Abril 2023
+  - dialect:
       delimiter: ;
     encoding: utf-8-sig
     format: csv
@@ -2580,9 +2575,8 @@ resources:
         - name: nota_fiscal_para_aglutinacao
           type: string
     scheme: file
-    title: Insira um título humanamente legível para este recurso.
-  - description: Insira a descrição/explicação detalhada deste recurso.
-    dialect:
+    title: Notas Fiscais Abril 2024
+  - dialect:
       delimiter: ;
     encoding: utf-8-sig
     format: csv
@@ -2623,9 +2617,8 @@ resources:
         - name: nota_fiscal_para_aglutinacao
           type: string
     scheme: file
-    title: Insira um título humanamente legível para este recurso.
-  - description: Insira a descrição/explicação detalhada deste recurso.
-    dialect:
+    title: Notas Fiscais Abril 2025
+  - dialect:
       delimiter: ;
     encoding: utf-8-sig
     format: csv
@@ -2666,9 +2659,8 @@ resources:
         - name: nota_fiscal_para_aglutinacao
           type: string
     scheme: file
-    title: Insira um título humanamente legível para este recurso.
-  - description: Insira a descrição/explicação detalhada deste recurso.
-    dialect:
+    title: Notas Fiscais Agosto 2022
+  - dialect:
       delimiter: ;
     encoding: utf-8-sig
     format: csv
@@ -2709,7 +2701,7 @@ resources:
         - name: nota_fiscal_para_aglutinacao
           type: string
     scheme: file
-    title: Insira um título humanamente legível para este recurso.
+    title: Notas Fiscais Agosto 2023
   - description: Insira a descrição/explicação detalhada deste recurso.
     dialect:
       delimiter: ;
@@ -2752,9 +2744,8 @@ resources:
         - name: nota_fiscal_para_aglutinacao
           type: string
     scheme: file
-    title: Insira um título humanamente legível para este recurso.
-  - description: Insira a descrição/explicação detalhada deste recurso.
-    dialect:
+    title: Notas Fiscais Agosto 2024
+  - dialect:
       delimiter: ;
     encoding: utf-8-sig
     format: csv
@@ -2795,9 +2786,8 @@ resources:
         - name: nota_fiscal_para_aglutinacao
           type: string
     scheme: file
-    title: Insira um título humanamente legível para este recurso.
-  - description: Insira a descrição/explicação detalhada deste recurso.
-    dialect:
+    title: Notas Fiscais Agosto 2025
+  - dialect:
       delimiter: ;
     encoding: utf-8-sig
     format: csv
@@ -2838,9 +2828,8 @@ resources:
         - name: nota_fiscal_para_aglutinacao
           type: string
     scheme: file
-    title: Insira um título humanamente legível para este recurso.
-  - description: Insira a descrição/explicação detalhada deste recurso.
-    dialect:
+    title: Notas Fiscais Dezembro 2022
+  - dialect:
       delimiter: ;
     encoding: utf-8-sig
     format: csv
@@ -2881,9 +2870,8 @@ resources:
         - name: nota_fiscal_para_aglutinacao
           type: string
     scheme: file
-    title: Insira um título humanamente legível para este recurso.
-  - description: Insira a descrição/explicação detalhada deste recurso.
-    dialect:
+    title: Notas Fiscais Dezembro 2023
+  - dialect:
       delimiter: ;
     encoding: utf-8-sig
     format: csv
@@ -2924,9 +2912,8 @@ resources:
         - name: nota_fiscal_para_aglutinacao
           type: string
     scheme: file
-    title: Insira um título humanamente legível para este recurso.
-  - description: Insira a descrição/explicação detalhada deste recurso.
-    dialect:
+    title: Notas Fiscais Dezembro 2024
+  - dialect:
       delimiter: ;
     encoding: utf-8-sig
     format: csv
@@ -2967,9 +2954,8 @@ resources:
         - name: nota_fiscal_para_aglutinacao
           type: string
     scheme: file
-    title: Insira um título humanamente legível para este recurso.
-  - description: Insira a descrição/explicação detalhada deste recurso.
-    dialect:
+    title: Notas Fiscais Dezembro 2025
+  - dialect:
       delimiter: ;
     encoding: utf-8-sig
     format: csv
@@ -3010,9 +2996,8 @@ resources:
         - name: nota_fiscal_para_aglutinacao
           type: string
     scheme: file
-    title: Insira um título humanamente legível para este recurso.
-  - description: Insira a descrição/explicação detalhada deste recurso.
-    dialect:
+    title: Notas Fiscais Fevereiro 2022
+  - dialect:
       delimiter: ;
     encoding: utf-8-sig
     format: csv
@@ -3053,9 +3038,8 @@ resources:
         - name: nota_fiscal_para_aglutinacao
           type: string
     scheme: file
-    title: Insira um título humanamente legível para este recurso.
-  - description: Insira a descrição/explicação detalhada deste recurso.
-    dialect:
+    title: Notas Fiscais Fevereiro 2023
+  - dialect:
       delimiter: ;
     encoding: utf-8-sig
     format: csv
@@ -3096,9 +3080,8 @@ resources:
         - name: nota_fiscal_para_aglutinacao
           type: string
     scheme: file
-    title: Insira um título humanamente legível para este recurso.
-  - description: Insira a descrição/explicação detalhada deste recurso.
-    dialect:
+    title: Notas Fiscais Fevereiro 2024
+  - dialect:
       delimiter: ;
     encoding: utf-8-sig
     format: csv
@@ -3139,9 +3122,8 @@ resources:
         - name: nota_fiscal_para_aglutinacao
           type: string
     scheme: file
-    title: Insira um título humanamente legível para este recurso.
-  - description: Insira a descrição/explicação detalhada deste recurso.
-    dialect:
+    title: Notas Fiscais Fevereiro 2025
+  - dialect:
       delimiter: ;
     encoding: utf-8-sig
     format: csv
@@ -3182,9 +3164,8 @@ resources:
         - name: nota_fiscal_para_aglutinacao
           type: string
     scheme: file
-    title: Insira um título humanamente legível para este recurso.
-  - description: Insira a descrição/explicação detalhada deste recurso.
-    dialect:
+    title: Notas Fiscais Fevereiro 2026
+  - dialect:
       delimiter: ;
     encoding: utf-8-sig
     format: csv
@@ -3225,9 +3206,8 @@ resources:
         - name: nota_fiscal_para_aglutinacao
           type: string
     scheme: file
-    title: Insira um título humanamente legível para este recurso.
-  - description: Insira a descrição/explicação detalhada deste recurso.
-    dialect:
+    title: Notas Fiscais Janeiro 2022
+  - dialect:
       delimiter: ;
     encoding: utf-8-sig
     format: csv
@@ -3268,9 +3248,8 @@ resources:
         - name: nota_fiscal_para_aglutinacao
           type: string
     scheme: file
-    title: Insira um título humanamente legível para este recurso.
-  - description: Insira a descrição/explicação detalhada deste recurso.
-    dialect:
+    title: Notas Fiscais Janeiro 2023
+  - dialect:
       delimiter: ;
     encoding: utf-8-sig
     format: csv
@@ -3311,9 +3290,8 @@ resources:
         - name: nota_fiscal_para_aglutinacao
           type: string
     scheme: file
-    title: Insira um título humanamente legível para este recurso.
-  - description: Insira a descrição/explicação detalhada deste recurso.
-    dialect:
+    title: Notas Fiscais Janeiro 2024
+  - dialect:
       delimiter: ;
     encoding: utf-8-sig
     format: csv
@@ -3354,9 +3332,8 @@ resources:
         - name: nota_fiscal_para_aglutinacao
           type: string
     scheme: file
-    title: Insira um título humanamente legível para este recurso.
-  - description: Insira a descrição/explicação detalhada deste recurso.
-    dialect:
+    title: Notas Fiscais Janeiro 2025
+  - dialect:
       delimiter: ;
     encoding: utf-8-sig
     format: csv
@@ -3397,9 +3374,8 @@ resources:
         - name: nota_fiscal_para_aglutinacao
           type: string
     scheme: file
-    title: Insira um título humanamente legível para este recurso.
-  - description: Insira a descrição/explicação detalhada deste recurso.
-    dialect:
+    title: Notas Fiscais Janeiro 2026
+  - dialect:
       delimiter: ;
     encoding: utf-8-sig
     format: csv
@@ -3440,9 +3416,8 @@ resources:
         - name: nota_fiscal_para_aglutinacao
           type: string
     scheme: file
-    title: Insira um título humanamente legível para este recurso.
-  - description: Insira a descrição/explicação detalhada deste recurso.
-    dialect:
+    title: Notas Fiscais Julho 2022
+  - dialect:
       delimiter: ;
     encoding: utf-8-sig
     format: csv
@@ -3483,9 +3458,8 @@ resources:
         - name: nota_fiscal_para_aglutinacao
           type: string
     scheme: file
-    title: Insira um título humanamente legível para este recurso.
-  - description: Insira a descrição/explicação detalhada deste recurso.
-    dialect:
+    title: Notas Fiscais Julho 2023
+  - dialect:
       delimiter: ;
     encoding: utf-8-sig
     format: csv
@@ -3526,9 +3500,8 @@ resources:
         - name: nota_fiscal_para_aglutinacao
           type: string
     scheme: file
-    title: Insira um título humanamente legível para este recurso.
-  - description: Insira a descrição/explicação detalhada deste recurso.
-    dialect:
+    title: Notas Fiscais Julho 2024
+  - dialect:
       delimiter: ;
     encoding: utf-8-sig
     format: csv
@@ -3569,9 +3542,8 @@ resources:
         - name: nota_fiscal_para_aglutinacao
           type: string
     scheme: file
-    title: Insira um título humanamente legível para este recurso.
-  - description: Insira a descrição/explicação detalhada deste recurso.
-    dialect:
+    title: Notas Fiscais Julho 2025
+  - dialect:
       delimiter: ;
     encoding: utf-8-sig
     format: csv
@@ -3612,9 +3584,8 @@ resources:
         - name: nota_fiscal_para_aglutinacao
           type: string
     scheme: file
-    title: Insira um título humanamente legível para este recurso.
-  - description: Insira a descrição/explicação detalhada deste recurso.
-    dialect:
+    title: Notas Fiscais Junho 2022
+  - dialect:
       delimiter: ;
     encoding: utf-8-sig
     format: csv
@@ -3655,9 +3626,8 @@ resources:
         - name: nota_fiscal_para_aglutinacao
           type: string
     scheme: file
-    title: Insira um título humanamente legível para este recurso.
-  - description: Insira a descrição/explicação detalhada deste recurso.
-    dialect:
+    title: Notas Fiscais Junho 2023
+  - dialect:
       delimiter: ;
     encoding: utf-8-sig
     format: csv
@@ -3698,9 +3668,8 @@ resources:
         - name: nota_fiscal_para_aglutinacao
           type: string
     scheme: file
-    title: Insira um título humanamente legível para este recurso.
-  - description: Insira a descrição/explicação detalhada deste recurso.
-    dialect:
+    title: Notas Fiscais Junho 2024
+  - dialect:
       delimiter: ;
     encoding: utf-8-sig
     format: csv
@@ -3741,9 +3710,8 @@ resources:
         - name: nota_fiscal_para_aglutinacao
           type: string
     scheme: file
-    title: Insira um título humanamente legível para este recurso.
-  - description: Insira a descrição/explicação detalhada deste recurso.
-    dialect:
+    title: Notas Fiscais Junho 2025
+  - dialect:
       delimiter: ;
     encoding: utf-8-sig
     format: csv
@@ -3784,9 +3752,8 @@ resources:
         - name: nota_fiscal_para_aglutinacao
           type: string
     scheme: file
-    title: Insira um título humanamente legível para este recurso.
-  - description: Insira a descrição/explicação detalhada deste recurso.
-    dialect:
+    title: Notas Fiscais Maio 2022
+  - dialect:
       delimiter: ;
     encoding: utf-8-sig
     format: csv
@@ -3827,9 +3794,8 @@ resources:
         - name: nota_fiscal_para_aglutinacao
           type: string
     scheme: file
-    title: Insira um título humanamente legível para este recurso.
-  - description: Insira a descrição/explicação detalhada deste recurso.
-    dialect:
+    title: Notas Fiscais Maio 2023
+  - dialect:
       delimiter: ;
     encoding: utf-8-sig
     format: csv
@@ -3870,9 +3836,8 @@ resources:
         - name: nota_fiscal_para_aglutinacao
           type: string
     scheme: file
-    title: Insira um título humanamente legível para este recurso.
-  - description: Insira a descrição/explicação detalhada deste recurso.
-    dialect:
+    title: Notas Fiscais Maio 2024
+  - dialect:
       delimiter: ;
     encoding: utf-8-sig
     format: csv
@@ -3913,9 +3878,8 @@ resources:
         - name: nota_fiscal_para_aglutinacao
           type: string
     scheme: file
-    title: Insira um título humanamente legível para este recurso.
-  - description: Insira a descrição/explicação detalhada deste recurso.
-    dialect:
+    title: Notas Fiscais Maio 2025
+  - dialect:
       delimiter: ;
     encoding: utf-8-sig
     format: csv
@@ -3956,9 +3920,8 @@ resources:
         - name: nota_fiscal_para_aglutinacao
           type: string
     scheme: file
-    title: Insira um título humanamente legível para este recurso.
-  - description: Insira a descrição/explicação detalhada deste recurso.
-    dialect:
+    title: Notas Fiscais Março 2022
+  - dialect:
       delimiter: ;
     encoding: utf-8-sig
     format: csv
@@ -3999,9 +3962,8 @@ resources:
         - name: nota_fiscal_para_aglutinacao
           type: string
     scheme: file
-    title: Insira um título humanamente legível para este recurso.
-  - description: Insira a descrição/explicação detalhada deste recurso.
-    dialect:
+    title: Notas Fiscais Março 2022
+  - dialect:
       delimiter: ;
     encoding: utf-8-sig
     format: csv
@@ -4042,9 +4004,8 @@ resources:
         - name: nota_fiscal_para_aglutinacao
           type: string
     scheme: file
-    title: Insira um título humanamente legível para este recurso.
-  - description: Insira a descrição/explicação detalhada deste recurso.
-    dialect:
+    title: Notas Fiscais Março 2024
+  - dialect:
       delimiter: ;
     encoding: utf-8-sig
     format: csv
@@ -4085,9 +4046,8 @@ resources:
         - name: nota_fiscal_para_aglutinacao
           type: string
     scheme: file
-    title: Insira um título humanamente legível para este recurso.
-  - description: Insira a descrição/explicação detalhada deste recurso.
-    dialect:
+    title: Notas Fiscais Março 2025
+  - dialect:
       delimiter: ;
     encoding: utf-8-sig
     format: csv
@@ -4128,9 +4088,8 @@ resources:
         - name: nota_fiscal_para_aglutinacao
           type: string
     scheme: file
-    title: Insira um título humanamente legível para este recurso.
-  - description: Insira a descrição/explicação detalhada deste recurso.
-    dialect:
+    title: Notas Fiscais Março 2026
+  - dialect:
       delimiter: ;
     encoding: utf-8-sig
     format: csv
@@ -4171,9 +4130,8 @@ resources:
         - name: nota_fiscal_para_aglutinacao
           type: string
     scheme: file
-    title: Insira um título humanamente legível para este recurso.
-  - description: Insira a descrição/explicação detalhada deste recurso.
-    dialect:
+    title: Notas Fiscais Novembro 2022
+  - dialect:
       delimiter: ;
     encoding: utf-8-sig
     format: csv
@@ -4214,9 +4172,8 @@ resources:
         - name: nota_fiscal_para_aglutinacao
           type: string
     scheme: file
-    title: Insira um título humanamente legível para este recurso.
-  - description: Insira a descrição/explicação detalhada deste recurso.
-    dialect:
+    title: Notas Fiscais Novembro 2023
+  - dialect:
       delimiter: ;
     encoding: utf-8-sig
     format: csv
@@ -4257,9 +4214,8 @@ resources:
         - name: nota_fiscal_para_aglutinacao
           type: string
     scheme: file
-    title: Insira um título humanamente legível para este recurso.
-  - description: Insira a descrição/explicação detalhada deste recurso.
-    dialect:
+    title: Notas Fiscais Novembro 2024
+  - dialect:
       delimiter: ;
     encoding: utf-8-sig
     format: csv
@@ -4300,9 +4256,8 @@ resources:
         - name: nota_fiscal_para_aglutinacao
           type: string
     scheme: file
-    title: Insira um título humanamente legível para este recurso.
-  - description: Insira a descrição/explicação detalhada deste recurso.
-    dialect:
+    title: Notas Fiscais Novembro 2025
+  - dialect:
       delimiter: ;
     encoding: utf-8-sig
     format: csv
@@ -4343,9 +4298,8 @@ resources:
         - name: nota_fiscal_para_aglutinacao
           type: string
     scheme: file
-    title: Insira um título humanamente legível para este recurso.
-  - description: Insira a descrição/explicação detalhada deste recurso.
-    dialect:
+    title: Notas Fiscais Outubro 2022
+  - dialect:
       delimiter: ;
     encoding: utf-8-sig
     format: csv
@@ -4386,9 +4340,8 @@ resources:
         - name: nota_fiscal_para_aglutinacao
           type: string
     scheme: file
-    title: Insira um título humanamente legível para este recurso.
-  - description: Insira a descrição/explicação detalhada deste recurso.
-    dialect:
+    title: Notas Fiscais Outubro 2023
+  - dialect:
       delimiter: ;
     encoding: utf-8-sig
     format: csv
@@ -4429,9 +4382,8 @@ resources:
         - name: nota_fiscal_para_aglutinacao
           type: string
     scheme: file
-    title: Insira um título humanamente legível para este recurso.
-  - description: Insira a descrição/explicação detalhada deste recurso.
-    dialect:
+    title: Notas Fiscais Outubro 2024
+  - dialect:
       delimiter: ;
     encoding: utf-8-sig
     format: csv
@@ -4472,9 +4424,50 @@ resources:
         - name: nota_fiscal_para_aglutinacao
           type: string
     scheme: file
-    title: Insira um título humanamente legível para este recurso.
-  - description: Insira a descrição/explicação detalhada deste recurso.
-    dialect:
+    title: Notas Fiscais Outubro 2025
+  - dialect:
+      delimiter: ;
+    encoding: utf-8-sig
+    format: csv
+    hashing: md5
+    name: notas_set22
+    path: data/notas_set22.csv
+    profile: tabular-data-resource
+    schema:
+      fields:
+        - name: orgao_emissor
+          type: string
+        - name: tipo_de_documento
+          type: any
+        - name: fornecedor_cnpj_cpf
+          type: string
+        - name: fornecedor_nome_empresarial
+          type: string
+        - name: numero
+          type: integer
+        - name: serie
+          type: any
+        - name: sequencial
+          type: integer
+        - name: situacao
+          type: string
+        - name: natureza
+          type: string
+        - name: indicador_de_orcamento
+          type: string
+        - name: data_de_emissao
+          type: date
+        - name: data_de_recebimento
+          type: date
+        - name: data_de_registro
+          type: date
+        - name: valor_total_com_impostos
+          type: string
+        - name: nota_fiscal_para_aglutinacao
+          type: string
+    scheme: file
+    title: Notas Fiscais Setembro 2022
+  - dialect:
       delimiter: ;
     encoding: utf-8-sig
     format: csv
@@ -4515,9 +4508,8 @@ resources:
         - name: nota_fiscal_para_aglutinacao
           type: string
     scheme: file
-    title: Insira um título humanamente legível para este recurso.
-  - description: Insira a descrição/explicação detalhada deste recurso.
-    dialect:
+    title: Notas Fiscais Setembro 2023
+  - dialect:
       delimiter: ;
     encoding: utf-8-sig
     format: csv
@@ -4558,9 +4550,8 @@ resources:
         - name: nota_fiscal_para_aglutinacao
           type: string
     scheme: file
-    title: Insira um título humanamente legível para este recurso.
-  - description: Insira a descrição/explicação detalhada deste recurso.
-    dialect:
+    title: Notas Fiscais Setembro 2024
+  - dialect:
       delimiter: ;
     encoding: utf-8-sig
     format: csv
@@ -4601,5 +4592,5 @@ resources:
         - name: nota_fiscal_para_aglutinacao
           type: string
     scheme: file
-    title: Insira um título humanamente legível para este recurso.
-title: Portal_notas_fiscais
+    title: Notas Fiscais Setembro 2025
+title: Notas Fiscais
