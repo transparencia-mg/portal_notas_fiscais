@@ -1304,27 +1304,27 @@
                 <div class="filter-container">
                     <div class="filters-row">
                         <div class="filter-group">
-                            <label class="filter-label"><i class="material-icons">event</i>ANO</label>
+                            <label class="filter-label"><i class="material-icons"></i>ANO</label>
                             <select class="form-select" id="filtroAnoVG" onchange="mudarAnoVG()">
                                 ${anosDisponiveis.map(a => `<option value="${a}" ${a === anoAtual ? 'selected' : ''}>${a}</option>`).join('')}
                             </select>
                         </div>
                         <div class="filter-group">
-                            <label class="filter-label"><i class="material-icons">business</i>ÓRGÃO</label>
+                            <label class="filter-label"><i class="material-icons"></i>ÓRGÃO</label>
                             <select class="form-select" id="filtroOrgaoVG">
                                 <option value="">Todos</option>
                                 ${orgaos.map(o => `<option value="${o}">${o}</option>`).join('')}
                             </select>
                         </div>
                         <div class="filter-group">
-                            <label class="filter-label"><i class="material-icons">category</i>NATUREZA</label>
+                            <label class="filter-label"><i class="material-icons"></i>NATUREZA</label>
                             <select class="form-select" id="filtroNaturezaVG">
                                 <option value="">Todas</option>
                                 ${naturezas.map(n => `<option value="${n}">${n}</option>`).join('')}
                             </select>
                         </div>
                         <div class="filter-group">
-                            <label class="filter-label"><i class="material-icons">account_balance</i>INDICADOR</label>
+                            <label class="filter-label"><i class="material-icons"></i>INDICADOR</label>
                             <select class="form-select" id="filtroIndicadorVG">
                                 <option value="">Todos</option>
                                 ${indicadores.map(i => `<option value="${i}">${i}</option>`).join('')}
@@ -1333,7 +1333,7 @@
                     </div>
                     <div class="botoes-abaixo">
                         <button class="btn-pesquisa" onclick="aplicarFiltrosVG()"><i class="material-icons me-2">search</i>Pesquisar</button>
-                        <button class="btn-secondary-custom" onclick="limparFiltrosVG()"><i class="material-icons me-2">clear</i>Limpar</button>
+                        <button class="btn-secondary-custom" onclick="limparFiltrosVG()"><i class="material-icons me-2">clear</i>Limpar Filtros</button>
                     </div>
                 </div>
 
@@ -1476,27 +1476,27 @@
                 <div class="filter-container">
                     <div class="row g-3">
                         <div class="col-md-2">
-                            <label class="filter-label"><i class="material-icons">event</i>Ano</label>
+                            <label class="filter-label"><i class="material-icons"></i>Ano</label>
                             <select class="form-select" id="filtroAnoNotas" onchange="mudarAnoNotas()">
                                 ${anosDisponiveis.map(a => `<option value="${a}" ${a === anoAtual ? 'selected' : ''}>${a}</option>`).join('')}
                             </select>
                         </div>
                         <div class="col-md-3">
-                            <label class="filter-label"><i class="material-icons">business</i>Órgão</label>
+                            <label class="filter-label"><i class="material-icons"></i>Órgão</label>
                             <select class="form-select" id="filtroOrgaoNotas">
                                 <option value="">Todos</option>
                                 ${orgaos.map(o => `<option value="${o}">${o}</option>`).join('')}
                             </select>
                         </div>
                         <div class="col-md-2">
-                            <label class="filter-label"><i class="material-icons">category</i>Natureza</label>
+                            <label class="filter-label"><i class="material-icons"></i>Natureza</label>
                             <select class="form-select" id="filtroNaturezaNotas">
                                 <option value="">Todas</option>
                                 ${naturezas.map(n => `<option value="${n}">${n}</option>`).join('')}
                             </select>
                         </div>
                         <div class="col-md-3">
-                            <label class="filter-label"><i class="material-icons">person</i>Fornecedor</label>
+                            <label class="filter-label"><i class="material-icons"></i>Fornecedor</label>
                             <select class="form-select" id="filtroFornecedorNotas">
                                 <option value="">Todos</option>
                                 ${fornecedores.map(f => `<option value="${f}">${f.substring(0,50)}</option>`).join('')}
@@ -1510,7 +1510,7 @@
                     <div class="row mt-3">
                         <div class="col-12 d-flex gap-2">
                             <button class="btn-pesquisa" onclick="aplicarFiltrosNotas()"><i class="material-icons me-2">search</i>Pesquisar</button>
-                            <button class="btn-secondary-custom" onclick="limparFiltrosNotas()"><i class="material-icons me-2">clear</i>Limpar</button>
+                            <button class="btn-secondary-custom" onclick="limparFiltrosNotas()"><i class="material-icons me-2">clear</i>Limpar Filtros</button>
                         </div>
                     </div>
                 </div>
@@ -1680,41 +1680,41 @@
                 <div class="filter-container">
                     <div class="row g-3">
                         <div class="col-md-2">
-                            <label class="filter-label"><i class="material-icons">event</i>Ano</label>
+                            <label class="filter-label"><i class="material-icons"></i>Ano</label>
                             <select class="form-select" id="filtroAnoItens" onchange="mudarAnoItens()">
                                 ${anosDisponiveis.map(a => `<option value="${a}" ${a === anoAtual ? 'selected' : ''}>${a}</option>`).join('')}
                             </select>
                         </div>
                         <div class="col-md-3">
-                            <label class="filter-label"><i class="material-icons">business</i>Órgão</label>
+                            <label class="filter-label"><i class="material-icons"></i>Órgão</label>
                             <select class="form-select" id="filtroOrgaoItens">
                                 <option value="">Todos</option>
                                 ${orgaos.map(o => `<option value="${o}">${o}</option>`).join('')}
                             </select>
                         </div>
                         <div class="col-md-2">
-                            <label class="filter-label"><i class="material-icons">category</i>Natureza</label>
+                            <label class="filter-label"><i class="material-icons"></i>Natureza</label>
                             <select class="form-select" id="filtroNaturezaItens">
                                 <option value="">Todas</option>
                                 ${naturezas.map(n => `<option value="${n}">${n}</option>`).join('')}
                             </select>
                         </div>
                         <div class="col-md-3">
-                            <label class="filter-label"><i class="material-icons">person</i>Fornecedor</label>
+                            <label class="filter-label"><i class="material-icons"></i>Fornecedor</label>
                             <select class="form-select" id="filtroFornecedorItens">
                                 <option value="">Todos</option>
                                 ${fornecedores.map(f => `<option value="${f}">${f.substring(0,50)}</option>`).join('')}
                             </select>
                         </div>
                         <div class="col-md-2">
-                            <label class="filter-label"><i class="material-icons">search</i>Item</label>
+                            <label class="filter-label"><i class="material-icons"></i>Item</label>
                             <input type="text" class="form-control" id="filtroItem" placeholder="Código ou descrição...">
                         </div>
                     </div>
                     <div class="row mt-3">
                         <div class="col-12 d-flex gap-2">
                             <button class="btn-pesquisa" onclick="aplicarFiltrosItens()"><i class="material-icons me-2">search</i>Pesquisar</button>
-                            <button class="btn-secondary-custom" onclick="limparFiltrosItens()"><i class="material-icons me-2">clear</i>Limpar</button>
+                            <button class="btn-secondary-custom" onclick="limparFiltrosItens()"><i class="material-icons me-2">clear</i>Limpar Filtros</button>
                         </div>
                     </div>
                 </div>
@@ -1954,17 +1954,18 @@
                             <div class="col-md-6 col-12">
                                 <div class="card-stats p-4 bg-white rounded shadow-sm h-100">
                                     <div class="d-flex align-items-center gap-2 mb-3">
-                                        <i class="material-icons" style="color: var(--primary-dark);">cloud_download</i>
+                                        <i class="material-icons" style="color: var(--primary-dark);"></i>
                                         <h4 class="fw-bold text-start mb-0">Portal de Dados Abertos</h4>
                                     </div>
                                     <p class="text-muted text-justify" style="font-size: 13px; text-align: justify;">
-                                        Acesse o conjunto de dados completo no Portal de Dados Abertos de Minas Gerais. Dados documentados conforme especificações Frictionless Data.
+                                        Acesse o conjunto de dados completo no Portal de Dados Abertos de Minas Gerais. 
+                                        Dados documentados conforme especificações Frictionless Data.
                                     </p>
                                     <div class="mt-4 text-end">
                                         <a href="https://dados.mg.gov.br/dataset/portal_notas_fiscais" 
                                            target="_blank" 
                                            class="btn-export text-decoration-none fw-bold d-inline-block px-4 py-2">
-                                            <i class="material-icons me-2" style="font-size: 18px; vertical-align: middle;">open_in_new</i>
+                                            <i class="material-icons me-2" style="font-size: 18px; vertical-align: middle;"></i>
                                             Acessar Portal de Dados MG
                                         </a>
                                     </div>
@@ -1974,7 +1975,7 @@
                     </div>
                 </div>
 
-                <h4 class="mb-3 fw-bold">Metadados</h4>
+                <h4 class="mb-3 fw-bold">METADADOS - Estrutura de Dados</h4>
                 
                 <div class="row">
                     <div class="col-md-6">
