@@ -48,16 +48,15 @@
             min-height: auto;
         }
         
-        html, body {
-            font-family: 'Montserrat', 'Open Sans', sans-serif;
-            background-color: var(--background-light);
-            overflow-y: visible !important;
-            overflow-x: hidden !important;
-            height: auto !important;
-            min-height: auto !important;
-            padding-bottom: 15px;
-            margin: 0;
-        }
+        body { 
+            font-family: 'Montserrat', Segoe UI, Tahoma, Geneva, Verdana, sans-serif; 
+            background-color: var(--background-light); 
+            padding-bottom: 15px; 
+            overflow-x: hidden; 
+            min-height: auto; 
+            height: auto; 
+            position: relative; 
+        } 
 
         .main-container { 
             height: auto; 
@@ -92,12 +91,6 @@
             overflow: visible;
         }
 
-        .table-container { 
-            height: auto; 
-            min-height: auto; 
-            overflow: visible; 
-            position: relative; 
-        }
 
         /* ==================== DATA ATUALIZAÇÃO ==================== */
         .data-atualizacao-container {
@@ -189,7 +182,7 @@
         }
 
         .metric-header {
-            background: #20445d;
+            background: #ar(--primary-dark);
             color: white;
             font-size: 18px;
             font-weight: 600;
@@ -206,11 +199,11 @@
         .metric-value {
             font-size: 26px;
             font-weight: 600;
-            color: #1a3a5c;
+            color: var(--primary-dark);
         }
 
         .metric-label {
-            font-size: 15px;
+            font-size: 12px;
             color: var(--primary-darker);
             font-weight: 600;
             margin-bottom: 6px;
