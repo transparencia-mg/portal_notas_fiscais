@@ -33,6 +33,21 @@
         }
 
         /* ==================== ESTILOS GERAIS E CONTROLE DE IFRAME ==================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            width: 100%;
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+            height: auto;
+            min-height: auto;
+        }
+        
         html, body {
             font-family: 'Montserrat', 'Open Sans', sans-serif;
             background-color: var(--background-light);
@@ -43,6 +58,13 @@
             padding-bottom: 15px;
             margin: 0;
         }
+
+        .main-container { 
+            height: auto; 
+            min-height: auto; 
+            overflow: visible; 
+            position: relative; 
+        } 
 
         .container-fluid {
             width: 100%;
