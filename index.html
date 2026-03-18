@@ -44,14 +44,37 @@
             margin: 0;
         }
 
-        .container-fluid, .tab-content, .tab-pane {
-            overflow: visible !important;
-            height: auto !important;
-            min-height: auto !important;
+        .container-fluid {
+            width: 100%;
+            max-width: 100% !important;
+            padding: 0 40px;
+            margin: 0;
+            height: auto;
+            min-height: auto;
         }
 
-        .table-container {
-            overflow: visible !important;
+        .dashboard-container {
+            width: 100%;
+            max-width: 100%;
+            padding: 0 40px;
+            margin: 0 auto;
+            height: auto;
+            min-height: auto;
+        }
+
+        .tab-content, 
+        .tab-pane {
+            width: 100%;
+            height: auto;
+            min-height: auto;
+            overflow: visible;
+        }
+
+        .table-container { 
+            height: auto; 
+            min-height: auto; 
+            overflow: visible; 
+            position: relative; 
         }
 
         /* ==================== DATA ATUALIZAÇÃO ==================== */
@@ -59,7 +82,7 @@
             display: flex;
             justify-content: left;
             align-items: center;
-            margin: 20px 0;
+            margin: 15px 0;
         }
         
         .data-atualizacao-box {
@@ -87,19 +110,17 @@
             box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
             padding: 20px;
             margin-bottom: 20px;
-            border-left: 5px solid var(--accent-red);
+            border-left: none;
+            width: 100%;
         }
         
         .filter-label {
+            font-size: 16px;
             font-weight: 600;
-            color: var(--primary-dark);
+            color: #1a3a5c;
             margin-bottom: 6px;
-            font-size: 14px;
             text-transform: uppercase;
-            letter-spacing: 0.3px;
-            display: flex;
-            align-items: center;
-            gap: 4px;
+            letter-spacing: 0.5px;
         }
         
         .filter-label i { font-size: 18px; color: var(--accent-red); }
@@ -108,9 +129,10 @@
             border: 2px solid #e9ecef;
             border-radius: 6px;
             padding: 10px 12px;
-            font-size: 14px;
+            font-size: 13px;
             transition: all 0.3s ease;
             height: 42px;
+            width: 100%;
         }
         
         .form-control:focus, .form-select:focus {
@@ -137,28 +159,34 @@
         /* ==================== CARDS DE MÉTRICAS ==================== */
         .metric-card {
             background: white;
-            border-radius: 10px;
-            padding: 20px 15px;
+            border-radius: 8px;
+            border: 1px solid #e5e9ef;
             box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
-            margin-bottom: 20px;
-            border-top: 4px solid var(--primary-dark);
-            transition: all 0.3s ease;
+            overflow: hidden;
             height: 100%;
         }
-        
-        .metric-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+
+        .metric-header {
+            background: #20445d;
+            color: white;
+            font-size: 18px;
+            font-weight: 600;
+            padding: 10px 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-        
+
+        .metric-body {
+            padding: 12px 15px;
+        }
+
         .metric-value {
-            font-size: 24px;
-            font-weight: 700;
-            color: var(--primary-dark);
-            margin: 8px 0;
-            line-height: 1;
+            font-size: 26px;
+            font-weight: 600;
+            color: #1a3a5c;
         }
-        
+
         .metric-label {
             font-size: 15px;
             color: var(--primary-darker);
@@ -196,38 +224,40 @@
         }
         
         .table-badge {
-            background: var(--accent-red);
+            background: var(--primary-dark);
             color: white;
-            padding: 4px 12px;
-            border-radius: 15px;
-            font-size: 15px;
+            padding: 5px 12px;
+            border-radius: 12px;
+            font-size: 13px;
             font-weight: 600;
         }
         
         .table-fixed-header-container {
             position: relative;
-            max-height: 500px;
             overflow: auto;
+            width: 100%;
+            max-height: 600px;
         }
         
         .table-fixed-header-container table thead th {
-            background-color: var(--primary-dark) !important;
+            background-color: #54697b !important;
             color: white !important;
             position: sticky;
             top: 0;
             z-index: 10;
             font-weight: 600;
             padding: 12px 10px;
-            font-size: 14px;
+            font-size: 15px;
             text-transform: uppercase;
             white-space: nowrap;
         }
         
         .table {
             width: 100%;
-            font-size: 14px;
+            font-size: 15px;
             border-collapse: separate;
             border-spacing: 0;
+            table-layout: auto;
         }
         
         .table tbody td {
@@ -241,28 +271,49 @@
         }
 
         .orgao-link {
-            color: var(--primary-dark);
+            color: #006a82;
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 400;
             cursor: pointer;
         }
         .orgao-link:hover { color: var(--accent-red); }
 
+        /* ==================== SORTABLE HEADERS ==================== */
+        .sortable-header {
+            cursor: pointer;
+            position: relative;
+            padding-right: 25px !important;
+        }
+        
+        .sortable-header:hover {
+            background-color: #2a4a6e !important;
+        }
+        
+        .sortable-header i {
+            font-size: 18px;
+            position: absolute;
+            right: 5px;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 0.8;
+        }
+
         /* ==================== BOTÕES ==================== */
         .btn-primary-custom, .btn-pesquisa {
-            background: linear-gradient(to right, var(--primary-darker), var(--primary-dark));
+            background: linear-gradient(to right, #20445d, #20445d);
             border: none;
             padding: 10px 20px;
             font-weight: 600;
             border-radius: 6px;
             transition: all 0.3s ease;
-            font-size: 14px;
+            font-size: 18px;
             color: white;
             display: inline-flex;
             align-items: center;
             gap: 6px;
             cursor: pointer;
             height: 42px;
+            white-space: nowrap;
         }
         .btn-primary-custom:hover, .btn-pesquisa:hover {
             background: linear-gradient(to right, var(--accent-red), #a32c32);
@@ -277,6 +328,7 @@
             color: var(--primary-darker);
             padding: 10px 20px;
             font-weight: 600;
+            font-size: 18px;
             border-radius: 6px;
             transition: all 0.3s ease;
             display: inline-flex;
@@ -284,32 +336,37 @@
             gap: 6px;
             cursor: pointer;
             height: 42px;
+            white-space: nowrap;
         }
         .btn-secondary-custom:hover {
-            background-color: var(--primary-darker);
-            color: white;
-            transform: translateY(-1px);
+            background-color: #132837  !important;
+            color: white !important;
+            border-color: #132837 !important;
         }
         
         .btn-export {
-            background: white;
-            border: 2px solid var(--primary-darker);
-            color: var(--primary-darker);
-            padding: 8px 15px;
-            border-radius: 6px;
-            font-weight: 600;
-            font-size: 14px;
-            transition: all 0.3s ease;
+            background: #ffffff;
+            border: 1px solid #d6dee6 !important;
+            color: #1a3a5c;
+            padding: 4px 10px;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 500;
             display: inline-flex;
             align-items: center;
-            gap: 6px;
-            cursor: pointer;
-            height: 38px;
+            gap: 5px;
+            height: 32px;
+            line-height: 1;
         }
+
+        .btn-export i {
+            font-size: 15px !important;
+        }
+
         .btn-export:hover {
-            background: var(--primary-darker);
+            background: #0f2a44;
+            border-color: #c8d2dc;
             color: white;
-            transform: translateY(-1px);
         }
 
         .btn-action {
@@ -390,31 +447,46 @@
 
         /* ==================== NAVEGAÇÃO ==================== */
         .nav-tabs-container {
-            background: white;
-            border-radius: 10px;
-            padding: 12px;
-            margin-bottom: 20px;
-            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
-            overflow-x: auto;
+            background: transparent;
+            padding: 10px 0;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            width: 100%;
         }
-        .nav-tabs { border: none !important; gap: 4px; flex-wrap: nowrap; }
+        
+        .nav-tabs {
+            border: none !important;
+            gap: 10px;
+            width: 100%;
+        }
+
         .nav-tabs .nav-link {
             border: none !important;
-            border-radius: 6px !important;
-            padding: 10px 15px !important;
-            font-weight: 600;
-            color: var(--primary-dark) !important;
-            font-size: 16px;
-            white-space: nowrap;
+            background: #ffffff !important;
+            border-radius: 10px !important;
+            padding: 8px 18px !important;
+            font-weight: 500;
+            font-size: 18px;
+            color: #1a3a5c !important;
             display: inline-flex !important;
             align-items: center;
+            gap: 6px;
+            transition: all .25s ease;
         }
-        .nav-tabs .nav-link:hover { background-color: rgba(41, 67, 90, 0.05) !important; color: var(--accent-red) !important; }
+
+        .nav-tabs .nav-link:hover {
+            background: #e6e9ed !important;
+        }
+
         .nav-tabs .nav-link.active {
-            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-darker) 100%) !important;
-            color: white !important;
+            background: #234c63 !important;
+            color: #fff !important;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
         }
-        .nav-tabs .nav-link .material-icons { font-size: 18px !important; margin-right: 8px !important; }
+
+        .nav-tabs .nav-link .material-icons {
+            font-size: 18px !important;
+        }
 
         /* ==================== MODAL ==================== */
         .modal-creative .modal-header {
@@ -524,56 +596,6 @@
             font-style: italic;
         }
         
-        .portal-card {
-            background: white;
-            border-radius: 10px;
-            padding: 30px;
-            text-align: center;
-            border: 2px dashed var(--primary-dark);
-            transition: all 0.3s ease;
-            margin-bottom: 30px;
-        }
-        
-        .portal-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            border-color: var(--accent-red);
-        }
-        
-        .portal-card i {
-            font-size: 48px;
-            color: var(--primary-dark);
-            margin-bottom: 15px;
-        }
-        
-        .portal-card h3 {
-            color: var(--primary-dark);
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-        
-        .portal-card p {
-            color: #6c757d;
-            margin-bottom: 20px;
-        }
-        
-        .portal-link {
-            background: linear-gradient(135deg, var(--primary-dark), var(--primary-darker));
-            color: white;
-            padding: 12px 30px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            display: inline-block;
-            transition: all 0.3s ease;
-        }
-        
-        .portal-link:hover {
-            background: linear-gradient(135deg, var(--accent-red), #a32c32);
-            color: white;
-            transform: scale(1.05);
-        }
-
         .badge-orcamentaria {
             background-color: #d4edda;
             color: #155724;
@@ -601,8 +623,57 @@
         
         .text-right { text-align: right; }
         .text-center { text-align: center; }
-        .sortable-header { cursor: pointer; }
-        .sortable-header:hover { color: var(--accent-red); }
+
+        /* ==================== FILTROS LAYOUT ==================== */
+        .filters-row {
+            display: flex;
+            gap: 15px;
+            width: 100%;
+            flex-wrap: nowrap;
+        }
+        
+        .filter-group {
+            flex: 1;
+        }
+        
+        .filter-buttons-group {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            align-items: center;
+            margin-left: auto;
+        }
+        
+        .botoes-abaixo {
+            margin-top: 15px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .consulta-filters-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            width: 100%;
+        }
+        
+        .consulta-filter-group {
+            flex: 1 1 calc(33.333% - 15px);
+            min-width: 250px;
+        }
+        
+        .consulta-buttons-row {
+            display: flex;
+            gap: 10px;
+            width: 100%;
+            margin-top: 15px;
+            justify-content: flex-start;
+        }
+        
+        .consulta-buttons-row .btn-pesquisa,
+        .consulta-buttons-row .btn-secondary-custom {
+            min-width: 150px;
+        }
     </style>
 </head>
 <body>
@@ -706,17 +777,14 @@
         // Ordenação
         let sortConfigNotas = { column: 'data_de_emissao', direction: 'desc' };
         let sortConfigItens = { column: 'data_emissao', direction: 'desc' };
+        // NOVO: Configuração de ordenação para Visão Geral
+        let sortConfigVG = { column: 'total', direction: 'desc' };
 
         // ============================================
         // FUNÇÃO PARA AJUSTAR ALTURA DO IFRAME
         // ============================================
         function iframeUpdateHeight() {
             console.log('Atualizando altura do iframe...');
-            
-            // Forçar reflow
-            document.body.style.display = 'none';
-            document.body.offsetHeight; // Força reflow
-            document.body.style.display = '';
             
             const html = document.documentElement;
             const body = document.body;
@@ -729,7 +797,7 @@
                 document.querySelector('.container-fluid')?.scrollHeight || 0
             );
             
-            const finalHeight = scrollHeight + 20; // Pequena margem de segurança
+            const finalHeight = scrollHeight + 20;
             
             console.log('Altura calculada:', finalHeight);
             
@@ -811,19 +879,15 @@
             try {
                 console.log(`Carregando dados de ${ano}...`);
                 
-                // Carregar apenas arquivos existentes para o ano
                 const arquivosNotas = [];
                 const arquivosItens = [];
                 
-                // Determinar meses disponíveis para cada ano
                 if (ano === '2026') {
-                    // Para 2026, carregar apenas jan, fev, mar
                     ['jan', 'fev', 'mar'].forEach(mes => {
                         arquivosNotas.push(`${BASE_URL}notas_${mes}26.csv`);
                         arquivosItens.push(`${BASE_URL}itensnota_${mes}26.csv`);
                     });
                 } else {
-                    // Para anos anteriores, carregar todos os meses
                     meses.forEach(mes => {
                         const anoDoisDigitos = ano.slice(-2);
                         arquivosNotas.push(`${BASE_URL}notas_${mes}${anoDoisDigitos}.csv`);
@@ -831,7 +895,6 @@
                     });
                 }
 
-                // Carregar todos os arquivos em paralelo para melhor performance
                 const [notasResults, itensResults] = await Promise.all([
                     Promise.allSettled(arquivosNotas.map(url => fetch(url).then(r => r.ok ? r.text() : null))),
                     Promise.allSettled(arquivosItens.map(url => fetch(url).then(r => r.ok ? r.text() : null)))
@@ -883,7 +946,6 @@
                 renderizarDownloads();
                 document.getElementById('data-atualizacao-header').textContent = new Date().toLocaleString('pt-BR');
                 
-                // Atualizar altura do iframe após carregar
                 setTimeout(iframeUpdateHeight, 500);
             } catch (error) {
                 console.error('Erro:', error);
@@ -908,7 +970,6 @@
                 else if (componente === 'notas') renderizarConsultaNotas();
                 else if (componente === 'itens') renderizarConsultaItens();
                 
-                // Atualizar altura do iframe
                 setTimeout(iframeUpdateHeight, 200);
                 
             } finally {
@@ -918,7 +979,6 @@
         }
 
         function processarDados() {
-            // Processar itens por nota
             const itensPorNota = {};
             dadosItens.forEach(item => {
                 const chave = `${item.orgao_emissor}|${item.numero}|${item.serie || ''}|${item.sequencial || ''}`;
@@ -931,7 +991,6 @@
                 itens: itensPorNota[`${nota.orgao_emissor}|${nota.numero}|${nota.serie || ''}|${nota.sequencial || ''}`] || []
             }));
             
-            // Visão Geral
             const mapaVG = new Map();
             dadosCompletosNF.forEach(nota => {
                 if (!nota.valor_total_com_impostos) return;
@@ -956,11 +1015,9 @@
             dadosVisaoGeral = Array.from(mapaVG.values());
             dadosVisaoGeralFiltrados = [...dadosVisaoGeral];
             
-            // Todas as notas
             todasNotas = [...dadosCompletosNF];
             notasFiltradas = [...todasNotas];
             
-            // Processar itens com informações da nota
             const mapaNotas = new Map();
             dadosCompletosNF.forEach(nota => {
                 const chave = `${nota.orgao_emissor}|${nota.numero}|${nota.serie || ''}|${nota.sequencial || ''}`;
@@ -1089,7 +1146,6 @@
             link.download = nomeArquivo;
             link.click();
             
-            // Atualizar altura após exportação
             setTimeout(iframeUpdateHeight, 100);
         }
 
@@ -1189,6 +1245,35 @@
         // ============================================
         // VISÃO GERAL
         // ============================================
+        // NOVA FUNÇÃO: ordenar tabela da visão geral
+        window.ordenarVisaoGeral = function(coluna) {
+            if (sortConfigVG.column === coluna) {
+                sortConfigVG.direction = sortConfigVG.direction === 'asc' ? 'desc' : 'asc';
+            } else {
+                sortConfigVG.column = coluna;
+                sortConfigVG.direction = 'asc';
+            }
+            
+            dadosVisaoGeralFiltrados.sort((a, b) => {
+                let valA = a[coluna] !== undefined ? a[coluna] : '';
+                let valB = b[coluna] !== undefined ? b[coluna] : '';
+                
+                if (coluna === 'total') {
+                    valA = parseFloat(valA) || 0;
+                    valB = parseFloat(valB) || 0;
+                } else {
+                    valA = String(valA).toLowerCase();
+                    valB = String(valB).toLowerCase();
+                }
+                
+                if (valA < valB) return sortConfigVG.direction === 'asc' ? -1 : 1;
+                if (valA > valB) return sortConfigVG.direction === 'asc' ? 1 : -1;
+                return 0;
+            });
+            
+            renderizarVisaoGeral();
+        };
+
         function renderizarVisaoGeral() {
             const orgaos = [...new Set(dadosVisaoGeral.map(o => o.orgao))].sort();
             const naturezas = [...new Set(dadosVisaoGeral.map(o => o.natureza))].filter(Boolean).sort();
@@ -1198,49 +1283,74 @@
             
             const html = `
                 <div class="filter-container">
-                    <div class="row g-3">
-                        <div class="col-md-2">
-                            <label class="filter-label"><i class="material-icons">event</i>Ano</label>
+                    <div class="filters-row">
+                        <div class="filter-group">
+                            <label class="filter-label"><i class="material-icons">event</i>ANO</label>
                             <select class="form-select" id="filtroAnoVG" onchange="mudarAnoVG()">
                                 ${anosDisponiveis.map(a => `<option value="${a}" ${a === anoAtual ? 'selected' : ''}>${a}</option>`).join('')}
                             </select>
                         </div>
-                        <div class="col-md-3">
-                            <label class="filter-label"><i class="material-icons">business</i>Órgão</label>
+                        <div class="filter-group">
+                            <label class="filter-label"><i class="material-icons">business</i>ÓRGÃO</label>
                             <select class="form-select" id="filtroOrgaoVG">
                                 <option value="">Todos</option>
                                 ${orgaos.map(o => `<option value="${o}">${o}</option>`).join('')}
                             </select>
                         </div>
-                        <div class="col-md-3">
-                            <label class="filter-label"><i class="material-icons">category</i>Natureza</label>
+                        <div class="filter-group">
+                            <label class="filter-label"><i class="material-icons">category</i>NATUREZA</label>
                             <select class="form-select" id="filtroNaturezaVG">
                                 <option value="">Todas</option>
                                 ${naturezas.map(n => `<option value="${n}">${n}</option>`).join('')}
                             </select>
                         </div>
-                        <div class="col-md-2">
-                            <label class="filter-label"><i class="material-icons">account_balance</i>Indicador</label>
+                        <div class="filter-group">
+                            <label class="filter-label"><i class="material-icons">account_balance</i>INDICADOR</label>
                             <select class="form-select" id="filtroIndicadorVG">
                                 <option value="">Todos</option>
                                 ${indicadores.map(i => `<option value="${i}">${i}</option>`).join('')}
                             </select>
                         </div>
-                        <div class="col-md-2"></div>
                     </div>
-                    <div class="row mt-3">
-                        <div class="col-12 d-flex gap-2">
-                            <button class="btn-pesquisa" onclick="aplicarFiltrosVG()"><i class="material-icons me-2">search</i>Pesquisar</button>
-                            <button class="btn-secondary-custom" onclick="limparFiltrosVG()"><i class="material-icons me-2">clear</i>Limpar</button>
-                        </div>
+                    <div class="botoes-abaixo">
+                        <button class="btn-pesquisa" onclick="aplicarFiltrosVG()"><i class="material-icons me-2">search</i>Pesquisar</button>
+                        <button class="btn-secondary-custom" onclick="limparFiltrosVG()"><i class="material-icons me-2">clear</i>Limpar</button>
                     </div>
                 </div>
 
                 <div class="row mb-4">
-                    <div class="col-md-3"><div class="metric-card"><div class="metric-label">Total de Registros</div><div class="metric-value">${dadosVisaoGeralFiltrados.length.toLocaleString()}</div></div></div>
-                    <div class="col-md-3"><div class="metric-card"><div class="metric-label">Total de Notas</div><div class="metric-value">${dadosCompletosNF.length.toLocaleString()}</div></div></div>
-                    <div class="col-md-3"><div class="metric-card"><div class="metric-label">Valor Total</div><div class="metric-value">${formatarMoeda(totalGeral)}</div></div></div>
-                    <div class="col-md-3"><div class="metric-card"><div class="metric-label">Média por Registro</div><div class="metric-value">${formatarMoeda(totalGeral / (dadosVisaoGeralFiltrados.length || 1))}</div></div></div>
+                    <div class="col-md-3">
+                        <div class="metric-card">
+                            <div class="metric-header">Total de Registros</div>
+                            <div class="metric-body">
+                                <div class="metric-value">${dadosVisaoGeralFiltrados.length.toLocaleString()}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="metric-card">
+                            <div class="metric-header">Total de Notas</div>
+                            <div class="metric-body">
+                                <div class="metric-value">${dadosCompletosNF.length.toLocaleString()}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="metric-card">
+                            <div class="metric-header">Valor Total</div>
+                            <div class="metric-body">
+                                <div class="metric-value">${formatarMoeda(totalGeral)}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="metric-card">
+                            <div class="metric-header">Média por Registro</div>
+                            <div class="metric-body">
+                                <div class="metric-value">${formatarMoeda(totalGeral / (dadosVisaoGeralFiltrados.length || 1))}</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="d-flex justify-content-between align-items-center mb-3">
@@ -1258,13 +1368,15 @@
                 <div class="table-container">
                     <div class="table-fixed-header-container">
                         <table class="table">
-                            <thead><tr>
-                                <th>Órgão</th>
-                                <th>Natureza</th>
-                                <th>Indicador de Orçamento</th>
-                                <th class="text-right">Valor Total</th>
-                                <th class="text-center">Ações</th>
-                            </tr></thead>
+                            <thead>
+                                <tr>
+                                    <th class="sortable-header" onclick="ordenarVisaoGeral('orgao')">Órgão <i class="material-icons">${getSortIcon('orgao', sortConfigVG)}</i></th>
+                                    <th class="sortable-header" onclick="ordenarVisaoGeral('natureza')">Natureza <i class="material-icons">${getSortIcon('natureza', sortConfigVG)}</i></th>
+                                    <th class="sortable-header" onclick="ordenarVisaoGeral('indicador')">Indicador de Orçamento <i class="material-icons">${getSortIcon('indicador', sortConfigVG)}</i></th>
+                                    <th class="sortable-header text-right" onclick="ordenarVisaoGeral('total')">Valor Total <i class="material-icons">${getSortIcon('total', sortConfigVG)}</i></th>
+                                    <th class="text-center">Ações</th>
+                                </tr>
+                            </thead>
                             <tbody>
                                 ${dadosVisaoGeralFiltrados.map(item => {
                                     const badgeClass = item.indicador.toLowerCase().includes('orçamentária') ? 'badge-orcamentaria' : 'badge-extra';
@@ -1289,7 +1401,6 @@
             
             document.getElementById('visao-geral-content').innerHTML = html;
             
-            // Atualizar altura do iframe
             setTimeout(iframeUpdateHeight, 100);
         }
 
@@ -1309,7 +1420,9 @@
                 if (indicador && item.indicador !== indicador) return false;
                 return true;
             });
-            renderizarVisaoGeral();
+            // Reset ordenação para padrão
+            sortConfigVG = { column: 'total', direction: 'desc' };
+            ordenarVisaoGeral('total');
         };
 
         window.limparFiltrosVG = function() {
@@ -1317,7 +1430,8 @@
             document.getElementById('filtroNaturezaVG').value = '';
             document.getElementById('filtroIndicadorVG').value = '';
             dadosVisaoGeralFiltrados = [...dadosVisaoGeral];
-            renderizarVisaoGeral();
+            sortConfigVG = { column: 'total', direction: 'desc' };
+            ordenarVisaoGeral('total');
         };
 
         window.irParaNotas = function(orgao) {
@@ -1332,7 +1446,7 @@
         };
 
         // ============================================
-        // CONSULTA DE NOTAS
+        // CONSULTA DE NOTAS (mantido igual)
         // ============================================
         function renderizarConsultaNotas() {
             const orgaos = [...new Set(todasNotas.map(n => n.orgao_emissor))].sort();
@@ -1427,7 +1541,6 @@
             document.getElementById('consulta-notas-content').innerHTML = html;
             atualizarTabelaNotas();
             
-            // Atualizar altura do iframe
             setTimeout(iframeUpdateHeight, 100);
         }
 
@@ -1510,7 +1623,6 @@
             totalPaginasNotas = Math.ceil(notasFiltradas.length / itensPorPaginaNotas);
             renderizarPaginacao('paginacaoNotas', paginaAtualNotas, totalPaginasNotas, 'mudarPaginaNotas');
             
-            // Atualizar altura do iframe
             setTimeout(iframeUpdateHeight, 50);
         }
 
@@ -1538,7 +1650,7 @@
         };
 
         // ============================================
-        // CONSULTA DE ITENS
+        // CONSULTA DE ITENS (mantido igual)
         // ============================================
         function renderizarConsultaItens() {
             const orgaos = [...new Set(todosItens.map(i => i.orgao_emissor))].sort();
@@ -1633,7 +1745,6 @@
             document.getElementById('consulta-itens-content').innerHTML = html;
             atualizarTabelaItens();
             
-            // Atualizar altura do iframe
             setTimeout(iframeUpdateHeight, 100);
         }
 
@@ -1716,7 +1827,6 @@
             totalPaginasItens = Math.ceil(itensFiltrados.length / itensPorPaginaItens);
             renderizarPaginacao('paginacaoItens', paginaAtualItens, totalPaginasItens, 'mudarPaginaItens');
             
-            // Atualizar altura do iframe
             setTimeout(iframeUpdateHeight, 50);
         }
 
@@ -1784,7 +1894,6 @@
             `;
             new bootstrap.Modal(document.getElementById('detailModal')).show();
             
-            // Atualizar altura do iframe após abrir modal (embora o modal seja fixed, não afeta o iframe)
             setTimeout(iframeUpdateHeight, 300);
         };
 
@@ -1820,32 +1929,31 @@
         // ============================================
         function renderizarDownloads() {
             document.getElementById('downloads-content').innerHTML = `
-<div class="table-container mt-4">
-    <div class="p-4">
-        <div class="row">
-            <div class="col-md-6 col-12">
-                <div class="card-stats p-4 bg-white rounded shadow-sm h-100">
-                    <div class="d-flex align-items-center gap-2 mb-3">
-                        <i class="material-icons" style="color: var(--primary-dark);">cloud_download</i>
-                        <h4 class="fw-bold text-start mb-0">Portal de Dados Abertos</h4>
-                    </div>
-                    <p class="text-muted text-justify" style="font-size: 13px; text-align: justify;">
-                        Acesse o conjunto de dados completo no Portal de Dados Abertos de Minas Gerais. Dados documentados conforme especificações Frictionless Data.
-                    </p>
-                    <div class="mt-4 text-end">
-                        <a href="https://dados.mg.gov.br/dataset/portal_notas_fiscais" 
-                           target="_blank" 
-                           class="btn-export text-decoration-none fw-bold d-inline-block px-4 py-2"
-                           style="color: var(--primary-dark); background-color: white; border: 1px solid var(--primary-dark); border-radius: 4px; transition: all 0.3s ease;">
-                            <i class="material-icons me-2" style="font-size: 18px; vertical-align: middle;">open_in_new</i>
-                            Acessar Portal de Dados MG
-                        </a>
+                <div class="table-container mt-4">
+                    <div class="p-4">
+                        <div class="row">
+                            <div class="col-md-6 col-12">
+                                <div class="card-stats p-4 bg-white rounded shadow-sm h-100">
+                                    <div class="d-flex align-items-center gap-2 mb-3">
+                                        <i class="material-icons" style="color: var(--primary-dark);">cloud_download</i>
+                                        <h4 class="fw-bold text-start mb-0">Portal de Dados Abertos</h4>
+                                    </div>
+                                    <p class="text-muted text-justify" style="font-size: 13px; text-align: justify;">
+                                        Acesse o conjunto de dados completo no Portal de Dados Abertos de Minas Gerais. Dados documentados conforme especificações Frictionless Data.
+                                    </p>
+                                    <div class="mt-4 text-end">
+                                        <a href="https://dados.mg.gov.br/dataset/portal_notas_fiscais" 
+                                           target="_blank" 
+                                           class="btn-export text-decoration-none fw-bold d-inline-block px-4 py-2">
+                                            <i class="material-icons me-2" style="font-size: 18px; vertical-align: middle;">open_in_new</i>
+                                            Acessar Portal de Dados MG
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-</div>
 
                 <h4 class="mb-3 fw-bold">Metadados</h4>
                 
@@ -1914,7 +2022,6 @@
                 </div>
             `;
             
-            // Atualizar altura do iframe
             setTimeout(iframeUpdateHeight, 100);
         }
 
@@ -1924,7 +2031,6 @@
         document.addEventListener('DOMContentLoaded', function() {
             carregarAnoInicial();
             
-            // Adicionar listener para mudanças de aba
             const tabs = document.querySelectorAll('[data-bs-toggle="tab"]');
             tabs.forEach(tab => {
                 tab.addEventListener('shown.bs.tab', function() {
@@ -1932,7 +2038,6 @@
                 });
             });
             
-            // Fechar compartilhamento ao clicar fora
             document.addEventListener('click', function(e) {
                 if (!e.target.closest('.share-dropdown')) {
                     document.querySelectorAll('.share-options').forEach(opt => {
