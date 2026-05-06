@@ -810,8 +810,8 @@ async function carregarDadosAno(ano, mostrarLoadingScreen = true) {
         const arquivosNotas = [];
         const arquivosItens = [];
 
-        // Detecta meses disponíveis para 2026 (jan a abr)
-        const meses2026 = ['jan','fev','mar','abr'];
+        // Detecta meses disponíveis para 2026 (jan a mai)
+        const meses2026 = ['jan','fev','mar','abr','mai'];
 
         if (ano === '2026') {
             meses2026.forEach(mes => {
