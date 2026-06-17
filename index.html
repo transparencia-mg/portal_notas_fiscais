@@ -623,7 +623,11 @@ const BASE_URL = 'https://raw.githubusercontent.com/transparencia-mg/portal_nota
 const GITHUB_API = 'https://api.github.com/repos/transparencia-mg/portal_notas_fiscais/contents/dataset/data';
 
 const meses = ['jan','fev','mar','abr','mai','jun','jul','ago','set','out','nov','dez'];
-const anosDisponiveis = ['2026','2025','2024','2023','2022'];
+// Gera dinamicamente a lista de anos disponíveis (ano atual até 2022)
+const anosDisponiveis = Array.from(
+    { length: new Date().getFullYear() - 2022 + 1 },
+    (_, i) => String(new Date().getFullYear() - i)
+);
 
 // Cache de dados por ano
 const cacheNotas = {};
@@ -640,7 +644,7 @@ let notasFiltradas = [];
 let todosItens = [];
 let itensFiltrados = [];
 
-let anoAtual = '2026';
+let anoAtual = String(new Date().getFullYear());
 let carregando = false;
 
 // Paginação
@@ -810,13 +814,18 @@ async function carregarDadosAno(ano, mostrarLoadingScreen = true) {
         const arquivosNotas = [];
         const arquivosItens = [];
 
-        // Detecta meses disponíveis para 2026 (jan a mai)
-        const meses2026 = ['jan','fev','mar','abr','mai'];
+        // Detecta meses disponíveis dinamicamente com base no ano atual e mês corrente
+        const anoAtualNum = new Date().getFullYear();
+        const mesAtualNum = new Date().getMonth(); // 0 = jan, 11 = dez
+        const anoNum = parseInt(ano);
+        const qtdMeses = (anoNum < anoAtualNum) ? 12 : (mesAtualNum + 1); // ano passado = 12 meses; ano atual = até o mês corrente
+        const mesesDoAno = meses.slice(0, qtdMeses);
 
-        if (ano === '2026') {
-            meses2026.forEach(mes => {
-                arquivosNotas.push(`${BASE_URL}notas_${mes}26.csv`);
-                arquivosItens.push(`${BASE_URL}itensnota_${mes}26.csv`);
+        if (anoNum >= anoAtualNum) {
+            mesesDoAno.forEach(mes => {
+                const anoDois = ano.slice(-2);
+                arquivosNotas.push(`${BASE_URL}notas_${mes}${anoDois}.csv`);
+                arquivosItens.push(`${BASE_URL}itensnota_${mes}${anoDois}.csv`);
             });
         } else {
             meses.forEach(mes => {
@@ -854,9 +863,11 @@ async function carregarDadosAno(ano, mostrarLoadingScreen = true) {
 }
 
 async function carregarAnoInicial() {
-    mostrarLoading(true, 'Carregando dados de 2026…');
+    const anoInicial = anosDisponiveis[0]; // sempre o ano mais recente
+    mostrarLoading(true, `Carregando dados de ${anoInicial}…`);
+    anoAtual = anoInicial;
     try {
-        const { notas, itens } = await carregarDadosAno('2026', false);
+        const { notas, itens } = await carregarDadosAno(anoInicial, false);
         dadosNotas = notas;
         dadosItens = itens;
         processarDados();
