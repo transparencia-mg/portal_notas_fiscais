@@ -1,0 +1,24 @@
+name: Atualiza data de modificação
+
+on:
+  push:
+    paths:
+      - 'dataset/data/**'
+
+jobs:
+  atualiza:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Grava data de atualização
+        run: |
+          echo "{\"ultima_atualizacao\": \"$(date -u +%Y-%m-%dT%H:%M:%SZ)\"}" > ultima_atualizacao.json
+
+      - name: Commit e push
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add ultima_atualizacao.json
+          git diff --staged --quiet || git commit -m "chore: atualiza data de modificação"
+          git push
