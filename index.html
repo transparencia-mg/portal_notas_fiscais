@@ -490,6 +490,15 @@
         .metadata-table td:last-child { color: #6c757d; font-style: italic; }
 
         /* ============================================================
+           DICIONÁRIO DE DADOS
+        ============================================================ */
+        .metadata-container { background: white; border-radius: 10px; box-shadow: 0 3px 12px rgba(0,0,0,0.06); overflow: hidden; margin-bottom: 20px; }
+        .metadata-header { background: #20445d; color: white; padding: 12px 16px; font-size: 13px; font-weight: 700; display: flex; align-items: center; gap: 8px; }
+        .dic-tab-btn { background: #f0f4f8; border: none; padding: 7px 16px; border-radius: 20px; font-size: 12px; font-weight: 600; color: #1a3a5c; cursor: pointer; transition: all 0.2s; }
+        .dic-tab-btn.active, .dic-tab-btn:hover { background: #1a3a5c; color: white; }
+        .dic-row-highlight { background: #fff8dc !important; }
+
+        /* ============================================================
            18. RESPONSIVIDADE
         ============================================================ */
         @media (max-width: 992px) {
@@ -535,6 +544,12 @@
                     </button>
                 </li>
                 <li class="nav-item">
+                    <button class="nav-link" id="dicionario-tab"
+                        data-bs-toggle="tab" data-bs-target="#dicionario">
+                        <i class="material-icons">menu_book</i>Dicionário de Dados
+                    </button>
+                </li>
+                <li class="nav-item">
                     <button class="nav-link" id="downloads-tab"
                         data-bs-toggle="tab" data-bs-target="#downloads">
                         <i class="material-icons">download</i>Downloads
@@ -561,6 +576,9 @@
             </div>
             <div class="tab-pane fade" id="consulta-itens" role="tabpanel">
                 <div id="consulta-itens-content">Carregando...</div>
+            </div>
+            <div class="tab-pane fade" id="dicionario" role="tabpanel">
+                <div id="dicionario-content">Carregando...</div>
             </div>
             <div class="tab-pane fade" id="downloads" role="tabpanel">
                 <div id="downloads-content">Carregando...</div>
@@ -1834,75 +1852,148 @@ function renderizarDownloads() {
                 <i class="material-icons">open_in_new</i> Acessar Portal de Dados MG
             </a>
         </div>
-    </div>
-
-    <div class="filter-container">
-        <h5 style="font-size:14px;font-weight:700;color:#1a3a5c;margin-bottom:12px;">
-            <i class="material-icons" style="vertical-align:middle;margin-right:6px;">info</i>
-            Metadados — Estrutura de Dados
-        </h5>
-
-        <div class="row g-4">
-            <div class="col-12">
-                <h6 style="font-size:13px;font-weight:700;color:#20445d;margin-bottom:10px;">
-                    <i class="material-icons" style="vertical-align:middle;margin-right:4px;font-size:15px;">receipt</i>
-                    Notas Fiscais
-                </h6>
-                <table class="metadata-table">
-                    <thead><tr><th>Campo</th><th>Descrição</th><th>Tipo</th></tr></thead>
-                    <tbody>
-                        <tr><td><code>orgao_emissor</code></td><td>Órgão responsável pela emissão</td><td>Texto</td></tr>
-                        <tr><td><code>tipo_documento</code></td><td>Tipo de documento relacionado</td><td>Texto</td></tr>
-                        <tr><td><code>fornecedor_cnpj_cpf</code></td><td>CNPJ ou CPF do fornecedor</td><td>Texto</td></tr>
-                        <tr><td><code>fornecedor_nome_empresarial</code></td><td>Razão social do fornecedor</td><td>Texto</td></tr>
-                        <tr><td><code>numero</code></td><td>Número da nota fiscal</td><td>Texto</td></tr>
-                        <tr><td><code>serie</code></td><td>Série da nota fiscal</td><td>Texto</td></tr>
-                        <tr><td><code>sequencial</code></td><td>Número sequencial</td><td>Texto</td></tr>
-                        <tr><td><code>situacao</code></td><td>Status da nota</td><td>Texto</td></tr>
-                        <tr><td><code>natureza</code></td><td>Natureza da despesa</td><td>Texto</td></tr>
-                        <tr><td><code>indicador_de_orcamento</code></td><td>Indicador de orçamento</td><td>Texto</td></tr>
-                        <tr><td><code>data_de_emissao</code></td><td>Data de emissão</td><td>Data</td></tr>
-                        <tr><td><code>data_de_recebimento</code></td><td>Data de recebimento</td><td>Data</td></tr>
-                        <tr><td><code>data_de_registro</code></td><td>Data de registro</td><td>Data</td></tr>
-                        <tr><td><code>valor_total_com_impostos</code></td><td>Valor total com impostos</td><td>Número</td></tr>
-                        <tr><td><code>nota_fiscal_para_aglutinacao</code></td><td>Indicador de aglutinação</td><td>Texto</td></tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="col-12">
-                <h6 style="font-size:13px;font-weight:700;color:#20445d;margin-bottom:10px;margin-top:8px;">
-                    <i class="material-icons" style="vertical-align:middle;margin-right:4px;font-size:15px;">list_alt</i>
-                    Itens da Nota
-                </h6>
-                <table class="metadata-table">
-                    <thead><tr><th>Campo</th><th>Descrição</th><th>Tipo</th></tr></thead>
-                    <tbody>
-                        <tr><td><code>orgao_emissor</code></td><td>Órgão responsável</td><td>Texto</td></tr>
-                        <tr><td><code>tipo_documento</code></td><td>Tipo de documento</td><td>Texto</td></tr>
-                        <tr><td><code>fornecedor_cnpj_cpf</code></td><td>CNPJ ou CPF</td><td>Texto</td></tr>
-                        <tr><td><code>fornecedor_nome_empresarial</code></td><td>Nome do fornecedor</td><td>Texto</td></tr>
-                        <tr><td><code>numero</code></td><td>Número da nota</td><td>Texto</td></tr>
-                        <tr><td><code>serie</code></td><td>Série da nota</td><td>Texto</td></tr>
-                        <tr><td><code>sequencial</code></td><td>Sequencial</td><td>Texto</td></tr>
-                        <tr><td><code>natureza</code></td><td>Natureza da despesa</td><td>Texto</td></tr>
-                        <tr><td><code>indicador_de_orcamento</code></td><td>Indicador de orçamento</td><td>Texto</td></tr>
-                        <tr><td><code>item_da_nota_fiscal</code></td><td>Identificação do item</td><td>Texto</td></tr>
-                        <tr><td><code>codigo_do_item</code></td><td>Código do item</td><td>Texto</td></tr>
-                        <tr><td><code>desc_do_item_de_material</code></td><td>Descrição do item</td><td>Texto</td></tr>
-                        <tr><td><code>desc_da_unid_de_fornecimento</code></td><td>Unidade de fornecimento</td><td>Texto</td></tr>
-                        <tr><td><code>unid_orcamentaria</code></td><td>Unidade orçamentária</td><td>Texto</td></tr>
-                        <tr><td><code>elemento_item_de_despesa</code></td><td>Elemento da despesa</td><td>Texto</td></tr>
-                        <tr><td><code>qtde_na_nota_fiscal</code></td><td>Quantidade</td><td>Número</td></tr>
-                        <tr><td><code>valor_unitario_r</code></td><td>Valor unitário</td><td>Número</td></tr>
-                        <tr><td><code>valor_total_r</code></td><td>Valor total</td><td>Número</td></tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
     </div>`;
 
     setTimeout(iframeUpdateHeight, 100);
 }
+
+// ============================================================
+// 12b. DICIONÁRIO DE DADOS
+// ============================================================
+const DICIONARIO_NOTAS = {
+    notas_fiscais: [
+        { campo: 'orgao_emissor',               descricao: 'Órgão responsável pela emissão da nota fiscal.', tipo: 'Texto' },
+        { campo: 'tipo_documento',              descricao: 'Tipo de documento relacionado à nota fiscal.', tipo: 'Texto' },
+        { campo: 'fornecedor_cnpj_cpf',         descricao: 'CNPJ ou CPF do fornecedor emitente.', tipo: 'Texto' },
+        { campo: 'fornecedor_nome_empresarial', descricao: 'Razão social do fornecedor.', tipo: 'Texto' },
+        { campo: 'numero',                      descricao: 'Número da nota fiscal.', tipo: 'Texto' },
+        { campo: 'serie',                       descricao: 'Série da nota fiscal.', tipo: 'Texto' },
+        { campo: 'sequencial',                  descricao: 'Número sequencial de controle da nota.', tipo: 'Texto' },
+        { campo: 'situacao',                    descricao: 'Status atual da nota fiscal (ex: Registrada, Cancelada).', tipo: 'Texto' },
+        { campo: 'natureza',                    descricao: 'Natureza da despesa associada à nota.', tipo: 'Texto' },
+        { campo: 'indicador_de_orcamento',      descricao: 'Indicador do tipo de orçamento vinculado.', tipo: 'Texto' },
+        { campo: 'data_de_emissao',             descricao: 'Data de emissão da nota fiscal.', tipo: 'Data' },
+        { campo: 'data_de_recebimento',         descricao: 'Data de recebimento da nota fiscal.', tipo: 'Data' },
+        { campo: 'data_de_registro',            descricao: 'Data de registro da nota fiscal no sistema.', tipo: 'Data' },
+        { campo: 'valor_total_com_impostos',    descricao: 'Valor total da nota fiscal, incluindo impostos.', tipo: 'Número (R$)' },
+        { campo: 'nota_fiscal_para_aglutinacao',descricao: 'Indicador de aglutinação com outra(s) nota(s) fiscal(is).', tipo: 'Texto' },
+    ],
+    itens_nota: [
+        { campo: 'orgao_emissor',                descricao: 'Órgão responsável pela emissão.', tipo: 'Texto' },
+        { campo: 'tipo_documento',               descricao: 'Tipo de documento relacionado.', tipo: 'Texto' },
+        { campo: 'fornecedor_cnpj_cpf',          descricao: 'CNPJ ou CPF do fornecedor.', tipo: 'Texto' },
+        { campo: 'fornecedor_nome_empresarial',  descricao: 'Nome/razão social do fornecedor.', tipo: 'Texto' },
+        { campo: 'numero',                       descricao: 'Número da nota fiscal à qual o item pertence.', tipo: 'Texto' },
+        { campo: 'serie',                        descricao: 'Série da nota fiscal.', tipo: 'Texto' },
+        { campo: 'sequencial',                   descricao: 'Sequencial de controle da nota.', tipo: 'Texto' },
+        { campo: 'natureza',                     descricao: 'Natureza da despesa do item.', tipo: 'Texto' },
+        { campo: 'indicador_de_orcamento',       descricao: 'Indicador do tipo de orçamento vinculado.', tipo: 'Texto' },
+        { campo: 'item_da_nota_fiscal',          descricao: 'Identificação/número do item dentro da nota fiscal.', tipo: 'Texto' },
+        { campo: 'codigo_do_item',               descricao: 'Código do item de material ou serviço.', tipo: 'Texto' },
+        { campo: 'desc_do_item_de_material',     descricao: 'Descrição do item de material ou serviço.', tipo: 'Texto' },
+        { campo: 'desc_da_unid_de_fornecimento', descricao: 'Unidade de fornecimento do item (ex: unidade, caixa, kg).', tipo: 'Texto' },
+        { campo: 'unid_orcamentaria',            descricao: 'Unidade orçamentária responsável pela despesa.', tipo: 'Texto' },
+        { campo: 'elemento_item_de_despesa',     descricao: 'Elemento de despesa ao qual o item está classificado.', tipo: 'Texto' },
+        { campo: 'qtde_na_nota_fiscal',          descricao: 'Quantidade do item constante na nota fiscal.', tipo: 'Número' },
+        { campo: 'valor_unitario_r',             descricao: 'Valor unitário do item, em reais.', tipo: 'Número (R$)' },
+        { campo: 'valor_total_r',                descricao: 'Valor total do item (quantidade × valor unitário), em reais.', tipo: 'Número (R$)' },
+    ],
+};
+
+function renderizarDicionario() {
+    const container = document.getElementById('dicionario-content');
+    if (!container) return;
+
+    const labelsTabela = { notas_fiscais: 'Notas Fiscais', itens_nota: 'Itens da Nota' };
+    const coresTabela  = { notas_fiscais: '#1a3a5c', itens_nota: '#b93c42' };
+    const tabelas = Object.keys(DICIONARIO_NOTAS);
+
+    container.innerHTML = `
+    <div class="filter-container">
+        <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
+            <i class="material-icons" style="font-size:32px;color:#20445d;">menu_book</i>
+            <div>
+                <h5 style="font-size:15px;font-weight:700;color:#20445d;margin:0;">Dicionário de Dados</h5>
+                <p style="color:#6c757d;font-size:12px;margin:0;">Descrição de todas as colunas de cada tabela do dataset de Notas Fiscais</p>
+            </div>
+        </div>
+        <div style="margin-top:14px;display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
+            <input type="text" id="dicBusca" class="form-control" style="height:36px;font-size:12px;max-width:340px;padding:4px 12px;" placeholder="Buscar campo ou descrição em qualquer tabela..." oninput="buscarDicionario(this.value)">
+        </div>
+    </div>
+
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px;" id="dicTabs">
+        <button class="dic-tab-btn active" onclick="mostrarTabelaDic('todas',this)">Todas as Tabelas</button>
+        ${tabelas.map(t=>`<button class="dic-tab-btn" onclick="mostrarTabelaDic('${t}',this)">${labelsTabela[t]||t}</button>`).join('')}
+    </div>
+
+    <div id="dicConteudo">
+        ${tabelas.map(tabela => `
+        <div class="metadata-container dic-section" data-tabela="${tabela}">
+            <div class="metadata-header">
+                <i class="material-icons" style="font-size:16px;vertical-align:middle;">table_chart</i>
+                ${labelsTabela[tabela]||tabela}
+                <span style="margin-left:8px;background:rgba(255,255,255,0.2);padding:2px 10px;border-radius:10px;font-size:11px;">${DICIONARIO_NOTAS[tabela].length} campos</span>
+            </div>
+            <div class="table-responsive">
+                <table class="metadata-table" id="dicTabela_${tabela}">
+                    <thead><tr>
+                        <th>Campo</th>
+                        <th>Descrição</th>
+                        <th>Tipo</th>
+                        <th>Tabela</th>
+                    </tr></thead>
+                    <tbody>
+                        ${DICIONARIO_NOTAS[tabela].map(row=>`<tr class="dic-linha">
+                            <td><code>${row.campo}</code></td>
+                            <td>${row.descricao}</td>
+                            <td><span style="background:#e2e8f0;padding:2px 7px;border-radius:4px;font-size:10px;font-weight:600;color:#475569;">${row.tipo}</span></td>
+                            <td><span style="background:${coresTabela[tabela]||'#1a3a5c'};color:white;padding:2px 10px;border-radius:12px;font-size:10px;font-weight:600;">${labelsTabela[tabela]||tabela}</span></td>
+                        </tr>`).join('')}
+                    </tbody>
+                </table>
+            </div>
+        </div>`).join('')}
+    </div>`;
+
+    setTimeout(iframeUpdateHeight, 100);
+}
+
+window.mostrarTabelaDic = function(qual, btnEl) {
+    document.querySelectorAll('.dic-tab-btn').forEach(b => b.classList.remove('active'));
+    if (btnEl) btnEl.classList.add('active');
+    document.querySelectorAll('.dic-section').forEach(s => {
+        s.style.display = (qual === 'todas' || s.dataset.tabela === qual) ? 'block' : 'none';
+    });
+    const busca = document.getElementById('dicBusca');
+    if (busca) busca.value = '';
+    document.querySelectorAll('.dic-linha').forEach(r => { r.style.display = ''; r.classList.remove('dic-row-highlight'); });
+    setTimeout(iframeUpdateHeight, 100);
+};
+
+window.buscarDicionario = function(termo) {
+    const t = (termo||'').toLowerCase().trim();
+    document.querySelectorAll('.dic-section').forEach(s => s.style.display = 'block');
+    document.querySelectorAll('.dic-tab-btn').forEach(b => b.classList.remove('active'));
+    const btnTodas = document.querySelector('.dic-tab-btn');
+    if (btnTodas) btnTodas.classList.add('active');
+    if (!t) {
+        document.querySelectorAll('.dic-linha').forEach(r => { r.style.display = ''; r.classList.remove('dic-row-highlight'); });
+        setTimeout(iframeUpdateHeight, 100);
+        return;
+    }
+    document.querySelectorAll('.dic-linha').forEach(row => {
+        const texto = row.textContent.toLowerCase();
+        const match = texto.includes(t);
+        row.style.display = match ? '' : 'none';
+        if (match) row.classList.add('dic-row-highlight'); else row.classList.remove('dic-row-highlight');
+    });
+    document.querySelectorAll('.dic-section').forEach(s => {
+        const visiveis = s.querySelectorAll('.dic-linha:not([style*="display: none"])').length;
+        s.style.display = visiveis > 0 ? 'block' : 'none';
+    });
+    setTimeout(iframeUpdateHeight, 100);
+};
 
 // ============================================================
 // 13. INICIALIZAÇÃO
@@ -1910,6 +2001,7 @@ function renderizarDownloads() {
 document.addEventListener('DOMContentLoaded', async () => {
     setupAtualizacaoData();
     await carregarAnoInicial();
+    renderizarDicionario();
     renderizarDownloads();
 
     document.querySelectorAll('[data-bs-toggle="tab"]').forEach(tab => {
