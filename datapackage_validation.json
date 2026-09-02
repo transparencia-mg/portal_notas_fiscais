@@ -1,6 +1,6 @@
 {
   "version": "4.16.6",
-  "time": 129.753,
+  "time": 130.393,
   "errors": [],
   "tasks": [
     {
@@ -87,7 +87,7 @@
           "rows": 16586
         }
       },
-      "time": 0.912,
+      "time": 0.916,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -211,7 +211,7 @@
           "rows": 24334
         }
       },
-      "time": 0.786,
+      "time": 0.773,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -447,7 +447,7 @@
           "rows": 30284
         }
       },
-      "time": 0.973,
+      "time": 0.952,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -559,7 +559,7 @@
           "rows": 0
         }
       },
-      "time": 1.252,
+      "time": 1.256,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -35684,7 +35684,7 @@
           "rows": 0
         }
       },
-      "time": 0.571,
+      "time": 0.564,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -73797,7 +73797,7 @@
           "rows": 22597
         }
       },
-      "time": 1.196,
+      "time": 1.204,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -73921,7 +73921,7 @@
           "rows": 32159
         }
       },
-      "time": 1.053,
+      "time": 1.02,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -74033,7 +74033,7 @@
           "rows": 27192
         }
       },
-      "time": 1.451,
+      "time": 1.443,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -74157,7 +74157,7 @@
           "rows": 40580
         }
       },
-      "time": 1.286,
+      "time": 1.271,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -74269,7 +74269,7 @@
           "rows": 23506
         }
       },
-      "time": 1.342,
+      "time": 1.339,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -104844,7 +104844,7 @@
           "rows": 33806
         }
       },
-      "time": 1.077,
+      "time": 1.072,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -104956,7 +104956,7 @@
           "rows": 22978
         }
       },
-      "time": 1.22,
+      "time": 1.245,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -105080,7 +105080,7 @@
           "rows": 33590
         }
       },
-      "time": 1.071,
+      "time": 1.079,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -105192,7 +105192,7 @@
           "rows": 25814
         }
       },
-      "time": 1.382,
+      "time": 1.395,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -105316,7 +105316,7 @@
           "rows": 38550
         }
       },
-      "time": 1.218,
+      "time": 1.23,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -105428,7 +105428,7 @@
           "rows": 23785
         }
       },
-      "time": 1.261,
+      "time": 1.295,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -105552,7 +105552,7 @@
           "rows": 0
         }
       },
-      "time": 0.747,
+      "time": 0.739,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -143665,7 +143665,7 @@
           "rows": 0
         }
       },
-      "time": 1.195,
+      "time": 1.197,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -178790,7 +178790,7 @@
           "rows": 35726
         }
       },
-      "time": 1.153,
+      "time": 1.158,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -178902,7 +178902,7 @@
           "rows": 22741
         }
       },
-      "time": 1.213,
+      "time": 1.238,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -179026,7 +179026,7 @@
           "rows": 33575
         }
       },
-      "time": 1.078,
+      "time": 1.084,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -179138,7 +179138,7 @@
           "rows": 27263
         }
       },
-      "time": 1.44,
+      "time": 1.475,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -179262,7 +179262,7 @@
           "rows": 41522
         }
       },
-      "time": 1.34,
+      "time": 1.341,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -179374,7 +179374,7 @@
           "rows": 18309
         }
       },
-      "time": 0.981,
+      "time": 1.013,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -179498,7 +179498,7 @@
           "rows": 27431
         }
       },
-      "time": 0.893,
+      "time": 0.884,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -179610,7 +179610,7 @@
           "rows": 19172
         }
       },
-      "time": 1.029,
+      "time": 1.041,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -179734,7 +179734,7 @@
           "rows": 29074
         }
       },
-      "time": 0.936,
+      "time": 0.929,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -179846,7 +179846,7 @@
           "rows": 25142
         }
       },
-      "time": 1.341,
+      "time": 1.37,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -179970,7 +179970,7 @@
           "rows": 37365
         }
       },
-      "time": 1.19,
+      "time": 1.184,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -180082,7 +180082,7 @@
           "rows": 0
         }
       },
-      "time": 1.118,
+      "time": 1.125,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -215207,7 +215207,7 @@
           "rows": 0
         }
       },
-      "time": 0.768,
+      "time": 0.758,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -287780,7 +287780,7 @@
           "rows": 0
         }
       },
-      "time": 0.637,
+      "time": 0.63,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -325893,7 +325893,7 @@
           "rows": 0
         }
       },
-      "time": 0.904,
+      "time": 0.911,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -361018,7 +361018,7 @@
           "rows": 37780
         }
       },
-      "time": 1.214,
+      "time": 1.198,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -361130,7 +361130,7 @@
           "rows": 23139
         }
       },
-      "time": 1.23,
+      "time": 1.232,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -361254,7 +361254,7 @@
           "rows": 34455
         }
       },
-      "time": 1.107,
+      "time": 1.094,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -361366,7 +361366,7 @@
           "rows": 25002
         }
       },
-      "time": 1.337,
+      "time": 1.321,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -361490,7 +361490,7 @@
           "rows": 36868
         }
       },
-      "time": 1.18,
+      "time": 1.183,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -361602,7 +361602,7 @@
           "rows": 23090
         }
       },
-      "time": 1.228,
+      "time": 1.243,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -361726,7 +361726,7 @@
           "rows": 34307
         }
       },
-      "time": 1.105,
+      "time": 1.078,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -361838,7 +361838,7 @@
           "rows": 24710
         }
       },
-      "time": 1.319,
+      "time": 1.346,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -361962,7 +361962,7 @@
           "rows": 36353
         }
       },
-      "time": 1.167,
+      "time": 1.151,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -362074,7 +362074,7 @@
           "rows": 23201
         }
       },
-      "time": 1.233,
+      "time": 1.236,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -362198,7 +362198,7 @@
           "rows": 34214
         }
       },
-      "time": 1.116,
+      "time": 1.078,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -362310,7 +362310,7 @@
           "rows": 28401
         }
       },
-      "time": 1.502,
+      "time": 1.518,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -362434,7 +362434,7 @@
           "rows": 42659
         }
       },
-      "time": 1.343,
+      "time": 1.355,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -362546,7 +362546,7 @@
           "rows": 19886
         }
       },
-      "time": 1.072,
+      "time": 1.081,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -362670,7 +362670,7 @@
           "rows": 27276
         }
       },
-      "time": 0.884,
+      "time": 0.876,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -362782,7 +362782,7 @@
           "rows": 22101
         }
       },
-      "time": 1.187,
+      "time": 1.193,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -362906,7 +362906,7 @@
           "rows": 32987
         }
       },
-      "time": 1.052,
+      "time": 1.042,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -363018,7 +363018,7 @@
           "rows": 23198
         }
       },
-      "time": 1.242,
+      "time": 1.237,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -363142,7 +363142,7 @@
           "rows": 33047
         }
       },
-      "time": 1.051,
+      "time": 1.036,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -363254,7 +363254,7 @@
           "rows": 28542
         }
       },
-      "time": 1.515,
+      "time": 1.527,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -363378,7 +363378,7 @@
           "rows": 41802
         }
       },
-      "time": 1.338,
+      "time": 1.313,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -363490,7 +363490,7 @@
           "rows": 24506
         }
       },
-      "time": 1.314,
+      "time": 1.309,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -363614,7 +363614,7 @@
           "rows": 35060
         }
       },
-      "time": 1.138,
+      "time": 1.113,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -363726,7 +363726,7 @@
           "rows": 24661
         }
       },
-      "time": 1.314,
+      "time": 1.32,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -363850,7 +363850,7 @@
           "rows": 36217
         }
       },
-      "time": 1.169,
+      "time": 1.14,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -363962,7 +363962,7 @@
           "rows": 25553
         }
       },
-      "time": 1.374,
+      "time": 1.397,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -364086,7 +364086,7 @@
           "rows": 0
         }
       },
-      "time": 0.572,
+      "time": 0.571,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -402199,7 +402199,7 @@
           "rows": 26050
         }
       },
-      "time": 1.389,
+      "time": 1.42,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -402323,7 +402323,7 @@
           "rows": 38249
         }
       },
-      "time": 1.217,
+      "time": 1.2,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -402435,7 +402435,7 @@
           "rows": 0
         }
       },
-      "time": 0.925,
+      "time": 0.939,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -437560,7 +437560,7 @@
           "rows": 35604
         }
       },
-      "time": 1.133,
+      "time": 1.125,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -437672,7 +437672,7 @@
           "rows": 25794
         }
       },
-      "time": 1.388,
+      "time": 1.397,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -437796,7 +437796,7 @@
           "rows": 37658
         }
       },
-      "time": 1.209,
+      "time": 1.193,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -437908,7 +437908,7 @@
           "rows": 24057
         }
       },
-      "time": 1.314,
+      "time": 1.299,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -438032,7 +438032,7 @@
           "rows": 34891
         }
       },
-      "time": 1.119,
+      "time": 1.111,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -438144,7 +438144,7 @@
           "rows": 26738
         }
       },
-      "time": 1.436,
+      "time": 1.449,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -438268,7 +438268,7 @@
           "rows": 0
         }
       },
-      "time": 0.589,
+      "time": 0.587,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -476381,7 +476381,7 @@
           "rows": 18579
         }
       },
-      "time": 0.981,
+      "time": 0.995,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -476505,7 +476505,7 @@
           "rows": 27111
         }
       },
-      "time": 0.868,
+      "time": 0.865,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -476617,7 +476617,7 @@
           "rows": 19932
         }
       },
-      "time": 1.066,
+      "time": 1.071,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -476741,7 +476741,7 @@
           "rows": 30426
         }
       },
-      "time": 0.977,
+      "time": 0.957,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -476853,7 +476853,7 @@
           "rows": 20736
         }
       },
-      "time": 1.102,
+      "time": 1.114,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -476977,7 +476977,7 @@
           "rows": 30693
         }
       },
-      "time": 0.983,
+      "time": 0.972,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -477089,7 +477089,7 @@
           "rows": 22879
         }
       },
-      "time": 1.21,
+      "time": 1.25,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -477213,7 +477213,7 @@
           "rows": 0
         }
       },
-      "time": 0.601,
+      "time": 0.599,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -515326,7 +515326,7 @@
           "rows": 0
         }
       },
-      "time": 0.934,
+      "time": 0.938,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -550451,7 +550451,7 @@
           "rows": 0
         }
       },
-      "time": 0.573,
+      "time": 0.567,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -588564,7 +588564,7 @@
           "rows": 22541
         }
       },
-      "time": 1.198,
+      "time": 1.205,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -588800,7 +588800,7 @@
           "rows": 25579
         }
       },
-      "time": 1.351,
+      "time": 1.359,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -588924,7 +588924,7 @@
           "rows": 37432
         }
       },
-      "time": 1.197,
+      "time": 1.184,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -589036,7 +589036,7 @@
           "rows": 23421
         }
       },
-      "time": 1.236,
+      "time": 1.247,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -589160,7 +589160,7 @@
           "rows": 33557
         }
       },
-      "time": 1.087,
+      "time": 1.061,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -589272,7 +589272,7 @@
           "rows": 24497
         }
       },
-      "time": 1.315,
+      "time": 1.319,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -589396,7 +589396,7 @@
           "rows": 35971
         }
       },
-      "time": 1.176,
+      "time": 1.147,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -589508,7 +589508,7 @@
           "rows": 24012
         }
       },
-      "time": 1.296,
+      "time": 1.293,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -589632,7 +589632,7 @@
           "rows": 35593
         }
       },
-      "time": 1.198,
+      "time": 1.133,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -589744,7 +589744,7 @@
           "rows": 20951
         }
       },
-      "time": 1.135,
+      "time": 1.117,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -589868,7 +589868,7 @@
           "rows": 30933
         }
       },
-      "time": 1.003,
+      "time": 0.983,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -589980,7 +589980,7 @@
           "rows": 24038
         }
       },
-      "time": 1.276,
+      "time": 1.278,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -590104,7 +590104,7 @@
           "rows": 35359
         }
       },
-      "time": 1.158,
+      "time": 1.13,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -590216,7 +590216,7 @@
           "rows": 22238
         }
       },
-      "time": 1.218,
+      "time": 1.202,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -590340,7 +590340,7 @@
           "rows": 31293
         }
       },
-      "time": 1.028,
+      "time": 1.008,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -590452,7 +590452,7 @@
           "rows": 0
         }
       },
-      "time": 1.082,
+      "time": 1.087,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -625577,7 +625577,7 @@
           "rows": 33037
         }
       },
-      "time": 1.057,
+      "time": 1.054,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -625689,7 +625689,7 @@
           "rows": 27954
         }
       },
-      "time": 1.468,
+      "time": 1.494,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -625813,7 +625813,7 @@
           "rows": 39911
         }
       },
-      "time": 1.28,
+      "time": 1.264,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -625925,7 +625925,7 @@
           "rows": 23381
         }
       },
-      "time": 1.251,
+      "time": 1.288,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -626049,7 +626049,7 @@
           "rows": 32664
         }
       },
-      "time": 1.054,
+      "time": 1.034,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -626161,7 +626161,7 @@
           "rows": 27396
         }
       },
-      "time": 1.472,
+      "time": 1.473,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -626285,7 +626285,7 @@
           "rows": 38295
         }
       },
-      "time": 1.236,
+      "time": 1.218,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -626397,7 +626397,7 @@
           "rows": 28255
         }
       },
-      "time": 1.502,
+      "time": 1.517,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -626521,7 +626521,7 @@
           "rows": 40129
         }
       },
-      "time": 1.292,
+      "time": 1.279,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -626633,7 +626633,7 @@
           "rows": 28698
         }
       },
-      "time": 1.537,
+      "time": 1.557,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -626757,7 +626757,7 @@
           "rows": 40279
         }
       },
-      "time": 1.306,
+      "time": 1.346,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -626863,13 +626863,13 @@
         "scheme": "file",
         "title": "Notas Fiscais Agosto 2026",
         "stats": {
-          "hash": "7a4f58b281c8d8b29eeb5767fc2b85f6",
-          "bytes": 4729370,
+          "hash": "55c528786d29196c41b1f1ea43f6af68",
+          "bytes": 5933121,
           "fields": 15,
-          "rows": 21418
+          "rows": 26804
         }
       },
-      "time": 1.151,
+      "time": 1.485,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -626987,13 +626987,249 @@
         "scheme": "file",
         "title": "Itens Notas Agosto 2026",
         "stats": {
-          "hash": "139aef7d3114dfa95549663037b46b59",
-          "bytes": 9024457,
+          "hash": "60260f25a44f196b67c832c19aeaae18",
+          "bytes": 11527588,
           "fields": 18,
-          "rows": 29468
+          "rows": 37504
         }
       },
-      "time": 1.032,
+      "time": 1.203,
+      "scope": [
+        "hash-count-error",
+        "byte-count-error",
+        "field-count-error",
+        "row-count-error",
+        "blank-header",
+        "extra-label",
+        "missing-label",
+        "blank-label",
+        "duplicate-label",
+        "incorrect-label",
+        "blank-row",
+        "primary-key-error",
+        "foreign-key-error",
+        "extra-cell",
+        "missing-cell",
+        "type-error",
+        "constraint-error",
+        "unique-error"
+      ],
+      "partial": false,
+      "errors": [],
+      "stats": {
+        "errors": 0
+      },
+      "valid": true
+    },
+    {
+      "resource": {
+        "dialect": {
+          "delimiter": ";"
+        },
+        "encoding": "utf-8-sig",
+        "format": "csv",
+        "hashing": "md5",
+        "name": "notas_set26",
+        "path": "data/notas_set26.csv",
+        "profile": "tabular-data-resource",
+        "schema": {
+          "fields": [
+            {
+              "name": "orgao_emissor",
+              "type": "string"
+            },
+            {
+              "name": "tipo_de_documento",
+              "type": "string"
+            },
+            {
+              "name": "fornecedor_cnpj_cpf",
+              "type": "string"
+            },
+            {
+              "name": "fornecedor_nome_empresarial",
+              "type": "string"
+            },
+            {
+              "name": "numero",
+              "type": "integer"
+            },
+            {
+              "name": "serie",
+              "type": "string"
+            },
+            {
+              "name": "sequencial",
+              "type": "integer"
+            },
+            {
+              "name": "situacao",
+              "type": "string"
+            },
+            {
+              "name": "natureza",
+              "type": "string"
+            },
+            {
+              "name": "indicador_de_orcamento",
+              "type": "string"
+            },
+            {
+              "name": "data_de_emissao",
+              "type": "date"
+            },
+            {
+              "name": "data_de_recebimento",
+              "type": "date"
+            },
+            {
+              "name": "data_de_registro",
+              "type": "date"
+            },
+            {
+              "name": "valor_total_com_impostos",
+              "type": "string"
+            },
+            {
+              "name": "nota_fiscal_para_aglutinacao",
+              "type": "string"
+            }
+          ]
+        },
+        "scheme": "file",
+        "title": "Notas Fiscais Setembro 2026",
+        "stats": {
+          "hash": "0a8fc7bf4304ab5b6dc4690bb11be2a6",
+          "bytes": 314622,
+          "fields": 15,
+          "rows": 1428
+        }
+      },
+      "time": 0.099,
+      "scope": [
+        "hash-count-error",
+        "byte-count-error",
+        "field-count-error",
+        "row-count-error",
+        "blank-header",
+        "extra-label",
+        "missing-label",
+        "blank-label",
+        "duplicate-label",
+        "incorrect-label",
+        "blank-row",
+        "primary-key-error",
+        "foreign-key-error",
+        "extra-cell",
+        "missing-cell",
+        "type-error",
+        "constraint-error",
+        "unique-error"
+      ],
+      "partial": false,
+      "errors": [],
+      "stats": {
+        "errors": 0
+      },
+      "valid": true
+    },
+    {
+      "resource": {
+        "dialect": {
+          "delimiter": ";"
+        },
+        "encoding": "utf-8-sig",
+        "format": "csv",
+        "hashing": "md5",
+        "name": "itensnota_set26",
+        "path": "data/itensnota_set26.csv",
+        "profile": "tabular-data-resource",
+        "schema": {
+          "fields": [
+            {
+              "name": "orgao_emissor",
+              "type": "string"
+            },
+            {
+              "name": "tipo_de_documento",
+              "type": "string"
+            },
+            {
+              "name": "fornecedor_cnpj_cpf",
+              "type": "string"
+            },
+            {
+              "name": "fornecedor_nome_empresarial",
+              "type": "string"
+            },
+            {
+              "name": "numero",
+              "type": "integer"
+            },
+            {
+              "name": "serie",
+              "type": "string"
+            },
+            {
+              "name": "sequencial",
+              "type": "integer"
+            },
+            {
+              "name": "natureza",
+              "type": "string"
+            },
+            {
+              "name": "indicador_de_orcamento",
+              "type": "string"
+            },
+            {
+              "name": "item_da_nota_fiscal",
+              "type": "integer"
+            },
+            {
+              "name": "codigo_do_item",
+              "type": "integer"
+            },
+            {
+              "name": "desc_do_item_de_material",
+              "type": "string"
+            },
+            {
+              "name": "desc_da_unid_de_fornecimento",
+              "type": "string"
+            },
+            {
+              "name": "unid_orcamentaria",
+              "type": "integer"
+            },
+            {
+              "name": "elemento_item_de_despesa",
+              "type": "integer"
+            },
+            {
+              "name": "qtde_na_nota_fiscal",
+              "type": "string"
+            },
+            {
+              "name": "valor_unitario_r",
+              "type": "string"
+            },
+            {
+              "name": "valor_total_r",
+              "type": "string"
+            }
+          ]
+        },
+        "scheme": "file",
+        "title": "Itens Notas Setembro 2026",
+        "stats": {
+          "hash": "3b59f5b6f23bae3fa7631a7acefccfa9",
+          "bytes": 643261,
+          "fields": 18,
+          "rows": 2178
+        }
+      },
+      "time": 0.088,
       "scope": [
         "hash-count-error",
         "byte-count-error",
@@ -627024,7 +627260,7 @@
   ],
   "stats": {
     "errors": 16851,
-    "tasks": 112
+    "tasks": 114
   },
   "valid": false
 }
