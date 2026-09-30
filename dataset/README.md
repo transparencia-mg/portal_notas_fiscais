@@ -1,6 +1,6 @@
 Conjunto de dados que reúne informações sobre as notas fiscais emitidas para os órgãos e entidades do Estado de Minas Gerais, disponibilizado em conformidade com a política estadual de transparência e de dados abertos.
 
-Os dados são organizados em arquivos anuais e seguem um padrão estruturado, facilitando o uso por cidadãos, pesquisadores, órgãos de controle e desenvolvedores
+Os dados são organizados em arquivos anuais e seguem um padrão estruturado, facilitando o uso por cidadãos, pesquisadores, órgãos de controle e desenvolvedores.
 
 Periodicidade de Atualização: Semanal
 
