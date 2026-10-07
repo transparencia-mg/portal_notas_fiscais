@@ -5132,7 +5132,7 @@ resources:
           type: string
     scheme: file
     title: Itens Notas Setembro 2026
-    - dialect:
+  - dialect:
       delimiter: ;
     encoding: utf-8-sig
     format: csv
